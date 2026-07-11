@@ -83,8 +83,13 @@ docs/
 ├── 08-deployment-operations.md                🔲 Deploy e operação
 ├── 09-analytics-measurement.md                🔲 Analytics e medição de jornada
 │
-└── adr/                                        🔲 Architecture Decision Records (ver §8)
-    └── 0000-template.md
+└── adr/                                        ✅ Architecture Decision Records (ver §8)
+    ├── README.md                               ✅ Índice e processo de ADRs
+    ├── 0000-template.md                        ✅ Template
+    ├── 0001-cms-selection.md                   🟡 Proposto (pendente do spike)
+    ├── 0002-rendering-strategy.md              🟡 Proposto (pendente do spike)
+    ├── 0003-cache-invalidation.md              🟡 Proposto (pendente do spike)
+    └── 0004-edge-cdn-security.md               🟡 Proposto (pendente do spike)
 ```
 
 ### Detalhamento por documento
@@ -102,7 +107,7 @@ docs/
 | **07** `testing-quality-strategy` | Testes (unit/e2e/perf/a11y/SEO), CI, gates automáticos | 06 | 🔲 Planejado | Criar junto ao plano de implementação |
 | **08** `deployment-operations` | Ambientes, pipeline, rollback, observabilidade em produção | 03, 06 | 🔲 Planejado | Criar antes do primeiro deploy |
 | **09** `analytics-measurement` | Instrumentação de jornada, RUM, privacidade por design | 05 | 🔲 Planejado | Criar antes de captação de leads |
-| **adr/** | Registro de decisões arquiteturais (ver §8) | — | 🔲 Planejado | Criar template + primeiros ADRs |
+| **adr/** | Registro de decisões arquiteturais (ver §8) | — | ✅ Estrutura criada · 🟡 0001–0004 Proposto | Aceitar ADRs após veredito do spike |
 
 > **Sobre a numeração:** o projeto usa numeração **por documento**, não idêntica à numeração de **fases** do roadmap (§4). O mapeamento entre ambos está na tabela do §4 para evitar confusão.
 
@@ -187,7 +192,9 @@ Um documento só deve ser considerado **estável** depois que seus predecessores
 **🔲 Próximos documentos**
 - `06-implementation-plan.md` (após spike aprovado)
 - `07-testing-quality-strategy.md`, `08-deployment-operations.md`, `09-analytics-measurement.md`
-- `adr/0000-template.md` + primeiros ADRs
+
+**🟡 ADRs criados em status Proposto** (análise pronta, decisão congelada até o spike)
+- `adr/0001-cms-selection.md`, `adr/0002-rendering-strategy.md`, `adr/0003-cache-invalidation.md`, `adr/0004-edge-cdn-security.md`
 
 **🚧 Bloqueios existentes**
 - **BLOQUEIO PRINCIPAL:** a **execução** do Spike de Escala (03.1) trava toda a Fase 06 (Implementação). Nenhum código de produção deve começar antes do veredito.
@@ -245,11 +252,13 @@ O que foi decidido, de forma clara e afirmativa.
 Positivas, negativas e riscos aceitos. O que esta decisão obriga ou impede no futuro.
 ```
 
-**Primeiros ADRs esperados (após o spike):**
-- `ADR-0001` — Escolha do CMS headless.
-- `ADR-0002` — Estratégia de renderização (SSG+ISR + islands).
-- `ADR-0003` — Modelo de invalidação de cache por `Content`.
-- `ADR-0004` — Fornecedor de edge/CDN e camada de segurança.
+**Primeiros ADRs (criados em status `Proposto` — decisão congelada até o spike):**
+- [`ADR-0001`](adr/0001-cms-selection.md) — Escolha do CMS headless.
+- [`ADR-0002`](adr/0002-rendering-strategy.md) — Estratégia de renderização (SSG+ISR + islands).
+- [`ADR-0003`](adr/0003-cache-invalidation.md) — Modelo de invalidação de cache por `Content`.
+- [`ADR-0004`](adr/0004-edge-cdn-security.md) — Fornecedor de edge/CDN e camada de segurança.
+
+> A análise (contexto, alternativas, critérios objetivos de aceitação) já está escrita em cada ADR. Cada um vira `Aceito` **apenas** quando o spike (03.1) produzir os números que satisfaçam suas condições. Isso adianta o raciocínio sem violar o gate.
 
 ---
 
