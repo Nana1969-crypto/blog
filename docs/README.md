@@ -133,13 +133,13 @@ spike/                                          ✅ Harness do spike (CÓDIGO DE
 | **FASE 03** | Arquitetura (Técnica & Performance) | `03-technical-architecture-performance.md` | ✅ Concluída (condicional) |
 | **FASE 03.1** | Validação de Escala (Spike — plano + evidência local) | `03.1-scale-validation-spike.md` | ✅ Plano + evidência local · ⏳ eixos de infra pendentes |
 | **FASE 03.2** | Execução do Spike (runbook provisionado) | `03.2-spike-execution-runbook.md` | ✅ Runbook pronto · ⏳ **Execução pendente** |
-| **FASE 04** | Design/Editorial (Sistema & E-E-A-T) | `04-editorial-system-eeat.md` | ✅ Concluída |
+| **FASE 04** | Editorial (Sistema & E-E-A-T) | `04-editorial-system-eeat.md` | ✅ Concluída |
 | **FASE 05** | SEO/CRO (Conversão & Growth) | `05-conversion-growth-system.md` | ✅ Concluída |
-| **FASE 06** | Implementação | `06-implementation-plan.md` | 🔲 Bloqueada por 03.1 (execução) |
+| **FASE 06** | Implementação | `06-implementation-plan.md` | 🔲 Bloqueada pela execução do spike (03.2) |
 | **FASE 07** | Qualidade | `07-testing-quality-strategy.md` | 🔲 Não iniciada |
 | **FASE 08** | Escala (Deploy & Operação) | `08-deployment-operations.md`, `09-analytics-measurement.md` | 🔲 Não iniciada |
 
-> **Observação de honestidade:** o roadmap genérico proposto (Fundação → Estratégia → Produto → Arquitetura → Design → SEO/CRO → Implementação → Qualidade → Escala) foi **mapeado** para os documentos reais acima. SEO e CRO não são um documento único: SEO nasce no doc 01 (arquitetura) e conversão está no doc 05. Design e Editorial foram consolidados por proximidade temática.
+> **Observação de honestidade:** o roadmap genérico proposto (Fundação → Estratégia → Produto → Arquitetura → Design → SEO/CRO → Implementação → Qualidade → Escala) foi **mapeado** para os documentos reais acima. Duas remapeações importantes: (1) **Design** não é uma fase tardia — o design system foi front-carregado no doc **02** (FASE 02); por isso a "FASE 04" do roadmap genérico corresponde ao nosso doc de **Editorial**. (2) **SEO e CRO não são um documento único:** SEO nasce no doc **01** (arquitetura da informação) e a conversão/CRO está no doc **05**.
 
 ---
 
@@ -157,7 +157,10 @@ Um documento só deve ser considerado **estável** depois que seus predecessores
 02 Design System              03 Arquitetura Técnica
         │                             │
         │                             ▼
-        │                     03.1 Spike de Escala  ◄── GATE CRÍTICO
+        │                     03.1 Spike (plano + evidência local)
+        │                             │
+        │                             ▼
+        │                     03.2 Execução provisionada  ◄── GATE CRÍTICO
         │                             │
         └──────────────┬──────────────┘
                        ▼
@@ -169,7 +172,7 @@ Um documento só deve ser considerado **estável** depois que seus predecessores
                        ▼
         ┌──────────────┴───────────────┐
         ▼                              ▼
-06 Implementação  (só após 03.1 APROVADO)
+06 Implementação  (só após veredito APROVADO do spike)
         │
         ▼
 07 Qualidade ──► 08 Deploy/Operação ──► 09 Analytics
@@ -177,8 +180,8 @@ Um documento só deve ser considerado **estável** depois que seus predecessores
 
 **Regras de dependência:**
 - **00 é raiz** — nenhum documento contradiz seus princípios sem justificativa registrada (ADR).
-- **03.1 é o gate crítico:** a Fase 06 (Implementação) **não começa** sem veredito **APROVADO** (ou REVISÃO resolvida e re-testada) no spike.
-- **01 congela após 03.1:** o modelo de dados só é considerado final quando validado sob escala real.
+- **A execução do spike é o gate crítico:** o plano (03.1) e a evidência local já existem; a Fase 06 (Implementação) **não começa** sem o veredito **APROVADO** dos eixos de infra (03.2) — ou REVISÃO resolvida e re-testada.
+- **01 congela após o spike:** o modelo de dados só é considerado final quando validado sob escala real (parte local já validada; build/CMS reais pendentes).
 
 ---
 
@@ -269,7 +272,7 @@ Positivas, negativas e riscos aceitos. O que esta decisão obriga ou impede no f
 - [`ADR-0003`](adr/0003-cache-invalidation.md) — Modelo de invalidação de cache por `Content`.
 - [`ADR-0004`](adr/0004-edge-cdn-security.md) — Fornecedor de edge/CDN e camada de segurança.
 
-> A análise (contexto, alternativas, critérios objetivos de aceitação) já está escrita em cada ADR. Cada um vira `Aceito` **apenas** quando o spike (03.1) produzir os números que satisfaçam suas condições. Isso adianta o raciocínio sem violar o gate.
+> A análise (contexto, alternativas, critérios objetivos de aceitação) já está escrita em cada ADR. Cada um vira `Aceito` **apenas** quando a execução do spike (03.1 local + 03.2 provisionado) produzir os números que satisfaçam suas condições. Isso adianta o raciocínio sem violar o gate.
 
 ---
 
