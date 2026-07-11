@@ -74,7 +74,8 @@ docs/
 ├── 02-design-system-reading-experience.md     ✅ Design system e sistema de leitura
 ├── 03-technical-architecture-performance.md   ✅ Arquitetura técnica e performance
 ├── 03.1-scale-validation-spike.md             ✅ Spike de validação de escala (plano + evidência local)
-├── 03.2-spike-execution-runbook.md            ✅ Runbook de execução do spike provisionado
+├── 03.2-local-harness-enhancement.md          ✅ Enriquecimento do harness local (laboratório)
+├── 03.3-spike-execution-runbook.md            ✅ Runbook de execução do spike provisionado
 ├── 04-editorial-system-eeat.md                ✅ Sistema editorial e E-E-A-T
 ├── 05-conversion-growth-system.md             ✅ Sistema de conversão e growth
 │
@@ -109,8 +110,9 @@ spike/                                          ✅ Harness do spike (CÓDIGO DE
 | **01** `information-architecture-data-model` | Intenção canônica, taxonomia, blocos tipados, grafo de interlinking, URLs, gate | 00 | ✅ Concluído | Congelar contrato após spike (03.1) |
 | **02** `design-system-reading-experience` | Tokens, tipografia de leitura, cor/tema, grid, contrato dos blocos, A11y | 00, 01 | ✅ Concluído | Resolver decisões em aberto (fonte, acento) na Fase 04 |
 | **03** `technical-architecture-performance` | Render híbrido, borda/cache, perf gate, segurança, clean architecture | 00, 01, 02 | ✅ Concluído (condicional ao spike) | Executar 03.1 antes de fechar stack |
-| **03.1** `scale-validation-spike` | Plano de validação de escala (100k/1M) — hipóteses, cenário, métricas, critérios + evidência local do harness | 01, 03 | ✅ Concluído · evidência local coletada | Executar eixos que exigem infra (via 03.2) |
-| **03.2** `spike-execution-runbook` | Runbook para executar H3/H4/H7/H8 + build real no ambiente provisionado; template de relatório de decisão | 03, 03.1, harness | ✅ Pronto para execução | **Provisionar ambiente e executar** (próximo marco) |
+| **03.1** `scale-validation-spike` | Plano de validação de escala (100k/1M) — hipóteses, cenário, métricas, critérios + evidência local do harness | 01, 03 | ✅ Concluído · evidência local coletada | Enriquecer o harness (03.2) e executar infra (03.3) |
+| **03.2** `local-harness-enhancement` | Expansão do laboratório local: cenários 1k–1M, métricas, testes de crescimento, limitações e critérios para avançar à infra | 03.1, harness | ✅ Concluído | Implementar as extensões do harness quando priorizado |
+| **03.3** `spike-execution-runbook` | Runbook para executar H3/H4/H7/H8 + build real no ambiente provisionado; template de relatório de decisão | 03, 03.1, 03.2, harness | ✅ Pronto para execução | **Provisionar ambiente e executar** (próximo marco) |
 | **04** `editorial-system-eeat` | Workflow editorial, gate de qualidade, E-E-A-T, ciclo de atualização | 00, 01, 02, 03 | ✅ Concluído | Operacionalizar após aprovação da arquitetura |
 | **05** `conversion-growth-system` | Funil, captura, relacionamento, medição, monetização | 00–04 | ✅ Concluído | Definir modelo de receita com dados |
 | **06** `implementation-plan` | Sequência de construção, marcos, equipe, estimativas | 03.1 **APROVADO** | 🔲 Planejado | Criar após veredito do spike |
@@ -132,10 +134,11 @@ spike/                                          ✅ Harness do spike (CÓDIGO DE
 | **FASE 02** | Produto (Design System & Leitura) | `02-design-system-reading-experience.md` | ✅ Concluída |
 | **FASE 03** | Arquitetura (Técnica & Performance) | `03-technical-architecture-performance.md` | ✅ Concluída (condicional) |
 | **FASE 03.1** | Validação de Escala (Spike — plano + evidência local) | `03.1-scale-validation-spike.md` | ✅ Plano + evidência local · ⏳ eixos de infra pendentes |
-| **FASE 03.2** | Execução do Spike (runbook provisionado) | `03.2-spike-execution-runbook.md` | ✅ Runbook pronto · ⏳ **Execução pendente** |
+| **FASE 03.2** | Enriquecimento do Harness Local (laboratório) | `03.2-local-harness-enhancement.md` | ✅ Especificado · ⏳ extensões a implementar |
+| **FASE 03.3** | Execução do Spike (runbook provisionado) | `03.3-spike-execution-runbook.md` | ✅ Runbook pronto · ⏳ **Execução pendente** |
 | **FASE 04** | Editorial (Sistema & E-E-A-T) | `04-editorial-system-eeat.md` | ✅ Concluída |
 | **FASE 05** | SEO/CRO (Conversão & Growth) | `05-conversion-growth-system.md` | ✅ Concluída |
-| **FASE 06** | Implementação | `06-implementation-plan.md` | 🔲 Bloqueada pela execução do spike (03.2) |
+| **FASE 06** | Implementação | `06-implementation-plan.md` | 🔲 Bloqueada pela execução do spike (03.3) |
 | **FASE 07** | Qualidade | `07-testing-quality-strategy.md` | 🔲 Não iniciada |
 | **FASE 08** | Escala (Deploy & Operação) | `08-deployment-operations.md`, `09-analytics-measurement.md` | 🔲 Não iniciada |
 
@@ -160,7 +163,10 @@ Um documento só deve ser considerado **estável** depois que seus predecessores
         │                     03.1 Spike (plano + evidência local)
         │                             │
         │                             ▼
-        │                     03.2 Execução provisionada  ◄── GATE CRÍTICO
+        │                     03.2 Harness local enriquecido (laboratório)
+        │                             │
+        │                             ▼
+        │                     03.3 Execução provisionada  ◄── GATE CRÍTICO
         │                             │
         └──────────────┬──────────────┘
                        ▼
@@ -180,7 +186,7 @@ Um documento só deve ser considerado **estável** depois que seus predecessores
 
 **Regras de dependência:**
 - **00 é raiz** — nenhum documento contradiz seus princípios sem justificativa registrada (ADR).
-- **A execução do spike é o gate crítico:** o plano (03.1) e a evidência local já existem; a Fase 06 (Implementação) **não começa** sem o veredito **APROVADO** dos eixos de infra (03.2) — ou REVISÃO resolvida e re-testada.
+- **A execução provisionada do spike é o gate crítico:** o plano (03.1), a evidência local e o laboratório enriquecido (03.2) já existem; a Fase 06 (Implementação) **não começa** sem o veredito **APROVADO** dos eixos de infra (03.3) — ou REVISÃO resolvida e re-testada.
 - **01 congela após o spike:** o modelo de dados só é considerado final quando validado sob escala real (parte local já validada; build/CMS reais pendentes).
 
 ---
@@ -272,7 +278,7 @@ Positivas, negativas e riscos aceitos. O que esta decisão obriga ou impede no f
 - [`ADR-0003`](adr/0003-cache-invalidation.md) — Modelo de invalidação de cache por `Content`.
 - [`ADR-0004`](adr/0004-edge-cdn-security.md) — Fornecedor de edge/CDN e camada de segurança.
 
-> A análise (contexto, alternativas, critérios objetivos de aceitação) já está escrita em cada ADR. Cada um vira `Aceito` **apenas** quando a execução do spike (03.1 local + 03.2 provisionado) produzir os números que satisfaçam suas condições. Isso adianta o raciocínio sem violar o gate.
+> A análise (contexto, alternativas, critérios objetivos de aceitação) já está escrita em cada ADR. Cada um vira `Aceito` **apenas** quando a execução do spike (03.1 local + 03.3 provisionado) produzir os números que satisfaçam suas condições. Isso adianta o raciocínio sem violar o gate.
 
 ---
 
@@ -280,13 +286,15 @@ Positivas, negativas e riscos aceitos. O que esta decisão obriga ou impede no f
 
 **Já feito:** harness local do spike executado — evidência real e positiva para H5, H6 e sinais de H1/H2 (fan-out de invalidação plano em 100×, auditorias exatas). Ver `spike/README.md` e `03.1` §9.1.
 
-**Marco lógico imediato:** **executar os eixos do spike que exigem infraestrutura** (H3 cache/CDN, H4 CWV de campo, H7 API, H8 CMS + build real), seguindo o runbook `03.2-spike-execution-runbook.md`.
+**Opcional antes da infra:** implementar as extensões do laboratório local especificadas em `03.2-local-harness-enhancement.md` (cenários 1k–1M, métricas de crescimento, modo explain de invalidação) — aprofunda a evidência local sem custo de infraestrutura.
+
+**Marco lógico imediato (gate):** **executar os eixos do spike que exigem infraestrutura** (H3 cache/CDN, H4 CWV de campo, H7 API, H8 CMS + build real), seguindo o runbook `03.3-spike-execution-runbook.md`.
 
 Sequência:
-1. **Provisionar** o ambiente efêmero (CMS candidato + edge/CDN) conforme `03.2` §2.
-2. **Gerar e importar** os dados do harness (100k/1M) e rodar o build real (`03.2` §3–§4).
+1. **Provisionar** o ambiente efêmero (CMS candidato + edge/CDN) conforme `03.3` §2.
+2. **Gerar e importar** os dados do harness (100k/1M) e rodar o build real (`03.3` §3–§4).
 3. **Medir** H3/H4/H7/H8 + build incremental contra as metas p95/p75, cruzando com o fan-out já medido localmente.
-4. **Preencher o relatório de decisão** (`03.2` §5) com veredito por eixo (APROVADO / REVISÃO / REPROVADO).
+4. **Preencher o relatório de decisão** (`03.3` §5) com veredito por eixo (APROVADO / REVISÃO / REPROVADO).
 5. **Atualizar os ADRs 0001–0004** (`Proposto` → `Aceito` ou reabrir).
 6. Só então **criar `06-implementation-plan.md`** e iniciar a construção pelas fundações validadas.
 

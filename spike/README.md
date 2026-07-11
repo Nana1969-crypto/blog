@@ -91,5 +91,9 @@ Curva observada localmente (o valor está na *inclinação*, não no ponto — 0
 
 ## Próximo passo
 
-Provisionar o ambiente efêmero (CMS + edge/CDN), rodar o build real com o dataset de 100k/1M,
-preencher H3/H4/H7/H8 e consolidar o **relatório de decisão** que aceita ou reabre os ADRs.
+- **Enriquecer o laboratório (opcional, sem infra):** as extensões especificadas em
+  `../docs/03.2-local-harness-enhancement.md` (cenário de 1M medido, métricas de recurso,
+  geração de sitemap, modo `explain` de invalidação, testes de crescimento por variável).
+- **Executar o spike provisionado (gate):** seguir `../docs/03.3-spike-execution-runbook.md` —
+  provisionar ambiente efêmero (CMS + edge/CDN), rodar o build real com 100k/1M, preencher
+  H3/H4/H7/H8 e consolidar o **relatório de decisão** que aceita ou reabre os ADRs.

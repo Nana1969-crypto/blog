@@ -192,6 +192,6 @@ Fechando o anti-padrão da Fase 00 ("excesso de anúncios", "UX agressiva"):
 | 04 | `04-editorial-system-eeat.md` | Workflow, gate de qualidade, E-E-A-T, ciclo de atualização |
 | 05 | `05-conversion-growth-system.md` | Funil, captura, relacionamento, medição, monetização |
 
-**Próximo marco (fora do escopo de planejamento):** o **spike de validação de escala** — plano e evidência local já concluídos (`03.1`, que confirmou fan-out de invalidação plano e auditorias exatas no nível do modelo); resta a **execução provisionada** dos eixos de infra via runbook `03.2` (cache/CDN, CWV de campo, API, CMS e build real) para aprovar o stack antes de iniciar a implementação.
+**Próximo marco (fora do escopo de planejamento):** o **spike de validação de escala** — plano e evidência local já concluídos (`03.1`, que confirmou fan-out de invalidação plano e auditorias exatas no nível do modelo); resta a **execução provisionada** dos eixos de infra via runbook `03.3` (cache/CDN, CWV de campo, API, CMS e build real) — com o harness local ainda enriquecível conforme `03.2` — para aprovar o stack antes de iniciar a implementação.
 
 *Fim do documento. Fundação estratégica concluída.*
