@@ -73,7 +73,8 @@ docs/
 ├── 01-information-architecture-data-model.md  ✅ Arquitetura de informação e modelo de dados
 ├── 02-design-system-reading-experience.md     ✅ Design system e sistema de leitura
 ├── 03-technical-architecture-performance.md   ✅ Arquitetura técnica e performance
-├── 03.1-scale-validation-spike.md             ✅ Spike de validação de escala
+├── 03.1-scale-validation-spike.md             ✅ Spike de validação de escala (plano + evidência local)
+├── 03.2-spike-execution-runbook.md            ✅ Runbook de execução do spike provisionado
 ├── 04-editorial-system-eeat.md                ✅ Sistema editorial e E-E-A-T
 ├── 05-conversion-growth-system.md             ✅ Sistema de conversão e growth
 │
@@ -108,7 +109,8 @@ spike/                                          ✅ Harness do spike (CÓDIGO DE
 | **01** `information-architecture-data-model` | Intenção canônica, taxonomia, blocos tipados, grafo de interlinking, URLs, gate | 00 | ✅ Concluído | Congelar contrato após spike (03.1) |
 | **02** `design-system-reading-experience` | Tokens, tipografia de leitura, cor/tema, grid, contrato dos blocos, A11y | 00, 01 | ✅ Concluído | Resolver decisões em aberto (fonte, acento) na Fase 04 |
 | **03** `technical-architecture-performance` | Render híbrido, borda/cache, perf gate, segurança, clean architecture | 00, 01, 02 | ✅ Concluído (condicional ao spike) | Executar 03.1 antes de fechar stack |
-| **03.1** `scale-validation-spike` | Plano de validação de escala (100k/1M) — hipóteses, cenário, métricas, critérios | 01, 03 | ✅ Concluído (plano) | **Executar o spike** (próximo marco) |
+| **03.1** `scale-validation-spike` | Plano de validação de escala (100k/1M) — hipóteses, cenário, métricas, critérios + evidência local do harness | 01, 03 | ✅ Concluído · evidência local coletada | Executar eixos que exigem infra (via 03.2) |
+| **03.2** `spike-execution-runbook` | Runbook para executar H3/H4/H7/H8 + build real no ambiente provisionado; template de relatório de decisão | 03, 03.1, harness | ✅ Pronto para execução | **Provisionar ambiente e executar** (próximo marco) |
 | **04** `editorial-system-eeat` | Workflow editorial, gate de qualidade, E-E-A-T, ciclo de atualização | 00, 01, 02, 03 | ✅ Concluído | Operacionalizar após aprovação da arquitetura |
 | **05** `conversion-growth-system` | Funil, captura, relacionamento, medição, monetização | 00–04 | ✅ Concluído | Definir modelo de receita com dados |
 | **06** `implementation-plan` | Sequência de construção, marcos, equipe, estimativas | 03.1 **APROVADO** | 🔲 Planejado | Criar após veredito do spike |
@@ -129,7 +131,8 @@ spike/                                          ✅ Harness do spike (CÓDIGO DE
 | **FASE 01** | Estratégia (IA & Modelo de Dados) | `01-information-architecture-data-model.md` | ✅ Concluída |
 | **FASE 02** | Produto (Design System & Leitura) | `02-design-system-reading-experience.md` | ✅ Concluída |
 | **FASE 03** | Arquitetura (Técnica & Performance) | `03-technical-architecture-performance.md` | ✅ Concluída (condicional) |
-| **FASE 03.1** | Validação de Escala (Spike) | `03.1-scale-validation-spike.md` | ✅ Plano concluído · ⏳ **Execução pendente** |
+| **FASE 03.1** | Validação de Escala (Spike — plano + evidência local) | `03.1-scale-validation-spike.md` | ✅ Plano + evidência local · ⏳ eixos de infra pendentes |
+| **FASE 03.2** | Execução do Spike (runbook provisionado) | `03.2-spike-execution-runbook.md` | ✅ Runbook pronto · ⏳ **Execução pendente** |
 | **FASE 04** | Design/Editorial (Sistema & E-E-A-T) | `04-editorial-system-eeat.md` | ✅ Concluída |
 | **FASE 05** | SEO/CRO (Conversão & Growth) | `05-conversion-growth-system.md` | ✅ Concluída |
 | **FASE 06** | Implementação | `06-implementation-plan.md` | 🔲 Bloqueada por 03.1 (execução) |
@@ -272,16 +275,19 @@ Positivas, negativas e riscos aceitos. O que esta decisão obriga ou impede no f
 
 ## 9. Próximos Passos
 
-**Marco lógico imediato após este README:** **executar o Spike de Validação de Escala (Fase 03.1)**.
+**Já feito:** harness local do spike executado — evidência real e positiva para H5, H6 e sinais de H1/H2 (fan-out de invalidação plano em 100×, auditorias exatas). Ver `spike/README.md` e `03.1` §9.1.
+
+**Marco lógico imediato:** **executar os eixos do spike que exigem infraestrutura** (H3 cache/CDN, H4 CWV de campo, H7 API, H8 CMS + build real), seguindo o runbook `03.2-spike-execution-runbook.md`.
 
 Sequência:
-1. **Provisionar** o ambiente efêmero de spike e **gerar os dados sintéticos** (100k/1M itens) conforme `03.1-scale-validation-spike.md` §2.
-2. **Medir** os seis eixos (DB, CMS, build, CDN/cache, performance, API) contra as metas p95/p75.
-3. **Produzir o relatório de decisão** com veredito por eixo (APROVADO / REVISÃO / REPROVADO).
-4. **Registrar os ADRs** decorrentes (CMS, render, cache, edge).
-5. Só então **criar `06-implementation-plan.md`** e iniciar a construção pelas fundações validadas.
+1. **Provisionar** o ambiente efêmero (CMS candidato + edge/CDN) conforme `03.2` §2.
+2. **Gerar e importar** os dados do harness (100k/1M) e rodar o build real (`03.2` §3–§4).
+3. **Medir** H3/H4/H7/H8 + build incremental contra as metas p95/p75, cruzando com o fan-out já medido localmente.
+4. **Preencher o relatório de decisão** (`03.2` §5) com veredito por eixo (APROVADO / REVISÃO / REPROVADO).
+5. **Atualizar os ADRs 0001–0004** (`Proposto` → `Aceito` ou reabrir).
+6. Só então **criar `06-implementation-plan.md`** e iniciar a construção pelas fundações validadas.
 
-> ⚠️ **Lembrete de disciplina:** executar o spike envolve código *descartável*, não produção. Nenhuma linha de código de produção deve ser escrita antes do veredito APROVADO. Este README, os 7 documentos de planejamento e o futuro relatório do spike são o alicerce — a implementação vem depois, sobre terreno validado.
+> ⚠️ **Lembrete de disciplina:** o spike (local e provisionado) envolve código *descartável*, não produção. Nenhuma linha de código de produção antes do veredito APROVADO. Os documentos de planejamento, o harness e o futuro relatório de decisão são o alicerce — a implementação vem depois, sobre terreno validado. **Não fabricar métricas:** célula sem medição real fica `PENDENTE`.
 
 ---
 
