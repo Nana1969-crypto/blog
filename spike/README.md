@@ -60,30 +60,40 @@ Estes só têm número em ambiente próximo de produção — **não os fabrique
 - **H8** workflow/busca do CMS com milhares de autores
 - Tempo de **build incremental real** de produção
 
-## Resultados medidos (seed 42) — sweep de escala
+## Resultados medidos (seed 42) — série de escala 1k → 1M
 
-Curva observada localmente (o valor está na *inclinação*, não no ponto — 03.1 §11.2):
+Série completa via `bash spike/run-series.sh --with-1m` (03.2 §1). Corpos em blocos incluídos
+até 100k (`full`); 1M em `--light` (corpo omitido — métricas de grafo/invalidação inalteradas):
 
-| Artigos | fan-out p50 | fan-out p95 | fan-out max | lookup p95 (ns) | maior cluster | órfãos | dup-intents |
-|---:|---:|---:|---:|---:|---:|:---:|:---:|
-| 1.000 | 18 | 25 | 33 | 280 | 35 | ✅ casa | 4=4 |
-| 5.000 | 18 | 25 | 34 | 293 | 150 | ✅ casa | 23=23 |
-| 25.000 | 18 | 25 | 37 | 423 | 557 | ✅ casa | 101=101 |
-| 100.000 | 18 | 25 | 39 | 541 | 2.102 | ✅ casa | 409=409 |
+| Artigos | modo | ger. (s) | ger. RSS | val. (s) | fan-out p50 | p95 | max | lookup p95 (ns) | maior cluster | URLs | sitemaps | órfãos | dup |
+|---:|:--|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|:--:|:--:|
+| 1.000 | full | 0,2 | 59MB | 0,1 | 18 | 25 | 37 | 246 | 28 | 1.555 | 1 | ✅ | ✅ |
+| 10.000 | full | 1,4 | 75MB | 0,8 | 18 | 25 | 35 | 360 | 323 | 10.825 | 1 | ✅ | ✅ |
+| 50.000 | full | 6,6 | 91MB | 3,9 | 18 | 25 | 37 | 572 | 1.116 | 52.521 | 2 | ✅ | ✅ |
+| 100.000 | full | 13,1 | 114MB | 8,5 | 18 | 25 | 38 | 812 | 2.147 | 104.641 | 3 | ✅ | ✅ |
+| **1.000.000** | light | 30,7 | 160MB | 47,9 | **18** | **25** | 45 | 1.960 | 20.192 | 1.042.801 | 21 | ✅ | ✅ |
+
+**Modo `explain` de invalidação (ADR-0003), catálogo de 100k:**
+
+| Página | Política | Inlinks | Rotas a regenerar |
+|---|---|--:|--:|
+| normal (`content_777`) | build | 18 | 23 |
+| **mais quente do catálogo** (`content_3`) | build | 35 | **40** |
+| mais quente | runtime | 0 | 5 |
 
 **Leitura dos resultados:**
 
-- ✅ **fan-out de invalidação p50/p95 é PLANO** (18/25) de 1k→100k (100×). Sinal forte de que
-  **CACHE-1/RENDER-1 se sustentam no nível do modelo**: publicar 1 artigo regenera um número
-  ~constante de páginas, independente do catálogo. *(Confirmação final exige o build real — H1/H3.)*
-- ⚠️ **fan-out max cresce devagar** (33→39): páginas "quentes" (power-law) acumulam muitos inlinks.
-  Reforça a necessidade da **política de âncora do ADR-0003** (resolver rótulo no build vs. runtime).
-- ✅ **detector de canibalização e de órfãos é exato** (planted == detected em toda escala) →
-  a auditoria da Fase 01 (INV-3/LINK-1) funciona como gate confiável.
-- ⚠️ **maior cluster cresce ~linear com N** (2.102 em 100k): confirma que listagem/sitemap precisam de
-  **paginação keyset (cursor), não offset** (03.1 §3.2). Decisão para o plano de implementação.
-- ℹ️ **lookup p95** sobe ~2× para 100× de escala (sub-linear; proxy em memória) — a latência real de
-  consulta ao CMS/DB é H2 e depende do ambiente.
+- ✅ **fan-out de invalidação p50/p95 é PLANO (18/25) de 1k → 1M — 1000×.** CACHE-1/RENDER-1
+  sustentam-se no nível do modelo: publicar 1 artigo regenera nº ~constante de páginas,
+  independente do catálogo. Max cresce devagar (37→45, power-law).
+- ✅ **Política de âncora decidida com dado (ADR-0003): BUILD.** Mesmo a página mais quente
+  custa 40 rotas — barato, e as páginas ficam 100% estáticas (sem custo de resolução no serve).
+- ✅ **Geração/validação escalam sub-linear** com backpressure: 1M gerado em 31s/160MB,
+  validado em 48s/414MB. O laboratório em si escala.
+- ✅ **Detectores exatos em toda a série** (canibalização, órfãos) — gate confiável até 1M.
+- ⚠️ **Maior cluster ~linear** (20.192 em 1M): paginação **keyset obrigatória**; e
+  **sitemap segmentado com índice** a partir de ~50k URLs (21 arquivos em 1M).
+- ℹ️ **lookup p95** sobe ~8× para 1000× de escala (sub-linear; proxy em memória).
 
 > **Estes números não aprovam o stack.** Aprovam/reprovam apenas as propriedades do **modelo de dados
 > e do grafo**. O veredito de arquitetura (APROVADO/REVISÃO/REPROVADO, 03.1 §9) só fecha com H3/H4/H7/H8

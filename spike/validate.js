@@ -143,6 +143,22 @@ async function main() {
   const latSorted = Array.from(lat).sort((a, b) => a - b);
   const lookupNs = { p50: percentile(latSorted, 50), p95: percentile(latSorted, 95), p99: percentile(latSorted, 99) };
 
+  // ---- 03.2 §3.1/§3.2: métricas de recurso + simulação de sitemap ----
+  const artifactBytes = {};
+  let totalBytes = 0;
+  for (const f of fs.readdirSync(dir)) {
+    if (f.endsWith('.ndjson')) {
+      const b = fs.statSync(path.join(dir, f)).size;
+      artifactBytes[f] = b; totalBytes += b;
+    }
+  }
+  // URLs indexáveis: home + pillars + clusters + content + autores + tags (aprox. vocabulário usado)
+  const nTags = 400; // vocabulário do gerador (teto)
+  const totalUrls = 1 + pillarIds.size + clusterSize.size + contentIds.size + summary.authors + nTags;
+  const SITEMAP_LIMIT = 50000;
+  const sitemapFiles = Math.ceil(totalUrls / SITEMAP_LIMIT);
+  const cpu = process.cpuUsage();
+
   const rssMB = Math.round(process.memoryUsage().rss / 1048576);
   const validateSeconds = Number(((Date.now() - t0) / 1000).toFixed(1));
 
@@ -194,7 +210,16 @@ async function main() {
         nota: 'cluster gigante testa keyset vs offset em listagem/sitemap',
       },
     },
-    perf: { validateSeconds, rssMB },
+    seoStructure: {
+      urlsIndexaveis: totalUrls,
+      sitemaps: { arquivos: sitemapFiles, limitePorArquivo: SITEMAP_LIMIT, precisaIndice: sitemapFiles > 1 },
+      nota: 'acima de 50k URLs, sitemap único estoura → índice de sitemaps obrigatório (03.2 §3.2)',
+    },
+    perf: {
+      validateSeconds, rssMB,
+      cpuUserSec: Number((cpu.user / 1e6).toFixed(1)), cpuSysSec: Number((cpu.system / 1e6).toFixed(1)),
+      artifactMB: Number((totalBytes / 1048576).toFixed(1)), artifactBytes,
+    },
     naoMedidoLocalmente: {
       motivo: 'exige ambiente provisionado (CMS, edge/CDN, build real)',
       hipoteses: ['H3 cache hit ratio / propagação CDN', 'H4 CWV de campo (LCP/INP/CLS)', 'H7 rate limit e custo de API', 'H8 workflow/busca do CMS', 'tempo de build incremental real'],

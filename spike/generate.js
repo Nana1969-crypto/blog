@@ -18,15 +18,25 @@ const { mulberry32, randInt, zipfIndex, articleBlockCount } = require('./lib/prn
 const { buildBody } = require('./lib/blocks');
 
 function parseArgs(argv) {
-  const a = { articles: 5000, seed: 42, out: path.join(__dirname, 'out'), linksPerArticle: 15 };
+  const a = { articles: 5000, seed: 42, out: path.join(__dirname, 'out'), linksPerArticle: 15, light: false };
   for (let i = 2; i < argv.length; i++) {
     const k = argv[i];
     if (k === '--articles') a.articles = parseInt(argv[++i], 10);
     else if (k === '--seed') a.seed = parseInt(argv[++i], 10);
     else if (k === '--out') a.out = argv[++i];
     else if (k === '--links') a.linksPerArticle = parseInt(argv[++i], 10);
+    else if (k === '--light') a.light = true; // 03.2: omite o corpo em blocos (projeção 1M sem estourar disco)
   }
   return a;
+}
+
+// 03.2 §2.1: tags com vocabulário power-law (poucas tags dominam).
+const TAG_VOCAB_SIZE = 400;
+function pickTags(rng, zipf) {
+  const n = 3 + Math.floor(rng() * 6); // 3–8
+  const set = new Set();
+  while (set.size < n) set.add(`tag_${zipf(rng, TAG_VOCAB_SIZE)}`);
+  return [...set];
 }
 
 function slugify(s, rng) {
@@ -42,7 +52,17 @@ function isPlantedOrphan(i) {
   return (i * 2654435761 >>> 0) % 1000 < 5; // ~0.5%
 }
 
-function main() {
+// Escrita com backpressure: se o buffer do stream encher, aguarda 'drain'.
+// Sem isso, 1M de artigos (~17M linhas) bufferiza na memória e estoura o heap.
+function makeWriter(stream) {
+  return (obj) => {
+    const ok = stream.write(JSON.stringify(obj) + '\n');
+    if (ok) return null;
+    return new Promise((res) => stream.once('drain', res));
+  };
+}
+
+async function main() {
   const args = parseArgs(process.argv);
   const rng = mulberry32(args.seed);
   fs.mkdirSync(args.out, { recursive: true });
@@ -56,14 +76,16 @@ function main() {
 
   const t0 = Date.now();
   const streams = {};
+  const writers = {};
   for (const name of ['pillars', 'clusters', 'authors', 'content', 'intents', 'links']) {
     streams[name] = fs.createWriteStream(path.join(args.out, `${name}.ndjson`));
+    writers[name] = makeWriter(streams[name]);
   }
-  const write = (name, obj) => streams[name].write(JSON.stringify(obj) + '\n');
+  const write = async (name, obj) => { const p = writers[name](obj); if (p) await p; };
 
   // ---- Autores (cauda longa: poucos prolíficos) ----
   for (let i = 0; i < nAuthors; i++) {
-    write('authors', {
+    await write('authors', {
       id: `author_${i}`,
       name: `Autor ${i}`,
       bio: `Especialista com experiência real — autor ${i}.`,
@@ -74,10 +96,10 @@ function main() {
 
   // ---- Pillars e Clusters ----
   for (let p = 0; p < nPillars; p++) {
-    write('pillars', { id: `pillar_${p}`, slug: slugify(`tema-${p}`, rng), title: `Tema ${p}`, description: `Pilar ${p}`, order: p });
+    await write('pillars', { id: `pillar_${p}`, slug: slugify(`tema-${p}`, rng), title: `Tema ${p}`, description: `Pilar ${p}`, order: p });
     for (let c = 0; c < clustersPerPillar; c++) {
       const cid = `cluster_${p}_${c}`;
-      write('clusters', { id: cid, pillarId: `pillar_${p}`, slug: slugify(`sub-${p}-${c}`, rng), title: `Subtema ${p}.${c}` });
+      await write('clusters', { id: cid, pillarId: `pillar_${p}`, slug: slugify(`sub-${p}-${c}`, rng), title: `Subtema ${p}.${c}` });
     }
   }
 
@@ -101,7 +123,8 @@ function main() {
 
     const type = 'article';
     const blockCount = articleBlockCount(rng);
-    const body = buildBody(rng, blockCount, { contentId: id });
+    const body = args.light ? undefined : buildBody(rng, blockCount, { contentId: id });
+    const tags = pickTags(rng, zipfIndex);
 
     // publishedAt/updatedAt espalhados por ~4 anos (exercita ciclo de frescor).
     const daysAgo = randInt(rng, 0, 1460);
@@ -120,7 +143,7 @@ function main() {
     if (dup) plantedDupIntents++;
     prevWasDup = dup;
 
-    write('content', {
+    await write('content', {
       id,
       type,
       slug: slugify(`artigo-${i}`, rng),
@@ -133,11 +156,13 @@ function main() {
       updatedAt,
       status: 'published',
       seo: { metaTitle: `Artigo ${i}`, metaDescription: `Desc ${i}`, canonicalUrl: `/tema-${p}/sub-${p}-${c}/artigo-${i}` },
+      tags,
       blockCount,
+      body,
       _isOrphan: isOrphan, // marcador só para o spike (não é campo de produção)
     });
 
-    write('intents', {
+    await write('intents', {
       id: `intent_${i}`,
       canonicalQuery: `pergunta ${i}`,
       intentType: ['informational', 'commercial', 'transactional'][randInt(rng, 0, 2)],
@@ -166,7 +191,7 @@ function main() {
     // pillar_up (LINK-1), exceto para órfãos plantados — mesma função determinística
     // usada no passo de content, garantindo consistência entre marcador e aresta.
     if (!isPlantedOrphan(i)) {
-      write('links', { fromContentId: from, toContentId: `pillar_${i % nPillars}`, anchorText: 'ver pilar', relation: 'pillar_up', placement: 'body' });
+      await write('links', { fromContentId: from, toContentId: `pillar_${i % nPillars}`, anchorText: 'ver pilar', relation: 'pillar_up', placement: 'body' });
       edgeCount++;
     }
 
@@ -176,7 +201,7 @@ function main() {
       let target = zipfIndex(rng, N);
       if (target === i) target = (i + 1) % N;
       const rel = rng() < 0.15 ? 'next_step' : 'contextual';
-      write('links', {
+      await write('links', {
         fromContentId: from,
         toContentId: `content_${target}`,
         anchorText: `link ${k}`,
@@ -209,4 +234,4 @@ function main() {
   }
 }
 
-main();
+main().catch((e) => { console.error(e); process.exit(1); });
