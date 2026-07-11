@@ -1,0 +1,5 @@
+# Datasets sintéticos gerados — descartáveis, não versionar (podem ter GBs).
+out/
+out_*/
+out100k/
+*.ndjson

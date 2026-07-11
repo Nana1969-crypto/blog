@@ -90,7 +90,15 @@ docs/
     ├── 0002-rendering-strategy.md              🟡 Proposto (pendente do spike)
     ├── 0003-cache-invalidation.md              🟡 Proposto (pendente do spike)
     └── 0004-edge-cdn-security.md               🟡 Proposto (pendente do spike)
+
+spike/                                          ✅ Harness do spike (CÓDIGO DESCARTÁVEL)
+├── README.md                                   ✅ Uso, resultados locais e limites
+├── generate.js                                 ✅ Gerador de dados sintéticos (Fase 01)
+├── validate.js                                 ✅ Validadores locais (H5/H6, sinais H1/H2)
+└── lib/                                         ✅ PRNG determinístico + blocos tipados
 ```
+
+> ⚠️ **`spike/` é código descartável, não produção** — ferramental da Fase 03.1. Já produz evidência local real (fan-out de invalidação plano em 100×, auditorias exatas); H3/H4/H7/H8 seguem pendentes de ambiente provisionado.
 
 ### Detalhamento por documento
 
@@ -197,8 +205,8 @@ Um documento só deve ser considerado **estável** depois que seus predecessores
 - `adr/0001-cms-selection.md`, `adr/0002-rendering-strategy.md`, `adr/0003-cache-invalidation.md`, `adr/0004-edge-cdn-security.md`
 
 **🚧 Bloqueios existentes**
-- **BLOQUEIO PRINCIPAL:** a **execução** do Spike de Escala (03.1) trava toda a Fase 06 (Implementação). Nenhum código de produção deve começar antes do veredito.
-- **Dependências de decisão:** escolha de CMS/edge não pode ser fechada no papel — depende de números do spike.
+- **BLOQUEIO PRINCIPAL:** a **execução completa** do Spike de Escala (03.1) trava toda a Fase 06 (Implementação). Nenhum código de produção deve começar antes do veredito. O harness local (`spike/`) já cobriu a parte que **não** exige infra (H5/H6, sinais H1/H2 — evidência positiva); resta o eixo que **exige ambiente provisionado**: H3 (cache/CDN), H4 (CWV de campo), H7 (API), H8 (CMS) e o build incremental real.
+- **Dependências de decisão:** escolha de CMS/edge não pode ser fechada no papel — depende dos números que só o ambiente provisionado produz (ADRs 0001–0004 seguem `Proposto`).
 
 ---
 
