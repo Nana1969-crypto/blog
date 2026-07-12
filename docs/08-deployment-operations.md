@@ -66,3 +66,20 @@ npx wrangler deploy                         # publica em https://blog-os.<subdom
 5. Registrar os números no ADR-0004 → `Aceito`.
 
 > **Segurança operacional:** o token de API (se usado) vive em variável de ambiente/secret do CI — nunca em arquivo versionado nem colado em chat. Escopo mínimo: `Workers Scripts:Edit`.
+
+## 6. Estado do deploy (registro real)
+
+- **2026-07-12 — PRIMEIRO DEPLOY REALIZADO** ✅ via upload manual no dashboard (Rota C).
+  URL de produção: `https://sweet-unit-a094.pazadrianaw.workers.dev` (Worker auto-nomeado; renomeável).
+- **Verificação de conteúdo/qualidade:** feita ANTES do deploy sobre os arquivos idênticos aos publicados
+  (mesmo `dist/` empacotado e enviado) — gate verde, contraste AA, 0 links quebrados, navegador real
+  (doc 06 §4). O que subiu é byte-a-byte o que foi verificado.
+- **Pendências de campo (H3/H4):** não medidas a partir do ambiente de build (política de rede bloqueia
+  `*.workers.dev`). Medir por uma destas vias, sem fabricar números:
+  1. **Cloudflare Dashboard → o Worker → Metrics/Analytics** (requests, cache, latência) — dados de campo reais.
+  2. **PageSpeed Insights / CrUX** apontando para a URL de produção (LCP/INP/CLS de campo).
+  3. Qualquer rede aberta rodando o smoke test (`curl -sI` para conferir CSP e status 200).
+- **Polimentos pendentes (não bloqueiam o site no ar):** (a) renomear o Worker para `blog-os`;
+  (b) domínio próprio + atualizar `baseUrl` em `content/site.json` (hoje aponta ao placeholder, então
+  `canonical`/sitemap/RSS ainda usam `blogos.example`); (c) migrar do upload manual para o deploy
+  automático já configurado (`.github/workflows/deploy.yml`) quando conveniente.

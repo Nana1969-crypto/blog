@@ -1,6 +1,6 @@
 # ADR-0004: Edge/CDN e camada de segurança
 
-- **Status:** 🟡 Proposto → **fornecedor selecionado: Cloudflare (Workers + static assets)**; aceitação final condicionada às medições de campo pós-deploy (H3/H4)
+- **Status:** ✅ **Deployado — Cloudflare Workers (static assets)**. Site no ar em `https://sweet-unit-a094.pazadrianaw.workers.dev` (deploy manual via dashboard, 2026-07-12). Aceitação plena (H3/H4 de campo) pendente de medição a partir de uma rede que alcance o host — o ambiente de build tem política que bloqueia saída para `*.workers.dev`.
 - **Data:** (a definir na aceitação)
 - **Decisores:** CTO, Staff Eng, Security Engineer, Performance Eng
 - **Documentos relacionados:** 03 §4/§6, 03.1 §6/§7
