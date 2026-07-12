@@ -1,0 +1,39 @@
+name: Deploy Blog OS to Cloudflare
+
+# Deploy automático a cada push na main. O gate de qualidade (check.js) roda
+# ANTES do deploy — se algo violar contraste/links/schema, o job falha e NADA
+# vai ao ar. É o modelo "publicar = merge" (doc 08), com a qualidade garantida
+# no CI, não na confiança.
+#
+# Requer 2 secrets no repositório (Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN   — token com permissão "Edit Cloudflare Workers"
+#   CLOUDFLARE_ACCOUNT_ID  — id da conta (Cloudflare dashboard → Workers → lado direito)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build + gate de qualidade (bloqueante)
+        working-directory: platform
+        run: |
+          node src/build.js
+          node src/check.js
+
+      - name: Deploy para Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: platform
+          command: deploy
