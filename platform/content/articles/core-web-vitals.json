@@ -1,0 +1,163 @@
+{
+  "id": "art-cwv",
+  "slug": "core-web-vitals",
+  "clusterId": "cluster_seo_fund",
+  "title": "Core Web Vitals: o guia direto de LCP, INP e CLS",
+  "dek": "Core Web Vitals são as três métricas com que o Google mede a experiência real de carregamento, interação e estabilidade visual: LCP (até 2,5s), INP (até 200ms) e CLS (até 0,1) — medidas no percentil 75 de usuários reais.",
+  "authorId": "author_equipe",
+  "publishedAt": "2026-03-22",
+  "updatedAt": "2026-07-05",
+  "intent": {
+    "primaryKeyword": "core web vitals",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "Core Web Vitals: guia direto de LCP, INP e CLS",
+    "metaDescription": "O que medem LCP, INP e CLS, quais são os limites bons, a diferença entre dados de laboratório e de campo, e as correções com maior impacto."
+  },
+  "sources": [
+    {
+      "label": "web.dev — Core Web Vitals",
+      "url": "https://web.dev/articles/vitals"
+    },
+    {
+      "label": "web.dev — INP substitui FID como Core Web Vital",
+      "url": "https://web.dev/blog/inp-cwv-launch"
+    },
+    {
+      "label": "Chrome UX Report (CrUX) — dados de campo",
+      "url": "https://developer.chrome.com/docs/crux"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "Core Web Vitals são o subconjunto de métricas de experiência que o Google considera essenciais em qualquer página e usa como sinal de ranqueamento. São três, cada uma cobrindo uma dimensão distinta da experiência: carregar, responder e não pular na tela."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "As três métricas e seus limites"
+    },
+    {
+      "type": "table",
+      "caption": "Core Web Vitals — o que medem e os limites de 'bom' (p75 de campo)",
+      "headers": [
+        "Métrica",
+        "Mede",
+        "Bom",
+        "Ruim"
+      ],
+      "rows": [
+        [
+          "LCP (Largest Contentful Paint)",
+          "quando o maior elemento visível termina de carregar",
+          "≤ 2,5s",
+          "> 4,0s"
+        ],
+        [
+          "INP (Interaction to Next Paint)",
+          "a latência das interações ao longo da visita",
+          "≤ 200ms",
+          "> 500ms"
+        ],
+        [
+          "CLS (Cumulative Layout Shift)",
+          "o quanto o layout pula inesperadamente",
+          "≤ 0,1",
+          "> 0,25"
+        ]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "info",
+      "richText": "Os limites valem no percentil 75: pelo menos 75% das visitas reais precisam ficar dentro do limite. Uma média boa pode esconder uma cauda péssima — e é a cauda que define a classificação."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Laboratório mede hipótese; campo mede verdade"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Ferramentas como Lighthouse rodam a página numa máquina controlada: são dados de laboratório — ótimos para depurar, incapazes de dizer o que o usuário real sente. Os dados de campo (CrUX e monitoramento próprio) vêm de visitas reais em aparelhos e redes reais. A regra: otimize com o laboratório, valide com o campo. Um Lighthouse 100 com campo ruim é um alarme, não um troféu."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "As correções com maior impacto"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          "Para ",
+          {
+            "b": "LCP"
+          },
+          ": sirva HTML pronto (estático ou cacheado) da rede de borda; priorize a imagem principal (sem lazy-load no herói); elimine CSS/JS que bloqueiam a renderização."
+        ],
+        [
+          "Para ",
+          {
+            "b": "INP"
+          },
+          ": reduza JavaScript — a página deve ser legível sem ele; quebre tarefas longas; hidrate só o que é interativo (ilhas)."
+        ],
+        [
+          "Para ",
+          {
+            "b": "CLS"
+          },
+          ": reserve espaço para imagens e embeds com width/height; nunca insira conteúdo acima do que já foi lido; carregue fontes com fallback métrico compatível."
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Performance é decisão de arquitetura, não ajuste final"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "A maior parte dos problemas de Web Vitals nasce de decisões estruturais: renderizar no servidor a cada visita, carregar frameworks inteiros para páginas de leitura, depender de terceiros no caminho crítico. É por isso que páginas de conteúdo devem nascer estáticas e leves — a filosofia detalhada em ",
+        {
+          "link": {
+            "ref": "article:art-blocos",
+            "text": "conteúdo estruturado em blocos"
+          }
+        },
+        ": quando o conteúdo é dado, gerar HTML mínimo e rápido é consequência, não esforço."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Esta página pratica o que descreve: HTML estático, CSS embutido, e menos de 1KB de JavaScript no total (apenas o alternador de tema) — o artigo é legível com JavaScript desligado."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Core Web Vitals afetam mesmo o ranqueamento?",
+          "answerRichText": "Sim, como um dos sinais de experiência de página — desempate entre conteúdos de relevância comparável. Conteúdo continua mandando; com concorrentes bons, a experiência decide."
+        },
+        {
+          "question": "Por que o INP substituiu o FID?",
+          "answerRichText": "O FID media apenas o atraso da primeira interação. O INP avalia a latência das interações ao longo de toda a visita, capturando muito melhor a lentidão que o usuário de fato sente. A troca ocorreu em março de 2024."
+        },
+        {
+          "question": "Preciso medir campo se meu site é pequeno?",
+          "answerRichText": "Sites com pouco tráfego podem não ter amostra no CrUX. Nesse caso, use laboratório com throttling de rede e CPU (simulando aparelho modesto) como aproximação — e trate os limites como orçamento de projeto."
+        }
+      ]
+    }
+  ]
+}

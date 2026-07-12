@@ -1,0 +1,20 @@
+{
+  "pillars": [
+    {
+      "id": "pillar_seo",
+      "slug": "seo-tecnico",
+      "title": "SEO Técnico",
+      "description": "Como buscadores rastreiam, indexam e ranqueiam — e por que as decisões de engenharia do site pesam tanto quanto o texto."
+    },
+    {
+      "id": "pillar_eng",
+      "slug": "engenharia-de-conteudo",
+      "title": "Engenharia de Conteúdo",
+      "description": "Arquitetura de informação, conteúdo estruturado e sistemas editoriais que escalam para milhares de páginas sem perder qualidade."
+    }
+  ],
+  "clusters": [
+    { "id": "cluster_seo_fund", "pillarId": "pillar_seo", "slug": "fundamentos", "title": "Fundamentos" },
+    { "id": "cluster_eng_arq", "pillarId": "pillar_eng", "slug": "arquitetura", "title": "Arquitetura de conteúdo" }
+  ]
+}

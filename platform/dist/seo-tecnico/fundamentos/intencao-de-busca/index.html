@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intenção de busca: o que é e como modelá-la</title>
+<meta name="description" content="Entenda os quatro tipos de intenção de busca, por que cada página deve responder a uma única intenção e como modelar isso na arquitetura do site.">
+<link rel="canonical" href="https://blogos.example/seo-tecnico/fundamentos/intencao-de-busca/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b5cc4'/%3E%3Cpath d='M9 10h14M9 16h14M9 22h9' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="Blog OS" href="/rss.xml">
+<meta property="og:title" content="Intenção de busca: o que é e como modelá-la">
+<meta property="og:description" content="Entenda os quatro tipos de intenção de busca, por que cada página deve responder a uma única intenção e como modelar isso na arquitetura do site.">
+<meta property="og:url" content="https://blogos.example/seo-tecnico/fundamentos/intencao-de-busca/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Blog OS">
+<script>(function(){try{var t=localStorage.getItem('theme');
+if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+<style>:root{--text-xs:0.778rem;--text-sm:0.889rem;--text-base:1rem;--text-lg:1.111rem;--text-xl:1.389rem;--text-2xl:1.722rem;--text-3xl:2.167rem;--text-4xl:2.722rem;--measure:42rem;--leading-body:1.6;--leading-tight:1.15;--font-body:Charter, Georgia, Cambria, 'Times New Roman', serif;--font-ui:system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;--font-mono:ui-monospace, 'SF Mono', Menlo, Consolas, monospace;--radius:8px;--motion-fast:120ms;--color-bg:#ffffff;--color-surface:#f6f8fa;--color-border:#d1d9e0;--color-text:#1f2328;--color-text-2:#59636e;--color-accent:#0b5cc4;--color-accent-hover:#09479a;--color-focus:#0b5cc4;--color-code-bg:#f6f8fa;--color-callout-tip-bg:#dcf5e3;--color-callout-tip-fg:#0f5127;--color-callout-warn-bg:#fff3d6;--color-callout-warn-fg:#5f4200;color-scheme:light dark;}
+@media (prefers-color-scheme: dark){:root:not([data-theme]){--color-bg:#0e1116;--color-surface:#161b22;--color-border:#2b3340;--color-text:#e6e9ee;--color-text-2:#9aa4b2;--color-accent:#7ab5ff;--color-accent-hover:#a8cdff;--color-focus:#7ab5ff;--color-code-bg:#161b22;--color-callout-tip-bg:#12291a;--color-callout-tip-fg:#dcf5e3;--color-callout-warn-bg:#3a2f14;--color-callout-warn-fg:#fff3d6;}}
+:root[data-theme="dark"]{--color-bg:#0e1116;--color-surface:#161b22;--color-border:#2b3340;--color-text:#e6e9ee;--color-text-2:#9aa4b2;--color-accent:#7ab5ff;--color-accent-hover:#a8cdff;--color-focus:#7ab5ff;--color-code-bg:#161b22;--color-callout-tip-bg:#12291a;--color-callout-tip-fg:#dcf5e3;--color-callout-warn-bg:#3a2f14;--color-callout-warn-fg:#fff3d6;}
+:root[data-theme="light"]{--color-bg:#ffffff;--color-surface:#f6f8fa;--color-border:#d1d9e0;--color-text:#1f2328;--color-text-2:#59636e;--color-accent:#0b5cc4;--color-accent-hover:#09479a;--color-focus:#0b5cc4;--color-code-bg:#f6f8fa;--color-callout-tip-bg:#dcf5e3;--color-callout-tip-fg:#0f5127;--color-callout-warn-bg:#fff3d6;--color-callout-warn-fg:#5f4200;}
+*{box-sizing:border-box;margin:0}
+html{font-size:112.5%}
+body{font-family:var(--font-body);font-size:var(--text-base);line-height:var(--leading-body);
+  color:var(--color-text);background:var(--color-bg);-webkit-font-smoothing:antialiased}
+a{color:var(--color-accent);text-underline-offset:2px}
+a:hover{color:var(--color-accent-hover)}
+:focus-visible{outline:2px solid var(--color-focus);outline-offset:2px;border-radius:2px}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--color-bg);padding:.5rem 1rem;z-index:10}
+.skip-link:focus{left:0}
+header.site{font-family:var(--font-ui);border-bottom:1px solid var(--color-border)}
+.site-inner{max-width:64rem;margin:0 auto;padding:.9rem 1.25rem;display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
+.wordmark{font-weight:700;font-size:var(--text-lg);color:var(--color-text);text-decoration:none;letter-spacing:-.02em}
+nav.pillars{display:flex;gap:1rem;flex-wrap:wrap;font-size:var(--text-sm)}
+nav.pillars a{color:var(--color-text-2);text-decoration:none}
+nav.pillars a:hover,nav.pillars a[aria-current]{color:var(--color-accent);text-decoration:underline}
+.theme-toggle{margin-left:auto;font:inherit;font-size:var(--text-xs);cursor:pointer;
+  background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-border);
+  border-radius:999px;padding:.35rem .8rem}
+main{display:block;max-width:64rem;margin:0 auto;padding:2rem 1.25rem 4rem}
+.reading{max-width:var(--measure)}
+h1,h2,h3,h4{font-family:var(--font-ui);line-height:var(--leading-tight);letter-spacing:-.015em}
+h1{font-size:clamp(1.9rem,4.5vw,var(--text-3xl));font-weight:700;margin:0 0 .6rem}
+h2{font-size:var(--text-xl);font-weight:650;margin:2.2rem 0 .7rem}
+h3{font-size:var(--text-lg);font-weight:650;margin:1.6rem 0 .5rem}
+p,ul,ol{margin:0 0 1em}
+li{margin:.3em 0}
+ul,ol{padding-left:1.4rem}
+.dek{font-size:var(--text-lg);color:var(--color-text-2);margin:0 0 1.1rem}
+.meta{font-family:var(--font-ui);font-size:var(--text-xs);color:var(--color-text-2);
+  display:flex;gap:.9rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.breadcrumb{font-family:var(--font-ui);font-size:var(--text-xs);margin-bottom:1.1rem}
+.breadcrumb ol{list-style:none;padding:0;display:flex;gap:.4rem;flex-wrap:wrap}
+.breadcrumb li+li::before{content:"›";margin-right:.4rem;color:var(--color-text-2)}
+.breadcrumb a{color:var(--color-text-2)}
+.article-grid{display:grid;grid-template-columns:1fr;gap:2.5rem}
+.article-grid>*{min-width:0}
+@media(min-width:64rem){.article-grid{grid-template-columns:minmax(0,var(--measure)) 15rem}}
+.toc{font-family:var(--font-ui);font-size:var(--text-xs);align-self:start;order:-1}
+@media(min-width:64rem){.toc{order:1;position:sticky;top:1.5rem}}
+.toc-box{border:1px solid var(--color-border);border-radius:var(--radius);padding:1rem;background:var(--color-surface)}
+.toc h2{margin:0 0 .5rem;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-2)}
+.toc ol{list-style:none;padding:0;margin:0}
+.toc a{text-decoration:none;color:var(--color-text-2);display:block;padding:.18rem 0}
+.toc a:hover{color:var(--color-accent)}
+.toc .lvl3{padding-left:.9rem}
+.callout{border-radius:var(--radius);padding:.85rem 1rem;margin:0 0 1em;background:var(--color-surface);
+  border:1px solid var(--color-border)}
+.callout-tip{background:var(--color-callout-tip-bg);color:var(--color-callout-tip-fg);border-color:transparent}
+.callout-warn{background:var(--color-callout-warn-bg);color:var(--color-callout-warn-fg);border-color:transparent}
+.table-wrap{overflow-x:auto;margin:0 0 1em}
+table{border-collapse:collapse;font-family:var(--font-ui);font-size:var(--text-sm);min-width:100%}
+caption{text-align:left;font-size:var(--text-xs);color:var(--color-text-2);padding-bottom:.4rem}
+th,td{border:1px solid var(--color-border);padding:.5rem .7rem;text-align:left;vertical-align:top}
+th{background:var(--color-surface)}
+pre{background:var(--color-code-bg);border:1px solid var(--color-border);border-radius:var(--radius);
+  padding:1rem;overflow-x:auto;margin:0 0 1em;font-size:var(--text-sm)}
+code{font-family:var(--font-mono);font-size:.92em}
+blockquote{border-left:3px solid var(--color-accent);padding:.2rem 0 .2rem 1.1rem;margin:0 0 1em;color:var(--color-text-2)}
+blockquote footer{font-family:var(--font-ui);font-size:var(--text-xs);margin-top:.4rem}
+figure{margin:0 0 1em}
+figure img{max-width:100%;height:auto;border-radius:var(--radius)}
+figcaption{font-family:var(--font-ui);font-size:var(--text-xs);color:var(--color-text-2);margin-top:.45rem}
+.diagram svg{max-width:100%;height:auto}
+.faq-item{border:1px solid var(--color-border);border-radius:var(--radius);margin:0 0 .6rem;background:var(--color-surface)}
+.faq-item summary{cursor:pointer;font-family:var(--font-ui);font-weight:600;font-size:var(--text-sm);padding:.8rem 1rem}
+.faq-item p{padding:0 1rem 1rem}
+hr{border:0;border-top:1px solid var(--color-border);margin:2rem 0}
+.next-step{margin-top:2.6rem;border:1px solid var(--color-border);border-radius:var(--radius);
+  padding:1.2rem 1.3rem;background:var(--color-surface);font-family:var(--font-ui)}
+.next-step h2{margin:0 0 .4rem;font-size:var(--text-lg)}
+.next-step p{margin:0;font-size:var(--text-sm);color:var(--color-text-2)}
+.sources{margin-top:2.4rem;font-size:var(--text-sm)}
+.sources h2{font-size:var(--text-lg)}
+.sources ol{color:var(--color-text-2)}
+.card-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));padding:0;list-style:none}
+.card{border:1px solid var(--color-border);border-radius:var(--radius);padding:1.1rem 1.2rem;background:var(--color-surface)}
+.card h2,.card h3{margin:0 0 .35rem;font-size:var(--text-lg)}
+.card p{margin:0;font-size:var(--text-sm);color:var(--color-text-2)}
+.card a{text-decoration:none;color:var(--color-text)}
+.card a:hover{color:var(--color-accent)}
+.hero{padding:2.2rem 0 1.4rem}
+.hero p{font-size:var(--text-lg);color:var(--color-text-2);max-width:var(--measure)}
+.list-plain{list-style:none;padding:0}
+.list-plain li{border-bottom:1px solid var(--color-border);padding:.85rem 0}
+.list-plain .t{font-family:var(--font-ui);font-weight:600;text-decoration:none;color:var(--color-text)}
+.list-plain .t:hover{color:var(--color-accent)}
+.list-plain .d{font-size:var(--text-sm);color:var(--color-text-2);margin:.15rem 0 0}
+footer.site{border-top:1px solid var(--color-border);font-family:var(--font-ui);font-size:var(--text-xs);color:var(--color-text-2)}
+footer.site .site-inner{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1.4rem 1.25rem}
+footer.site a{color:var(--color-text-2)}
+@media (prefers-reduced-motion: no-preference){a,button{transition:color var(--motion-fast) ease}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Intenção de busca: o que é e como modelá-la na arquitetura","description":"Intenção de busca é o objetivo real por trás de uma consulta. Uma página deve responder a uma única intenção — e a forma mais confiável de garantir isso é modelar a intenção como dado, antes de escrever qualquer texto.","datePublished":"2026-02-10","dateModified":"2026-06-28","inLanguage":"pt-BR","mainEntityOfPage":"https://blogos.example/seo-tecnico/fundamentos/intencao-de-busca/","author":{"@type":"Organization","name":"Equipe Blog OS","url":"https://blogos.example/autores/equipe-blog-os/"},"publisher":{"@type":"Organization","name":"Blog OS","url":"https://blogos.example"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://blogos.example/"},{"@type":"ListItem","position":2,"name":"SEO Técnico","item":"https://blogos.example/seo-tecnico/"},{"@type":"ListItem","position":3,"name":"Intenção de busca: o que é e como modelá-la na arquitetura","item":"https://blogos.example/seo-tecnico/fundamentos/intencao-de-busca/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Uma página pode ranquear para várias palavras-chave?","acceptedAnswer":{"@type":"Answer","text":"Sim — e deve. Uma página que satisfaz bem uma intenção ranqueia para dezenas de variações daquela intenção. O que ela não deve fazer é disputar a intenção canônica de outra página do mesmo site."}},{"@type":"Question","name":"Como sei se duas consultas têm a mesma intenção?","acceptedAnswer":{"@type":"Answer","text":"Pesquise as duas. Se os resultados da primeira página forem substancialmente os mesmos, o buscador as trata como a mesma intenção — e você deve ter uma única página para ambas."}}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<header class="site"><div class="site-inner">
+<a class="wordmark" href="/">Blog OS</a>
+<nav class="pillars" aria-label="Temas"><a href="/seo-tecnico/" aria-current="page">SEO Técnico</a><a href="/engenharia-de-conteudo/">Engenharia de Conteúdo</a></nav>
+<button class="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">Tema</button>
+</div></header>
+<main id="conteudo">
+
+<nav class="breadcrumb" aria-label="Você está em"><ol><li><a href="/">Início</a></li><li><a href="/seo-tecnico/">SEO Técnico</a></li><li aria-current="page">Intenção de busca: o que é e como modelá-la na arquitetura</li></ol></nav>
+<div class="article-grid">
+<article class="reading">
+<h1>Intenção de busca: o que é e como modelá-la na arquitetura</h1>
+<p class="dek">Intenção de busca é o objetivo real por trás de uma consulta. Uma página deve responder a uma única intenção — e a forma mais confiável de garantir isso é modelar a intenção como dado, antes de escrever qualquer texto.</p>
+<div class="meta">
+<span>Por <a href="/autores/equipe-blog-os/">Equipe Blog OS</a></span>
+<span>Publicado em <time datetime="2026-02-10">10 de fevereiro de 2026</time></span>
+<span>Atualizado em <time datetime="2026-06-28">28 de junho de 2026</time></span>
+<span>2 min de leitura</span>
+</div>
+<p>Quando alguém digita uma consulta num buscador, o texto da consulta é só a superfície. O que decide se a sua página satisfaz o usuário — e, por consequência, se ela ranqueia de forma durável — é a <strong>intenção</strong> por trás da consulta: o que a pessoa realmente quer resolver naquele momento.</p>
+<h2 id="os-quatro-tipos-de-intencao">Os quatro tipos de intenção</h2>
+<p>A classificação clássica divide as intenções em quatro famílias. Elas importam porque cada uma pede um formato de página diferente — e misturar formatos numa página só costuma significar não atender bem a nenhum.</p>
+<div class="table-wrap"><table><caption>Tipos de intenção e o formato de página que cada um pede</caption><thead><tr><th scope="col">Intenção</th><th scope="col">O usuário quer</th><th scope="col">Formato que funciona</th></tr></thead><tbody><tr><td>Informacional</td><td>entender algo</td><td>guia, explicação, tutorial</td></tr><tr><td>Navegacional</td><td>chegar a um lugar específico</td><td>página institucional, login</td></tr><tr><td>Comercial</td><td>comparar antes de decidir</td><td>comparativo, review, lista</td></tr><tr><td>Transacional</td><td>concluir uma ação</td><td>página de produto, checkout, assinatura</td></tr></tbody></table></div>
+<h2 id="por-que-uma-pagina-deve-responder-a-uma-unica-intencao">Por que uma página deve responder a uma única intenção</h2>
+<p>Quando duas páginas do mesmo site disputam a mesma intenção, os sinais de relevância se dividem entre elas e as duas performam pior — o fenômeno conhecido como <a href="/seo-tecnico/fundamentos/canibalizacao-de-palavras-chave/">canibalização de palavras-chave</a>. O inverso também vale: quando uma página tenta cobrir várias intenções ao mesmo tempo, ela responde superficialmente a todas e profundamente a nenhuma.</p>
+<aside class="callout callout-tip" role="note"><strong class="callout-label">Dica:</strong> Regra prática: uma intenção → uma URL. Se você não consegue dizer em uma frase qual pergunta a página responde, a página ainda não está pronta para existir.</aside>
+<h2 id="modelar-a-intencao-como-dado-nao-como-intuicao">Modelar a intenção como dado, não como intuição</h2>
+<p>A maioria dos sites trata intenção como uma nota mental do redator. Em escala, isso não sobrevive: com centenas de páginas, ninguém lembra qual página responde a quê, e os conflitos aparecem silenciosamente. A solução é tornar a intenção um campo estruturado do conteúdo — cada artigo declara sua consulta canônica e sua palavra-chave primária, e uma verificação automática bloqueia a publicação de qualquer página que dispute uma palavra-chave já ocupada.</p>
+<pre><code class="lang-json">{
+  &quot;intent&quot;: {
+    &quot;primaryKeyword&quot;: &quot;intenção de busca&quot;,
+    &quot;intentType&quot;: &quot;informational&quot;,
+    &quot;funnelStage&quot;: &quot;ToFu&quot;
+  }
+}</code></pre>
+<p>Este site faz exatamente isso: o artigo que você está lendo declara sua intenção no próprio arquivo de conteúdo, e o build falha se outro artigo tentar usar a mesma palavra-chave primária. A intenção deixou de ser uma boa prática de redação e virou uma <strong>invariante de arquitetura</strong>.</p>
+<h2 id="como-identificar-a-intencao-antes-de-escrever">Como identificar a intenção antes de escrever</h2>
+<ol><li>Pesquise a consulta e observe o que já ranqueia: o formato das páginas na primeira página revela como o buscador interpretou a intenção.</li><li>Liste as sub-perguntas que a mesma pessoa teria em seguida — elas viram seções do artigo ou artigos irmãos no mesmo <a href="/engenharia-de-conteudo/arquitetura/arquitetura-pillar-cluster/">cluster de conteúdo</a>.</li><li>Escreva a resposta essencial em uma frase. Ela vira o primeiro parágrafo (answer-first) — quem chegou com pressa é atendido de imediato.</li><li>Só então defina título, estrutura e profundidade.</li></ol>
+<section class="faq" aria-label="Perguntas frequentes"><h2 id="faq">Perguntas frequentes</h2><details class="faq-item"><summary>Uma página pode ranquear para várias palavras-chave?</summary><p>Sim — e deve. Uma página que satisfaz bem uma intenção ranqueia para dezenas de variações daquela intenção. O que ela não deve fazer é disputar a intenção canônica de outra página do mesmo site.</p></details><details class="faq-item"><summary>Como sei se duas consultas têm a mesma intenção?</summary><p>Pesquise as duas. Se os resultados da primeira página forem substancialmente os mesmos, o buscador as trata como a mesma intenção — e você deve ter uma única página para ambas.</p></details></section>
+<section class="sources"><h2 id="fontes">Fontes e referências</h2><ol><li><a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" rel="noopener noreferrer">Google Search Central — Criando conteúdo útil, confiável e centrado nas pessoas</a></li><li><a href="https://static.googleusercontent.com/media/guidelines.raterhub.com/pt-BR//searchqualityevaluatorguidelines.pdf" rel="noopener noreferrer">Google — Diretrizes para avaliadores de qualidade de busca (Search Quality Rater Guidelines)</a></li></ol></section>
+<aside class="next-step"><h2>Próximo passo</h2><p><a href="/seo-tecnico/fundamentos/canibalizacao-de-palavras-chave/">Canibalização de palavras-chave: como detectar e eliminar de vez</a> — continue no tema com o próximo guia do cluster</p></aside>
+</article>
+<aside class="toc" aria-label="Neste artigo"><div class="toc-box"><h2>Neste artigo</h2><ol><li><a href="#os-quatro-tipos-de-intencao">Os quatro tipos de intenção</a></li><li><a href="#por-que-uma-pagina-deve-responder-a-uma-unica-intencao">Por que uma página deve responder a uma única intenção</a></li><li><a href="#modelar-a-intencao-como-dado-nao-como-intuicao">Modelar a intenção como dado, não como intuição</a></li><li><a href="#como-identificar-a-intencao-antes-de-escrever">Como identificar a intenção antes de escrever</a></li><li><a href="#faq">Perguntas frequentes</a></li></ol></div></aside>
+</div>
+</main>
+<footer class="site"><div class="site-inner">
+<span>© 2026 Blog OS — conteúdo estruturado, aberto a auditoria.</span>
+<span><a href="/politica-editorial/">Política editorial</a> · <a href="/rss.xml">RSS</a></span>
+</div></footer>
+<script>(function(){var b=document.querySelector('.theme-toggle');if(!b)return;
+b.addEventListener('click',function(){var d=document.documentElement;
+var cur=d.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+var nx=cur==='dark'?'light':'dark';d.setAttribute('data-theme',nx);
+try{localStorage.setItem('theme',nx)}catch(e){}});})();</script>
+</body>
+</html>

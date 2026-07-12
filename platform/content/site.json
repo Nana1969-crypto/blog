@@ -1,0 +1,7 @@
+{
+  "name": "Blog OS",
+  "baseUrl": "https://blogos.example",
+  "tagline": "Conteúdo que se prova.",
+  "promise": "Guias profundos de SEO técnico e engenharia de conteúdo — estruturados, auditáveis e feitos para durar.",
+  "editorialPolicyHtml": "<p>Todo artigo publicado aqui passa por um <strong>gate de qualidade executável</strong>: o build da plataforma falha se um artigo não tiver intenção de busca única (anti-canibalização), fontes citadas, autoria com bio, estrutura mínima de leitura e metadados completos. Não é uma promessa — é código.</p><p>Cada artigo declara <em>uma</em> intenção de busca canônica. Duas páginas nunca disputam a mesma palavra-chave primária: a auditoria roda em toda publicação e bloqueia o conflito antes de ir ao ar.</p><p>As datas de publicação e atualização refletem mudanças reais de conteúdo. Não fazemos <em>bump</em> cosmético de data: atualização exposta é atualização feita.</p><p>Afirmações relevantes citam fontes verificáveis, listadas ao fim de cada artigo. Quando um conteúdo envelhece, ele é revisado, consolidado em outra página (com redirecionamento) ou aposentado — nunca abandonado.</p><p><strong>Transparência sobre autoria:</strong> este é um acervo de demonstração da plataforma Blog OS, assinado institucionalmente pela equipe editorial. Antes de um lançamento público, cada artigo recebe autoria individual com credenciais verificáveis.</p>"
+}
