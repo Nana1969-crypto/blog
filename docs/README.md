@@ -1,9 +1,9 @@
 # BLOG OS — Documentação Central
 
 > Índice oficial de toda a documentação do Blog OS. Ponto de partida para qualquer pessoa que entra no projeto.
-> Versão 1.0 · Fase atual: **Planejamento (pré-implementação)** · Branch de trabalho: `claude/blog-os-foundation-benchmarking-44tatg`
+> Versão 2.0 · Fase atual: **v1 implementada e verificada localmente — pendente apenas o deploy real** · Branch: `claude/blog-os-foundation-benchmarking-44tatg`
 
-> **Nota de precisão:** este README reflete o **estado real** do repositório. Documentos existentes estão marcados ✅; documentos ainda **não criados** aparecem como 🔲 *Planejado* — não confunda planejamento com entrega. Nenhuma implementação de código existe ainda: o projeto está integralmente na fase de planejamento estratégico.
+> **Nota de precisão:** este README reflete o **estado real** do repositório. A plataforma v1 está implementada em `platform/` (build estático zero-dependências + 6 artigos reais) e **verificada localmente** (gate, links, contraste AA computado, navegador real). O que depende de rede/CDN real — CWV de campo, cache hit ratio, TTFB global — permanece **pendência explícita do deploy** (docs 08 e 03.3): medições nunca foram estimadas nem simuladas.
 
 ---
 
@@ -79,46 +79,49 @@ docs/
 ├── 04-editorial-system-eeat.md                ✅ Sistema editorial e E-E-A-T
 ├── 05-conversion-growth-system.md             ✅ Sistema de conversão e growth
 │
-├── (planejados — ainda não criados)
-├── 06-implementation-plan.md                  🔲 Plano de implementação
-├── 07-testing-quality-strategy.md             🔲 Estratégia de testes e qualidade
-├── 08-deployment-operations.md                🔲 Deploy e operação
-├── 09-analytics-measurement.md                🔲 Analytics e medição de jornada
+├── 06-implementation-plan.md                  ✅ Plano de implementação + resultados medidos
+├── 07-testing-quality-strategy.md             ✅ Testes e qualidade (gate executável)
+├── 08-deployment-operations.md                ✅ Deploy e operação (dist CDN-ready)
+├── 09-analytics-measurement.md                ✅ Analytics privacy-first (ativa no deploy)
 │
 └── adr/                                        ✅ Architecture Decision Records (ver §8)
     ├── README.md                               ✅ Índice e processo de ADRs
     ├── 0000-template.md                        ✅ Template
-    ├── 0001-cms-selection.md                   🟡 Proposto (pendente do spike)
-    ├── 0002-rendering-strategy.md              🟡 Proposto (pendente do spike)
-    ├── 0003-cache-invalidation.md              🟡 Proposto (pendente do spike)
-    └── 0004-edge-cdn-security.md               🟡 Proposto (pendente do spike)
+    ├── 0001-cms-selection.md                   ✅ Aceito (v1: file-based; gatilho de revisão documentado)
+    ├── 0002-rendering-strategy.md              ✅ Aceito (v1: estático+incremental+ilhas, medido)
+    ├── 0003-cache-invalidation.md              ✅ Aceito (âncora BUILD, decidida com dados)
+    └── 0004-edge-cdn-security.md               🟡 Proposto (só o deploy real fecha)
+
+platform/                                       ✅ PLATAFORMA v1 (código de produção)
+├── content/                                    ✅ blocos tipados: 2 pilares, 6 artigos, autoria, taxonomia
+├── src/                                        ✅ tokens, blocks, templates, build (gate+incremental+explain), check, serve
+└── dist/                                       (gerado; gitignored — saída estática CDN-ready)
 
 spike/                                          ✅ Harness do spike (CÓDIGO DESCARTÁVEL)
-├── README.md                                   ✅ Uso, resultados locais e limites
-├── generate.js                                 ✅ Gerador de dados sintéticos (Fase 01)
-├── validate.js                                 ✅ Validadores locais (H5/H6, sinais H1/H2)
-└── lib/                                         ✅ PRNG determinístico + blocos tipados
+├── README.md                                   ✅ Uso, resultados 1k→1M e limites
+├── generate.js / validate.js / explain.js      ✅ Gerador, validadores e explain de invalidação
+└── run-series.sh / lib/                        ✅ Série reproduzível + PRNG determinístico
 ```
 
-> ⚠️ **`spike/` é código descartável, não produção** — ferramental da Fase 03.1. Já produz evidência local real (fan-out de invalidação plano em 100×, auditorias exatas); H3/H4/H7/H8 seguem pendentes de ambiente provisionado.
+> ⚠️ **`spike/` é descartável; `platform/` é produção.** O harness mediu a série 1k→1M (fan-out de invalidação plano; auditorias exatas). Dos eixos que exigiam infra: H7/H8 colapsaram por construção com o ADR-0001 (armazenamento file-based não tem API remota); H3 (CDN) e H4 (CWV de campo) permanecem pendentes do deploy — ver docs 08 e 03.3.
 
 ### Detalhamento por documento
 
 | Doc | Objetivo | Dependências | Status | Próxima ação |
 |---|---|---|---|---|
 | **00** `foundation-benchmarking` | Posicionamento, benchmarking de 11 referências, 50 princípios, modelo ideal, perguntas críticas | — (raiz) | ✅ Concluído | Manter como fonte de princípios |
-| **01** `information-architecture-data-model` | Intenção canônica, taxonomia, blocos tipados, grafo de interlinking, URLs, gate | 00 | ✅ Concluído | Congelar contrato após spike (03.1) |
+| **01** `information-architecture-data-model` | Intenção canônica, taxonomia, blocos tipados, grafo de interlinking, URLs, gate | 00 | ✅ Concluído | Contrato implementado em `platform/`; congelado |
 | **02** `design-system-reading-experience` | Tokens, tipografia de leitura, cor/tema, grid, contrato dos blocos, A11y | 00, 01 | ✅ Concluído | Resolver decisões em aberto (fonte, acento) na Fase 04 |
-| **03** `technical-architecture-performance` | Render híbrido, borda/cache, perf gate, segurança, clean architecture | 00, 01, 02 | ✅ Concluído (condicional ao spike) | Executar 03.1 antes de fechar stack |
+| **03** `technical-architecture-performance` | Render híbrido, borda/cache, perf gate, segurança, clean architecture | 00, 01, 02 | ✅ Concluído | Stack v1 decidido (ADRs 0001–0003); 0004 no deploy |
 | **03.1** `scale-validation-spike` | Plano de validação de escala (100k/1M) — hipóteses, cenário, métricas, critérios + evidência local do harness | 01, 03 | ✅ Concluído · evidência local coletada | Enriquecer o harness (03.2) e executar infra (03.3) |
-| **03.2** `local-harness-enhancement` | Expansão do laboratório local: cenários 1k–1M, métricas, testes de crescimento, limitações e critérios para avançar à infra | 03.1, harness | ✅ Concluído | Implementar as extensões do harness quando priorizado |
-| **03.3** `spike-execution-runbook` | Runbook para executar H3/H4/H7/H8 + build real no ambiente provisionado; template de relatório de decisão | 03, 03.1, 03.2, harness | ✅ Pronto para execução | **Provisionar ambiente e executar** (próximo marco) |
+| **03.2** `local-harness-enhancement` | Expansão do laboratório local: cenários 1k–1M, métricas, testes de crescimento, limitações e critérios para avançar à infra | 03.1, harness | ✅ Executado (extensões implementadas; série 1k→1M medida) | — |
+| **03.3** `spike-execution-runbook` | Runbook para executar H3/H4/H7/H8 + build real no ambiente provisionado; template de relatório de decisão | 03, 03.1, 03.2, harness | ✅ Pronto | Executar no deploy — escopo reduzido a H3/H4 (H7/H8 colapsados pelo ADR-0001) |
 | **04** `editorial-system-eeat` | Workflow editorial, gate de qualidade, E-E-A-T, ciclo de atualização | 00, 01, 02, 03 | ✅ Concluído | Operacionalizar após aprovação da arquitetura |
 | **05** `conversion-growth-system` | Funil, captura, relacionamento, medição, monetização | 00–04 | ✅ Concluído | Definir modelo de receita com dados |
-| **06** `implementation-plan` | Sequência de construção, marcos, equipe, estimativas | 03.1 **APROVADO** | 🔲 Planejado | Criar após veredito do spike |
-| **07** `testing-quality-strategy` | Testes (unit/e2e/perf/a11y/SEO), CI, gates automáticos | 06 | 🔲 Planejado | Criar junto ao plano de implementação |
-| **08** `deployment-operations` | Ambientes, pipeline, rollback, observabilidade em produção | 03, 06 | 🔲 Planejado | Criar antes do primeiro deploy |
-| **09** `analytics-measurement` | Instrumentação de jornada, RUM, privacidade por design | 05 | 🔲 Planejado | Criar antes de captação de leads |
+| **06** `implementation-plan` | Escopo v1, arquitetura da implementação e **resultados medidos** (gate, incremental, navegador real) | ADR-0001, 03.2 | ✅ Executado | Deploy real (08 + 03.3) |
+| **07** `testing-quality-strategy` | Camadas de verificação executáveis (gate, contrato, pós-build, navegador) | 06 | ✅ Ativo | Adicionar Lighthouse CI + RUM no deploy |
+| **08** `deployment-operations` | Deploy atômico de estático, cache/purga por rota, segurança e runbook | 03, 06 | ✅ Especificado | Executar no dia do deploy (fecha ADR-0004) |
+| **09** `analytics-measurement` | Medição de jornada privacy-first em 4 camadas | 05, 08 | ✅ Especificado | Ativar camadas 1–3 no deploy |
 | **adr/** | Registro de decisões arquiteturais (ver §8) | — | ✅ Estrutura criada · 🟡 0001–0004 Proposto | Aceitar ADRs após veredito do spike |
 
 > **Sobre a numeração:** o projeto usa numeração **por documento**, não idêntica à numeração de **fases** do roadmap (§4). O mapeamento entre ambos está na tabela do §4 para evitar confusão.
@@ -138,9 +141,9 @@ spike/                                          ✅ Harness do spike (CÓDIGO DE
 | **FASE 03.3** | Execução do Spike (runbook provisionado) | `03.3-spike-execution-runbook.md` | ✅ Runbook pronto · ⏳ **Execução pendente** |
 | **FASE 04** | Editorial (Sistema & E-E-A-T) | `04-editorial-system-eeat.md` | ✅ Concluída |
 | **FASE 05** | SEO/CRO (Conversão & Growth) | `05-conversion-growth-system.md` | ✅ Concluída |
-| **FASE 06** | Implementação | `06-implementation-plan.md` | 🔲 Bloqueada pela execução do spike (03.3) |
-| **FASE 07** | Qualidade | `07-testing-quality-strategy.md` | 🔲 Não iniciada |
-| **FASE 08** | Escala (Deploy & Operação) | `08-deployment-operations.md`, `09-analytics-measurement.md` | 🔲 Não iniciada |
+| **FASE 06** | Implementação | `06-implementation-plan.md` + `platform/` | ✅ **v1 implementada e verificada** (local) |
+| **FASE 07** | Qualidade | `07-testing-quality-strategy.md` | ✅ Ativa (gate executável + navegador real) |
+| **FASE 08** | Escala (Deploy & Operação) | `08-deployment-operations.md`, `09-analytics-measurement.md` | ✅ Especificada · ⏳ execução no deploy real |
 
 > **Observação de honestidade:** o roadmap genérico proposto (Fundação → Estratégia → Produto → Arquitetura → Design → SEO/CRO → Implementação → Qualidade → Escala) foi **mapeado** para os documentos reais acima. Duas remapeações importantes: (1) **Design** não é uma fase tardia — o design system foi front-carregado no doc **02** (FASE 02); por isso a "FASE 04" do roadmap genérico corresponde ao nosso doc de **Editorial**. (2) **SEO e CRO não são um documento único:** SEO nasce no doc **01** (arquitetura da informação) e a conversão/CRO está no doc **05**.
 
@@ -193,32 +196,26 @@ Um documento só deve ser considerado **estável** depois que seus predecessores
 
 ## 6. Status Atual
 
-**📅 Data de referência:** planejamento pré-implementação · **Branch:** `claude/blog-os-foundation-benchmarking-44tatg`
+**📅 Data de referência:** v1 implementada e verificada localmente · **Branch:** `claude/blog-os-foundation-benchmarking-44tatg`
 
-**✅ Documentos concluídos (7)**
-- `00-foundation-benchmarking.md`
-- `01-information-architecture-data-model.md`
-- `02-design-system-reading-experience.md`
-- `03-technical-architecture-performance.md` *(aprovação condicional ao spike)*
-- `03.1-scale-validation-spike.md` *(plano; execução pendente)*
-- `04-editorial-system-eeat.md`
-- `05-conversion-growth-system.md`
+**✅ Concluído**
+- **Documentação 00–09 completa** (fundação → analytics), coerente e com referências cruzadas verificadas.
+- **Laboratório de escala executado:** série 1k→1M medida; fan-out de invalidação **plano (p50/p95 = 18/25) em 1000×**; auditorias de canibalização/órfãos exatas; política de âncora decidida com dados (`spike/README.md`).
+- **Plataforma v1 (`platform/`):** build estático zero-dependências com gate bloqueante, build incremental com `--explain`, design system em tokens (claro/escuro, contraste AA computado), 6 artigos reais em blocos tipados, sitemap/RSS/robots/JSON-LD/CSP.
+- **Verificação real:** 3 violações plantadas → 3 builds bloqueados; 12 páginas sem link quebrado; navegador Chromium (desktop/mobile/dark): 0 erros de console, artigo com ~20KB/1 request/≤499B de JS, legível sem JS; defeito de grid mobile encontrado e corrigido na verificação (doc 06 §4.3).
+- **ADRs 0001–0003 aceitos com evidência**; 0004 proposto (só o deploy fecha).
 
-**🔍 Documentos em revisão / decisões em aberto**
-- **02** — família de fonte do corpo, acento de marca, estilo de figuras (decidir na Fase 04 com dados).
-- **03** — fornecedor de CMS e de edge, busca interna (decidir **no spike**).
-- **05** — modelo de receita primário, ferramenta de email/CRM (decidir com dados de audiência).
+**🔍 Decisões em aberto (não bloqueiam a v1)**
+- **02** — família de fonte definitiva e acento de marca (v1 usa system stack por performance; trocável por tokens).
+- **05** — modelo de receita primário e ferramenta de email/CRM (decidir com dados de audiência).
 
-**🔲 Próximos documentos**
-- `06-implementation-plan.md` (após spike aprovado)
-- `07-testing-quality-strategy.md`, `08-deployment-operations.md`, `09-analytics-measurement.md`
+**⏳ Pendências explícitas (exigem deploy real — docs 08 e 03.3)**
+- CWV de campo p75 (H4), cache hit ratio/TTFB global (H3), aceitação do ADR-0004.
+- Autores reais com credenciais antes de launch público (E-E-A-T pleno — o conteúdo demo é assinado institucionalmente e declara isso).
+- Ativação do sistema de captura/newsletter (Fase 05) e das camadas de analytics (doc 09).
 
-**🟡 ADRs criados em status Proposto** (análise pronta, decisão congelada até o spike)
-- `adr/0001-cms-selection.md`, `adr/0002-rendering-strategy.md`, `adr/0003-cache-invalidation.md`, `adr/0004-edge-cdn-security.md`
-
-**🚧 Bloqueios existentes**
-- **BLOQUEIO PRINCIPAL:** a **execução completa** do Spike de Escala (03.1) trava toda a Fase 06 (Implementação). Nenhum código de produção deve começar antes do veredito. O harness local (`spike/`) já cobriu a parte que **não** exige infra (H5/H6, sinais H1/H2 — evidência positiva); resta o eixo que **exige ambiente provisionado**: H3 (cache/CDN), H4 (CWV de campo), H7 (API), H8 (CMS) e o build incremental real.
-- **Dependências de decisão:** escolha de CMS/edge não pode ser fechada no papel — depende dos números que só o ambiente provisionado produz (ADRs 0001–0004 seguem `Proposto`).
+**🚧 Bloqueios**
+- Nenhum bloqueio interno. O único gate restante é externo: **deploy em CDN real** para medir o que só produção mede.
 
 ---
 
@@ -284,21 +281,20 @@ Positivas, negativas e riscos aceitos. O que esta decisão obriga ou impede no f
 
 ## 9. Próximos Passos
 
-**Já feito:** harness local do spike executado — evidência real e positiva para H5, H6 e sinais de H1/H2 (fan-out de invalidação plano em 100×, auditorias exatas). Ver `spike/README.md` e `03.1` §9.1.
+**Estado:** documentação 00–09 completa · laboratório 1k→1M executado · **plataforma v1 implementada e verificada localmente** · ADRs 0001–0003 aceitos com evidência.
 
-**Opcional antes da infra:** implementar as extensões do laboratório local especificadas em `03.2-local-harness-enhancement.md` (cenários 1k–1M, métricas de crescimento, modo explain de invalidação) — aprofunda a evidência local sem custo de infraestrutura.
+**O que já foi feito nesta fase** (detalhes e números no doc 06 §4 e em `spike/README.md`):
+- Extensões do 03.2 implementadas e série completa medida (fan-out plano até 1M; política de âncora BUILD decidida com `explain`).
+- ADR-0001 aceito (armazenamento file-based v1) — colapsou H7/H8 por construção e destravou a implementação sem infra.
+- `platform/` construída e verificada: gate testado com violações plantadas, incremental medido, navegador real (desktop/mobile/dark) sem erros.
 
-**Marco lógico imediato (gate):** **executar os eixos do spike que exigem infraestrutura** (H3 cache/CDN, H4 CWV de campo, H7 API, H8 CMS + build real), seguindo o runbook `03.3-spike-execution-runbook.md`.
+**Marco restante — deploy real** (fecha o projeto ponta a ponta):
+1. Escolher CDN/edge pelos critérios do ADR-0004 e publicar o `dist/` (deploy atômico — doc 08).
+2. Medir H3 (hit ratio > 95%, TTFB p75 < 200ms multi-região) e H4 (CWV de campo p75) — runbook `03.3`, escopo reduzido a esses dois eixos.
+3. Aceitar o ADR-0004 com os números; ativar analytics camadas 1–3 (doc 09).
+4. Antes de launch público: autoria individual com credenciais nos artigos (E-E-A-T pleno) e ativação da captura/newsletter (Fase 05).
 
-Sequência:
-1. **Provisionar** o ambiente efêmero (CMS candidato + edge/CDN) conforme `03.3` §2.
-2. **Gerar e importar** os dados do harness (100k/1M) e rodar o build real (`03.3` §3–§4).
-3. **Medir** H3/H4/H7/H8 + build incremental contra as metas p95/p75, cruzando com o fan-out já medido localmente.
-4. **Preencher o relatório de decisão** (`03.3` §5) com veredito por eixo (APROVADO / REVISÃO / REPROVADO).
-5. **Atualizar os ADRs 0001–0004** (`Proposto` → `Aceito` ou reabrir).
-6. Só então **criar `06-implementation-plan.md`** e iniciar a construção pelas fundações validadas.
-
-> ⚠️ **Lembrete de disciplina:** o spike (local e provisionado) envolve código *descartável*, não produção. Nenhuma linha de código de produção antes do veredito APROVADO. Os documentos de planejamento, o harness e o futuro relatório de decisão são o alicerce — a implementação vem depois, sobre terreno validado. **Não fabricar métricas:** célula sem medição real fica `PENDENTE`.
+> ⚠️ **Disciplina mantida:** nenhuma métrica de rede/CDN/campo foi estimada ou simulada — tudo que está registrado foi medido de verdade neste ambiente, e o que não pôde ser medido está marcado como pendência. Essa fronteira é o que torna a documentação confiável.
 
 ---
 

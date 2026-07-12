@@ -14,9 +14,9 @@
 | ADR | Título | Status | Decisão depende de |
 |---|---|---|---|
 | [0000](0000-template.md) | Template | — | — |
-| [0001](0001-cms-selection.md) | Seleção do CMS headless | 🟡 Proposto | Spike 03.1 §4, §8 |
-| [0002](0002-rendering-strategy.md) | Estratégia de renderização | 🟡 Proposto | Spike 03.1 §5, §7 |
-| [0003](0003-cache-invalidation.md) | Invalidação de cache | 🟡 Proposto | Spike 03.1 §6 |
-| [0004](0004-edge-cdn-security.md) | Edge/CDN e camada de segurança | 🟡 Proposto | Spike 03.1 §6, §7 |
+| [0001](0001-cms-selection.md) | Armazenamento de conteúdo (v1: file-based) | ✅ Aceito (v1) | — (condições medidas localmente; gatilho de revisão documentado) |
+| [0002](0002-rendering-strategy.md) | Estratégia de renderização (estático + incremental + ilhas) | ✅ Aceito (v1) | CWV de campo → 03.3 |
+| [0003](0003-cache-invalidation.md) | Invalidação de cache (âncora BUILD) | ✅ Aceito | — (explain + build real medidos) |
+| [0004](0004-edge-cdn-security.md) | Edge/CDN e camada de segurança | 🟡 Proposto | Deploy real (03.3) — dist é CDN-ready com _headers/CSP prontos |
 
-> **Estado atual:** os ADRs 0001–0004 estão em `Proposto` — a análise (contexto, alternativas, critérios) está pronta, mas **a decisão fica congelada até o spike produzir números**. Isso adianta o raciocínio sem pular o gate da Fase 03.1.
+> **Estado atual:** 0001–0003 aceitos com evidência medida (harness 03.2 + build real doc 06). 0004 permanece proposto por honestidade: cache hit ratio, TTFB global e CWV de campo só existem com deploy real — o `dist/` já sai CDN-ready (estático puro + `_headers` com CSP) para tornar essa aceitação trivial quando o deploy acontecer.

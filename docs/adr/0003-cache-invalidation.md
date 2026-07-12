@@ -1,7 +1,7 @@
 # ADR-0003: Invalidação de cache
 
-- **Status:** 🟡 Proposto — decisão pendente do Spike de Escala (03.1)
-- **Data:** (a definir na aceitação)
+- **Status:** ✅ Aceito — política de âncora: BUILD (decidida com dados do explain)
+- **Data:** 2026-07-12
 - **Decisores:** CTO, Staff Eng, Performance Eng
 - **Documentos relacionados:** 03 §4, 03.1 §6, 01 §5 (grafo)
 
@@ -11,14 +11,14 @@ Escala só é viável se a invalidação for **seletiva**: publicar/atualizar um
 
 Ponto difícil identificado (Fase 03 §11, 03.1 §6): quando um artigo A muda de título, as âncoras de link em N páginas que apontam para A precisam refletir a mudança. É preciso decidir **âncoras resolvidas em runtime vs. no build**.
 
-## Decisão (candidata)
+## Decisão
 
 **Invalidação seletiva por `Content`, derivada do grafo:** ao publicar/atualizar,
 1. regenera o `Content`;
 2. regenera páginas de índice/hub que o listam;
 3. purga na borda apenas essas rotas.
 
-Política de âncoras: **a definir no spike** — preferência inicial por *âncora derivada do título canônico resolvida no build* das páginas afetadas, com purga direcionada; alternativa é resolver o rótulo em runtime para reduzir fan-out de regeneração.
+**Política de âncoras: BUILD** — âncoras resolvidas na geração das páginas afetadas. Decidida com dados do modo `explain`: no catálogo de 100k, a página mais quente custa 40 rotas de regeneração (35 inlinks + índices) vs. 5 na política runtime — custo baixo o bastante para manter as páginas 100% estáticas, sem resolução no serve. Implementada no build real: editar um artigo regenera o próprio + índices + páginas que o referenciam (verificado no doc 06).
 
 **Condição objetiva para virar `Aceito`:** no spike (03.1 §6),
 - Publicar 1 artigo purga **apenas** as rotas do grafo (sem purga global).

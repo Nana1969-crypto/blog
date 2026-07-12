@@ -57,4 +57,31 @@ platform/
 
 ## 4. Resultados da execução
 
-*(preenchido ao concluir — medições reais, nunca estimadas)*
+Todas as medições abaixo são reais, executadas nesta fase (ambiente local; navegador Chromium via Playwright; servidor estático local). O que depende de rede/CDN real permanece pendente do deploy (03.3).
+
+### 4.1 Critérios de aceite — resultado
+
+| Critério | Resultado |
+|---|---|
+| Gate bloqueia violações | ✅ 3 violações plantadas, 3 bloqueadas: canibalização (INV-3), link interno para artigo inexistente (LINK-4), metaTitle >60 chars — build falha listando cada uma |
+| Contraste AA computado | ✅ 6 pares texto/fundo × 2 temas verificados por código em `check.js`; falha se <4.5:1 |
+| Zero links quebrados | ✅ 12 páginas varridas, 0 quebrados |
+| Build incremental | ✅ sem mudanças: 0 regenerados/6 pulados (21ms); 1 artigo editado: 1 regenerado/5 pulados (32ms); `--explain art-intencao` → 8 rotas exatas (própria + 3 índices + 2 inlinkers + 2 feeds) |
+| JS por página | ✅ máx **499 bytes** (orçamento: 2048); página legível com JS desligado (verificado em navegador com JS desabilitado) |
+| Schema.org válido | ✅ JSON-LD parseável com @type em toda página (Article, BreadcrumbList, FAQPage, WebSite, CollectionPage, Organization/Person) |
+| Navegação real verificada | ✅ Chromium: desktop claro/escuro + mobile 390px; 0 erros de console; toggle de tema persiste (localStorage); 1º Tab foca skip-link; FAQ abre por teclado/clique; sem scroll horizontal no mobile |
+
+### 4.2 Performance medida (navegador real, servidor local)
+
+| Página | Transferido | FCP | Requests |
+|---|---:|---:|---:|
+| Home | 14,2 KB | 156ms | 2 (html + favicon data:) |
+| Artigo (Core Web Vitals) | 19,8 KB | 68–140ms | 1 |
+| Pillar (SEO Técnico) | 12,7 KB | 44ms | 1 |
+| Artigo com diagrama SVG | 20,5 KB | 52ms | 1 |
+
+> **Leitura honesta:** FCP local não é CWV de campo (sem latência de rede real). O que estes números provam: o peso de página (~20KB, 1 request, CSS inline, ≤499B de JS) está uma ordem de grandeza abaixo dos orçamentos da Fase 03 §5 — em CDN, os alvos de LCP/TTFB são atingíveis por construção. A confirmação de campo é o item H4 do 03.3.
+
+### 4.3 Defeito encontrado e corrigido na verificação
+
+A verificação mobile revelou **grid blowout**: o item do grid do artigo estourava o track (453px > 345px) porque `min-width:auto` deixava o min-content da tabela vazar, expandindo o layout viewport para 477px. Corrigido com `.article-grid>*{min-width:0}` e re-verificado (viewport 390px, tabela rolando dentro do wrapper). Registrado aqui porque é exatamente o tipo de defeito que só a verificação em navegador real pega — screenshot e medição, não suposição.
