@@ -44,9 +44,25 @@ git push (branch) → PR → build+check verdes (CI) → merge
 - **RUM entra junto com o deploy** (doc 09) — é também o item H4 do 03.3.
 - **Runbook de incidente:** site estático degrada de poucas formas; para cada uma, a resposta é rollback do deploy (atômico) ou purga de cache. Documentar o comando exato da CDN escolhida no momento do setup.
 
-## 5. Pendências para o dia do deploy (fecham o 03.3 e o ADR-0004)
+## 5. Runbook Cloudflare (fornecedor selecionado — ADR-0004)
 
-1. Escolher fornecedor de CDN/edge conforme critérios do ADR-0004 (TTFB global, purga por rota, headers custom, WAF).
-2. Medir: cache hit ratio > 95%, TTFB p75 < 200ms multi-região, propagação < 60s (03.3 §4.2).
-3. Ativar RUM e coletar CWV de campo (03.3 §4.3 / H4).
-4. Registrar os números no relatório de decisão do 03.3 e aceitar o ADR-0004.
+O deploy usa **Workers com static assets**. A configuração está pronta em `platform/wrangler.jsonc` e **validada com `--dry-run`** (wrangler 4.110.0). Duas rotas de execução:
+
+**Rota A — CLI (mais direta):**
+```bash
+cd platform
+node src/build.js && node src/check.js     # pipeline verde obrigatório
+npx wrangler login                          # ou export CLOUDFLARE_API_TOKEN=***
+npx wrangler deploy                         # publica em https://blog-os.<subdominio>.workers.dev
+```
+
+**Rota B — Workers Builds (CI da Cloudflare, sem token local):** conectar o repositório GitHub no dashboard (Workers & Pages → Create → conectar repo), build command `cd platform && node src/build.js && node src/check.js`, deploy command `npx wrangler deploy` — cada push na branch de produção publica automaticamente, com preview em branches.
+
+**Pós-deploy (fecha o 03.3, escopo H3/H4, e aceita o ADR-0004):**
+1. Smoke test: home, um artigo e `sitemap.xml` respondendo 200 com conteúdo esperado; headers de segurança ativos (CSP visível na resposta).
+2. Apontar domínio próprio (Custom Domain no Worker) e **atualizar `baseUrl` em `platform/content/site.json`** (canonical/sitemap/RSS usam esse valor) + rebuild/redeploy.
+3. Medir **H3**: TTFB p75 < 200ms multi-região, cache hit ratio > 95% (analytics do Worker/zone), propagação < 60s após redeploy.
+4. Ativar RUM e coletar **H4** (CWV de campo p75) — doc 09 camadas 1–3.
+5. Registrar os números no ADR-0004 → `Aceito`.
+
+> **Segurança operacional:** o token de API (se usado) vive em variável de ambiente/secret do CI — nunca em arquivo versionado nem colado em chat. Escopo mínimo: `Workers Scripts:Edit`.

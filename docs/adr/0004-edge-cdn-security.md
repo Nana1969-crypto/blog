@@ -1,6 +1,6 @@
 # ADR-0004: Edge/CDN e camada de segurança
 
-- **Status:** 🟡 Proposto — decisão pendente do Spike de Escala (03.1)
+- **Status:** 🟡 Proposto → **fornecedor selecionado: Cloudflare (Workers + static assets)**; aceitação final condicionada às medições de campo pós-deploy (H3/H4)
 - **Data:** (a definir na aceitação)
 - **Decisores:** CTO, Staff Eng, Security Engineer, Performance Eng
 - **Documentos relacionados:** 03 §4/§6, 03.1 §6/§7
@@ -9,9 +9,15 @@
 
 A maioria absoluta das requisições deve ser servida da **borda**, perto do usuário (`Princípio 37`), com TTFB p75 < 200ms global. Segurança é **infraestrutura**, não add-on (`SEC-1`): TLS, headers (CSP/HSTS), WAF, rate limiting e proteção a bots/DDoS desde o dia 1.
 
-## Decisão (candidata)
+## Decisão
 
-**CDN/edge com compute na borda + camada de segurança integrada:**
+**Fornecedor: Cloudflare, via Workers com static assets** (modelo atual recomendado pela Cloudflare, sucessor do Pages para novos projetos). Racional:
+- Era uma das duas referências de engenharia do benchmarking (Fase 00 §2.11) — rede global, segurança integrada (WAF/DDoS/bots) e cache na borda numa única plataforma.
+- Suporte **nativo** ao que o build já produz: `_headers` (CSP/security headers), `404.html` (`not_found_handling: "404-page"`) e URLs `/dir/` (`html_handling: "auto-trailing-slash"`) — confirmado na documentação oficial.
+- Site 100% estático dispensa script de Worker: apenas assets servidos da borda.
+- Config pronta e validada: `platform/wrangler.jsonc` passou em `wrangler deploy --dry-run` (wrangler 4.110.0, 29 arquivos lidos do dist).
+
+**Arquitetura de entrega:**
 - Entrega de HTML estático/ISR e assets imutáveis (fingerprint de conteúdo) da borda.
 - WAF, rate limiting, anti-DDoS e bot management na borda.
 - Headers de segurança padrão (CSP restritiva com allowlist mínima, HSTS, etc.).

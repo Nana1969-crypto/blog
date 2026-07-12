@@ -1,0 +1,19 @@
+{
+  // Deploy do Blog OS na Cloudflare — Workers com static assets (ADR-0004).
+  // O site é 100% estático: sem script de Worker (main), apenas assets.
+  // _headers (CSP etc.) e 404.html no dist/ são suportados nativamente.
+  //
+  // Deploy:   npx wrangler deploy          (exige login: npx wrangler login,
+  //                                         ou CLOUDFLARE_API_TOKEN no ambiente)
+  // Validar:  npx wrangler deploy --dry-run
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "blog-os",
+  "compatibility_date": "2026-07-12",
+  "assets": {
+    "directory": "./dist",
+    // Requisição sem asset correspondente → 404.html do build (não SPA).
+    "not_found_handling": "404-page"
+    // html_handling usa o default "auto-trailing-slash", que casa com o
+    // padrão de URL do build (/{pillar}/{cluster}/{slug}/ → index.html).
+  }
+}
