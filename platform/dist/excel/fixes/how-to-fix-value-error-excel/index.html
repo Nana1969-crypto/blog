@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Google Sheets — Sheetlift</title>
-<meta name="description" content="Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.">
-<link rel="canonical" href="https://sheetlift.com/google-sheets/">
+<title>How to Fix the #VALUE! Error in Excel</title>
+<meta name="description" content="The #VALUE! error means a formula got text where it expected a number. Here is what causes it and how to find and fix it in Excel.">
+<link rel="canonical" href="https://sheetlift.com/excel/fixes/how-to-fix-value-error-excel/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b5cc4'/%3E%3Cpath d='M9 10h14M9 16h14M9 22h9' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="alternate" type="application/rss+xml" title="Sheetlift" href="/rss.xml">
-<meta property="og:title" content="Google Sheets — Sheetlift">
-<meta property="og:description" content="Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.">
-<meta property="og:url" content="https://sheetlift.com/google-sheets/">
+<meta property="og:title" content="How to Fix the #VALUE! Error in Excel">
+<meta property="og:description" content="The #VALUE! error means a formula got text where it expected a number. Here is what causes it and how to find and fix it in Excel.">
+<meta property="og:url" content="https://sheetlift.com/excel/fixes/how-to-fix-value-error-excel/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sheetlift">
 <script>(function(){try{var t=localStorage.getItem('theme');
@@ -111,20 +111,45 @@ footer.site .site-inner{display:flex;justify-content:space-between;gap:1rem;flex
 footer.site a{color:var(--color-text-2)}
 @media (prefers-reduced-motion: no-preference){a,button{transition:color var(--motion-fast) ease}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Google Sheets","description":"Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.","inLanguage":"pt-BR","isPartOf":{"@type":"WebSite","name":"Sheetlift","url":"https://sheetlift.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Fix the #VALUE! Error in Excel","description":"The #VALUE! error means a formula is trying to do math with something that is not a number — usually text or a stray space in a cell. The fix is to find the offending cell and clean it, or use a function that ignores text. Here is how.","datePublished":"2026-06-10","dateModified":"2026-07-11","inLanguage":"pt-BR","mainEntityOfPage":"https://sheetlift.com/excel/fixes/how-to-fix-value-error-excel/","author":{"@type":"Organization","name":"The Sheetlift Team","url":"https://sheetlift.com/authors/sheetlift-team/"},"publisher":{"@type":"Organization","name":"Sheetlift","url":"https://sheetlift.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://sheetlift.com/"},{"@type":"ListItem","position":2,"name":"Excel","item":"https://sheetlift.com/excel/"},{"@type":"ListItem","position":3,"name":"How to Fix the #VALUE! Error in Excel","item":"https://sheetlift.com/excel/fixes/how-to-fix-value-error-excel/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does SUM work but + gives #VALUE!?","acceptedAnswer":{"@type":"Answer","text":"SUM ignores cells that contain text, while the + operator does not — it tries to add the text and fails. Switching from A2+B2+C2 to SUM(A2:C2) is often the quickest fix."}},{"@type":"Question","name":"How do I find every #VALUE! at once?","acceptedAnswer":{"@type":"Answer","text":"Press Ctrl+F, search for #VALUE! and set \"Look in\" to Values. Excel lists every cell showing the error so you can work through them."}}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Skip to content</a>
 <header class="site"><div class="site-inner">
 <a class="wordmark" href="/">Sheetlift</a>
-<nav class="pillars" aria-label="Topics"><a href="/excel/">Excel</a><a href="/google-sheets/" aria-current="page">Google Sheets</a><a href="/compare/">Compare &amp; Choose</a></nav>
+<nav class="pillars" aria-label="Topics"><a href="/excel/" aria-current="page">Excel</a><a href="/google-sheets/">Google Sheets</a><a href="/compare/">Compare &amp; Choose</a></nav>
 <button class="theme-toggle" type="button" aria-label="Toggle light/dark theme">Theme</button>
 </div></header>
 <main id="conteudo">
 
-<nav class="breadcrumb" aria-label="You are here"><ol><li><a href="/">Home</a></li><li aria-current="page">Google Sheets</li></ol></nav>
-<div class="reading hero"><h1>Google Sheets</h1><p>Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.</p></div>
-<div class="reading"><section aria-labelledby="c-tutorials"><h2 id="c-tutorials">Google Sheets Tutorials</h2><ul class="list-plain"><li><a class="t" href="/google-sheets/tutorials/how-to-make-a-pivot-table-in-google-sheets/">How to Make a Pivot Table in Google Sheets</a><p class="d">In Google Sheets, select your data, choose Insert &gt; Pivot table, then use the editor on the right to add Rows, Columns, Values, and Filters. It summarizes thousands of rows into a clear report without a single formula. Here is the full walkthrough.</p></li><li><a class="t" href="/google-sheets/tutorials/how-to-remove-duplicates-in-google-sheets/">How to Remove Duplicates in Google Sheets</a><p class="d">To remove duplicates in Google Sheets, select your data and go to Data &gt; Data cleanup &gt; Remove duplicates. To keep your original list untouched, use the UNIQUE function instead. Here is how to do both.</p></li><li><a class="t" href="/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/">How to Use VLOOKUP in Google Sheets</a><p class="d">In Google Sheets, VLOOKUP searches down the first column of a range and returns a value from another column in the same row. The syntax is =VLOOKUP(search_key, range, index, FALSE). Here is how each part works, with examples.</p></li></ul></section></div>
+<nav class="breadcrumb" aria-label="You are here"><ol><li><a href="/">Home</a></li><li><a href="/excel/">Excel</a></li><li aria-current="page">How to Fix the #VALUE! Error in Excel</li></ol></nav>
+<div class="article-grid">
+<article class="reading">
+<h1>How to Fix the #VALUE! Error in Excel</h1>
+<p class="dek">The #VALUE! error means a formula is trying to do math with something that is not a number — usually text or a stray space in a cell. The fix is to find the offending cell and clean it, or use a function that ignores text. Here is how.</p>
+<div class="meta">
+<span>By <a href="/authors/sheetlift-team/">The Sheetlift Team</a></span>
+<span>Published <time datetime="2026-06-10">June 10, 2026</time></span>
+<span>Updated <time datetime="2026-07-11">July 11, 2026</time></span>
+<span>1 min read</span>
+</div>
+<p>#VALUE! is Excel's way of saying &quot;I can't do this math.&quot; It almost always means a formula ran into text, a space, or the wrong kind of value where it expected a number.</p>
+<h2 id="what-causes-value">What causes #VALUE!</h2>
+<ul><li>Adding or multiplying a cell that contains text, like =A2+B2 where B2 holds &quot;n/a&quot;.</li><li>A number stored as text, often with a hidden space in front of it.</li><li>A date entered in a format Excel does not recognize.</li><li>A function given the wrong type of argument.</li></ul>
+<h2 id="step-1-find-the-cell-causing-it">Step 1: Find the cell causing it</h2>
+<p>Click the cell with the error and look at the formula. Check every cell it references for text or spaces. A quick test: type =ISNUMBER(B2) next to a suspect cell — if it returns FALSE, that cell is text, not a number.</p>
+<h2 id="step-2-clean-or-work-around-it">Step 2: Clean or work around it</h2>
+<ol><li>Delete stray spaces, or wrap references in TRIM to strip them: =TRIM(B2).</li><li>Convert text-numbers back to numbers (Data &gt; Text to Columns &gt; Finish is a fast fix).</li><li>Use a function that ignores text: replace =A2+B2+C2 with =SUM(A2:C2), which skips text cells.</li></ol>
+<aside class="callout callout-tip" role="note"><strong class="callout-label">Tip:</strong> If you just want to hide the error while you investigate, wrap the formula in IFERROR: =IFERROR(A2+B2, 0). Use this sparingly — hiding an error is not the same as fixing the data behind it.</aside>
+<p>A #VALUE! often appears inside a larger formula, such as an <a href="/excel/tutorials/how-to-use-if-function-in-excel/">IF function</a>. A different error, #REF!, has its own cause and cure — see <a href="/excel/fixes/how-to-fix-ref-error-excel/">how to fix the #REF! error</a>.</p>
+<section class="faq" aria-label="Frequently asked questions"><h2 id="faq">Frequently asked questions</h2><details class="faq-item"><summary>Why does SUM work but + gives #VALUE!?</summary><p>SUM ignores cells that contain text, while the + operator does not — it tries to add the text and fails. Switching from A2+B2+C2 to SUM(A2:C2) is often the quickest fix.</p></details><details class="faq-item"><summary>How do I find every #VALUE! at once?</summary><p>Press Ctrl+F, search for #VALUE! and set &quot;Look in&quot; to Values. Excel lists every cell showing the error so you can work through them.</p></details></section>
+<section class="sources"><h2 id="sources">Sources and references</h2><ol><li><a href="https://support.microsoft.com/en-us/office/how-to-correct-a-value-error-15e1b616-fbf2-4147-9c0b-0a11a20e409e" rel="noopener noreferrer">Microsoft Support — How to correct a #VALUE! error</a></li></ol></section>
+<aside class="next-step"><h2>Next step</h2><p><a href="/excel/fixes/how-to-fix-ref-error-excel/">How to Fix the #REF! Error in Excel</a> — keep going with the next guide in this topic</p></aside>
+</article>
+<aside class="toc" aria-label="In this article"><div class="toc-box"><h2>In this article</h2><ol><li><a href="#what-causes-value">What causes #VALUE!</a></li><li><a href="#step-1-find-the-cell-causing-it">Step 1: Find the cell causing it</a></li><li><a href="#step-2-clean-or-work-around-it">Step 2: Clean or work around it</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></div></aside>
+</div>
 </main>
 <footer class="site"><div class="site-inner">
 <span>© 2026 Sheetlift — structured content, open to scrutiny.</span>

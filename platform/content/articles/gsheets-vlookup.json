@@ -1,0 +1,44 @@
+{
+  "id": "art-gs-vlookup",
+  "slug": "how-to-use-vlookup-in-google-sheets",
+  "clusterId": "cl_gs_tut",
+  "title": "How to Use VLOOKUP in Google Sheets",
+  "dek": "In Google Sheets, VLOOKUP searches down the first column of a range and returns a value from another column in the same row. The syntax is =VLOOKUP(search_key, range, index, FALSE). Here is how each part works, with examples.",
+  "authorId": "author_team",
+  "publishedAt": "2026-06-16",
+  "updatedAt": "2026-07-11",
+  "intent": {
+    "primaryKeyword": "how to use vlookup in google sheets",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Use VLOOKUP in Google Sheets",
+    "metaDescription": "A clear VLOOKUP guide for Google Sheets: syntax, examples, exact match, common errors, and when to use XLOOKUP instead."
+  },
+  "sources": [
+    { "label": "Google Docs Editors Help — VLOOKUP", "url": "https://support.google.com/docs/answer/3093318" }
+  ],
+  "body": [
+    { "type": "paragraph", "richText": ["VLOOKUP in Google Sheets does the same job as in Excel: it matches a value in one table to data in another — like pulling a price from a product list. The syntax is nearly identical, with one small naming difference."] },
+    { "type": "heading", "level": 2, "text": "The syntax" },
+    { "type": "code", "language": "text", "content": "=VLOOKUP(search_key, range, index, is_sorted)" },
+    { "type": "table", "caption": "The four parts of VLOOKUP in Google Sheets", "headers": ["Part", "Meaning"], "rows": [
+      ["search_key", "The value you are looking for"],
+      ["range", "The table to search; the key must be in its first column"],
+      ["index", "Which column number to return the result from"],
+      ["is_sorted", "FALSE (or 0) for an exact match; TRUE for approximate"]
+    ] },
+    { "type": "heading", "level": 2, "text": "An example" },
+    { "type": "paragraph", "richText": ["If product codes are in column A and prices in column B (A2:B100), and the code you want is in D2:"] },
+    { "type": "code", "language": "text", "content": "=VLOOKUP(D2, A2:B100, 2, FALSE)" },
+    { "type": "paragraph", "richText": ["The final ", { "b": "FALSE" }, " forces an exact match — leave it off and Sheets does an approximate match that returns wrong results on unsorted data. Almost always use FALSE."] },
+    { "type": "heading", "level": 2, "text": "Common errors and the modern alternative" },
+    { "type": "paragraph", "richText": ["An #N/A means the key was not found (check for extra spaces or a number stored as text). A #REF! usually means the index is bigger than the range has columns. Google Sheets also has XLOOKUP, which can look left, matches exactly by default, and does not break when you insert columns."] },
+    { "type": "paragraph", "richText": ["Know Excel already? Compare with ", { "link": { "ref": "article:art-excel-vlookup", "text": "VLOOKUP in Excel" } }, ". Deciding between the two apps? Read our ", { "link": { "ref": "article:art-excel-vs-sheets", "text": "Excel vs Google Sheets comparison" } }, "."] },
+    { "type": "faq", "items": [
+      { "question": "Why does my Google Sheets VLOOKUP return #N/A?", "answerRichText": "The search key was not found in the first column of the range. The usual causes are extra spaces (fix with TRIM), a number stored as text, or the value simply not being present." },
+      { "question": "Is VLOOKUP or XLOOKUP better in Google Sheets?", "answerRichText": "XLOOKUP is more flexible — it can return columns to the left, matches exactly by default, and survives inserted columns. VLOOKUP is still widely used and fine for simple left-to-right lookups." }
+    ] }
+  ]
+}

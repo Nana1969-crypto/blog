@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Google Sheets — Sheetlift</title>
-<meta name="description" content="Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.">
-<link rel="canonical" href="https://sheetlift.com/google-sheets/">
+<title>How to Use VLOOKUP in Google Sheets</title>
+<meta name="description" content="A clear VLOOKUP guide for Google Sheets: syntax, examples, exact match, common errors, and when to use XLOOKUP instead.">
+<link rel="canonical" href="https://sheetlift.com/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b5cc4'/%3E%3Cpath d='M9 10h14M9 16h14M9 22h9' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="alternate" type="application/rss+xml" title="Sheetlift" href="/rss.xml">
-<meta property="og:title" content="Google Sheets — Sheetlift">
-<meta property="og:description" content="Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.">
-<meta property="og:url" content="https://sheetlift.com/google-sheets/">
+<meta property="og:title" content="How to Use VLOOKUP in Google Sheets">
+<meta property="og:description" content="A clear VLOOKUP guide for Google Sheets: syntax, examples, exact match, common errors, and when to use XLOOKUP instead.">
+<meta property="og:url" content="https://sheetlift.com/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sheetlift">
 <script>(function(){try{var t=localStorage.getItem('theme');
@@ -111,7 +111,9 @@ footer.site .site-inner{display:flex;justify-content:space-between;gap:1rem;flex
 footer.site a{color:var(--color-text-2)}
 @media (prefers-reduced-motion: no-preference){a,button{transition:color var(--motion-fast) ease}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Google Sheets","description":"Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.","inLanguage":"pt-BR","isPartOf":{"@type":"WebSite","name":"Sheetlift","url":"https://sheetlift.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Use VLOOKUP in Google Sheets","description":"In Google Sheets, VLOOKUP searches down the first column of a range and returns a value from another column in the same row. The syntax is =VLOOKUP(search_key, range, index, FALSE). Here is how each part works, with examples.","datePublished":"2026-06-16","dateModified":"2026-07-11","inLanguage":"pt-BR","mainEntityOfPage":"https://sheetlift.com/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/","author":{"@type":"Organization","name":"The Sheetlift Team","url":"https://sheetlift.com/authors/sheetlift-team/"},"publisher":{"@type":"Organization","name":"Sheetlift","url":"https://sheetlift.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://sheetlift.com/"},{"@type":"ListItem","position":2,"name":"Google Sheets","item":"https://sheetlift.com/google-sheets/"},{"@type":"ListItem","position":3,"name":"How to Use VLOOKUP in Google Sheets","item":"https://sheetlift.com/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does my Google Sheets VLOOKUP return #N/A?","acceptedAnswer":{"@type":"Answer","text":"The search key was not found in the first column of the range. The usual causes are extra spaces (fix with TRIM), a number stored as text, or the value simply not being present."}},{"@type":"Question","name":"Is VLOOKUP or XLOOKUP better in Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"XLOOKUP is more flexible — it can return columns to the left, matches exactly by default, and survives inserted columns. VLOOKUP is still widely used and fine for simple left-to-right lookups."}}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Skip to content</a>
@@ -122,9 +124,34 @@ footer.site a{color:var(--color-text-2)}
 </div></header>
 <main id="conteudo">
 
-<nav class="breadcrumb" aria-label="You are here"><ol><li><a href="/">Home</a></li><li aria-current="page">Google Sheets</li></ol></nav>
-<div class="reading hero"><h1>Google Sheets</h1><p>Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.</p></div>
-<div class="reading"><section aria-labelledby="c-tutorials"><h2 id="c-tutorials">Google Sheets Tutorials</h2><ul class="list-plain"><li><a class="t" href="/google-sheets/tutorials/how-to-make-a-pivot-table-in-google-sheets/">How to Make a Pivot Table in Google Sheets</a><p class="d">In Google Sheets, select your data, choose Insert &gt; Pivot table, then use the editor on the right to add Rows, Columns, Values, and Filters. It summarizes thousands of rows into a clear report without a single formula. Here is the full walkthrough.</p></li><li><a class="t" href="/google-sheets/tutorials/how-to-remove-duplicates-in-google-sheets/">How to Remove Duplicates in Google Sheets</a><p class="d">To remove duplicates in Google Sheets, select your data and go to Data &gt; Data cleanup &gt; Remove duplicates. To keep your original list untouched, use the UNIQUE function instead. Here is how to do both.</p></li><li><a class="t" href="/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/">How to Use VLOOKUP in Google Sheets</a><p class="d">In Google Sheets, VLOOKUP searches down the first column of a range and returns a value from another column in the same row. The syntax is =VLOOKUP(search_key, range, index, FALSE). Here is how each part works, with examples.</p></li></ul></section></div>
+<nav class="breadcrumb" aria-label="You are here"><ol><li><a href="/">Home</a></li><li><a href="/google-sheets/">Google Sheets</a></li><li aria-current="page">How to Use VLOOKUP in Google Sheets</li></ol></nav>
+<div class="article-grid">
+<article class="reading">
+<h1>How to Use VLOOKUP in Google Sheets</h1>
+<p class="dek">In Google Sheets, VLOOKUP searches down the first column of a range and returns a value from another column in the same row. The syntax is =VLOOKUP(search_key, range, index, FALSE). Here is how each part works, with examples.</p>
+<div class="meta">
+<span>By <a href="/authors/sheetlift-team/">The Sheetlift Team</a></span>
+<span>Published <time datetime="2026-06-16">June 16, 2026</time></span>
+<span>Updated <time datetime="2026-07-11">July 11, 2026</time></span>
+<span>1 min read</span>
+</div>
+<p>VLOOKUP in Google Sheets does the same job as in Excel: it matches a value in one table to data in another — like pulling a price from a product list. The syntax is nearly identical, with one small naming difference.</p>
+<h2 id="the-syntax">The syntax</h2>
+<pre><code class="lang-text">=VLOOKUP(search_key, range, index, is_sorted)</code></pre>
+<div class="table-wrap"><table><caption>The four parts of VLOOKUP in Google Sheets</caption><thead><tr><th scope="col">Part</th><th scope="col">Meaning</th></tr></thead><tbody><tr><td>search_key</td><td>The value you are looking for</td></tr><tr><td>range</td><td>The table to search; the key must be in its first column</td></tr><tr><td>index</td><td>Which column number to return the result from</td></tr><tr><td>is_sorted</td><td>FALSE (or 0) for an exact match; TRUE for approximate</td></tr></tbody></table></div>
+<h2 id="an-example">An example</h2>
+<p>If product codes are in column A and prices in column B (A2:B100), and the code you want is in D2:</p>
+<pre><code class="lang-text">=VLOOKUP(D2, A2:B100, 2, FALSE)</code></pre>
+<p>The final <strong>FALSE</strong> forces an exact match — leave it off and Sheets does an approximate match that returns wrong results on unsorted data. Almost always use FALSE.</p>
+<h2 id="common-errors-and-the-modern-alternative">Common errors and the modern alternative</h2>
+<p>An #N/A means the key was not found (check for extra spaces or a number stored as text). A #REF! usually means the index is bigger than the range has columns. Google Sheets also has XLOOKUP, which can look left, matches exactly by default, and does not break when you insert columns.</p>
+<p>Know Excel already? Compare with <a href="/excel/tutorials/how-to-use-vlookup-in-excel/">VLOOKUP in Excel</a>. Deciding between the two apps? Read our <a href="/compare/guides/excel-vs-google-sheets/">Excel vs Google Sheets comparison</a>.</p>
+<section class="faq" aria-label="Frequently asked questions"><h2 id="faq">Frequently asked questions</h2><details class="faq-item"><summary>Why does my Google Sheets VLOOKUP return #N/A?</summary><p>The search key was not found in the first column of the range. The usual causes are extra spaces (fix with TRIM), a number stored as text, or the value simply not being present.</p></details><details class="faq-item"><summary>Is VLOOKUP or XLOOKUP better in Google Sheets?</summary><p>XLOOKUP is more flexible — it can return columns to the left, matches exactly by default, and survives inserted columns. VLOOKUP is still widely used and fine for simple left-to-right lookups.</p></details></section>
+<section class="sources"><h2 id="sources">Sources and references</h2><ol><li><a href="https://support.google.com/docs/answer/3093318" rel="noopener noreferrer">Google Docs Editors Help — VLOOKUP</a></li></ol></section>
+<aside class="next-step"><h2>Next step</h2><p><a href="/google-sheets/tutorials/how-to-make-a-pivot-table-in-google-sheets/">How to Make a Pivot Table in Google Sheets</a> — keep going with the next guide in this topic</p></aside>
+</article>
+<aside class="toc" aria-label="In this article"><div class="toc-box"><h2>In this article</h2><ol><li><a href="#the-syntax">The syntax</a></li><li><a href="#an-example">An example</a></li><li><a href="#common-errors-and-the-modern-alternative">Common errors and the modern alternative</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></div></aside>
+</div>
 </main>
 <footer class="site"><div class="site-inner">
 <span>© 2026 Sheetlift — structured content, open to scrutiny.</span>

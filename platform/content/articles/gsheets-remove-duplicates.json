@@ -1,0 +1,42 @@
+{
+  "id": "art-gs-dupes",
+  "slug": "how-to-remove-duplicates-in-google-sheets",
+  "clusterId": "cl_gs_tut",
+  "title": "How to Remove Duplicates in Google Sheets",
+  "dek": "To remove duplicates in Google Sheets, select your data and go to Data > Data cleanup > Remove duplicates. To keep your original list untouched, use the UNIQUE function instead. Here is how to do both.",
+  "authorId": "author_team",
+  "publishedAt": "2026-06-24",
+  "updatedAt": "2026-07-11",
+  "intent": {
+    "primaryKeyword": "how to remove duplicates in google sheets",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Remove Duplicates in Google Sheets",
+    "metaDescription": "Remove duplicates in Google Sheets with Data cleanup, or keep your original list with the UNIQUE function. Step-by-step guide."
+  },
+  "sources": [
+    { "label": "Google Docs Editors Help — Clean up your data", "url": "https://support.google.com/docs/answer/9843470" }
+  ],
+  "body": [
+    { "type": "paragraph", "richText": ["Duplicate rows throw off counts and totals in Google Sheets just like anywhere else. There are two clean ways to handle them: delete them in place, or build a fresh duplicate-free list with a formula."] },
+    { "type": "heading", "level": 2, "text": "Method 1: Remove duplicates in place" },
+    { "type": "list", "ordered": true, "items": [
+      "Select the range that includes your data (with headers).",
+      ["Go to ", { "b": "Data > Data cleanup > Remove duplicates" }, "."],
+      "Tick \"Data has header row\" if it does, and choose which columns to compare.",
+      "Click Remove duplicates. Sheets tells you how many rows it removed."
+    ] },
+    { "type": "callout", "variant": "warn", "richText": "This deletes rows for good. Make a copy of the sheet first (right-click the tab > Duplicate), or be ready to press Ctrl+Z." },
+    { "type": "heading", "level": 2, "text": "Method 2: The UNIQUE function (keeps your original)" },
+    { "type": "paragraph", "richText": ["To get a deduplicated list without deleting anything, use UNIQUE in an empty cell:"] },
+    { "type": "code", "language": "text", "content": "=UNIQUE(A2:A100)" },
+    { "type": "paragraph", "richText": "The list updates automatically as your source data changes, which makes it ideal for live dashboards. You can also wrap it in SORT to get a clean, ordered list: =SORT(UNIQUE(A2:A100))." },
+    { "type": "paragraph", "richText": ["Once your data is clean, summarize it with a ", { "link": { "ref": "article:art-gs-pivot", "text": "pivot table in Google Sheets" } }, ", or match values across tables with ", { "link": { "ref": "article:art-gs-vlookup", "text": "VLOOKUP" } }, "."] },
+    { "type": "faq", "items": [
+      { "question": "Does Remove duplicates in Google Sheets keep the first row?", "answerRichText": "Yes, it keeps the first occurrence and removes later matching rows. Sort your data first if you need a specific row to be the one that stays." },
+      { "question": "How do I highlight duplicates instead of removing them?", "answerRichText": "Use Format > Conditional formatting with a custom formula like =COUNTIF(A:A, A1)>1. Google Sheets then colors every value that appears more than once." }
+    ] }
+  ]
+}

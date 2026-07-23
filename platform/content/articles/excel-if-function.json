@@ -1,0 +1,44 @@
+{
+  "id": "art-excel-if",
+  "slug": "how-to-use-if-function-in-excel",
+  "clusterId": "cl_excel_tut",
+  "title": "How to Use the IF Function in Excel (with Examples)",
+  "dek": "The IF function returns one value when a condition is true and another when it is false. The syntax is =IF(logical_test, value_if_true, value_if_false). Here is how to use it, nest it, and avoid the usual mistakes.",
+  "authorId": "author_team",
+  "publishedAt": "2026-05-28",
+  "updatedAt": "2026-07-11",
+  "intent": {
+    "primaryKeyword": "how to use if function in excel",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Use the IF Function in Excel (Examples)",
+    "metaDescription": "Learn the Excel IF function: syntax, real examples, nested IFs, and how to combine it with AND and OR — with common errors explained."
+  },
+  "sources": [
+    { "label": "Microsoft Support — IF function", "url": "https://support.microsoft.com/en-us/office/if-function-69aed7c9-4e8a-4755-a9bc-aa8bbff73be2" }
+  ],
+  "body": [
+    { "type": "paragraph", "richText": ["The IF function is how you make Excel decide. It checks a condition and returns one answer if it is true and a different answer if it is false — the building block of nearly every smart spreadsheet."] },
+    { "type": "heading", "level": 2, "text": "The IF syntax" },
+    { "type": "code", "language": "text", "content": "=IF(logical_test, value_if_true, value_if_false)" },
+    { "type": "table", "caption": "The three parts of IF", "headers": ["Part", "Meaning"], "rows": [
+      ["logical_test", "The condition to check, e.g. B2>100"],
+      ["value_if_true", "What to return when the condition is met"],
+      ["value_if_false", "What to return when it is not"]
+    ] },
+    { "type": "heading", "level": 2, "text": "A simple example" },
+    { "type": "paragraph", "richText": ["To label sales in B2 as \"Pass\" or \"Fail\" based on a target of 100:"] },
+    { "type": "code", "language": "text", "content": "=IF(B2>=100, \"Pass\", \"Fail\")" },
+    { "type": "paragraph", "richText": "Text values must go in double quotes. If you want a number instead, leave the quotes off, for example =IF(B2>=100, 1, 0)." },
+    { "type": "heading", "level": 2, "text": "Nesting IF and combining with AND / OR" },
+    { "type": "paragraph", "richText": ["You can put an IF inside another IF for more than two outcomes, or use AND and OR to test several conditions at once, like =IF(AND(B2>=100, C2=\"VIP\"), \"Bonus\", \"Standard\"). If you have Microsoft 365, the IFS function is cleaner than deeply nested IFs."] },
+    { "type": "callout", "variant": "tip", "richText": "A blank cell counts as 0 in a numeric test, which can produce a surprising \"true\". Wrap the test in another IF that checks for blanks if that matters for your data." },
+    { "type": "paragraph", "richText": ["IF pairs naturally with lookups — use it to act on the result of ", { "link": { "ref": "article:art-excel-vlookup", "text": "VLOOKUP" } }, ". And if an IF returns #VALUE!, see ", { "link": { "ref": "article:art-excel-value", "text": "how to fix the #VALUE! error" } }, "."] },
+    { "type": "faq", "items": [
+      { "question": "Can the IF function check text?", "answerRichText": "Yes. Use quotes around the text, for example =IF(A2=\"Yes\", 1, 0). Text comparisons in Excel are not case-sensitive, so \"yes\" and \"YES\" are treated the same." },
+      { "question": "How many IFs can you nest?", "answerRichText": "Excel allows up to 64 nested IFs, but anything beyond three or four becomes hard to read. Use IFS, VLOOKUP against a lookup table, or the SWITCH function instead for many outcomes." }
+    ] }
+  ]
+}

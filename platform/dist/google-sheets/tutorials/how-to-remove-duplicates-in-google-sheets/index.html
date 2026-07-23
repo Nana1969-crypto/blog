@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Google Sheets — Sheetlift</title>
-<meta name="description" content="Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.">
-<link rel="canonical" href="https://sheetlift.com/google-sheets/">
+<title>How to Remove Duplicates in Google Sheets</title>
+<meta name="description" content="Remove duplicates in Google Sheets with Data cleanup, or keep your original list with the UNIQUE function. Step-by-step guide.">
+<link rel="canonical" href="https://sheetlift.com/google-sheets/tutorials/how-to-remove-duplicates-in-google-sheets/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b5cc4'/%3E%3Cpath d='M9 10h14M9 16h14M9 22h9' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="alternate" type="application/rss+xml" title="Sheetlift" href="/rss.xml">
-<meta property="og:title" content="Google Sheets — Sheetlift">
-<meta property="og:description" content="Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.">
-<meta property="og:url" content="https://sheetlift.com/google-sheets/">
+<meta property="og:title" content="How to Remove Duplicates in Google Sheets">
+<meta property="og:description" content="Remove duplicates in Google Sheets with Data cleanup, or keep your original list with the UNIQUE function. Step-by-step guide.">
+<meta property="og:url" content="https://sheetlift.com/google-sheets/tutorials/how-to-remove-duplicates-in-google-sheets/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sheetlift">
 <script>(function(){try{var t=localStorage.getItem('theme');
@@ -111,7 +111,9 @@ footer.site .site-inner{display:flex;justify-content:space-between;gap:1rem;flex
 footer.site a{color:var(--color-text-2)}
 @media (prefers-reduced-motion: no-preference){a,button{transition:color var(--motion-fast) ease}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Google Sheets","description":"Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.","inLanguage":"pt-BR","isPartOf":{"@type":"WebSite","name":"Sheetlift","url":"https://sheetlift.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Remove Duplicates in Google Sheets","description":"To remove duplicates in Google Sheets, select your data and go to Data > Data cleanup > Remove duplicates. To keep your original list untouched, use the UNIQUE function instead. Here is how to do both.","datePublished":"2026-06-24","dateModified":"2026-07-11","inLanguage":"pt-BR","mainEntityOfPage":"https://sheetlift.com/google-sheets/tutorials/how-to-remove-duplicates-in-google-sheets/","author":{"@type":"Organization","name":"The Sheetlift Team","url":"https://sheetlift.com/authors/sheetlift-team/"},"publisher":{"@type":"Organization","name":"Sheetlift","url":"https://sheetlift.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://sheetlift.com/"},{"@type":"ListItem","position":2,"name":"Google Sheets","item":"https://sheetlift.com/google-sheets/"},{"@type":"ListItem","position":3,"name":"How to Remove Duplicates in Google Sheets","item":"https://sheetlift.com/google-sheets/tutorials/how-to-remove-duplicates-in-google-sheets/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Remove duplicates in Google Sheets keep the first row?","acceptedAnswer":{"@type":"Answer","text":"Yes, it keeps the first occurrence and removes later matching rows. Sort your data first if you need a specific row to be the one that stays."}},{"@type":"Question","name":"How do I highlight duplicates instead of removing them?","acceptedAnswer":{"@type":"Answer","text":"Use Format > Conditional formatting with a custom formula like =COUNTIF(A:A, A1)>1. Google Sheets then colors every value that appears more than once."}}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Skip to content</a>
@@ -122,9 +124,32 @@ footer.site a{color:var(--color-text-2)}
 </div></header>
 <main id="conteudo">
 
-<nav class="breadcrumb" aria-label="You are here"><ol><li><a href="/">Home</a></li><li aria-current="page">Google Sheets</li></ol></nav>
-<div class="reading hero"><h1>Google Sheets</h1><p>Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.</p></div>
-<div class="reading"><section aria-labelledby="c-tutorials"><h2 id="c-tutorials">Google Sheets Tutorials</h2><ul class="list-plain"><li><a class="t" href="/google-sheets/tutorials/how-to-make-a-pivot-table-in-google-sheets/">How to Make a Pivot Table in Google Sheets</a><p class="d">In Google Sheets, select your data, choose Insert &gt; Pivot table, then use the editor on the right to add Rows, Columns, Values, and Filters. It summarizes thousands of rows into a clear report without a single formula. Here is the full walkthrough.</p></li><li><a class="t" href="/google-sheets/tutorials/how-to-remove-duplicates-in-google-sheets/">How to Remove Duplicates in Google Sheets</a><p class="d">To remove duplicates in Google Sheets, select your data and go to Data &gt; Data cleanup &gt; Remove duplicates. To keep your original list untouched, use the UNIQUE function instead. Here is how to do both.</p></li><li><a class="t" href="/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/">How to Use VLOOKUP in Google Sheets</a><p class="d">In Google Sheets, VLOOKUP searches down the first column of a range and returns a value from another column in the same row. The syntax is =VLOOKUP(search_key, range, index, FALSE). Here is how each part works, with examples.</p></li></ul></section></div>
+<nav class="breadcrumb" aria-label="You are here"><ol><li><a href="/">Home</a></li><li><a href="/google-sheets/">Google Sheets</a></li><li aria-current="page">How to Remove Duplicates in Google Sheets</li></ol></nav>
+<div class="article-grid">
+<article class="reading">
+<h1>How to Remove Duplicates in Google Sheets</h1>
+<p class="dek">To remove duplicates in Google Sheets, select your data and go to Data &gt; Data cleanup &gt; Remove duplicates. To keep your original list untouched, use the UNIQUE function instead. Here is how to do both.</p>
+<div class="meta">
+<span>By <a href="/authors/sheetlift-team/">The Sheetlift Team</a></span>
+<span>Published <time datetime="2026-06-24">June 24, 2026</time></span>
+<span>Updated <time datetime="2026-07-11">July 11, 2026</time></span>
+<span>1 min read</span>
+</div>
+<p>Duplicate rows throw off counts and totals in Google Sheets just like anywhere else. There are two clean ways to handle them: delete them in place, or build a fresh duplicate-free list with a formula.</p>
+<h2 id="method-1-remove-duplicates-in-place">Method 1: Remove duplicates in place</h2>
+<ol><li>Select the range that includes your data (with headers).</li><li>Go to <strong>Data &gt; Data cleanup &gt; Remove duplicates</strong>.</li><li>Tick &quot;Data has header row&quot; if it does, and choose which columns to compare.</li><li>Click Remove duplicates. Sheets tells you how many rows it removed.</li></ol>
+<aside class="callout callout-warn" role="note"><strong class="callout-label">Warning:</strong> This deletes rows for good. Make a copy of the sheet first (right-click the tab &gt; Duplicate), or be ready to press Ctrl+Z.</aside>
+<h2 id="method-2-the-unique-function-keeps-your-original">Method 2: The UNIQUE function (keeps your original)</h2>
+<p>To get a deduplicated list without deleting anything, use UNIQUE in an empty cell:</p>
+<pre><code class="lang-text">=UNIQUE(A2:A100)</code></pre>
+<p>The list updates automatically as your source data changes, which makes it ideal for live dashboards. You can also wrap it in SORT to get a clean, ordered list: =SORT(UNIQUE(A2:A100)).</p>
+<p>Once your data is clean, summarize it with a <a href="/google-sheets/tutorials/how-to-make-a-pivot-table-in-google-sheets/">pivot table in Google Sheets</a>, or match values across tables with <a href="/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/">VLOOKUP</a>.</p>
+<section class="faq" aria-label="Frequently asked questions"><h2 id="faq">Frequently asked questions</h2><details class="faq-item"><summary>Does Remove duplicates in Google Sheets keep the first row?</summary><p>Yes, it keeps the first occurrence and removes later matching rows. Sort your data first if you need a specific row to be the one that stays.</p></details><details class="faq-item"><summary>How do I highlight duplicates instead of removing them?</summary><p>Use Format &gt; Conditional formatting with a custom formula like =COUNTIF(A:A, A1)&gt;1. Google Sheets then colors every value that appears more than once.</p></details></section>
+<section class="sources"><h2 id="sources">Sources and references</h2><ol><li><a href="https://support.google.com/docs/answer/9843470" rel="noopener noreferrer">Google Docs Editors Help — Clean up your data</a></li></ol></section>
+<aside class="next-step"><h2>Next step</h2><p><a href="/google-sheets/tutorials/how-to-make-a-pivot-table-in-google-sheets/">How to Make a Pivot Table in Google Sheets</a> — keep going with the next guide in this topic</p></aside>
+</article>
+<aside class="toc" aria-label="In this article"><div class="toc-box"><h2>In this article</h2><ol><li><a href="#method-1-remove-duplicates-in-place">Method 1: Remove duplicates in place</a></li><li><a href="#method-2-the-unique-function-keeps-your-original">Method 2: The UNIQUE function (keeps your original)</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></div></aside>
+</div>
 </main>
 <footer class="site"><div class="site-inner">
 <span>© 2026 Sheetlift — structured content, open to scrutiny.</span>

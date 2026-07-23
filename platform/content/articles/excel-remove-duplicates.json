@@ -1,0 +1,43 @@
+{
+  "id": "art-excel-dupes",
+  "slug": "how-to-remove-duplicates-in-excel",
+  "clusterId": "cl_excel_tut",
+  "title": "How to Remove Duplicates in Excel (3 Ways)",
+  "dek": "The fastest way to remove duplicates in Excel is Data > Remove Duplicates: select your range, choose which columns to check, and click OK. You can also highlight duplicates first or use the UNIQUE function. Here is each method.",
+  "authorId": "author_team",
+  "publishedAt": "2026-05-20",
+  "updatedAt": "2026-07-11",
+  "intent": {
+    "primaryKeyword": "how to remove duplicates in excel",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Remove Duplicates in Excel (3 Ways)",
+    "metaDescription": "Remove duplicates in Excel three ways: the Remove Duplicates button, highlighting duplicates first, and the UNIQUE function. Step by step."
+  },
+  "sources": [
+    { "label": "Microsoft Support — Find and remove duplicates", "url": "https://support.microsoft.com/en-us/office/find-and-remove-duplicates-00e35bea-b46a-4d5d-b28e-66a552dc138d" }
+  ],
+  "body": [
+    { "type": "paragraph", "richText": ["Duplicate rows quietly break totals, counts, and reports. Excel gives you three good ways to deal with them, depending on whether you want to delete them, just see them first, or keep your original list untouched."] },
+    { "type": "heading", "level": 2, "text": "Method 1: The Remove Duplicates button" },
+    { "type": "list", "ordered": true, "items": [
+      "Click any cell inside your data.",
+      ["Go to the ", { "b": "Data" }, " tab and click ", { "b": "Remove Duplicates" }, "."],
+      "Tick the columns Excel should check. To remove only fully identical rows, keep all columns ticked.",
+      "Click OK. Excel deletes the duplicates and tells you how many it removed."
+    ] },
+    { "type": "callout", "variant": "warn", "richText": "Remove Duplicates deletes rows permanently. Work on a copy of your data, or be ready to press Ctrl+Z if the result is not what you expected." },
+    { "type": "heading", "level": 2, "text": "Method 2: Highlight duplicates before deleting" },
+    { "type": "paragraph", "richText": ["If you want to see the duplicates first, select your range, go to ", { "b": "Home > Conditional Formatting > Highlight Cells Rules > Duplicate Values" }, ". Excel colors every repeated value so you can review them before removing anything."] },
+    { "type": "heading", "level": 2, "text": "Method 3: The UNIQUE function (Microsoft 365)" },
+    { "type": "paragraph", "richText": ["If you have Microsoft 365, the UNIQUE function returns a clean list without touching the original. In an empty cell, type this and press Enter:"] },
+    { "type": "code", "language": "text", "content": "=UNIQUE(A2:A100)" },
+    { "type": "paragraph", "richText": ["The result updates automatically when your source data changes — handy for live reports. Pair it with a ", { "link": { "ref": "article:art-excel-pivot", "text": "pivot table" } }, " to summarize the deduplicated data, or learn the ", { "link": { "ref": "article:art-excel-if", "text": "IF function" } }, " to flag duplicates with a formula."] },
+    { "type": "faq", "items": [
+      { "question": "Does Remove Duplicates keep the first or last value?", "answerRichText": "It keeps the first occurrence and removes the ones below it. If order matters, sort your data the way you want before removing duplicates." },
+      { "question": "How do I remove duplicates based on one column only?", "answerRichText": "In the Remove Duplicates dialog, untick every column except the one you care about. Excel then treats rows as duplicates whenever that single column matches." }
+    ] }
+  ]
+}
