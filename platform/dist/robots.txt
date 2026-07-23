@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://blogos.example/sitemap.xml
+Sitemap: https://sheetlift.com/sitemap.xml

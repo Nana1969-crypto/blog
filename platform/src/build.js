@@ -108,7 +108,7 @@ function affectedRoutes(articleId, rendered, taxonomy) {
   const inlinkers = rendered.filter((r) => r.edges.some((e) => e.to === articleId)).map((r) => r.url);
   return {
     content: self.url,
-    fixedIndexes: ['/', `/${self.pillar.slug}/`, `/autores/`],
+    fixedIndexes: ['/', `/${self.pillar.slug}/`, `/authors/`],
     inlinkers,
     feeds: ['/sitemap.xml', '/rss.xml'],
     total: 1 + 3 + inlinkers.length + 2,
@@ -159,11 +159,19 @@ function build(opts = {}) {
   }
 
   fs.mkdirSync(DIST, { recursive: true });
+  // `keep` = todo arquivo que DEVE existir no dist ao fim do build. Usado no final
+  // para remover páginas órfãs (artigos apagados/renomeados, troca de nicho).
+  const keep = new Set();
+  const keepFile = (absPath) => keep.add(path.resolve(absPath));
   const writePage = (urlPath, html) => {
     const dir = path.join(DIST, urlPath);
     fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'index.html'), html);
+    const file = path.join(dir, 'index.html');
+    fs.writeFileSync(file, html);
+    keepFile(file);
   };
+  // Artigos "pulados" (incremental) continuam válidos no disco — preservar.
+  for (const r of rendered) keepFile(path.join(DIST, r.url, 'index.html'));
 
   // páginas de artigo — incremental por hash do JSON fonte
   let written = 0, skipped = 0;
@@ -177,8 +185,8 @@ function build(opts = {}) {
     const author = authors.find((au) => au.id === r.article.authorId);
     const others = rendered.filter((x) => x.cluster.id === r.cluster.id && x.article.id !== r.article.id);
     const nextStep = others.length
-      ? { href: others[0].url, label: others[0].article.title, why: 'continue no tema com o próximo guia do cluster' }
-      : { href: `/${r.pillar.slug}/`, label: r.pillar.title, why: 'veja o mapa completo do tema' };
+      ? { href: others[0].url, label: others[0].article.title, why: 'keep going with the next guide in this topic' }
+      : { href: `/${r.pillar.slug}/`, label: r.pillar.title, why: 'see the full topic map' };
     writePage(r.url, T.articlePage({ site, article: r.article, url: r.url, pillar: r.pillar, cluster: r.cluster, author, bodyHtml: r.html, headings: r.headings, readingMin: r.readingMin, nextStep }));
     written++;
   }
@@ -192,8 +200,8 @@ function build(opts = {}) {
         const author = authors.find((au) => au.id === r.article.authorId);
         const others = rendered.filter((x) => x.cluster.id === r.cluster.id && x.article.id !== r.article.id);
         const nextStep = others.length
-          ? { href: others[0].url, label: others[0].article.title, why: 'continue no tema com o próximo guia do cluster' }
-          : { href: `/${r.pillar.slug}/`, label: r.pillar.title, why: 'veja o mapa completo do tema' };
+          ? { href: others[0].url, label: others[0].article.title, why: 'keep going with the next guide in this topic' }
+          : { href: `/${r.pillar.slug}/`, label: r.pillar.title, why: 'see the full topic map' };
         writePage(r.url, T.articlePage({ site, article: r.article, url: r.url, pillar: r.pillar, cluster: r.cluster, author, bodyHtml: r.html, headings: r.headings, readingMin: r.readingMin, nextStep }));
         written++; skipped--;
       }
@@ -211,22 +219,22 @@ function build(opts = {}) {
   }
   for (const au of authors) {
     const list = rendered.filter((r) => r.article.authorId === au.id).map((r) => r.article);
-    writePage(`/autores/${au.slug}/`, T.authorPage({ site, author: au, articles: list }));
+    writePage(`/authors/${au.slug}/`, T.authorPage({ site, author: au, articles: list }));
   }
 
   // política editorial (transparência — Fase 04 §7)
-  writePage('/politica-editorial/', T.simplePage({
-    site, title: 'Política editorial', path: '/politica-editorial/',
-    description: 'Como produzimos, revisamos e atualizamos o conteúdo.',
+  writePage('/editorial-policy/', T.simplePage({
+    site, title: 'Editorial policy', path: '/editorial-policy/',
+    description: 'How we research, write, review and update our content.',
     bodyHtml: site.editorialPolicyHtml,
   }));
 
   // 404 + robots + sitemap + RSS
-  fs.writeFileSync(path.join(DIST, '404.html'), T.notFoundPage({ site }));
-  fs.writeFileSync(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${site.baseUrl}/sitemap.xml\n`);
+  fs.writeFileSync(path.join(DIST, '404.html'), T.notFoundPage({ site })); keepFile(path.join(DIST, '404.html'));
+  fs.writeFileSync(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${site.baseUrl}/sitemap.xml\n`); keepFile(path.join(DIST, 'robots.txt'));
 
   const urls = ['/', ...taxonomy.pillars.map((p) => `/${p.slug}/`), ...rendered.map((r) => r.url),
-    ...authors.map((a) => `/autores/${a.slug}/`), '/politica-editorial/'];
+    ...authors.map((a) => `/authors/${a.slug}/`), '/editorial-policy/'];
   // segmentação: >50k exigiria índice de sitemaps (medido no harness); v1 cabe em 1
   fs.writeFileSync(path.join(DIST, 'sitemap.xml'),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
@@ -249,9 +257,22 @@ function build(opts = {}) {
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 `);
 
+  for (const f of ['sitemap.xml', 'rss.xml', '_headers']) keepFile(path.join(DIST, f));
   fs.writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2));
+
+  // ---- PRUNE: remove páginas/arquivos órfãos que não fazem mais parte do site ----
+  let pruned = 0;
+  const walk = (dir) => {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) { walk(p); if (fs.readdirSync(p).length === 0) fs.rmdirSync(p); }
+      else if (!keep.has(path.resolve(p))) { fs.unlinkSync(p); pruned++; }
+    }
+  };
+  walk(DIST);
+
   const ms = Date.now() - t0;
-  console.log(`✓ build ok em ${ms}ms — artigos: ${written} regenerados, ${skipped} pulados (incremental${fullRebuild ? ' OFF: código mudou' : ' ON'}); ${urls.length} URLs no sitemap`);
+  console.log(`✓ build ok em ${ms}ms — artigos: ${written} regenerados, ${skipped} pulados${pruned ? `, ${pruned} órfãos removidos` : ''} (incremental${fullRebuild ? ' OFF: código mudou' : ' ON'}); ${urls.length} URLs no sitemap`);
 }
 
 // ---------------------------------------------------------------- CLI

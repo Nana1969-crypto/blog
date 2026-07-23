@@ -1,11 +1,12 @@
 {
-  "sharedHash": "1a1d75c840eadc8b",
+  "sharedHash": "a7cf76c73cba328c",
   "articles": {
-    "art-pillar-cluster": "f92916545060becd",
-    "art-canibalizacao": "2c7c47178ad0d2b4",
-    "art-blocos": "b592b293edd3be7e",
-    "art-cwv": "6d61850e142649d4",
-    "art-eeat": "e7a209cb1c1bf30c",
-    "art-intencao": "7bfdd5ff8b887b9d"
+    "art-best-spreadsheet": "6f0496cc9174b08b",
+    "art-excel-pivot": "151b69febe42042d",
+    "art-excel-ref": "89567b273097a602",
+    "art-excel-vlookup": "5f3fcdafe6b9f84a",
+    "art-excel-vs-sheets": "e39b6909540809a9",
+    "art-gs-alternatives": "d87939a9c11c6839",
+    "art-gs-pivot": "44b8644b89f6eec4"
   }
 }

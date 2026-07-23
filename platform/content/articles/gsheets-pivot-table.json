@@ -1,0 +1,49 @@
+{
+  "id": "art-gs-pivot",
+  "slug": "how-to-make-a-pivot-table-in-google-sheets",
+  "clusterId": "cl_gs_tut",
+  "title": "How to Make a Pivot Table in Google Sheets",
+  "dek": "In Google Sheets, select your data, choose Insert > Pivot table, then use the editor on the right to add Rows, Columns, Values, and Filters. It summarizes thousands of rows into a clear report without a single formula. Here is the full walkthrough.",
+  "authorId": "author_team",
+  "publishedAt": "2026-03-10",
+  "updatedAt": "2026-07-06",
+  "intent": {
+    "primaryKeyword": "how to make a pivot table in google sheets",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Make a Pivot Table in Google Sheets",
+    "metaDescription": "Step-by-step guide to creating a pivot table in Google Sheets: add rows, columns, values and filters, and fix the most common issues."
+  },
+  "sources": [
+    { "label": "Google Docs Editors Help — Create and use pivot tables", "url": "https://support.google.com/docs/answer/1272900" }
+  ],
+  "body": [
+    { "type": "paragraph", "richText": ["Pivot tables in Google Sheets work much like Excel's, but the editor lives in a side panel and updates live as you build. If you can drag a field name, you can build a report. This guide uses a sales list, but the steps fit any tidy data."] },
+    { "type": "heading", "level": 2, "text": "Step 1: Select your data and insert the pivot table" },
+    { "type": "list", "ordered": true, "items": [
+      "Select the range you want to summarize, including the header row.",
+      ["Click ", { "b": "Insert" }, " > ", { "b": "Pivot table" }, "."],
+      "Choose New sheet (recommended) and click Create.",
+      "An empty pivot table appears with the Pivot table editor on the right."
+    ] },
+    { "type": "heading", "level": 2, "text": "Step 2: Add Rows, Columns, and Values" },
+    { "type": "paragraph", "richText": "In the editor, click Add next to each area and pick a field. This is where your report takes shape." },
+    { "type": "table", "caption": "Pivot table editor areas in Google Sheets", "headers": ["Area", "What it does"], "rows": [
+      ["Rows", "Groups your data down the left"],
+      ["Columns", "Groups your data across the top"],
+      ["Values", "The number that gets calculated (Sum, Count, Average...)"],
+      ["Filters", "Limits which data the whole report uses"]
+    ] },
+    { "type": "paragraph", "richText": ["Add ", { "b": "Product" }, " to Rows and ", { "b": "Sales" }, " to Values to get total sales per product. Google Sheets also shows a Suggested section that can build a common report for you in one click."] },
+    { "type": "heading", "level": 2, "text": "Step 3: Change how values are calculated" },
+    { "type": "paragraph", "richText": "In the Values area, use the \"Summarize by\" dropdown to switch between SUM, COUNT, AVERAGE, MAX, and more. The \"Show as\" option can display results as a percentage of the total — handy for share-of-sales reports." },
+    { "type": "callout", "variant": "tip", "richText": "Pivot tables refresh automatically when the source data changes, as long as new rows fall inside the original range. Select whole columns (for example A:D) as your source so future rows are always included." },
+    { "type": "paragraph", "richText": ["Coming from Microsoft's tool? The concept is identical — compare the steps with ", { "link": { "ref": "article:art-excel-pivot", "text": "how to make a pivot table in Excel" } }, ". Deciding between the two apps entirely? Read our ", { "link": { "ref": "article:art-excel-vs-sheets", "text": "Excel vs Google Sheets comparison" } }, "."] },
+    { "type": "faq", "items": [
+      { "question": "Why is my Google Sheets pivot table empty?", "answerRichText": "You have inserted it but not added any fields yet. Use the Pivot table editor on the right to add at least one field to Rows and one to Values, and the report will populate." },
+      { "question": "Do Google Sheets pivot tables update automatically?", "answerRichText": "Yes, they refresh on their own when the source data changes — provided the new data is within the range you selected. Using whole-column ranges keeps future rows included automatically." }
+    ] }
+  ]
+}

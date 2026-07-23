@@ -115,7 +115,7 @@ function baseLayout({ site, title, description, canonicalPath, jsonld = [], body
     `<a href="/${p.slug}/"${currentPillar === p.slug ? ' aria-current="page"' : ''}>${esc(p.title)}</a>`).join('');
   const ld = jsonld.map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join('\n');
   return `<!doctype html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -134,18 +134,18 @@ function baseLayout({ site, title, description, canonicalPath, jsonld = [], body
 ${ld}
 </head>
 <body>
-<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<a class="skip-link" href="#conteudo">Skip to content</a>
 <header class="site"><div class="site-inner">
 <a class="wordmark" href="/">${esc(site.name)}</a>
-<nav class="pillars" aria-label="Temas">${nav}</nav>
-<button class="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">Tema</button>
+<nav class="pillars" aria-label="Topics">${nav}</nav>
+<button class="theme-toggle" type="button" aria-label="Toggle light/dark theme">Theme</button>
 </div></header>
 <main id="conteudo">
 ${body}
 </main>
 <footer class="site"><div class="site-inner">
-<span>© ${new Date().getFullYear()} ${esc(site.name)} — conteúdo estruturado, aberto a auditoria.</span>
-<span><a href="/politica-editorial/">Política editorial</a> · <a href="/rss.xml">RSS</a></span>
+<span>© ${new Date().getFullYear()} ${esc(site.name)} — structured content, open to scrutiny.</span>
+<span><a href="/editorial-policy/">Editorial policy</a> · <a href="/rss.xml">RSS</a></span>
 </div></footer>
 <script>${toggleScript}</script>
 </body>
@@ -157,7 +157,7 @@ function breadcrumb(items) {
     it.href && i < items.length - 1
       ? `<li><a href="${esc(it.href)}">${esc(it.label)}</a></li>`
       : `<li aria-current="page">${esc(it.label)}</li>`).join('');
-  return `<nav class="breadcrumb" aria-label="Você está em"><ol>${lis}</ol></nav>`;
+  return `<nav class="breadcrumb" aria-label="You are here"><ol>${lis}</ol></nav>`;
 }
 
 function tocHtml(headings) {
@@ -165,21 +165,21 @@ function tocHtml(headings) {
   if (h2s.length < 3) return '';
   const lis = h2s.map((h) =>
     `<li${h.level === 3 ? ' class="lvl3"' : ''}><a href="#${esc(h.anchor)}">${esc(h.text)}</a></li>`).join('');
-  return `<aside class="toc" aria-label="Neste artigo"><div class="toc-box"><h2>Neste artigo</h2><ol>${lis}</ol></div></aside>`;
+  return `<aside class="toc" aria-label="In this article"><div class="toc-box"><h2>In this article</h2><ol>${lis}</ol></div></aside>`;
 }
 
 function fmtDate(iso) {
-  return new Date(iso).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+  return new Date(iso).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 
 function articlePage({ site, article, url, pillar, cluster, author, bodyHtml, headings, readingMin, nextStep }) {
   const bc = breadcrumb([
-    { label: 'Início', href: '/' },
+    { label: 'Home', href: '/' },
     { label: pillar.title, href: `/${pillar.slug}/` },
     { label: article.title },
   ]);
   const updated = article.updatedAt && article.updatedAt !== article.publishedAt
-    ? `<span>Atualizado em <time datetime="${article.updatedAt}">${fmtDate(article.updatedAt)}</time></span>` : '';
+    ? `<span>Updated <time datetime="${article.updatedAt}">${fmtDate(article.updatedAt)}</time></span>` : '';
   const body = `
 ${bc}
 <div class="article-grid">
@@ -187,16 +187,16 @@ ${bc}
 <h1>${esc(article.title)}</h1>
 <p class="dek">${esc(article.dek)}</p>
 <div class="meta">
-<span>Por <a href="/autores/${esc(author.slug)}/">${esc(author.name)}</a></span>
-<span>Publicado em <time datetime="${article.publishedAt}">${fmtDate(article.publishedAt)}</time></span>
+<span>By <a href="/authors/${esc(author.slug)}/">${esc(author.name)}</a></span>
+<span>Published <time datetime="${article.publishedAt}">${fmtDate(article.publishedAt)}</time></span>
 ${updated}
-<span>${readingMin} min de leitura</span>
+<span>${readingMin} min read</span>
 </div>
 ${bodyHtml}
-${article.sources && article.sources.length ? `<section class="sources"><h2 id="fontes">Fontes e referências</h2><ol>${
+${article.sources && article.sources.length ? `<section class="sources"><h2 id="sources">Sources and references</h2><ol>${
   article.sources.map((s) => `<li>${s.url ? `<a href="${esc(s.url)}" rel="noopener noreferrer">${esc(s.label)}</a>` : esc(s.label)}</li>`).join('')
 }</ol></section>` : ''}
-<aside class="next-step"><h2>Próximo passo</h2><p><a href="${esc(nextStep.href)}">${esc(nextStep.label)}</a> — ${esc(nextStep.why)}</p></aside>
+<aside class="next-step"><h2>Next step</h2><p><a href="${esc(nextStep.href)}">${esc(nextStep.label)}</a> — ${esc(nextStep.why)}</p></aside>
 </article>
 ${tocHtml(headings)}
 </div>`;
@@ -215,7 +215,7 @@ function articleJsonLd({ site, article, url, pillar, author }) {
     datePublished: article.publishedAt, dateModified: article.updatedAt || article.publishedAt,
     inLanguage: 'pt-BR',
     mainEntityOfPage: site.baseUrl + url,
-    author: { '@type': author.type || 'Person', name: author.name, url: `${site.baseUrl}/autores/${author.slug}/` },
+    author: { '@type': author.type || 'Person', name: author.name, url: `${site.baseUrl}/authors/${author.slug}/` },
     publisher: { '@type': 'Organization', name: site.name, url: site.baseUrl },
   }, {
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',
@@ -244,7 +244,7 @@ function pillarPage({ site, pillar, clusters, articlesByCluster }) {
     return `<section aria-labelledby="c-${esc(c.slug)}"><h2 id="c-${esc(c.slug)}">${esc(c.title)}</h2><ul class="list-plain">${lis}</ul></section>`;
   }).join('\n');
   const body = `
-${breadcrumb([{ label: 'Início', href: '/' }, { label: pillar.title }])}
+${breadcrumb([{ label: 'Home', href: '/' }, { label: pillar.title }])}
 <div class="reading hero"><h1>${esc(pillar.title)}</h1><p>${esc(pillar.description)}</p></div>
 <div class="reading">${sections}</div>`;
   return baseLayout({
@@ -266,8 +266,8 @@ function homePage({ site, pillars, latest }) {
     `<li><a class="t" href="${esc(a._url)}">${esc(a.title)}</a><p class="d">${esc(a.dek)}</p></li>`).join('');
   const body = `
 <div class="hero reading"><h1>${esc(site.tagline)}</h1><p>${esc(site.promise)}</p></div>
-<section aria-label="Temas"><ul class="card-grid">${cards}</ul></section>
-<section class="reading" aria-labelledby="recentes"><h2 id="recentes">Guias em destaque</h2><ul class="list-plain">${lis}</ul></section>`;
+<section aria-label="Topics"><ul class="card-grid">${cards}</ul></section>
+<section class="reading" aria-labelledby="recentes"><h2 id="recent">Featured guides</h2><ul class="list-plain">${lis}</ul></section>`;
   return baseLayout({
     site, title: `${site.name} — ${site.tagline}`, description: site.promise,
     canonicalPath: '/',
@@ -284,30 +284,30 @@ function authorPage({ site, author, articles }) {
   const lis = articles.map((a) =>
     `<li><a class="t" href="${esc(a._url)}">${esc(a.title)}</a><p class="d">${esc(a.dek)}</p></li>`).join('');
   const body = `
-${breadcrumb([{ label: 'Início', href: '/' }, { label: author.name }])}
+${breadcrumb([{ label: 'Home', href: '/' }, { label: author.name }])}
 <div class="reading hero"><h1>${esc(author.name)}</h1><p>${esc(author.bio)}</p></div>
-<div class="reading"><h2>Artigos</h2><ul class="list-plain">${lis}</ul></div>`;
+<div class="reading"><h2>Articles</h2><ul class="list-plain">${lis}</ul></div>`;
   return baseLayout({
     site, title: `${author.name} — ${site.name}`, description: author.bio,
-    canonicalPath: `/autores/${author.slug}/`,
+    canonicalPath: `/authors/${author.slug}/`,
     jsonld: [{
       '@context': 'https://schema.org', '@type': author.type || 'Person',
-      name: author.name, description: author.bio, url: `${site.baseUrl}/autores/${author.slug}/`,
+      name: author.name, description: author.bio, url: `${site.baseUrl}/authors/${author.slug}/`,
     }],
     body,
   });
 }
 
 function simplePage({ site, title, description, path, bodyHtml }) {
-  const body = `${breadcrumb([{ label: 'Início', href: '/' }, { label: title }])}
+  const body = `${breadcrumb([{ label: 'Home', href: '/' }, { label: title }])}
 <div class="reading hero"><h1>${esc(title)}</h1></div><div class="reading">${bodyHtml}</div>`;
   return baseLayout({ site, title: `${title} — ${site.name}`, description, canonicalPath: path, body });
 }
 
 function notFoundPage({ site }) {
-  const body = `<div class="reading hero"><h1>Página não encontrada</h1>
-<p>O endereço pode ter mudado. Volte para a <a href="/">página inicial</a> ou explore os temas no menu.</p></div>`;
-  return baseLayout({ site, title: `Página não encontrada — ${site.name}`, description: 'Erro 404', canonicalPath: '/404.html', body });
+  const body = `<div class="reading hero"><h1>Page not found</h1>
+<p>This address may have changed. Go back to the <a href="/">home page</a> or explore the topics in the menu.</p></div>`;
+  return baseLayout({ site, title: `Page not found — ${site.name}`, description: 'Error 404', canonicalPath: '/404.html', body });
 }
 
 module.exports = { articlePage, pillarPage, homePage, authorPage, simplePage, notFoundPage, fmtDate };

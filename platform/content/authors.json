@@ -1,9 +1,9 @@
 [
   {
-    "id": "author_equipe",
-    "slug": "equipe-blog-os",
-    "name": "Equipe Blog OS",
+    "id": "author_team",
+    "slug": "sheetlift-team",
+    "name": "The Sheetlift Team",
     "type": "Organization",
-    "bio": "Conteúdo produzido e revisado pela equipe editorial do Blog OS sob um gate de qualidade executável: intenção de busca única por página, fontes citadas, estrutura de leitura validada e atualização programada. Este acervo é a demonstração viva da plataforma — antes de um lançamento público, os artigos recebem autoria individual com credenciais verificáveis (E-E-A-T)."
+    "bio": "The Sheetlift editorial team writes and tests every tutorial on the current versions of Microsoft Excel and Google Sheets. We focus on the exact steps, the common errors people actually hit, and honest comparisons — never filler. Before a wide launch, our guides will carry individual authors with verifiable spreadsheet expertise."
   }
 ]

@@ -57,7 +57,7 @@ const renderers = {
   },
 
   callout: (b, ctx) => {
-    const labels = { info: 'Nota', tip: 'Dica', warn: 'Atenção' };
+    const labels = { info: 'Note', tip: 'Tip', warn: 'Warning' };
     const v = b.variant in labels ? b.variant : 'info';
     return `<aside class="callout callout-${v}" role="note">` +
       `<strong class="callout-label">${labels[v]}:</strong> ${renderRich(b.richText, ctx)}</aside>`;
@@ -95,11 +95,11 @@ const renderers = {
 
   faq: (b, ctx) => {
     ctx.faq.push(...b.items);
-    ctx.headings.push({ level: 2, text: 'Perguntas frequentes', anchor: 'faq' });
+    ctx.headings.push({ level: 2, text: 'Frequently asked questions', anchor: 'faq' });
     const items = b.items.map((it) =>
       `<details class="faq-item"><summary>${esc(it.question)}</summary>` +
       `<p>${renderRich(it.answerRichText, ctx)}</p></details>`).join('');
-    return `<section class="faq" aria-label="Perguntas frequentes"><h2 id="faq">Perguntas frequentes</h2>${items}</section>`;
+    return `<section class="faq" aria-label="Frequently asked questions"><h2 id="faq">Frequently asked questions</h2>${items}</section>`;
   },
 
   divider: () => '<hr>',

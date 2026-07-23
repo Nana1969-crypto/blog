@@ -1,20 +1,28 @@
 {
   "pillars": [
     {
-      "id": "pillar_seo",
-      "slug": "seo-tecnico",
-      "title": "SEO Técnico",
-      "description": "Como buscadores rastreiam, indexam e ranqueiam — e por que as decisões de engenharia do site pesam tanto quanto o texto."
+      "id": "pillar_excel",
+      "slug": "excel",
+      "title": "Excel",
+      "description": "Step-by-step Microsoft Excel tutorials and error fixes — from pivot tables and VLOOKUP to the errors that break your formulas."
     },
     {
-      "id": "pillar_eng",
-      "slug": "engenharia-de-conteudo",
-      "title": "Engenharia de Conteúdo",
-      "description": "Arquitetura de informação, conteúdo estruturado e sistemas editoriais que escalam para milhares de páginas sem perder qualidade."
+      "id": "pillar_gsheets",
+      "slug": "google-sheets",
+      "title": "Google Sheets",
+      "description": "Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version."
+    },
+    {
+      "id": "pillar_compare",
+      "slug": "compare",
+      "title": "Compare & Choose",
+      "description": "Honest comparisons and buyer's guides to help you pick the right spreadsheet tool for your work and budget."
     }
   ],
   "clusters": [
-    { "id": "cluster_seo_fund", "pillarId": "pillar_seo", "slug": "fundamentos", "title": "Fundamentos" },
-    { "id": "cluster_eng_arq", "pillarId": "pillar_eng", "slug": "arquitetura", "title": "Arquitetura de conteúdo" }
+    { "id": "cl_excel_tut", "pillarId": "pillar_excel", "slug": "tutorials", "title": "Excel Tutorials" },
+    { "id": "cl_excel_fix", "pillarId": "pillar_excel", "slug": "fixes", "title": "Fix Excel Errors" },
+    { "id": "cl_gs_tut", "pillarId": "pillar_gsheets", "slug": "tutorials", "title": "Google Sheets Tutorials" },
+    { "id": "cl_compare", "pillarId": "pillar_compare", "slug": "guides", "title": "Buyer's Guides" }
   ]
 }
