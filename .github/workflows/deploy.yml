@@ -1,4 +1,4 @@
-name: Deploy Blog OS to Cloudflare
+name: Deploy Sheetlift to Cloudflare
 
 # Deploy automático a cada push na main. O gate de qualidade (check.js) roda
 # ANTES do deploy — se algo violar contraste/links/schema, o job falha e NADA
@@ -7,7 +7,7 @@ name: Deploy Blog OS to Cloudflare
 #
 # Requer 2 secrets no repositório (Settings → Secrets and variables → Actions):
 #   CLOUDFLARE_API_TOKEN   — token com permissão "Edit Cloudflare Workers"
-#   CLOUDFLARE_ACCOUNT_ID  — id da conta (Cloudflare dashboard → Workers → lado direito)
+#   CLOUDFLARE_ACCOUNT_ID  — id da conta
 
 on:
   push:
@@ -30,10 +30,12 @@ jobs:
           node src/build.js
           node src/check.js
 
-      - name: Deploy para Cloudflare Workers
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          workingDirectory: platform
-          command: deploy
+      # Deploy direto com wrangler v4 (suporta site 100% de assets estáticos).
+      # A wrangler-action@v3 usa um wrangler antigo que falha com
+      # "Missing entry-point" em sites sem script Worker — por isso o npx aqui.
+      - name: Deploy to Cloudflare Workers
+        working-directory: platform
+        run: npx --yes wrangler@4 deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
