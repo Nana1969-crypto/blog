@@ -145,7 +145,7 @@ ${body}
 </main>
 <footer class="site"><div class="site-inner">
 <span>© ${new Date().getFullYear()} ${esc(site.name)} — structured content, open to scrutiny.</span>
-<span><a href="/editorial-policy/">Editorial policy</a> · <a href="/rss.xml">RSS</a></span>
+<span><a href="/editorial-policy/">Editorial policy</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/contact/">Contact</a> · <a href="/rss.xml">RSS</a></span>
 </div></footer>
 <script>${toggleScript}</script>
 </body>

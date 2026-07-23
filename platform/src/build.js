@@ -31,8 +31,10 @@ function loadAll() {
   const artDir = path.join(CONTENT, 'articles');
   const articles = fs.readdirSync(artDir).filter((f) => f.endsWith('.json'))
     .map((f) => ({ ...readJson(path.join(artDir, f)), _file: f, _raw: fs.readFileSync(path.join(artDir, f), 'utf8') }));
+  const pagesFile = path.join(CONTENT, 'pages.json');
+  const pages = fs.existsSync(pagesFile) ? readJson(pagesFile) : [];
   site.pillars = taxonomy.pillars;
-  return { site, authors, taxonomy, articles };
+  return { site, authors, taxonomy, articles, pages };
 }
 
 function urlFor(article, taxonomy) {
@@ -118,7 +120,7 @@ function affectedRoutes(articleId, rendered, taxonomy) {
 // ---------------------------------------------------------------- build
 function build(opts = {}) {
   const t0 = Date.now();
-  const { site, authors, taxonomy, articles } = loadAll();
+  const { site, authors, taxonomy, articles, pages } = loadAll();
 
   // GATE
   const gateErrors = runGate({ articles, authors, taxonomy });
@@ -229,12 +231,21 @@ function build(opts = {}) {
     bodyHtml: site.editorialPolicyHtml,
   }));
 
+  // páginas avulsas (privacy, contact, etc.) — content/pages.json
+  const injectEmail = (html) => String(html).replace(/\{\{email\}\}/g, site.contactEmail || '');
+  for (const pg of pages) {
+    writePage(`/${pg.slug}/`, T.simplePage({
+      site, title: pg.title, path: `/${pg.slug}/`,
+      description: pg.description, bodyHtml: injectEmail(pg.bodyHtml),
+    }));
+  }
+
   // 404 + robots + sitemap + RSS
   fs.writeFileSync(path.join(DIST, '404.html'), T.notFoundPage({ site })); keepFile(path.join(DIST, '404.html'));
   fs.writeFileSync(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${site.baseUrl}/sitemap.xml\n`); keepFile(path.join(DIST, 'robots.txt'));
 
   const urls = ['/', ...taxonomy.pillars.map((p) => `/${p.slug}/`), ...rendered.map((r) => r.url),
-    ...authors.map((a) => `/authors/${a.slug}/`), '/editorial-policy/'];
+    ...authors.map((a) => `/authors/${a.slug}/`), '/editorial-policy/', ...pages.map((pg) => `/${pg.slug}/`)];
   // segmentação: >50k exigiria índice de sitemaps (medido no harness); v1 cabe em 1
   fs.writeFileSync(path.join(DIST, 'sitemap.xml'),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +

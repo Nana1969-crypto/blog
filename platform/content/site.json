@@ -1,6 +1,7 @@
 {
   "name": "Sheetlift",
   "baseUrl": "https://sheetlift.com",
+  "contactEmail": "contact@sheetlift.com",
   "tagline": "Spreadsheets, solved.",
   "promise": "Clear, tested tutorials and honest comparisons for Excel and Google Sheets — so you can stop fighting your spreadsheet and get back to work.",
   "editorialPolicyHtml": "<p>Every tutorial on Sheetlift is written to be <strong>tested and actually work</strong> — the steps are the steps we followed ourselves, on the current versions of Excel and Google Sheets.</p><p>Our comparison and \"best software\" articles are <strong>honest</strong>. We tell you who each tool is <em>not</em> for, not just who it is for. When we earn an affiliate commission from a tool we recommend, it never changes the ranking — the best pick is the best pick.</p><p>Publish and update dates reflect real changes to the content. We do not bump a date without revising the article. When software changes, we update the guide or retire it — we don't leave outdated steps online.</p><p><strong>About authorship:</strong> this is an early build of Sheetlift, published under our editorial team while we grow. Before any wide launch, articles will carry individual authors with verifiable spreadsheet expertise (E-E-A-T)."
