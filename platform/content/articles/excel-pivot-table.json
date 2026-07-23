@@ -5,8 +5,8 @@
   "title": "How to Make a Pivot Table in Excel (Step by Step)",
   "dek": "A pivot table summarizes a large table into a short, readable report in seconds. In Excel: select your data, click Insert > PivotTable, then drag fields into Rows, Columns, and Values. Here is the full walkthrough.",
   "authorId": "author_team",
-  "publishedAt": "2026-02-12",
-  "updatedAt": "2026-07-01",
+  "publishedAt": "2026-07-11",
+  "updatedAt": "2026-07-11",
   "intent": {
     "primaryKeyword": "how to make a pivot table in excel",
     "intentType": "informational",
@@ -17,39 +17,171 @@
     "metaDescription": "Learn to create a pivot table in Excel step by step, arrange rows, columns and values, and fix the most common pivot table problems."
   },
   "sources": [
-    { "label": "Microsoft Support — Create a PivotTable to analyze worksheet data", "url": "https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576" }
+    {
+      "label": "Microsoft Support — Create a PivotTable to analyze worksheet data",
+      "url": "https://support.microsoft.com/en-us/office/create-a-pivottable-to-analyze-worksheet-data-a9a84538-bfe9-40a9-a8e9-f99134456576"
+    }
   ],
   "body": [
-    { "type": "paragraph", "richText": ["A pivot table is the fastest way to turn a long spreadsheet into an answer. Instead of writing formulas, you drag fields around and Excel does the math — totals, counts, and averages update instantly. This guide uses a simple sales table, but the steps work for any data."] },
-    { "type": "heading", "level": 2, "text": "Step 1: Prepare your data" },
-    { "type": "paragraph", "richText": "A pivot table needs clean, tabular data: one row of headers at the top, and no fully blank rows or columns inside the range. Each column should hold one kind of value (dates in one, amounts in another). If your headers are missing, add them first — the pivot table uses them as field names." },
-    { "type": "heading", "level": 2, "text": "Step 2: Insert the pivot table" },
-    { "type": "list", "ordered": true, "items": [
-      "Click any cell inside your data.",
-      ["Go to the ", { "b": "Insert" }, " tab and click ", { "b": "PivotTable" }, "."],
-      "Excel auto-selects your range. Choose New Worksheet and click OK.",
-      "A blank pivot table appears with the PivotTable Fields pane on the right."
-    ] },
-    { "type": "heading", "level": 2, "text": "Step 3: Build the report with Rows, Columns, and Values" },
-    { "type": "paragraph", "richText": "In the Fields pane, drag each field into one of four areas. This is where the summary takes shape." },
-    { "type": "table", "caption": "What each pivot table area does", "headers": ["Area", "What it does", "Example"], "rows": [
-      ["Rows", "Groups data down the left side", "Product"],
-      ["Columns", "Groups data across the top", "Region"],
-      ["Values", "The number being calculated", "Sum of Sales"],
-      ["Filters", "Narrows the whole report", "Year"]
-    ] },
-    { "type": "paragraph", "richText": ["Drag ", { "b": "Product" }, " to Rows and ", { "b": "Sales" }, " to Values, and you instantly get total sales per product. Add ", { "b": "Region" }, " to Columns to break it down further."] },
-    { "type": "callout", "variant": "tip", "richText": "By default Excel sums numbers. To change it, click the field in the Values area, choose Value Field Settings, and pick Count, Average, Max, and so on." },
-    { "type": "heading", "level": 2, "text": "Common pivot table problems (and quick fixes)" },
-    { "type": "list", "ordered": false, "items": [
-      ["\"PivotTable field name is not valid\" — your data is missing a header. Add one and rebuild."],
-      ["Numbers show as Count instead of Sum — a blank or text cell is in your number column. Clean the column."],
-      ["New data not showing — right-click the pivot table and choose ", { "b": "Refresh" }, ", or use a Table as the source so it expands automatically."]
-    ] },
-    { "type": "paragraph", "richText": ["Pivot tables pair well with lookups. Once you can summarize data, learn ", { "link": { "ref": "article:art-excel-vlookup", "text": "how to use VLOOKUP in Excel" } }, " to pull matching details into your report. And if you work in Google Sheets instead, see ", { "link": { "ref": "article:art-gs-pivot", "text": "how to make a pivot table in Google Sheets" } }, "."] },
-    { "type": "faq", "items": [
-      { "question": "What is a pivot table used for?", "answerRichText": "To summarize large amounts of data quickly — totals, counts, and averages grouped by category — without writing formulas. It answers questions like \"total sales per product per region\" in seconds." },
-      { "question": "Do pivot tables update automatically?", "answerRichText": "Not by default. Right-click and choose Refresh after your data changes. If you build the pivot table from an Excel Table (Ctrl+T), new rows are included automatically on refresh." }
-    ] }
+    {
+      "type": "paragraph",
+      "richText": [
+        "A pivot table is the fastest way to turn a long spreadsheet into an answer. Instead of writing formulas, you drag fields around and Excel does the math — totals, counts, and averages update instantly. This guide uses a simple sales table, but the steps work for any data."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 1: Prepare your data"
+    },
+    {
+      "type": "paragraph",
+      "richText": "A pivot table needs clean, tabular data: one row of headers at the top, and no fully blank rows or columns inside the range. Each column should hold one kind of value (dates in one, amounts in another). If your headers are missing, add them first — the pivot table uses them as field names."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 2: Insert the pivot table"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Click any cell inside your data.",
+        [
+          "Go to the ",
+          {
+            "b": "Insert"
+          },
+          " tab and click ",
+          {
+            "b": "PivotTable"
+          },
+          "."
+        ],
+        "Excel auto-selects your range. Choose New Worksheet and click OK.",
+        "A blank pivot table appears with the PivotTable Fields pane on the right."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 3: Build the report with Rows, Columns, and Values"
+    },
+    {
+      "type": "paragraph",
+      "richText": "In the Fields pane, drag each field into one of four areas. This is where the summary takes shape."
+    },
+    {
+      "type": "table",
+      "caption": "What each pivot table area does",
+      "headers": [
+        "Area",
+        "What it does",
+        "Example"
+      ],
+      "rows": [
+        [
+          "Rows",
+          "Groups data down the left side",
+          "Product"
+        ],
+        [
+          "Columns",
+          "Groups data across the top",
+          "Region"
+        ],
+        [
+          "Values",
+          "The number being calculated",
+          "Sum of Sales"
+        ],
+        [
+          "Filters",
+          "Narrows the whole report",
+          "Year"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Drag ",
+        {
+          "b": "Product"
+        },
+        " to Rows and ",
+        {
+          "b": "Sales"
+        },
+        " to Values, and you instantly get total sales per product. Add ",
+        {
+          "b": "Region"
+        },
+        " to Columns to break it down further."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "By default Excel sums numbers. To change it, click the field in the Values area, choose Value Field Settings, and pick Count, Average, Max, and so on."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Common pivot table problems (and quick fixes)"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          "\"PivotTable field name is not valid\" — your data is missing a header. Add one and rebuild."
+        ],
+        [
+          "Numbers show as Count instead of Sum — a blank or text cell is in your number column. Clean the column."
+        ],
+        [
+          "New data not showing — right-click the pivot table and choose ",
+          {
+            "b": "Refresh"
+          },
+          ", or use a Table as the source so it expands automatically."
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Pivot tables pair well with lookups. Once you can summarize data, learn ",
+        {
+          "link": {
+            "ref": "article:art-excel-vlookup",
+            "text": "how to use VLOOKUP in Excel"
+          }
+        },
+        " to pull matching details into your report. And if you work in Google Sheets instead, see ",
+        {
+          "link": {
+            "ref": "article:art-gs-pivot",
+            "text": "how to make a pivot table in Google Sheets"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "What is a pivot table used for?",
+          "answerRichText": "To summarize large amounts of data quickly — totals, counts, and averages grouped by category — without writing formulas. It answers questions like \"total sales per product per region\" in seconds."
+        },
+        {
+          "question": "Do pivot tables update automatically?",
+          "answerRichText": "Not by default. Right-click and choose Refresh after your data changes. If you build the pivot table from an Excel Table (Ctrl+T), new rows are included automatically on refresh."
+        }
+      ]
+    }
   ]
 }

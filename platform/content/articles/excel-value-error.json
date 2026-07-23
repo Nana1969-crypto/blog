@@ -5,8 +5,8 @@
   "title": "How to Fix the #VALUE! Error in Excel",
   "dek": "The #VALUE! error means a formula is trying to do math with something that is not a number — usually text or a stray space in a cell. The fix is to find the offending cell and clean it, or use a function that ignores text. Here is how.",
   "authorId": "author_team",
-  "publishedAt": "2026-06-10",
-  "updatedAt": "2026-07-11",
+  "publishedAt": "2026-07-18",
+  "updatedAt": "2026-07-18",
   "intent": {
     "primaryKeyword": "value error excel",
     "intentType": "informational",
@@ -17,30 +17,97 @@
     "metaDescription": "The #VALUE! error means a formula got text where it expected a number. Here is what causes it and how to find and fix it in Excel."
   },
   "sources": [
-    { "label": "Microsoft Support — How to correct a #VALUE! error", "url": "https://support.microsoft.com/en-us/office/how-to-correct-a-value-error-15e1b616-fbf2-4147-9c0b-0a11a20e409e" }
+    {
+      "label": "Microsoft Support — How to correct a #VALUE! error",
+      "url": "https://support.microsoft.com/en-us/office/how-to-correct-a-value-error-15e1b616-fbf2-4147-9c0b-0a11a20e409e"
+    }
   ],
   "body": [
-    { "type": "paragraph", "richText": ["#VALUE! is Excel's way of saying \"I can't do this math.\" It almost always means a formula ran into text, a space, or the wrong kind of value where it expected a number."] },
-    { "type": "heading", "level": 2, "text": "What causes #VALUE!" },
-    { "type": "list", "ordered": false, "items": [
-      "Adding or multiplying a cell that contains text, like =A2+B2 where B2 holds \"n/a\".",
-      "A number stored as text, often with a hidden space in front of it.",
-      "A date entered in a format Excel does not recognize.",
-      "A function given the wrong type of argument."
-    ] },
-    { "type": "heading", "level": 2, "text": "Step 1: Find the cell causing it" },
-    { "type": "paragraph", "richText": ["Click the cell with the error and look at the formula. Check every cell it references for text or spaces. A quick test: type =ISNUMBER(B2) next to a suspect cell — if it returns FALSE, that cell is text, not a number."] },
-    { "type": "heading", "level": 2, "text": "Step 2: Clean or work around it" },
-    { "type": "list", "ordered": true, "items": [
-      "Delete stray spaces, or wrap references in TRIM to strip them: =TRIM(B2).",
-      "Convert text-numbers back to numbers (Data > Text to Columns > Finish is a fast fix).",
-      ["Use a function that ignores text: replace =A2+B2+C2 with =SUM(A2:C2), which skips text cells."]
-    ] },
-    { "type": "callout", "variant": "tip", "richText": "If you just want to hide the error while you investigate, wrap the formula in IFERROR: =IFERROR(A2+B2, 0). Use this sparingly — hiding an error is not the same as fixing the data behind it." },
-    { "type": "paragraph", "richText": ["A #VALUE! often appears inside a larger formula, such as an ", { "link": { "ref": "article:art-excel-if", "text": "IF function" } }, ". A different error, #REF!, has its own cause and cure — see ", { "link": { "ref": "article:art-excel-ref", "text": "how to fix the #REF! error" } }, "."] },
-    { "type": "faq", "items": [
-      { "question": "Why does SUM work but + gives #VALUE!?", "answerRichText": "SUM ignores cells that contain text, while the + operator does not — it tries to add the text and fails. Switching from A2+B2+C2 to SUM(A2:C2) is often the quickest fix." },
-      { "question": "How do I find every #VALUE! at once?", "answerRichText": "Press Ctrl+F, search for #VALUE! and set \"Look in\" to Values. Excel lists every cell showing the error so you can work through them." }
-    ] }
+    {
+      "type": "paragraph",
+      "richText": [
+        "#VALUE! is Excel's way of saying \"I can't do this math.\" It almost always means a formula ran into text, a space, or the wrong kind of value where it expected a number."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What causes #VALUE!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Adding or multiplying a cell that contains text, like =A2+B2 where B2 holds \"n/a\".",
+        "A number stored as text, often with a hidden space in front of it.",
+        "A date entered in a format Excel does not recognize.",
+        "A function given the wrong type of argument."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 1: Find the cell causing it"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Click the cell with the error and look at the formula. Check every cell it references for text or spaces. A quick test: type =ISNUMBER(B2) next to a suspect cell — if it returns FALSE, that cell is text, not a number."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 2: Clean or work around it"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Delete stray spaces, or wrap references in TRIM to strip them: =TRIM(B2).",
+        "Convert text-numbers back to numbers (Data > Text to Columns > Finish is a fast fix).",
+        [
+          "Use a function that ignores text: replace =A2+B2+C2 with =SUM(A2:C2), which skips text cells."
+        ]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "If you just want to hide the error while you investigate, wrap the formula in IFERROR: =IFERROR(A2+B2, 0). Use this sparingly — hiding an error is not the same as fixing the data behind it."
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "A #VALUE! often appears inside a larger formula, such as an ",
+        {
+          "link": {
+            "ref": "article:art-excel-if",
+            "text": "IF function"
+          }
+        },
+        ". A different error, #REF!, has its own cause and cure — see ",
+        {
+          "link": {
+            "ref": "article:art-excel-ref",
+            "text": "how to fix the #REF! error"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Why does SUM work but + gives #VALUE!?",
+          "answerRichText": "SUM ignores cells that contain text, while the + operator does not — it tries to add the text and fails. Switching from A2+B2+C2 to SUM(A2:C2) is often the quickest fix."
+        },
+        {
+          "question": "How do I find every #VALUE! at once?",
+          "answerRichText": "Press Ctrl+F, search for #VALUE! and set \"Look in\" to Values. Excel lists every cell showing the error so you can work through them."
+        }
+      ]
+    }
   ]
 }

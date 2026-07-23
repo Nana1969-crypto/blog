@@ -5,8 +5,8 @@
   "title": "How to Use VLOOKUP in Excel (with Examples)",
   "dek": "VLOOKUP finds a value in the first column of a table and returns a value from another column in the same row. The formula is =VLOOKUP(lookup_value, table_array, col_index_num, FALSE). Here is exactly how each part works.",
   "authorId": "author_team",
-  "publishedAt": "2026-02-20",
-  "updatedAt": "2026-07-03",
+  "publishedAt": "2026-07-12",
+  "updatedAt": "2026-07-12",
   "intent": {
     "primaryKeyword": "how to use vlookup in excel",
     "intentType": "informational",
@@ -17,34 +17,142 @@
     "metaDescription": "A clear VLOOKUP guide: syntax, real examples, exact vs approximate match, common errors, and why XLOOKUP is often the better choice."
   },
   "sources": [
-    { "label": "Microsoft Support — VLOOKUP function", "url": "https://support.microsoft.com/en-us/office/vlookup-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1" }
+    {
+      "label": "Microsoft Support — VLOOKUP function",
+      "url": "https://support.microsoft.com/en-us/office/vlookup-function-0bbc8083-26fe-4963-8ab8-93a18ad188a1"
+    }
   ],
   "body": [
-    { "type": "paragraph", "richText": ["VLOOKUP is the function people reach for when they need to match data between two tables — like pulling a price from a product list into an order sheet. It looks scary at first, but it only has four parts, and once you see them named, it clicks."] },
-    { "type": "heading", "level": 2, "text": "The VLOOKUP syntax, explained" },
-    { "type": "code", "language": "text", "content": "=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])" },
-    { "type": "table", "caption": "The four parts of VLOOKUP", "headers": ["Part", "Meaning"], "rows": [
-      ["lookup_value", "What you are searching for (e.g., a product code)"],
-      ["table_array", "The table to search — the value must be in its first column"],
-      ["col_index_num", "Which column number to return the answer from"],
-      ["range_lookup", "FALSE for an exact match; TRUE for an approximate match"]
-    ] },
-    { "type": "heading", "level": 2, "text": "A real example" },
-    { "type": "paragraph", "richText": ["Say column A has product codes and column B has prices, in the range A2:B100. To find the price of the code in cell D2, you write:"] },
-    { "type": "code", "language": "text", "content": "=VLOOKUP(D2, A2:B100, 2, FALSE)" },
-    { "type": "paragraph", "richText": ["This searches column A for the code in D2, and returns the value from column 2 (prices). The ", { "b": "FALSE" }, " at the end is the part most people forget — it forces an exact match. Leave it out and Excel does an approximate match, which returns wrong prices unless your list is sorted."] },
-    { "type": "callout", "variant": "warn", "richText": "Almost always use FALSE (exact match). Approximate match (TRUE) is only for sorted numeric ranges like tax brackets — and it silently returns wrong answers on unsorted data." },
-    { "type": "heading", "level": 2, "text": "Common VLOOKUP errors" },
-    { "type": "list", "ordered": false, "items": [
-      ["#N/A — the value was not found. Check for extra spaces or a number stored as text."],
-      ["Returns the wrong value — you probably left off FALSE, or your lookup value is not in the first column of the table."],
-      ["#REF! — the column number is larger than the table has columns. See ", { "link": { "ref": "article:art-excel-ref", "text": "how to fix the #REF! error" } }, "."]
-    ] },
-    { "type": "heading", "level": 2, "text": "Should you use XLOOKUP instead?" },
-    { "type": "paragraph", "richText": ["If your Excel has XLOOKUP (Microsoft 365 and Excel 2021+), it is usually better: it can look left as well as right, does an exact match by default, and does not break when you insert columns. VLOOKUP is still everywhere, though, so it is worth knowing both. Once you are comfortable, combine it with ", { "link": { "ref": "article:art-excel-pivot", "text": "pivot tables" } }, " to build fast, self-updating reports."] },
-    { "type": "faq", "items": [
-      { "question": "Why does my VLOOKUP return #N/A?", "answerRichText": "The lookup value was not found in the first column. The usual causes are trailing spaces, a number stored as text (or vice versa), or the value simply not being there. Wrapping the lookup in TRIM or matching the data types usually fixes it." },
-      { "question": "Can VLOOKUP look to the left?", "answerRichText": "No — VLOOKUP can only return a column to the right of the lookup column. To look left, use INDEX/MATCH or XLOOKUP, which do not have that limitation." }
-    ] }
+    {
+      "type": "paragraph",
+      "richText": [
+        "VLOOKUP is the function people reach for when they need to match data between two tables — like pulling a price from a product list into an order sheet. It looks scary at first, but it only has four parts, and once you see them named, it clicks."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The VLOOKUP syntax, explained"
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])"
+    },
+    {
+      "type": "table",
+      "caption": "The four parts of VLOOKUP",
+      "headers": [
+        "Part",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "lookup_value",
+          "What you are searching for (e.g., a product code)"
+        ],
+        [
+          "table_array",
+          "The table to search — the value must be in its first column"
+        ],
+        [
+          "col_index_num",
+          "Which column number to return the answer from"
+        ],
+        [
+          "range_lookup",
+          "FALSE for an exact match; TRUE for an approximate match"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "A real example"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Say column A has product codes and column B has prices, in the range A2:B100. To find the price of the code in cell D2, you write:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=VLOOKUP(D2, A2:B100, 2, FALSE)"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "This searches column A for the code in D2, and returns the value from column 2 (prices). The ",
+        {
+          "b": "FALSE"
+        },
+        " at the end is the part most people forget — it forces an exact match. Leave it out and Excel does an approximate match, which returns wrong prices unless your list is sorted."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warn",
+      "richText": "Almost always use FALSE (exact match). Approximate match (TRUE) is only for sorted numeric ranges like tax brackets — and it silently returns wrong answers on unsorted data."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Common VLOOKUP errors"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          "#N/A — the value was not found. Check for extra spaces or a number stored as text."
+        ],
+        [
+          "Returns the wrong value — you probably left off FALSE, or your lookup value is not in the first column of the table."
+        ],
+        [
+          "#REF! — the column number is larger than the table has columns. See ",
+          {
+            "link": {
+              "ref": "article:art-excel-ref",
+              "text": "how to fix the #REF! error"
+            }
+          },
+          "."
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Should you use XLOOKUP instead?"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "If your Excel has XLOOKUP (Microsoft 365 and Excel 2021+), it is usually better: it can look left as well as right, does an exact match by default, and does not break when you insert columns. VLOOKUP is still everywhere, though, so it is worth knowing both. Once you are comfortable, combine it with ",
+        {
+          "link": {
+            "ref": "article:art-excel-pivot",
+            "text": "pivot tables"
+          }
+        },
+        " to build fast, self-updating reports."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Why does my VLOOKUP return #N/A?",
+          "answerRichText": "The lookup value was not found in the first column. The usual causes are trailing spaces, a number stored as text (or vice versa), or the value simply not being there. Wrapping the lookup in TRIM or matching the data types usually fixes it."
+        },
+        {
+          "question": "Can VLOOKUP look to the left?",
+          "answerRichText": "No — VLOOKUP can only return a column to the right of the lookup column. To look left, use INDEX/MATCH or XLOOKUP, which do not have that limitation."
+        }
+      ]
+    }
   ]
 }

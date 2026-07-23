@@ -5,8 +5,8 @@
   "title": "How to Freeze Rows and Columns in Excel",
   "dek": "To freeze the top row in Excel, go to View > Freeze Panes > Freeze Top Row. To freeze several rows and columns at once, select the cell below and to the right of them first, then choose Freeze Panes. Here is exactly how.",
   "authorId": "author_team",
-  "publishedAt": "2026-06-03",
-  "updatedAt": "2026-07-11",
+  "publishedAt": "2026-07-17",
+  "updatedAt": "2026-07-17",
   "intent": {
     "primaryKeyword": "how to freeze rows in excel",
     "intentType": "informational",
@@ -17,25 +17,117 @@
     "metaDescription": "Freeze the top row, freeze the first column, or freeze several at once in Excel using View > Freeze Panes. Step-by-step with a quick fix."
   },
   "sources": [
-    { "label": "Microsoft Support — Freeze panes to lock rows and columns", "url": "https://support.microsoft.com/en-us/office/freeze-panes-to-lock-rows-and-columns-dab2ffc9-020d-4026-8121-67dd25f2508f" }
+    {
+      "label": "Microsoft Support — Freeze panes to lock rows and columns",
+      "url": "https://support.microsoft.com/en-us/office/freeze-panes-to-lock-rows-and-columns-dab2ffc9-020d-4026-8121-67dd25f2508f"
+    }
   ],
   "body": [
-    { "type": "paragraph", "richText": ["Freezing keeps your headers visible while you scroll through a long sheet, so you never lose track of which column is which. Excel handles the top row, the first column, or any block, all from the View tab."] },
-    { "type": "heading", "level": 2, "text": "Freeze the top row" },
-    { "type": "paragraph", "richText": ["Go to the ", { "b": "View" }, " tab, click ", { "b": "Freeze Panes" }, ", and choose ", { "b": "Freeze Top Row" }, ". Row 1 now stays in place as you scroll down. This is the most common choice for tables with a header row."] },
-    { "type": "heading", "level": 2, "text": "Freeze the first column" },
-    { "type": "paragraph", "richText": ["From the same ", { "b": "Freeze Panes" }, " menu, choose ", { "b": "Freeze First Column" }, ". Column A stays visible as you scroll right — useful when your labels (names, IDs) are on the left."] },
-    { "type": "heading", "level": 2, "text": "Freeze several rows and columns at once" },
-    { "type": "list", "ordered": true, "items": [
-      "Click the cell that is just below the rows and just to the right of the columns you want to freeze. For example, to freeze rows 1-2 and column A, click cell B3.",
-      ["Go to ", { "b": "View > Freeze Panes > Freeze Panes" }, "."],
-      "Everything above and to the left of that cell is now locked in place."
-    ] },
-    { "type": "callout", "variant": "tip", "richText": "To undo it, go back to View > Freeze Panes and choose Unfreeze Panes. If freezing looks wrong, it is almost always because the active cell was in the wrong spot when you clicked." },
-    { "type": "paragraph", "richText": ["Freezing works beautifully alongside a ", { "link": { "ref": "article:art-excel-pivot", "text": "pivot table" } }, " or a filtered list. New to Excel? Start with the ", { "link": { "ref": "article:art-excel-if", "text": "IF function" } }, "."] },
-    { "type": "faq", "items": [
-      { "question": "Why is Freeze Panes greyed out?", "answerRichText": "Freeze Panes is disabled while you are editing a cell or when the sheet is in Page Layout view. Press Enter to finish editing, switch to Normal view, then try again." },
-      { "question": "Can I freeze rows and print them on every page instead?", "answerRichText": "Freezing only affects the screen. To repeat header rows on every printed page, use Page Layout > Print Titles > Rows to repeat at top." }
-    ] }
+    {
+      "type": "paragraph",
+      "richText": [
+        "Freezing keeps your headers visible while you scroll through a long sheet, so you never lose track of which column is which. Excel handles the top row, the first column, or any block, all from the View tab."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Freeze the top row"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Go to the ",
+        {
+          "b": "View"
+        },
+        " tab, click ",
+        {
+          "b": "Freeze Panes"
+        },
+        ", and choose ",
+        {
+          "b": "Freeze Top Row"
+        },
+        ". Row 1 now stays in place as you scroll down. This is the most common choice for tables with a header row."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Freeze the first column"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "From the same ",
+        {
+          "b": "Freeze Panes"
+        },
+        " menu, choose ",
+        {
+          "b": "Freeze First Column"
+        },
+        ". Column A stays visible as you scroll right — useful when your labels (names, IDs) are on the left."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Freeze several rows and columns at once"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Click the cell that is just below the rows and just to the right of the columns you want to freeze. For example, to freeze rows 1-2 and column A, click cell B3.",
+        [
+          "Go to ",
+          {
+            "b": "View > Freeze Panes > Freeze Panes"
+          },
+          "."
+        ],
+        "Everything above and to the left of that cell is now locked in place."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "To undo it, go back to View > Freeze Panes and choose Unfreeze Panes. If freezing looks wrong, it is almost always because the active cell was in the wrong spot when you clicked."
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Freezing works beautifully alongside a ",
+        {
+          "link": {
+            "ref": "article:art-excel-pivot",
+            "text": "pivot table"
+          }
+        },
+        " or a filtered list. New to Excel? Start with the ",
+        {
+          "link": {
+            "ref": "article:art-excel-if",
+            "text": "IF function"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Why is Freeze Panes greyed out?",
+          "answerRichText": "Freeze Panes is disabled while you are editing a cell or when the sheet is in Page Layout view. Press Enter to finish editing, switch to Normal view, then try again."
+        },
+        {
+          "question": "Can I freeze rows and print them on every page instead?",
+          "answerRichText": "Freezing only affects the screen. To repeat header rows on every printed page, use Page Layout > Print Titles > Rows to repeat at top."
+        }
+      ]
+    }
   ]
 }

@@ -5,8 +5,8 @@
   "title": "6 Best Free Excel Alternatives (2026)",
   "dek": "The best free Excel alternatives are Google Sheets for collaboration, LibreOffice Calc for offline desktop use, and Zoho Sheet for a browser-based all-rounder. WPS, OnlyOffice, and Apple Numbers round out the list. Here is who each suits.",
   "authorId": "author_team",
-  "publishedAt": "2026-07-01",
-  "updatedAt": "2026-07-11",
+  "publishedAt": "2026-07-22",
+  "updatedAt": "2026-07-22",
   "intent": {
     "primaryKeyword": "free excel alternatives",
     "intentType": "commercial",
@@ -17,31 +17,141 @@
     "metaDescription": "The best free Excel alternatives in 2026 — Google Sheets, LibreOffice, Zoho, WPS, OnlyOffice and Numbers — compared, with who each is best for."
   },
   "sources": [
-    { "label": "LibreOffice — Calc", "url": "https://www.libreoffice.org/discover/calc/" },
-    { "label": "OnlyOffice — Spreadsheet editor", "url": "https://www.onlyoffice.com/spreadsheet-editor.aspx" }
+    {
+      "label": "LibreOffice — Calc",
+      "url": "https://www.libreoffice.org/discover/calc/"
+    },
+    {
+      "label": "OnlyOffice — Spreadsheet editor",
+      "url": "https://www.onlyoffice.com/spreadsheet-editor.aspx"
+    }
   ],
   "body": [
-    { "type": "paragraph", "richText": ["Excel is powerful, but a Microsoft 365 subscription is not free — and for many people, a free tool does everything they need. These six free Excel alternatives cover collaboration, offline desktop work, and full Excel-file compatibility."] },
-    { "type": "heading", "level": 2, "text": "Quick comparison" },
-    { "type": "table", "caption": "Free Excel alternatives at a glance", "headers": ["Tool", "Type", "Best for"], "rows": [
-      ["Google Sheets", "Browser", "Collaboration and anywhere access"],
-      ["LibreOffice Calc", "Desktop", "Offline work, no account, full ownership"],
-      ["Zoho Sheet", "Browser", "A free, feature-rich all-rounder"],
-      ["WPS Spreadsheets", "Desktop / mobile", "A familiar, Excel-like interface"],
-      ["OnlyOffice", "Desktop / browser", "High Excel-format fidelity"],
-      ["Apple Numbers", "Desktop / mobile", "Mac and iPhone users"]
-    ] },
-    { "type": "heading", "level": 2, "text": "Best for collaboration: Google Sheets" },
-    { "type": "paragraph", "richText": ["Free with any Google account, Google Sheets offers real-time co-editing, automatic saving, and version history. It is the natural pick if you share spreadsheets with others. See our full ", { "link": { "ref": "article:art-excel-vs-sheets", "text": "Excel vs Google Sheets comparison" } }, " for the trade-offs."] },
-    { "type": "heading", "level": 2, "text": "Best for offline desktop: LibreOffice Calc" },
-    { "type": "paragraph", "richText": "LibreOffice Calc is a free, open-source desktop app that needs no account and works fully offline. It opens and saves .xlsx files and is the closest free stand-in for the Excel desktop experience." },
-    { "type": "heading", "level": 2, "text": "Best free browser all-rounder: Zoho Sheet" },
-    { "type": "paragraph", "richText": "Zoho Sheet gives you real-time collaboration, a deep function set, and data-cleaning tools for free — a strong choice if you want the Google Sheets experience outside Google's ecosystem." },
-    { "type": "callout", "variant": "tip", "richText": "If you only need Excel occasionally, the free Excel for the web (at office.com) also exists — it is lighter than the desktop app but handles everyday tasks at no cost." },
-    { "type": "paragraph", "richText": ["Leaving Google Sheets specifically? See the ", { "link": { "ref": "article:art-gs-alternatives", "text": "best Google Sheets alternatives" } }, ". Running a company? Read the ", { "link": { "ref": "article:art-best-spreadsheet", "text": "best spreadsheet software for small business" } }, "."] },
-    { "type": "faq", "items": [
-      { "question": "What is the best free alternative to Excel?", "answerRichText": "For collaboration, Google Sheets. For an offline desktop app with no account, LibreOffice Calc. Both are free and open Excel files, so your choice depends on whether you work online or offline." },
-      { "question": "Can free Excel alternatives open .xlsx files?", "answerRichText": "Yes. Google Sheets, LibreOffice Calc, Zoho Sheet, WPS, and OnlyOffice all open and save Excel .xlsx files. Very complex macros or advanced features may not carry over perfectly." }
-    ] }
+    {
+      "type": "paragraph",
+      "richText": [
+        "Excel is powerful, but a Microsoft 365 subscription is not free — and for many people, a free tool does everything they need. These six free Excel alternatives cover collaboration, offline desktop work, and full Excel-file compatibility."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Quick comparison"
+    },
+    {
+      "type": "table",
+      "caption": "Free Excel alternatives at a glance",
+      "headers": [
+        "Tool",
+        "Type",
+        "Best for"
+      ],
+      "rows": [
+        [
+          "Google Sheets",
+          "Browser",
+          "Collaboration and anywhere access"
+        ],
+        [
+          "LibreOffice Calc",
+          "Desktop",
+          "Offline work, no account, full ownership"
+        ],
+        [
+          "Zoho Sheet",
+          "Browser",
+          "A free, feature-rich all-rounder"
+        ],
+        [
+          "WPS Spreadsheets",
+          "Desktop / mobile",
+          "A familiar, Excel-like interface"
+        ],
+        [
+          "OnlyOffice",
+          "Desktop / browser",
+          "High Excel-format fidelity"
+        ],
+        [
+          "Apple Numbers",
+          "Desktop / mobile",
+          "Mac and iPhone users"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Best for collaboration: Google Sheets"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Free with any Google account, Google Sheets offers real-time co-editing, automatic saving, and version history. It is the natural pick if you share spreadsheets with others. See our full ",
+        {
+          "link": {
+            "ref": "article:art-excel-vs-sheets",
+            "text": "Excel vs Google Sheets comparison"
+          }
+        },
+        " for the trade-offs."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Best for offline desktop: LibreOffice Calc"
+    },
+    {
+      "type": "paragraph",
+      "richText": "LibreOffice Calc is a free, open-source desktop app that needs no account and works fully offline. It opens and saves .xlsx files and is the closest free stand-in for the Excel desktop experience."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Best free browser all-rounder: Zoho Sheet"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Zoho Sheet gives you real-time collaboration, a deep function set, and data-cleaning tools for free — a strong choice if you want the Google Sheets experience outside Google's ecosystem."
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "If you only need Excel occasionally, the free Excel for the web (at office.com) also exists — it is lighter than the desktop app but handles everyday tasks at no cost."
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Leaving Google Sheets specifically? See the ",
+        {
+          "link": {
+            "ref": "article:art-gs-alternatives",
+            "text": "best Google Sheets alternatives"
+          }
+        },
+        ". Running a company? Read the ",
+        {
+          "link": {
+            "ref": "article:art-best-spreadsheet",
+            "text": "best spreadsheet software for small business"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "What is the best free alternative to Excel?",
+          "answerRichText": "For collaboration, Google Sheets. For an offline desktop app with no account, LibreOffice Calc. Both are free and open Excel files, so your choice depends on whether you work online or offline."
+        },
+        {
+          "question": "Can free Excel alternatives open .xlsx files?",
+          "answerRichText": "Yes. Google Sheets, LibreOffice Calc, Zoho Sheet, WPS, and OnlyOffice all open and save Excel .xlsx files. Very complex macros or advanced features may not carry over perfectly."
+        }
+      ]
+    }
   ]
 }

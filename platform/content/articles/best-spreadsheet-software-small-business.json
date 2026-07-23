@@ -5,8 +5,8 @@
   "title": "Best Spreadsheet Software for Small Business (2026)",
   "dek": "For most small businesses, Google Workspace (Sheets) is the best value for collaboration, while Microsoft 365 (Excel) wins for analysis and finance. Zoho and LibreOffice are strong budget picks. Here is how to choose for your team.",
   "authorId": "author_team",
-  "publishedAt": "2026-05-06",
-  "updatedAt": "2026-07-10",
+  "publishedAt": "2026-07-22",
+  "updatedAt": "2026-07-22",
   "intent": {
     "primaryKeyword": "best spreadsheet software for small business",
     "intentType": "commercial",
@@ -17,29 +17,125 @@
     "metaDescription": "The best spreadsheet software for small business in 2026, compared on price, collaboration and ease of use, with a clear pick for each need."
   },
   "sources": [
-    { "label": "Google Workspace — pricing", "url": "https://workspace.google.com/pricing" },
-    { "label": "Microsoft 365 for business — plans", "url": "https://www.microsoft.com/en-us/microsoft-365/business" }
+    {
+      "label": "Google Workspace — pricing",
+      "url": "https://workspace.google.com/pricing"
+    },
+    {
+      "label": "Microsoft 365 for business — plans",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/business"
+    }
   ],
   "body": [
-    { "type": "paragraph", "richText": ["The best spreadsheet software for a small business is the one your team will actually use together, at a price that fits. For most, that is Google Sheets (via Workspace) for its unbeatable collaboration; for finance-heavy work, Excel (via Microsoft 365) is worth the extra cost. Here is how the main options compare and who each suits."] },
-    { "type": "heading", "level": 2, "text": "The options at a glance" },
-    { "type": "table", "caption": "Spreadsheet software for small business, compared", "headers": ["Software", "Price model", "Best for"], "rows": [
-      ["Google Workspace (Sheets)", "Low monthly per user", "Teams that live in the browser and collaborate daily"],
-      ["Microsoft 365 (Excel)", "Monthly per user", "Finance, analysis, and Office-heavy workflows"],
-      ["Zoho Sheet / Workplace", "Free tier + cheap paid", "Budget-conscious teams wanting an all-in-one"],
-      ["LibreOffice Calc", "Free", "One-off use, tight budgets, no cloud needed"],
-      ["Airtable", "Free tier + paid", "Teams managing projects and data, not just numbers"]
-    ] },
-    { "type": "heading", "level": 2, "text": "Best overall for most small businesses: Google Workspace" },
-    { "type": "paragraph", "richText": "Google Sheets, as part of Workspace, gives a small team real-time collaboration, automatic saving, easy sharing, and email plus storage in one low monthly price. There is almost nothing to manage and nothing to install. For the majority of small businesses, it is the most productive, lowest-friction choice." },
-    { "type": "heading", "level": 2, "text": "Best for finance and analysis: Microsoft 365" },
-    { "type": "paragraph", "richText": ["If your business runs on serious modeling, reporting, or accounting, Excel's depth pays for itself. Power Query, Power Pivot, and its huge function set handle work Sheets struggles with. The full case is in our ", { "link": { "ref": "article:art-excel-vs-sheets", "text": "Excel vs Google Sheets comparison" } }, "."] },
-    { "type": "heading", "level": 2, "text": "Best on a tight budget: Zoho and LibreOffice" },
-    { "type": "paragraph", "richText": ["If cost is the deciding factor, Zoho Sheet offers a generous free tier with real collaboration, and LibreOffice Calc is a completely free desktop app. Both appear in our wider list of ", { "link": { "ref": "article:art-gs-alternatives", "text": "best Google Sheets alternatives" } }, "."] },
-    { "type": "callout", "variant": "tip", "richText": "Match the tool to your bottleneck: if it is teamwork, choose Sheets; if it is analysis, choose Excel; if it is budget, choose Zoho or LibreOffice. Do not pay for power you will not use." },
-    { "type": "faq", "items": [
-      { "question": "What is the cheapest spreadsheet software for a small business?", "answerRichText": "LibreOffice Calc is completely free, and Google Sheets is free for individuals (small monthly cost per user under Workspace for business features). Zoho Sheet also has a strong free tier." },
-      { "question": "Should a small business use Excel or Google Sheets?", "answerRichText": "Most small businesses are better served by Google Sheets for its easy collaboration and low cost. Choose Excel if your work is finance-heavy or needs advanced analysis tools like Power Query." }
-    ] }
+    {
+      "type": "paragraph",
+      "richText": [
+        "The best spreadsheet software for a small business is the one your team will actually use together, at a price that fits. For most, that is Google Sheets (via Workspace) for its unbeatable collaboration; for finance-heavy work, Excel (via Microsoft 365) is worth the extra cost. Here is how the main options compare and who each suits."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The options at a glance"
+    },
+    {
+      "type": "table",
+      "caption": "Spreadsheet software for small business, compared",
+      "headers": [
+        "Software",
+        "Price model",
+        "Best for"
+      ],
+      "rows": [
+        [
+          "Google Workspace (Sheets)",
+          "Low monthly per user",
+          "Teams that live in the browser and collaborate daily"
+        ],
+        [
+          "Microsoft 365 (Excel)",
+          "Monthly per user",
+          "Finance, analysis, and Office-heavy workflows"
+        ],
+        [
+          "Zoho Sheet / Workplace",
+          "Free tier + cheap paid",
+          "Budget-conscious teams wanting an all-in-one"
+        ],
+        [
+          "LibreOffice Calc",
+          "Free",
+          "One-off use, tight budgets, no cloud needed"
+        ],
+        [
+          "Airtable",
+          "Free tier + paid",
+          "Teams managing projects and data, not just numbers"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Best overall for most small businesses: Google Workspace"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Google Sheets, as part of Workspace, gives a small team real-time collaboration, automatic saving, easy sharing, and email plus storage in one low monthly price. There is almost nothing to manage and nothing to install. For the majority of small businesses, it is the most productive, lowest-friction choice."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Best for finance and analysis: Microsoft 365"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "If your business runs on serious modeling, reporting, or accounting, Excel's depth pays for itself. Power Query, Power Pivot, and its huge function set handle work Sheets struggles with. The full case is in our ",
+        {
+          "link": {
+            "ref": "article:art-excel-vs-sheets",
+            "text": "Excel vs Google Sheets comparison"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Best on a tight budget: Zoho and LibreOffice"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "If cost is the deciding factor, Zoho Sheet offers a generous free tier with real collaboration, and LibreOffice Calc is a completely free desktop app. Both appear in our wider list of ",
+        {
+          "link": {
+            "ref": "article:art-gs-alternatives",
+            "text": "best Google Sheets alternatives"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Match the tool to your bottleneck: if it is teamwork, choose Sheets; if it is analysis, choose Excel; if it is budget, choose Zoho or LibreOffice. Do not pay for power you will not use."
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "What is the cheapest spreadsheet software for a small business?",
+          "answerRichText": "LibreOffice Calc is completely free, and Google Sheets is free for individuals (small monthly cost per user under Workspace for business features). Zoho Sheet also has a strong free tier."
+        },
+        {
+          "question": "Should a small business use Excel or Google Sheets?",
+          "answerRichText": "Most small businesses are better served by Google Sheets for its easy collaboration and low cost. Choose Excel if your work is finance-heavy or needs advanced analysis tools like Power Query."
+        }
+      ]
+    }
   ]
 }
