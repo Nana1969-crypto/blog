@@ -1,0 +1,190 @@
+{
+  "id": "art-excel-chart",
+  "slug": "how-to-make-a-chart-in-excel",
+  "clusterId": "cl_excel_tut",
+  "title": "How to Make a Chart in Excel (Step by Step)",
+  "dek": "To make a chart in Excel, select your data, open the Insert tab, and pick a chart type from the Charts group — or use Recommended Charts to let Excel choose. Here is how to build, choose, and format the right chart.",
+  "authorId": "author_team",
+  "publishedAt": "2026-07-24",
+  "updatedAt": "2026-07-24",
+  "intent": {
+    "primaryKeyword": "how to make a chart in excel",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Make a Chart in Excel (Step by Step)",
+    "metaDescription": "Make a chart in Excel in seconds: select your data, use Insert or Recommended Charts, pick the right type, and format it. Clear step-by-step guide."
+  },
+  "sources": [
+    {
+      "label": "Microsoft Support — Create a chart from start to finish",
+      "url": "https://support.microsoft.com/en-us/office/create-a-chart-from-start-to-finish-0baf399e-dd61-4e18-8a73-b3fd5d5680c2"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "A chart turns a wall of numbers into something people can understand at a glance. The good news: Excel builds one for you in just a few clicks, and you rarely have to start from scratch. Here is the fastest way to do it, plus how to pick a chart that actually fits your data."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to insert a chart in Excel"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Select the data you want to chart, including the row and column headers.",
+        [
+          "Go to the ",
+          {
+            "b": "Insert"
+          },
+          " tab on the ribbon."
+        ],
+        [
+          "In the ",
+          {
+            "b": "Charts"
+          },
+          " group, click a chart type (Column, Line, Pie, and so on), or click ",
+          {
+            "b": "Recommended Charts"
+          },
+          " to let Excel suggest the best fit."
+        ],
+        "Pick a style from the preview and click OK. The chart appears on your sheet, ready to move and resize."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "In a hurry? Select your data and press Alt+F1 to drop a default chart onto the same sheet instantly, or F11 to create it on its own chart sheet."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Choosing the right chart type"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "The chart type matters more than the colors. Match it to the story your data tells:"
+      ]
+    },
+    {
+      "type": "table",
+      "caption": "Which Excel chart to use",
+      "headers": [
+        "Chart type",
+        "Best for"
+      ],
+      "rows": [
+        [
+          "Column or Bar",
+          "Comparing values across categories (sales by product)"
+        ],
+        [
+          "Line",
+          "Showing a trend over time (revenue by month)"
+        ],
+        [
+          "Pie",
+          "Parts of a whole, with only a few slices (budget split)"
+        ],
+        [
+          "Scatter (XY)",
+          "The relationship between two numbers (price vs. sales)"
+        ]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warn",
+      "richText": "Avoid pie charts with many slices — they get hard to read fast. When you have more than five categories, a bar chart is almost always clearer."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Format and customize your chart"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Once the chart is on the sheet, click it to reveal the chart tools. Two controls do most of the work:"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          "The ",
+          {
+            "b": "+ (Chart Elements)"
+          },
+          " button next to the chart adds or removes titles, data labels, gridlines, and the legend."
+        ],
+        [
+          "The ",
+          {
+            "b": "Chart Design"
+          },
+          " tab lets you change the chart type, swap colors and styles, and switch the rows and columns if the axes look wrong."
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Always give the chart a clear title that states the takeaway (\"Sales grew 20% in Q4\"), not just the data name. A good title is what makes a chart useful to someone who did not build it."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Chart from a summary, not raw data"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Charts look best when they sit on top of a clean summary rather than hundreds of raw rows. The easiest way to build that summary is a ",
+        {
+          "link": {
+            "ref": "article:art-excel-pivot",
+            "text": "pivot table in Excel"
+          }
+        },
+        ", which groups and totals your data for you. You can then chart the pivot table directly. If you are pulling values from another sheet to build that summary, ",
+        {
+          "link": {
+            "ref": "article:art-excel-vlookup",
+            "text": "VLOOKUP"
+          }
+        },
+        " is the tool for the job."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "What is the fastest way to make a chart in Excel?",
+          "answerRichText": "Select your data and press Alt+F1. Excel instantly creates a default column chart on the same worksheet, which you can then change or format. Press F11 instead to put the chart on its own dedicated sheet."
+        },
+        {
+          "question": "How do I change the chart type after creating it?",
+          "answerRichText": "Click the chart, open the Chart Design tab, and choose Change Chart Type. Pick a new type from the gallery and click OK — your data stays the same, only the visual changes."
+        },
+        {
+          "question": "Why is my Excel chart empty or wrong?",
+          "answerRichText": "Usually the wrong range is selected, or text is mixed in where numbers should be. Click the chart, choose Select Data on the Chart Design tab, and confirm the range covers your headers and values with no stray text cells."
+        }
+      ]
+    }
+  ]
+}
