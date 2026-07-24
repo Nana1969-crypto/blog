@@ -18,6 +18,10 @@ a:hover{color:var(--color-accent-hover)}
 .skip-link:focus{left:0}
 header.site{font-family:var(--font-ui);border-bottom:1px solid var(--color-border)}
 .site-inner{max-width:64rem;margin:0 auto;padding:.9rem 1.25rem;display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.logomark{width:26px;height:26px;border-radius:7px;background:var(--color-accent);color:#fff;
+  display:flex;align-items:center;justify-content:center;flex:none}
+.logomark svg{width:16px;height:16px}
 .wordmark{font-weight:700;font-size:var(--text-lg);color:var(--color-text);text-decoration:none;letter-spacing:-.02em}
 nav.pillars{display:flex;gap:1rem;flex-wrap:wrap;font-size:var(--text-sm)}
 nav.pillars a{color:var(--color-text-2);text-decoration:none}
@@ -82,11 +86,17 @@ hr{border:0;border-top:1px solid var(--color-border);margin:2rem 0}
 .sources h2{font-size:var(--text-lg)}
 .sources ol{color:var(--color-text-2)}
 .card-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));padding:0;list-style:none}
-.card{border:1px solid var(--color-border);border-radius:var(--radius);padding:1.1rem 1.2rem;background:var(--color-surface)}
-.card h2,.card h3{margin:0 0 .35rem;font-size:var(--text-lg)}
+.card{border:1px solid var(--color-border);border-radius:var(--radius);padding:1.2rem 1.25rem;
+  background:var(--color-surface);display:flex;flex-direction:column;gap:.55rem}
+@media (prefers-reduced-motion: no-preference){.card{transition:border-color var(--motion-fast) ease}}
+.card:hover{border-color:var(--color-accent)}
+.card .ico{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  color:var(--color-accent);background:color-mix(in srgb,var(--color-accent) 14%,var(--color-bg))}
+.card .ico svg{width:23px;height:23px}
+.card h2,.card h3{margin:0;font-size:var(--text-lg)}
 .card p{margin:0;font-size:var(--text-sm);color:var(--color-text-2)}
-.card a{text-decoration:none;color:var(--color-text)}
-.card a:hover{color:var(--color-accent)}
+.card a{text-decoration:none;color:var(--color-accent)}
+.card a:hover{color:var(--color-accent-hover);text-decoration:underline}
 .hero{padding:2.2rem 0 1.4rem}
 .hero p{font-size:var(--text-lg);color:var(--color-text-2);max-width:var(--measure)}
 .list-plain{list-style:none;padding:0}
@@ -122,7 +132,7 @@ function baseLayout({ site, title, description, canonicalPath, jsonld = [], body
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${esc(canonical)}">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b5cc4'/%3E%3Cpath d='M9 10h14M9 16h14M9 22h9' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a7d55'/%3E%3Cpath d='M6 12h20M6 20h20M13 6v20M21 6v20' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="alternate" type="application/rss+xml" title="${esc(site.name)}" href="/rss.xml">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
@@ -136,7 +146,7 @@ ${ld}
 <body>
 <a class="skip-link" href="#conteudo">Skip to content</a>
 <header class="site"><div class="site-inner">
-<a class="wordmark" href="/">${esc(site.name)}</a>
+<a class="brand" href="/"><span class="logomark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 9h16M4 15h16M9 4v16M15 4v16"/></svg></span><span class="wordmark">${esc(site.name)}</span></a>
 <nav class="pillars" aria-label="Topics">${nav}</nav>
 <button class="theme-toggle" type="button" aria-label="Toggle light/dark theme">Theme</button>
 </div></header>
@@ -259,9 +269,16 @@ ${breadcrumb([{ label: 'Home', href: '/' }, { label: pillar.title }])}
   });
 }
 
+const PILLAR_ICONS = {
+  'excel': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/></svg>`,
+  'google-sheets': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h8"/></svg>`,
+  'compare': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M6 7l-3 6h6z"/><path d="M18 7l-3 6h6z"/><path d="M6 20h12"/></svg>`,
+  '_default': `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg>`,
+};
+
 function homePage({ site, pillars, latest }) {
   const cards = pillars.map((p) =>
-    `<li class="card"><h2><a href="/${p.slug}/">${esc(p.title)}</a></h2><p>${esc(p.description)}</p></li>`).join('');
+    `<li class="card"><span class="ico" aria-hidden="true">${PILLAR_ICONS[p.slug] || PILLAR_ICONS._default}</span><h2><a href="/${p.slug}/">${esc(p.title)}</a></h2><p>${esc(p.description)}</p></li>`).join('');
   const lis = latest.map((a) =>
     `<li><a class="t" href="${esc(a._url)}">${esc(a.title)}</a><p class="d">${esc(a.dek)}</p></li>`).join('');
   const body = `
