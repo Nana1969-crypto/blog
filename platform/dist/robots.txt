@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sheetlift.com/sitemap.xml
+Sitemap: https://griddojo.com/sitemap.xml

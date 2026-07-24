@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to Use VLOOKUP in Google Sheets</title>
 <meta name="description" content="A clear VLOOKUP guide for Google Sheets: syntax, examples, exact match, common errors, and when to use XLOOKUP instead.">
-<link rel="canonical" href="https://sheetlift.com/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/">
+<link rel="canonical" href="https://griddojo.com/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b5cc4'/%3E%3Cpath d='M9 10h14M9 16h14M9 22h9' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
-<link rel="alternate" type="application/rss+xml" title="Sheetlift" href="/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="GridDojo" href="/rss.xml">
 <meta property="og:title" content="How to Use VLOOKUP in Google Sheets">
 <meta property="og:description" content="A clear VLOOKUP guide for Google Sheets: syntax, examples, exact match, common errors, and when to use XLOOKUP instead.">
-<meta property="og:url" content="https://sheetlift.com/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/">
+<meta property="og:url" content="https://griddojo.com/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Sheetlift">
+<meta property="og:site_name" content="GridDojo">
 <script>(function(){try{var t=localStorage.getItem('theme');
 if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
 <style>:root{--text-xs:0.778rem;--text-sm:0.889rem;--text-base:1rem;--text-lg:1.111rem;--text-xl:1.389rem;--text-2xl:1.722rem;--text-3xl:2.167rem;--text-4xl:2.722rem;--measure:42rem;--leading-body:1.6;--leading-tight:1.15;--font-body:Charter, Georgia, Cambria, 'Times New Roman', serif;--font-ui:system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;--font-mono:ui-monospace, 'SF Mono', Menlo, Consolas, monospace;--radius:8px;--motion-fast:120ms;--color-bg:#ffffff;--color-surface:#f6f8fa;--color-border:#d1d9e0;--color-text:#1f2328;--color-text-2:#59636e;--color-accent:#0b5cc4;--color-accent-hover:#09479a;--color-focus:#0b5cc4;--color-code-bg:#f6f8fa;--color-callout-tip-bg:#dcf5e3;--color-callout-tip-fg:#0f5127;--color-callout-warn-bg:#fff3d6;--color-callout-warn-fg:#5f4200;color-scheme:light dark;}
@@ -111,14 +111,14 @@ footer.site .site-inner{display:flex;justify-content:space-between;gap:1rem;flex
 footer.site a{color:var(--color-text-2)}
 @media (prefers-reduced-motion: no-preference){a,button{transition:color var(--motion-fast) ease}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Use VLOOKUP in Google Sheets","description":"In Google Sheets, VLOOKUP searches down the first column of a range and returns a value from another column in the same row. The syntax is =VLOOKUP(search_key, range, index, FALSE). Here is how each part works, with examples.","datePublished":"2026-07-19","dateModified":"2026-07-19","inLanguage":"pt-BR","mainEntityOfPage":"https://sheetlift.com/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/","author":{"@type":"Organization","name":"The Sheetlift Team","url":"https://sheetlift.com/authors/sheetlift-team/"},"publisher":{"@type":"Organization","name":"Sheetlift","url":"https://sheetlift.com"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://sheetlift.com/"},{"@type":"ListItem","position":2,"name":"Google Sheets","item":"https://sheetlift.com/google-sheets/"},{"@type":"ListItem","position":3,"name":"How to Use VLOOKUP in Google Sheets","item":"https://sheetlift.com/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Use VLOOKUP in Google Sheets","description":"In Google Sheets, VLOOKUP searches down the first column of a range and returns a value from another column in the same row. The syntax is =VLOOKUP(search_key, range, index, FALSE). Here is how each part works, with examples.","datePublished":"2026-07-19","dateModified":"2026-07-19","inLanguage":"pt-BR","mainEntityOfPage":"https://griddojo.com/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/","author":{"@type":"Organization","name":"The GridDojo Team","url":"https://griddojo.com/authors/griddojo-team/"},"publisher":{"@type":"Organization","name":"GridDojo","url":"https://griddojo.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://griddojo.com/"},{"@type":"ListItem","position":2,"name":"Google Sheets","item":"https://griddojo.com/google-sheets/"},{"@type":"ListItem","position":3,"name":"How to Use VLOOKUP in Google Sheets","item":"https://griddojo.com/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does my Google Sheets VLOOKUP return #N/A?","acceptedAnswer":{"@type":"Answer","text":"The search key was not found in the first column of the range. The usual causes are extra spaces (fix with TRIM), a number stored as text, or the value simply not being present."}},{"@type":"Question","name":"Is VLOOKUP or XLOOKUP better in Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"XLOOKUP is more flexible — it can return columns to the left, matches exactly by default, and survives inserted columns. VLOOKUP is still widely used and fine for simple left-to-right lookups."}}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Skip to content</a>
 <header class="site"><div class="site-inner">
-<a class="wordmark" href="/">Sheetlift</a>
+<a class="wordmark" href="/">GridDojo</a>
 <nav class="pillars" aria-label="Topics"><a href="/excel/">Excel</a><a href="/google-sheets/" aria-current="page">Google Sheets</a><a href="/compare/">Compare &amp; Choose</a></nav>
 <button class="theme-toggle" type="button" aria-label="Toggle light/dark theme">Theme</button>
 </div></header>
@@ -130,7 +130,7 @@ footer.site a{color:var(--color-text-2)}
 <h1>How to Use VLOOKUP in Google Sheets</h1>
 <p class="dek">In Google Sheets, VLOOKUP searches down the first column of a range and returns a value from another column in the same row. The syntax is =VLOOKUP(search_key, range, index, FALSE). Here is how each part works, with examples.</p>
 <div class="meta">
-<span>By <a href="/authors/sheetlift-team/">The Sheetlift Team</a></span>
+<span>By <a href="/authors/griddojo-team/">The GridDojo Team</a></span>
 <span>Published <time datetime="2026-07-19">July 19, 2026</time></span>
 
 <span>1 min read</span>
@@ -154,7 +154,7 @@ footer.site a{color:var(--color-text-2)}
 </div>
 </main>
 <footer class="site"><div class="site-inner">
-<span>© 2026 Sheetlift — structured content, open to scrutiny.</span>
+<span>© 2026 GridDojo — structured content, open to scrutiny.</span>
 <span><a href="/editorial-policy/">Editorial policy</a> · <a href="/privacy-policy/">Privacy</a> · <a href="/contact/">Contact</a> · <a href="/rss.xml">RSS</a></span>
 </div></footer>
 <script>(function(){var b=document.querySelector('.theme-toggle');if(!b)return;
