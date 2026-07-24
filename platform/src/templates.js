@@ -132,7 +132,7 @@ function baseLayout({ site, title, description, canonicalPath, jsonld = [], body
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${esc(canonical)}">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a7d55'/%3E%3Cpath d='M6 12h20M6 20h20M13 6v20M21 6v20' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a7d55'/%3E%3Cpath d='M6 12h20M6 20h20M13 6v20M21 6v20' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Crect x='13' y='12' width='8' height='8' fill='white'/%3E%3C/svg%3E">
 <link rel="alternate" type="application/rss+xml" title="${esc(site.name)}" href="/rss.xml">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
@@ -146,7 +146,7 @@ ${ld}
 <body>
 <a class="skip-link" href="#conteudo">Skip to content</a>
 <header class="site"><div class="site-inner">
-<a class="brand" href="/"><span class="logomark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 9h16M4 15h16M9 4v16M15 4v16"/></svg></span><span class="wordmark">${esc(site.name)}</span></a>
+<a class="brand" href="/"><span class="logomark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9h16M4 15h16M9 4v16M15 4v16"/><rect x="9" y="9" width="6" height="6" rx="1" fill="currentColor" stroke="none"/></svg></span><span class="wordmark">${esc(site.name)}</span></a>
 <nav class="pillars" aria-label="Topics">${nav}</nav>
 <button class="theme-toggle" type="button" aria-label="Toggle light/dark theme">Theme</button>
 </div></header>
