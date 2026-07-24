@@ -244,6 +244,12 @@ function build(opts = {}) {
   fs.writeFileSync(path.join(DIST, '404.html'), T.notFoundPage({ site })); keepFile(path.join(DIST, '404.html'));
   fs.writeFileSync(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${site.baseUrl}/sitemap.xml\n`); keepFile(path.join(DIST, 'robots.txt'));
 
+  // Google Search Console — arquivo de verificação de propriedade (site.json)
+  if (site.googleSiteVerificationFile) {
+    const gsv = path.join(DIST, site.googleSiteVerificationFile);
+    fs.writeFileSync(gsv, `google-site-verification: ${site.googleSiteVerificationFile}\n`); keepFile(gsv);
+  }
+
   const urls = ['/', ...taxonomy.pillars.map((p) => `/${p.slug}/`), ...rendered.map((r) => r.url),
     ...authors.map((a) => `/authors/${a.slug}/`), '/editorial-policy/', ...pages.map((pg) => `/${pg.slug}/`)];
   // segmentação: >50k exigiria índice de sitemaps (medido no harness); v1 cabe em 1

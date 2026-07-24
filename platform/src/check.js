@@ -19,7 +19,7 @@ function* htmlFiles(dir) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, e.name);
     if (e.isDirectory()) yield* htmlFiles(p);
-    else if (e.name.endsWith('.html')) yield p;
+    else if (e.name.endsWith('.html') && !/^google[0-9a-f]+\.html$/.test(e.name)) yield p;
   }
 }
 
