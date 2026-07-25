@@ -1,0 +1,164 @@
+{
+  "id": "art-excel-dropdown",
+  "slug": "how-to-create-a-drop-down-list-in-excel",
+  "clusterId": "cl_excel_tut",
+  "title": "How to Create a Drop-Down List in Excel",
+  "dek": "To create a drop-down list in Excel, select the cells, go to Data > Data Validation, choose Allow: List, and type your options or point to a range. Here is how to build, edit, and troubleshoot one.",
+  "authorId": "author_team",
+  "publishedAt": "2026-07-25",
+  "updatedAt": "2026-07-25",
+  "intent": {
+    "primaryKeyword": "how to create a drop-down list in excel",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Create a Drop-Down List in Excel",
+    "metaDescription": "Create a drop-down list in Excel with Data Validation: type your options or link a range. Step-by-step, plus how to edit, remove, and fix common issues."
+  },
+  "sources": [
+    {
+      "label": "Microsoft Support — Create a drop-down list",
+      "url": "https://support.microsoft.com/en-us/office/create-a-drop-down-list-7693307a-59ef-400a-b769-c5402dce407b"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "Drop-down lists keep data clean by letting people pick from a set of options instead of typing (and mistyping) values. They are built with a feature called Data Validation, and you can set one up in under a minute."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to make a drop-down list"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Select the cell or cells where you want the drop-down to appear.",
+        [
+          "Go to the ",
+          {
+            "b": "Data"
+          },
+          " tab and click ",
+          {
+            "b": "Data Validation"
+          },
+          "."
+        ],
+        [
+          "In the ",
+          {
+            "b": "Allow"
+          },
+          " box, choose ",
+          {
+            "b": "List"
+          },
+          "."
+        ],
+        "In the Source box, type your options separated by commas — for example: Yes,No,Maybe",
+        "Click OK. A small arrow now appears in the cell, and clicking it shows your list."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Keep \"In-cell dropdown\" ticked so the arrow shows. If you also tick \"Ignore blank\", the cell can be left empty without triggering an error."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Use a list from a range (easier to update)"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Typing options works for short lists, but linking to a range is better when the list changes. Put your options in a column — say cells H1:H10 — then in the Source box enter:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=$H$1:$H$10"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Now you can edit the list just by changing those cells. If your source column might contain repeats, clean it first — see ",
+        {
+          "link": {
+            "ref": "article:art-excel-dupes",
+            "text": "how to remove duplicates in Excel"
+          }
+        },
+        " — so the drop-down only shows each option once."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Edit or remove a drop-down list"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          "To change the options: select the cell, open ",
+          {
+            "b": "Data > Data Validation"
+          },
+          ", and edit the Source, then click OK."
+        ],
+        [
+          "To remove the drop-down: select the cell, open Data Validation, and click ",
+          {
+            "b": "Clear All"
+          },
+          "."
+        ],
+        "To copy a drop-down to other cells: copy the cell, then use Paste Special > Validation."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Common drop-down problems"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "If the arrow does not appear, the cell may have been resized very small, or \"In-cell dropdown\" was unticked — reopen Data Validation and check it. If people can still type invalid values, the sheet may be protected or the validation was cleared. You can also pair a drop-down with an ",
+        {
+          "link": {
+            "ref": "article:art-excel-if",
+            "text": "IF function"
+          }
+        },
+        " so another cell reacts to whatever option is chosen."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "How do I add color to a drop-down list in Excel?",
+          "answerRichText": "The drop-down itself has no color, but you can color the results with Conditional Formatting. Select the cells, go to Home > Conditional Formatting, and add a rule for each option — for example, turn cells green when they equal \"Done\"."
+        },
+        {
+          "question": "Can I make a dependent (conditional) drop-down list?",
+          "answerRichText": "Yes. A dependent list changes its options based on another cell — for example, choosing a country then showing only its cities. It uses named ranges and the INDIRECT function in the Source box, and is a step up from a basic list."
+        },
+        {
+          "question": "Why does my drop-down list show a warning when I type?",
+          "answerRichText": "Data Validation blocks values that are not in the list by design. To allow other entries, open Data Validation, go to the Error Alert tab, and either change the style to Information or untick \"Show error alert\"."
+        }
+      ]
+    }
+  ]
+}
