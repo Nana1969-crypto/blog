@@ -1,0 +1,179 @@
+{
+  "id": "art-gs-graph",
+  "slug": "how-to-make-a-graph-in-google-sheets",
+  "clusterId": "cl_gs_tut",
+  "title": "How to Make a Graph in Google Sheets",
+  "dek": "To make a graph in Google Sheets, select your data, click Insert > Chart, and pick a chart type in the Chart editor. Here is how to build it, choose the right type, and customize it — step by step.",
+  "authorId": "author_team",
+  "publishedAt": "2026-07-26",
+  "updatedAt": "2026-07-26",
+  "intent": {
+    "primaryKeyword": "how to make a graph in google sheets",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Make a Graph in Google Sheets",
+    "metaDescription": "Make a graph in Google Sheets: select your data, click Insert > Chart, and pick a type in the Chart editor — plus how to choose and customize it."
+  },
+  "sources": [
+    {
+      "label": "Google Docs Editors Help — Add & edit a chart or graph",
+      "url": "https://support.google.com/docs/answer/63824"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "A graph makes numbers easy to understand at a glance, and Google Sheets builds one for you automatically from whatever data you select. Here is the fastest way to create one, plus how to pick a chart type that actually fits your data."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to insert a graph in Google Sheets"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Select the data you want to graph, including the row and column headers.",
+        [
+          "Click ",
+          {
+            "b": "Insert"
+          },
+          " in the menu, then ",
+          {
+            "b": "Chart"
+          },
+          "."
+        ],
+        "Google Sheets adds a chart and opens the Chart editor on the right, with a suggested type.",
+        [
+          "In the Chart editor, use the ",
+          {
+            "b": "Chart type"
+          },
+          " menu to choose the graph you want (column, line, pie, and so on)."
+        ],
+        "Drag the chart to reposition it, or drag a corner to resize."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Google Sheets guesses the best chart from your data. If the guess is wrong, just change it in the Chart type menu — your data stays the same."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Choosing the right graph type"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "The type matters more than the colors. Match it to the story your data tells:"
+      ]
+    },
+    {
+      "type": "table",
+      "caption": "Which Google Sheets graph to use",
+      "headers": [
+        "Graph type",
+        "Best for"
+      ],
+      "rows": [
+        [
+          "Column or Bar",
+          "Comparing values across categories (sales by product)"
+        ],
+        [
+          "Line",
+          "Showing a trend over time (revenue by month)"
+        ],
+        [
+          "Pie",
+          "Parts of a whole, with only a few slices (budget split)"
+        ],
+        [
+          "Scatter",
+          "The relationship between two numbers (price vs. sales)"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Customize your graph"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Double-click any part of the chart to reopen the Chart editor, then switch to the ",
+        {
+          "b": "Customize"
+        },
+        " tab. There you can:"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Add or edit the chart title and axis titles.",
+        "Turn on data labels so the exact numbers show on the chart.",
+        "Change colors, fonts, and the legend position."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Give the chart a title that states the takeaway (\"Sales grew 20% in Q4\"), not just the data name — that is what makes it useful to someone who did not build it."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Graph from a summary, not raw data"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Graphs look best on top of a clean summary rather than hundreds of raw rows. The easiest way to build that summary is a ",
+        {
+          "link": {
+            "ref": "article:art-gs-pivot",
+            "text": "pivot table in Google Sheets"
+          }
+        },
+        ", which groups and totals your data for you. Working in Excel instead? See ",
+        {
+          "link": {
+            "ref": "article:art-excel-chart",
+            "text": "how to make a chart in Excel"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "How do I edit a graph after creating it in Google Sheets?",
+          "answerRichText": "Double-click the chart to reopen the Chart editor on the right. Use the Setup tab to change the type or data range, and the Customize tab to change titles, colors, and labels."
+        },
+        {
+          "question": "Why is my Google Sheets graph empty or wrong?",
+          "answerRichText": "Usually the wrong range is selected, or text is mixed in where numbers should be. Double-click the chart, open the Setup tab, and check that the Data range covers your headers and values with no stray text cells."
+        },
+        {
+          "question": "How do I download a graph from Google Sheets?",
+          "answerRichText": "Click the chart, then the three-dot menu in its top-right corner, and choose Download. You can save it as a PNG image, PDF, or SVG to use in documents or slides."
+        }
+      ]
+    }
+  ]
+}
