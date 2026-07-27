@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Google Sheets — GridDojo</title>
-<meta name="description" content="Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.">
-<link rel="canonical" href="https://griddojo.com/google-sheets/">
+<title>How to Make a Drop-Down List in Google Sheets</title>
+<meta name="description" content="Make a drop-down list in Google Sheets with Data validation: add a Dropdown rule and enter your options — plus how to edit and fix common issues.">
+<link rel="canonical" href="https://griddojo.com/google-sheets/tutorials/how-to-create-a-drop-down-list-in-google-sheets/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a7d55'/%3E%3Cpath d='M6 12h20M6 20h20M13 6v20M21 6v20' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Crect x='13' y='12' width='8' height='8' fill='white'/%3E%3C/svg%3E">
 <link rel="alternate" type="application/rss+xml" title="GridDojo" href="/rss.xml">
-<meta property="og:title" content="Google Sheets — GridDojo">
-<meta property="og:description" content="Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.">
-<meta property="og:url" content="https://griddojo.com/google-sheets/">
+<meta property="og:title" content="How to Make a Drop-Down List in Google Sheets">
+<meta property="og:description" content="Make a drop-down list in Google Sheets with Data validation: add a Dropdown rule and enter your options — plus how to edit and fix common issues.">
+<meta property="og:url" content="https://griddojo.com/google-sheets/tutorials/how-to-create-a-drop-down-list-in-google-sheets/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="GridDojo">
 <script>(function(){try{var t=localStorage.getItem('theme');
@@ -121,7 +121,9 @@ footer.site .site-inner{display:flex;justify-content:space-between;gap:1rem;flex
 footer.site a{color:var(--color-text-2)}
 @media (prefers-reduced-motion: no-preference){a,button{transition:color var(--motion-fast) ease}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Google Sheets","description":"Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.","inLanguage":"pt-BR","isPartOf":{"@type":"WebSite","name":"GridDojo","url":"https://griddojo.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Make a Drop-Down List in Google Sheets","description":"To make a drop-down list in Google Sheets, select the cells, open Data > Data validation, add a rule with the Dropdown criteria, and enter your options. Here is how to build, edit, and troubleshoot one.","datePublished":"2026-07-27","dateModified":"2026-07-27","inLanguage":"pt-BR","mainEntityOfPage":"https://griddojo.com/google-sheets/tutorials/how-to-create-a-drop-down-list-in-google-sheets/","author":{"@type":"Organization","name":"The GridDojo Team","url":"https://griddojo.com/authors/griddojo-team/"},"publisher":{"@type":"Organization","name":"GridDojo","url":"https://griddojo.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://griddojo.com/"},{"@type":"ListItem","position":2,"name":"Google Sheets","item":"https://griddojo.com/google-sheets/"},{"@type":"ListItem","position":3,"name":"How to Make a Drop-Down List in Google Sheets","item":"https://griddojo.com/google-sheets/tutorials/how-to-create-a-drop-down-list-in-google-sheets/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I add color to a drop-down list in Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"When you add or edit the Dropdown options in Data validation, each option has a color picker next to it. Pick a color and the cell fills with it whenever that option is selected."}},{"@type":"Question","name":"Can I make a dependent (conditional) drop-down list in Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"Yes. A dependent list changes its options based on another cell — for example, choosing a country then showing only its cities. It uses helper ranges and formulas like INDIRECT or FILTER, and is a step up from a basic list."}},{"@type":"Question","name":"Why won't my Google Sheets drop-down let me type other values?","acceptedAnswer":{"@type":"Answer","text":"The rule is set to reject anything outside the list. Open Data > Data validation, and under \"If the data is invalid\" switch from Reject the input to Show a warning, which allows other entries."}}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Skip to content</a>
@@ -132,9 +134,35 @@ footer.site a{color:var(--color-text-2)}
 </div></header>
 <main id="conteudo">
 
-<nav class="breadcrumb" aria-label="You are here"><ol><li><a href="/">Home</a></li><li aria-current="page">Google Sheets</li></ol></nav>
-<div class="reading hero"><h1>Google Sheets</h1><p>Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.</p></div>
-<div class="reading"><section aria-labelledby="c-tutorials"><h2 id="c-tutorials">Google Sheets Tutorials</h2><ul class="list-plain"><li><a class="t" href="/google-sheets/tutorials/how-to-create-a-drop-down-list-in-google-sheets/">How to Make a Drop-Down List in Google Sheets</a><p class="d">To make a drop-down list in Google Sheets, select the cells, open Data &gt; Data validation, add a rule with the Dropdown criteria, and enter your options. Here is how to build, edit, and troubleshoot one.</p></li><li><a class="t" href="/google-sheets/tutorials/how-to-make-a-graph-in-google-sheets/">How to Make a Graph in Google Sheets</a><p class="d">To make a graph in Google Sheets, select your data, click Insert &gt; Chart, and pick a chart type in the Chart editor. Here is how to build it, choose the right type, and customize it — step by step.</p></li><li><a class="t" href="/google-sheets/tutorials/how-to-make-a-pivot-table-in-google-sheets/">How to Make a Pivot Table in Google Sheets</a><p class="d">In Google Sheets, select your data, choose Insert &gt; Pivot table, then use the editor on the right to add Rows, Columns, Values, and Filters. It summarizes thousands of rows into a clear report without a single formula. Here is the full walkthrough.</p></li><li><a class="t" href="/google-sheets/tutorials/how-to-remove-duplicates-in-google-sheets/">How to Remove Duplicates in Google Sheets</a><p class="d">To remove duplicates in Google Sheets, select your data and go to Data &gt; Data cleanup &gt; Remove duplicates. To keep your original list untouched, use the UNIQUE function instead. Here is how to do both.</p></li><li><a class="t" href="/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/">How to Use VLOOKUP in Google Sheets</a><p class="d">In Google Sheets, VLOOKUP searches down the first column of a range and returns a value from another column in the same row. The syntax is =VLOOKUP(search_key, range, index, FALSE). Here is how each part works, with examples.</p></li></ul></section></div>
+<nav class="breadcrumb" aria-label="You are here"><ol><li><a href="/">Home</a></li><li><a href="/google-sheets/">Google Sheets</a></li><li aria-current="page">How to Make a Drop-Down List in Google Sheets</li></ol></nav>
+<div class="article-grid">
+<article class="reading">
+<h1>How to Make a Drop-Down List in Google Sheets</h1>
+<p class="dek">To make a drop-down list in Google Sheets, select the cells, open Data &gt; Data validation, add a rule with the Dropdown criteria, and enter your options. Here is how to build, edit, and troubleshoot one.</p>
+<div class="meta">
+<span>By <a href="/authors/griddojo-team/">The GridDojo Team</a></span>
+<span>Published <time datetime="2026-07-27">July 27, 2026</time></span>
+
+<span>2 min read</span>
+</div>
+<p>Drop-down lists keep a sheet tidy by letting people pick from set options instead of typing (and mistyping) values. In Google Sheets they take about a minute to set up, and you can build one from a typed list or from a range of cells.</p>
+<h2 id="how-to-make-a-drop-down-list">How to make a drop-down list</h2>
+<ol><li>Select the cell or cells where you want the drop-down.</li><li>Open the <strong>Data</strong> menu and click <strong>Data validation</strong>, then <strong>Add rule</strong>.</li><li>Under Criteria, choose <strong>Dropdown</strong>.</li><li>Type each option and press Enter to add the next one. You can give each a color if you like.</li><li>Click Done. Each cell now shows a chip you can click to pick an option.</li></ol>
+<aside class="callout callout-tip" role="note"><strong class="callout-label">Tip:</strong> A faster route: select the cells and use the Insert menu &gt; Dropdown. It opens the same panel with the Dropdown criteria already chosen.</aside>
+<h2 id="use-a-list-from-a-range-easier-to-update">Use a list from a range (easier to update)</h2>
+<p>Typing options is fine for short lists, but linking to a range is better when the list changes. Put your options in a column — say H1:H10 — then in the Data validation panel choose <strong>Dropdown (from a range)</strong> and set the range to:</p>
+<pre><code class="lang-text">=$H$1:$H$10</code></pre>
+<p>Now you can update the list just by editing those cells. If the source column might contain repeats, clean it first — see <a href="/google-sheets/tutorials/how-to-remove-duplicates-in-google-sheets/">how to remove duplicates in Google Sheets</a> — so each option appears only once.</p>
+<h2 id="edit-or-remove-a-drop-down-list">Edit or remove a drop-down list</h2>
+<ul><li>To change the options: click the cell, then the chip's menu (or reopen Data &gt; Data validation) and edit the rule.</li><li>To remove it: open <strong>Data &gt; Data validation</strong>, point to the rule, and click the trash icon (Remove rule).</li><li>To reuse it: copy the cell and Paste special &gt; Data validation only onto other cells.</li></ul>
+<h2 id="common-drop-down-problems">Common drop-down problems</h2>
+<p>If invalid entries slip through, open the rule and set &quot;If the data is invalid&quot; to <strong>Reject the input</strong> instead of showing a warning. Doing the same task in Excel? See <a href="/excel/tutorials/how-to-create-a-drop-down-list-in-excel/">how to create a drop-down list in Excel</a>.</p>
+<section class="faq" aria-label="Frequently asked questions"><h2 id="faq">Frequently asked questions</h2><details class="faq-item"><summary>How do I add color to a drop-down list in Google Sheets?</summary><p>When you add or edit the Dropdown options in Data validation, each option has a color picker next to it. Pick a color and the cell fills with it whenever that option is selected.</p></details><details class="faq-item"><summary>Can I make a dependent (conditional) drop-down list in Google Sheets?</summary><p>Yes. A dependent list changes its options based on another cell — for example, choosing a country then showing only its cities. It uses helper ranges and formulas like INDIRECT or FILTER, and is a step up from a basic list.</p></details><details class="faq-item"><summary>Why won't my Google Sheets drop-down let me type other values?</summary><p>The rule is set to reject anything outside the list. Open Data &gt; Data validation, and under &quot;If the data is invalid&quot; switch from Reject the input to Show a warning, which allows other entries.</p></details></section>
+<section class="sources"><h2 id="sources">Sources and references</h2><ol><li><a href="https://support.google.com/docs/answer/186103" rel="noopener noreferrer">Google Docs Editors Help — Create a dropdown list</a></li></ol></section>
+<aside class="next-step"><h2>Next step</h2><p><a href="/google-sheets/tutorials/how-to-make-a-graph-in-google-sheets/">How to Make a Graph in Google Sheets</a> — keep going with the next guide in this topic</p></aside>
+</article>
+<aside class="toc" aria-label="In this article"><div class="toc-box"><h2>In this article</h2><ol><li><a href="#how-to-make-a-drop-down-list">How to make a drop-down list</a></li><li><a href="#use-a-list-from-a-range-easier-to-update">Use a list from a range (easier to update)</a></li><li><a href="#edit-or-remove-a-drop-down-list">Edit or remove a drop-down list</a></li><li><a href="#common-drop-down-problems">Common drop-down problems</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></div></aside>
+</div>
 </main>
 <footer class="site"><div class="site-inner">
 <span>© 2026 GridDojo — structured content, open to scrutiny.</span>

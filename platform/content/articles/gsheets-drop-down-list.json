@@ -1,0 +1,166 @@
+{
+  "id": "art-gs-dropdown",
+  "slug": "how-to-create-a-drop-down-list-in-google-sheets",
+  "clusterId": "cl_gs_tut",
+  "title": "How to Make a Drop-Down List in Google Sheets",
+  "dek": "To make a drop-down list in Google Sheets, select the cells, open Data > Data validation, add a rule with the Dropdown criteria, and enter your options. Here is how to build, edit, and troubleshoot one.",
+  "authorId": "author_team",
+  "publishedAt": "2026-07-27",
+  "updatedAt": "2026-07-27",
+  "intent": {
+    "primaryKeyword": "how to create a drop-down list in google sheets",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Make a Drop-Down List in Google Sheets",
+    "metaDescription": "Make a drop-down list in Google Sheets with Data validation: add a Dropdown rule and enter your options — plus how to edit and fix common issues."
+  },
+  "sources": [
+    {
+      "label": "Google Docs Editors Help — Create a dropdown list",
+      "url": "https://support.google.com/docs/answer/186103"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "Drop-down lists keep a sheet tidy by letting people pick from set options instead of typing (and mistyping) values. In Google Sheets they take about a minute to set up, and you can build one from a typed list or from a range of cells."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to make a drop-down list"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Select the cell or cells where you want the drop-down.",
+        [
+          "Open the ",
+          {
+            "b": "Data"
+          },
+          " menu and click ",
+          {
+            "b": "Data validation"
+          },
+          ", then ",
+          {
+            "b": "Add rule"
+          },
+          "."
+        ],
+        [
+          "Under Criteria, choose ",
+          {
+            "b": "Dropdown"
+          },
+          "."
+        ],
+        "Type each option and press Enter to add the next one. You can give each a color if you like.",
+        "Click Done. Each cell now shows a chip you can click to pick an option."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "A faster route: select the cells and use the Insert menu > Dropdown. It opens the same panel with the Dropdown criteria already chosen."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Use a list from a range (easier to update)"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Typing options is fine for short lists, but linking to a range is better when the list changes. Put your options in a column — say H1:H10 — then in the Data validation panel choose ",
+        {
+          "b": "Dropdown (from a range)"
+        },
+        " and set the range to:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=$H$1:$H$10"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Now you can update the list just by editing those cells. If the source column might contain repeats, clean it first — see ",
+        {
+          "link": {
+            "ref": "article:art-gs-dupes",
+            "text": "how to remove duplicates in Google Sheets"
+          }
+        },
+        " — so each option appears only once."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Edit or remove a drop-down list"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "To change the options: click the cell, then the chip's menu (or reopen Data > Data validation) and edit the rule.",
+        [
+          "To remove it: open ",
+          {
+            "b": "Data > Data validation"
+          },
+          ", point to the rule, and click the trash icon (Remove rule)."
+        ],
+        "To reuse it: copy the cell and Paste special > Data validation only onto other cells."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Common drop-down problems"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "If invalid entries slip through, open the rule and set \"If the data is invalid\" to ",
+        {
+          "b": "Reject the input"
+        },
+        " instead of showing a warning. Doing the same task in Excel? See ",
+        {
+          "link": {
+            "ref": "article:art-excel-dropdown",
+            "text": "how to create a drop-down list in Excel"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "How do I add color to a drop-down list in Google Sheets?",
+          "answerRichText": "When you add or edit the Dropdown options in Data validation, each option has a color picker next to it. Pick a color and the cell fills with it whenever that option is selected."
+        },
+        {
+          "question": "Can I make a dependent (conditional) drop-down list in Google Sheets?",
+          "answerRichText": "Yes. A dependent list changes its options based on another cell — for example, choosing a country then showing only its cities. It uses helper ranges and formulas like INDIRECT or FILTER, and is a step up from a basic list."
+        },
+        {
+          "question": "Why won't my Google Sheets drop-down let me type other values?",
+          "answerRichText": "The rule is set to reject anything outside the list. Open Data > Data validation, and under \"If the data is invalid\" switch from Reject the input to Show a warning, which allows other entries."
+        }
+      ]
+    }
+  ]
+}
