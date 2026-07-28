@@ -1,0 +1,145 @@
+{
+  "id": "art-excel-div0",
+  "slug": "how-to-fix-div-0-error-excel",
+  "clusterId": "cl_excel_fix",
+  "title": "How to Fix the #DIV/0! Error in Excel",
+  "dek": "The #DIV/0! error means a formula is dividing by zero or by an empty cell. The fix is to correct the denominator, or wrap the formula in IFERROR or IF so it returns a blank or a message instead. Here is how.",
+  "authorId": "author_team",
+  "publishedAt": "2026-07-28",
+  "updatedAt": "2026-07-28",
+  "intent": {
+    "primaryKeyword": "div/0 error excel",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Fix the #DIV/0! Error in Excel",
+    "metaDescription": "The #DIV/0! error means a formula is dividing by zero or an empty cell. Here is what causes it and how to fix or hide it with IFERROR and IF."
+  },
+  "sources": [
+    {
+      "label": "Microsoft Support — How to correct a #DIV/0! error",
+      "url": "https://support.microsoft.com/en-us/office/how-to-correct-a-div-0-error-3a5a18a9-8d80-4ebb-a908-39e759a009a5"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "The #DIV/0! error is Excel telling you a formula tried to divide by zero — which is not a valid calculation. It usually shows up when the number you are dividing by is zero, or the cell it points to is empty."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What causes #DIV/0!"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "A formula like =A2/B2 where B2 is 0 or empty.",
+        "An average of a range that has no numbers yet, such as =AVERAGE(B2:B10) on empty cells.",
+        "A cell referenced in the denominator that gets cleared later, turning a working formula into an error."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The quick fix: handle it with IFERROR"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "If the error appears simply because data has not been entered yet, wrap the formula in IFERROR so it shows a blank (or a message) instead of #DIV/0!:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=IFERROR(A2/B2, \"\")"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "The two quotation marks return an empty cell. You could put text there instead, such as =IFERROR(A2/B2, \"No data\")."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warn",
+      "richText": "IFERROR hides every error, not just #DIV/0!. If a different mistake creeps in, it will be hidden too. Use it when you expect the divide-by-zero and want a clean result — not to paper over unknown problems."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The precise fix: test with IF"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "To handle only the zero case and leave real errors visible, check the denominator first with an ",
+        {
+          "link": {
+            "ref": "article:art-excel-if",
+            "text": "IF function"
+          }
+        },
+        ":"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=IF(B2=0, \"\", A2/B2)"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "This says: if B2 is zero, return blank; otherwise divide normally. It is more precise than IFERROR because it only reacts to the zero, not to every possible error."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Or just fix the data"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Sometimes the honest fix is not a formula at all — the denominator should not be zero. Check whether a value is missing, a total is wrong, or a cell was cleared by accident. A #DIV/0! is often a useful warning that data is incomplete. For other common formula errors, see ",
+        {
+          "link": {
+            "ref": "article:art-excel-value",
+            "text": "how to fix the #VALUE! error"
+          }
+        },
+        " and ",
+        {
+          "link": {
+            "ref": "article:art-excel-ref",
+            "text": "how to fix the #REF! error"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "How do I hide #DIV/0! but keep the formula?",
+          "answerRichText": "Wrap it in IFERROR, like =IFERROR(A2/B2, \"\"). The formula still works once valid data is entered, but shows a blank instead of the error while the denominator is zero or empty."
+        },
+        {
+          "question": "Why does AVERAGE give a #DIV/0! error?",
+          "answerRichText": "AVERAGE divides the total by the count of numbers. If the range has no numeric values yet, the count is zero and you get #DIV/0!. Once at least one number is entered, the error clears on its own."
+        },
+        {
+          "question": "Is #DIV/0! a mistake I should always hide?",
+          "answerRichText": "Not always. It can be a helpful signal that data is missing. Hide it with IFERROR or IF only when a zero denominator is expected and you want a clean sheet — otherwise, fix the underlying data."
+        }
+      ]
+    }
+  ]
+}
