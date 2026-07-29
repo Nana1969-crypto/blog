@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Google Sheets — GridDojo</title>
-<meta name="description" content="Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.">
-<link rel="canonical" href="https://griddojo.com/google-sheets/">
+<title>How to Use the IF Function in Google Sheets</title>
+<meta name="description" content="The IF function in Google Sheets returns one value if a condition is true and another if false. Learn the syntax, real examples, and how to nest IFs.">
+<link rel="canonical" href="https://griddojo.com/google-sheets/tutorials/how-to-use-if-function-in-google-sheets/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a7d55'/%3E%3Cpath d='M6 12h20M6 20h20M13 6v20M21 6v20' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Crect x='13' y='12' width='8' height='8' fill='white'/%3E%3C/svg%3E">
 <link rel="alternate" type="application/rss+xml" title="GridDojo" href="/rss.xml">
-<meta property="og:title" content="Google Sheets — GridDojo">
-<meta property="og:description" content="Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.">
-<meta property="og:url" content="https://griddojo.com/google-sheets/">
+<meta property="og:title" content="How to Use the IF Function in Google Sheets">
+<meta property="og:description" content="The IF function in Google Sheets returns one value if a condition is true and another if false. Learn the syntax, real examples, and how to nest IFs.">
+<meta property="og:url" content="https://griddojo.com/google-sheets/tutorials/how-to-use-if-function-in-google-sheets/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="GridDojo">
 <script>(function(){try{var t=localStorage.getItem('theme');
@@ -121,7 +121,9 @@ footer.site .site-inner{display:flex;justify-content:space-between;gap:1rem;flex
 footer.site a{color:var(--color-text-2)}
 @media (prefers-reduced-motion: no-preference){a,button{transition:color var(--motion-fast) ease}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Google Sheets","description":"Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.","inLanguage":"pt-BR","isPartOf":{"@type":"WebSite","name":"GridDojo","url":"https://griddojo.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Use the IF Function in Google Sheets","description":"The IF function in Google Sheets returns one value when a condition is true and another when it is false. The syntax is =IF(condition, value_if_true, value_if_false). Here is exactly how each part works, with examples.","datePublished":"2026-07-29","dateModified":"2026-07-29","inLanguage":"pt-BR","mainEntityOfPage":"https://griddojo.com/google-sheets/tutorials/how-to-use-if-function-in-google-sheets/","author":{"@type":"Organization","name":"The GridDojo Team","url":"https://griddojo.com/authors/griddojo-team/"},"publisher":{"@type":"Organization","name":"GridDojo","url":"https://griddojo.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://griddojo.com/"},{"@type":"ListItem","position":2,"name":"Google Sheets","item":"https://griddojo.com/google-sheets/"},{"@type":"ListItem","position":3,"name":"How to Use the IF Function in Google Sheets","item":"https://griddojo.com/google-sheets/tutorials/how-to-use-if-function-in-google-sheets/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between IF and IFS in Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"IF handles one test with a true and a false result. IFS checks several conditions in order and returns the first that is true, which avoids long nested IFs when you have many cases."}},{"@type":"Question","name":"How do I use IF with text in Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"Put the text in quotation marks and compare with =. For example, =IF(A2=\"Paid\", \"Done\", \"Pending\") checks whether A2 says Paid. Text comparisons in Google Sheets are not case-sensitive."}},{"@type":"Question","name":"Why does my IF formula show a value everywhere?","acceptedAnswer":{"@type":"Answer","text":"Usually the condition is always true or always false. Check that you are comparing the right cell and using the correct operator (>, >=, =). A common slip is comparing a number to text, which never matches."}}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Skip to content</a>
@@ -132,9 +134,37 @@ footer.site a{color:var(--color-text-2)}
 </div></header>
 <main id="conteudo">
 
-<nav class="breadcrumb" aria-label="You are here"><ol><li><a href="/">Home</a></li><li aria-current="page">Google Sheets</li></ol></nav>
-<div class="reading hero"><h1>Google Sheets</h1><p>Clear Google Sheets tutorials for everyday tasks, formulas, and collaboration — written and tested on the current version.</p></div>
-<div class="reading"><section aria-labelledby="c-tutorials"><h2 id="c-tutorials">Google Sheets Tutorials</h2><ul class="list-plain"><li><a class="t" href="/google-sheets/tutorials/how-to-create-a-drop-down-list-in-google-sheets/">How to Make a Drop-Down List in Google Sheets</a><p class="d">To make a drop-down list in Google Sheets, select the cells, open Data &gt; Data validation, add a rule with the Dropdown criteria, and enter your options. Here is how to build, edit, and troubleshoot one.</p></li><li><a class="t" href="/google-sheets/tutorials/how-to-use-if-function-in-google-sheets/">How to Use the IF Function in Google Sheets</a><p class="d">The IF function in Google Sheets returns one value when a condition is true and another when it is false. The syntax is =IF(condition, value_if_true, value_if_false). Here is exactly how each part works, with examples.</p></li><li><a class="t" href="/google-sheets/tutorials/how-to-make-a-graph-in-google-sheets/">How to Make a Graph in Google Sheets</a><p class="d">To make a graph in Google Sheets, select your data, click Insert &gt; Chart, and pick a chart type in the Chart editor. Here is how to build it, choose the right type, and customize it — step by step.</p></li><li><a class="t" href="/google-sheets/tutorials/how-to-make-a-pivot-table-in-google-sheets/">How to Make a Pivot Table in Google Sheets</a><p class="d">In Google Sheets, select your data, choose Insert &gt; Pivot table, then use the editor on the right to add Rows, Columns, Values, and Filters. It summarizes thousands of rows into a clear report without a single formula. Here is the full walkthrough.</p></li><li><a class="t" href="/google-sheets/tutorials/how-to-remove-duplicates-in-google-sheets/">How to Remove Duplicates in Google Sheets</a><p class="d">To remove duplicates in Google Sheets, select your data and go to Data &gt; Data cleanup &gt; Remove duplicates. To keep your original list untouched, use the UNIQUE function instead. Here is how to do both.</p></li><li><a class="t" href="/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/">How to Use VLOOKUP in Google Sheets</a><p class="d">In Google Sheets, VLOOKUP searches down the first column of a range and returns a value from another column in the same row. The syntax is =VLOOKUP(search_key, range, index, FALSE). Here is how each part works, with examples.</p></li></ul></section></div>
+<nav class="breadcrumb" aria-label="You are here"><ol><li><a href="/">Home</a></li><li><a href="/google-sheets/">Google Sheets</a></li><li aria-current="page">How to Use the IF Function in Google Sheets</li></ol></nav>
+<div class="article-grid">
+<article class="reading">
+<h1>How to Use the IF Function in Google Sheets</h1>
+<p class="dek">The IF function in Google Sheets returns one value when a condition is true and another when it is false. The syntax is =IF(condition, value_if_true, value_if_false). Here is exactly how each part works, with examples.</p>
+<div class="meta">
+<span>By <a href="/authors/griddojo-team/">The GridDojo Team</a></span>
+<span>Published <time datetime="2026-07-29">July 29, 2026</time></span>
+
+<span>2 min read</span>
+</div>
+<p>IF is the function that lets a spreadsheet make decisions. It checks a condition and returns one thing when it is true and another when it is false — perfect for labels like Pass/Fail, Yes/No, or flagging values that need attention.</p>
+<h2 id="the-if-syntax-explained">The IF syntax, explained</h2>
+<pre><code class="lang-text">=IF(condition, value_if_true, value_if_false)</code></pre>
+<div class="table-wrap"><table><caption>The three parts of IF</caption><thead><tr><th scope="col">Part</th><th scope="col">Meaning</th></tr></thead><tbody><tr><td>condition</td><td>A test that is either true or false, like B2&gt;50</td></tr><tr><td>value_if_true</td><td>What to return when the test is true</td></tr><tr><td>value_if_false</td><td>What to return when the test is false</td></tr></tbody></table></div>
+<h2 id="a-real-example">A real example</h2>
+<p>Say column B has scores. To label each one Pass or Fail based on a 50 cutoff, in cell C2 you write:</p>
+<pre><code class="lang-text">=IF(B2&gt;=50, &quot;Pass&quot;, &quot;Fail&quot;)</code></pre>
+<p>This reads: if the score in B2 is 50 or higher, show &quot;Pass&quot;; otherwise show &quot;Fail&quot;. Wrap text values in quotation marks; numbers and cell references do not need them.</p>
+<aside class="callout callout-tip" role="note"><strong class="callout-label">Tip:</strong> Leaving a result blank is fine — use two quotation marks with nothing between them: =IF(B2&gt;=50, &quot;Pass&quot;, &quot;&quot;). The cell stays empty when the test is false.</aside>
+<h2 id="testing-more-than-one-condition">Testing more than one condition</h2>
+<p>You can nest an IF inside another to handle several outcomes — for example, grades:</p>
+<pre><code class="lang-text">=IF(B2&gt;=80, &quot;A&quot;, IF(B2&gt;=50, &quot;B&quot;, &quot;C&quot;))</code></pre>
+<p>When there are many cases, the IFS function is cleaner than deeply nested IFs. And to test two conditions at once, combine IF with AND or OR, like =IF(AND(B2&gt;=50, C2=&quot;Yes&quot;), &quot;OK&quot;, &quot;No&quot;).</p>
+<p>The IF function works almost identically in Excel — see <a href="/excel/tutorials/how-to-use-if-function-in-excel/">how to use the IF function in Excel</a>. Once your logic is set, you can visualize the results with a <a href="/google-sheets/tutorials/how-to-make-a-graph-in-google-sheets/">graph in Google Sheets</a>.</p>
+<section class="faq" aria-label="Frequently asked questions"><h2 id="faq">Frequently asked questions</h2><details class="faq-item"><summary>What is the difference between IF and IFS in Google Sheets?</summary><p>IF handles one test with a true and a false result. IFS checks several conditions in order and returns the first that is true, which avoids long nested IFs when you have many cases.</p></details><details class="faq-item"><summary>How do I use IF with text in Google Sheets?</summary><p>Put the text in quotation marks and compare with =. For example, =IF(A2=&quot;Paid&quot;, &quot;Done&quot;, &quot;Pending&quot;) checks whether A2 says Paid. Text comparisons in Google Sheets are not case-sensitive.</p></details><details class="faq-item"><summary>Why does my IF formula show a value everywhere?</summary><p>Usually the condition is always true or always false. Check that you are comparing the right cell and using the correct operator (&gt;, &gt;=, =). A common slip is comparing a number to text, which never matches.</p></details></section>
+<section class="sources"><h2 id="sources">Sources and references</h2><ol><li><a href="https://support.google.com/docs/answer/3093364" rel="noopener noreferrer">Google Docs Editors Help — IF function</a></li></ol></section>
+<aside class="next-step"><h2>Next step</h2><p><a href="/google-sheets/tutorials/how-to-create-a-drop-down-list-in-google-sheets/">How to Make a Drop-Down List in Google Sheets</a> — keep going with the next guide in this topic</p></aside>
+</article>
+<aside class="toc" aria-label="In this article"><div class="toc-box"><h2>In this article</h2><ol><li><a href="#the-if-syntax-explained">The IF syntax, explained</a></li><li><a href="#a-real-example">A real example</a></li><li><a href="#testing-more-than-one-condition">Testing more than one condition</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></div></aside>
+</div>
 </main>
 <footer class="site"><div class="site-inner">
 <span>© 2026 GridDojo — structured content, open to scrutiny.</span>

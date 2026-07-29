@@ -1,0 +1,151 @@
+{
+  "id": "art-gs-if",
+  "slug": "how-to-use-if-function-in-google-sheets",
+  "clusterId": "cl_gs_tut",
+  "title": "How to Use the IF Function in Google Sheets",
+  "dek": "The IF function in Google Sheets returns one value when a condition is true and another when it is false. The syntax is =IF(condition, value_if_true, value_if_false). Here is exactly how each part works, with examples.",
+  "authorId": "author_team",
+  "publishedAt": "2026-07-29",
+  "updatedAt": "2026-07-29",
+  "intent": {
+    "primaryKeyword": "how to use if function in google sheets",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Use the IF Function in Google Sheets",
+    "metaDescription": "The IF function in Google Sheets returns one value if a condition is true and another if false. Learn the syntax, real examples, and how to nest IFs."
+  },
+  "sources": [
+    {
+      "label": "Google Docs Editors Help — IF function",
+      "url": "https://support.google.com/docs/answer/3093364"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "IF is the function that lets a spreadsheet make decisions. It checks a condition and returns one thing when it is true and another when it is false — perfect for labels like Pass/Fail, Yes/No, or flagging values that need attention."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The IF syntax, explained"
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=IF(condition, value_if_true, value_if_false)"
+    },
+    {
+      "type": "table",
+      "caption": "The three parts of IF",
+      "headers": [
+        "Part",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "condition",
+          "A test that is either true or false, like B2>50"
+        ],
+        [
+          "value_if_true",
+          "What to return when the test is true"
+        ],
+        [
+          "value_if_false",
+          "What to return when the test is false"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "A real example"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Say column B has scores. To label each one Pass or Fail based on a 50 cutoff, in cell C2 you write:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=IF(B2>=50, \"Pass\", \"Fail\")"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "This reads: if the score in B2 is 50 or higher, show \"Pass\"; otherwise show \"Fail\". Wrap text values in quotation marks; numbers and cell references do not need them."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Leaving a result blank is fine — use two quotation marks with nothing between them: =IF(B2>=50, \"Pass\", \"\"). The cell stays empty when the test is false."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Testing more than one condition"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "You can nest an IF inside another to handle several outcomes — for example, grades:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=IF(B2>=80, \"A\", IF(B2>=50, \"B\", \"C\"))"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "When there are many cases, the IFS function is cleaner than deeply nested IFs. And to test two conditions at once, combine IF with AND or OR, like =IF(AND(B2>=50, C2=\"Yes\"), \"OK\", \"No\")."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "The IF function works almost identically in Excel — see ",
+        {
+          "link": {
+            "ref": "article:art-excel-if",
+            "text": "how to use the IF function in Excel"
+          }
+        },
+        ". Once your logic is set, you can visualize the results with a ",
+        {
+          "link": {
+            "ref": "article:art-gs-graph",
+            "text": "graph in Google Sheets"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "What is the difference between IF and IFS in Google Sheets?",
+          "answerRichText": "IF handles one test with a true and a false result. IFS checks several conditions in order and returns the first that is true, which avoids long nested IFs when you have many cases."
+        },
+        {
+          "question": "How do I use IF with text in Google Sheets?",
+          "answerRichText": "Put the text in quotation marks and compare with =. For example, =IF(A2=\"Paid\", \"Done\", \"Pending\") checks whether A2 says Paid. Text comparisons in Google Sheets are not case-sensitive."
+        },
+        {
+          "question": "Why does my IF formula show a value everywhere?",
+          "answerRichText": "Usually the condition is always true or always false. Check that you are comparing the right cell and using the correct operator (>, >=, =). A common slip is comparing a number to text, which never matches."
+        }
+      ]
+    }
+  ]
+}
