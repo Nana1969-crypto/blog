@@ -1,0 +1,135 @@
+{
+  "id": "art-gs-freeze",
+  "slug": "how-to-freeze-rows-and-columns-in-google-sheets",
+  "clusterId": "cl_gs_tut",
+  "title": "How to Freeze Rows and Columns in Google Sheets",
+  "dek": "To freeze rows in Google Sheets, open the View menu, choose Freeze, and pick how many rows or columns to lock. They then stay visible as you scroll. Here is how to freeze, adjust, and unfreeze them.",
+  "authorId": "author_team",
+  "publishedAt": "2026-07-31",
+  "updatedAt": "2026-07-31",
+  "intent": {
+    "primaryKeyword": "how to freeze rows in google sheets",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Freeze Rows and Columns in Google Sheets",
+    "metaDescription": "Freeze rows in Google Sheets from the View > Freeze menu so headers stay visible as you scroll — how to freeze, adjust, and unfreeze rows and columns."
+  },
+  "sources": [
+    {
+      "label": "Google Docs Editors Help — Freeze or merge rows & columns",
+      "url": "https://support.google.com/docs/answer/9060449"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "Freezing keeps your header row (or first columns) visible while the rest of the sheet scrolls. It is the fix for that moment when you scroll down a long list and can no longer tell which column is which."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to freeze rows"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Open the sheet and click any cell.",
+        [
+          "Go to the ",
+          {
+            "b": "View"
+          },
+          " menu, then hover over ",
+          {
+            "b": "Freeze"
+          },
+          "."
+        ],
+        "Choose 1 row to lock just the header, or 2 rows to lock the top two.",
+        "Scroll down — the frozen rows stay put while everything below moves."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "To freeze up to a specific row, click a cell in that row first, then choose View > Freeze > Up to current row. Google Sheets locks everything above it in one step."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to freeze columns"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Columns work the same way. Go to View > Freeze and choose 1 column or 2 columns to keep the leftmost columns — like names or dates — visible as you scroll sideways. To freeze up to a certain column, select a cell in it first and choose \"Up to current column\"."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Adjust or unfreeze"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "To change how many rows or columns are frozen, just pick a different number under View > Freeze.",
+        [
+          "To remove a freeze, go to ",
+          {
+            "b": "View > Freeze"
+          },
+          " and choose ",
+          {
+            "b": "No rows"
+          },
+          " (or No columns)."
+        ],
+        "You can also drag the thick gray line at the edge of the frozen area to move the freeze by hand."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Doing the same thing in Excel? See ",
+        {
+          "link": {
+            "ref": "article:art-excel-freeze",
+            "text": "how to freeze rows and columns in Excel"
+          }
+        },
+        ". Once your headers stay put, a ",
+        {
+          "link": {
+            "ref": "article:art-gs-pivot",
+            "text": "pivot table in Google Sheets"
+          }
+        },
+        " makes long lists even easier to read."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "How do I freeze the top row in Google Sheets?",
+          "answerRichText": "Click any cell, open the View menu, hover over Freeze, and choose 1 row. The top row then stays visible as a header while the rest of the sheet scrolls."
+        },
+        {
+          "question": "Can I freeze rows and columns at the same time in Google Sheets?",
+          "answerRichText": "Yes. Freeze rows from View > Freeze, then repeat for columns. Google Sheets keeps both locked, so your top header and left columns stay visible together."
+        },
+        {
+          "question": "Why is the freeze option greyed out?",
+          "answerRichText": "This usually happens when a cell is being edited or a filter view is active. Press Escape to finish editing, or close the filter view, and the View > Freeze menu becomes available again."
+        }
+      ]
+    }
+  ]
+}
