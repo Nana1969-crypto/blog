@@ -1,0 +1,129 @@
+{
+  "id": "art-excel-name",
+  "slug": "how-to-fix-name-error-excel",
+  "clusterId": "cl_excel_fix",
+  "title": "How to Fix the #NAME? Error in Excel",
+  "dek": "The #NAME? error means Excel does not recognize something in your formula — usually a misspelled function, missing quotation marks around text, or an unknown name. Here is how to find the cause and fix it.",
+  "authorId": "author_team",
+  "publishedAt": "2026-07-31",
+  "updatedAt": "2026-07-31",
+  "intent": {
+    "primaryKeyword": "name error excel",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Fix the #NAME? Error in Excel",
+    "metaDescription": "The #NAME? error means Excel doesn't recognize part of your formula. Here are the common causes — typos, missing quotes, bad ranges — and how to fix each."
+  },
+  "sources": [
+    {
+      "label": "Microsoft Support — How to correct a #NAME? error",
+      "url": "https://support.microsoft.com/en-us/office/how-to-correct-a-name-error-b6d54e31-a743-4d7d-9b61-40002a7b4286"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "The #NAME? error is Excel's way of saying \"I don't recognize something you typed.\" It almost always points to a small typo in a formula — and once you know where to look, it is quick to fix."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The common causes of #NAME?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "A misspelled function name — for example =SUMM(A1:A5) instead of =SUM(A1:A5).",
+        "Text in a formula without quotation marks, like =IF(A1=Paid,\"Yes\",\"No\") instead of =IF(A1=\"Paid\",\"Yes\",\"No\").",
+        "A named range that does not exist or was deleted.",
+        "A missing colon in a range, such as =SUM(A1 A5) instead of =SUM(A1:A5).",
+        "A function from a newer Excel that your version does not have."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 1: Check the function name"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Click the cell and read the formula slowly. The most common cause is a typo in the function name. As you start typing a function, Excel shows a list of matching names — pick it from that list instead of typing it fully, and the spelling is guaranteed correct."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 2: Check text and ranges"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Make sure any text inside the formula is wrapped in straight quotation marks: \"Paid\", not Paid.",
+        "Check that ranges use a colon: A1:A5, not A1;A5 or A1 A5.",
+        [
+          "If you used a named range, open ",
+          {
+            "b": "Formulas > Name Manager"
+          },
+          " and confirm the name still exists and is spelled the same way."
+        ]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Copied a formula from a website? The quotation marks are often \"curly\" (“ ”) rather than the straight quotes Excel needs. Delete them and retype the quotes directly in Excel."
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "The #NAME? error is one of a small family of Excel errors. If you also see others, here is how to fix the ",
+        {
+          "link": {
+            "ref": "article:art-excel-value",
+            "text": "#VALUE! error"
+          }
+        },
+        ", the ",
+        {
+          "link": {
+            "ref": "article:art-excel-ref",
+            "text": "#REF! error"
+          }
+        },
+        ", and the ",
+        {
+          "link": {
+            "ref": "article:art-excel-div0",
+            "text": "#DIV/0! error"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Why does my VLOOKUP show #NAME?",
+          "answerRichText": "Almost always a spelling slip — for example \"VLOOKP\" or \"VLOOOKUP\". Delete the function name and re-pick VLOOKUP from the list Excel shows as you type, which fixes the spelling automatically."
+        },
+        {
+          "question": "Why do I get #NAME? when using text in a formula?",
+          "answerRichText": "Text must be wrapped in straight quotation marks. Excel reads unquoted words as a range or defined name it cannot find, so =IF(A1=Paid,...) fails but =IF(A1=\"Paid\",...) works."
+        },
+        {
+          "question": "Can a deleted named range cause #NAME?",
+          "answerRichText": "Yes. If a formula refers to a named range that was renamed or deleted, Excel no longer recognizes the name and returns #NAME?. Recreate the name, or replace it with the actual cell range, in Formulas > Name Manager."
+        }
+      ]
+    }
+  ]
+}

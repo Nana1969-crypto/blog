@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to Fix the #DIV/0! Error in Excel</title>
-<meta name="description" content="The #DIV/0! error means a formula is dividing by zero or an empty cell. Here is what causes it and how to fix or hide it with IFERROR and IF.">
-<link rel="canonical" href="https://griddojo.com/excel/fixes/how-to-fix-div-0-error-excel/">
+<title>How to Fix the #NAME? Error in Excel</title>
+<meta name="description" content="The #NAME? error means Excel doesn't recognize part of your formula. Here are the common causes — typos, missing quotes, bad ranges — and how to fix each.">
+<link rel="canonical" href="https://griddojo.com/excel/fixes/how-to-fix-name-error-excel/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a7d55'/%3E%3Cpath d='M6 12h20M6 20h20M13 6v20M21 6v20' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Crect x='13' y='12' width='8' height='8' fill='white'/%3E%3C/svg%3E">
 <link rel="alternate" type="application/rss+xml" title="GridDojo" href="/rss.xml">
-<meta property="og:title" content="How to Fix the #DIV/0! Error in Excel">
-<meta property="og:description" content="The #DIV/0! error means a formula is dividing by zero or an empty cell. Here is what causes it and how to fix or hide it with IFERROR and IF.">
-<meta property="og:url" content="https://griddojo.com/excel/fixes/how-to-fix-div-0-error-excel/">
+<meta property="og:title" content="How to Fix the #NAME? Error in Excel">
+<meta property="og:description" content="The #NAME? error means Excel doesn't recognize part of your formula. Here are the common causes — typos, missing quotes, bad ranges — and how to fix each.">
+<meta property="og:url" content="https://griddojo.com/excel/fixes/how-to-fix-name-error-excel/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="GridDojo">
 <script>(function(){try{var t=localStorage.getItem('theme');
@@ -121,9 +121,9 @@ footer.site .site-inner{display:flex;justify-content:space-between;gap:1rem;flex
 footer.site a{color:var(--color-text-2)}
 @media (prefers-reduced-motion: no-preference){a,button{transition:color var(--motion-fast) ease}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Fix the #DIV/0! Error in Excel","description":"The #DIV/0! error means a formula is dividing by zero or by an empty cell. The fix is to correct the denominator, or wrap the formula in IFERROR or IF so it returns a blank or a message instead. Here is how.","datePublished":"2026-07-28","dateModified":"2026-07-28","inLanguage":"pt-BR","mainEntityOfPage":"https://griddojo.com/excel/fixes/how-to-fix-div-0-error-excel/","author":{"@type":"Organization","name":"The GridDojo Team","url":"https://griddojo.com/authors/griddojo-team/"},"publisher":{"@type":"Organization","name":"GridDojo","url":"https://griddojo.com"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://griddojo.com/"},{"@type":"ListItem","position":2,"name":"Excel","item":"https://griddojo.com/excel/"},{"@type":"ListItem","position":3,"name":"How to Fix the #DIV/0! Error in Excel","item":"https://griddojo.com/excel/fixes/how-to-fix-div-0-error-excel/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I hide #DIV/0! but keep the formula?","acceptedAnswer":{"@type":"Answer","text":"Wrap it in IFERROR, like =IFERROR(A2/B2, \"\"). The formula still works once valid data is entered, but shows a blank instead of the error while the denominator is zero or empty."}},{"@type":"Question","name":"Why does AVERAGE give a #DIV/0! error?","acceptedAnswer":{"@type":"Answer","text":"AVERAGE divides the total by the count of numbers. If the range has no numeric values yet, the count is zero and you get #DIV/0!. Once at least one number is entered, the error clears on its own."}},{"@type":"Question","name":"Is #DIV/0! a mistake I should always hide?","acceptedAnswer":{"@type":"Answer","text":"Not always. It can be a helpful signal that data is missing. Hide it with IFERROR or IF only when a zero denominator is expected and you want a clean sheet — otherwise, fix the underlying data."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Fix the #NAME? Error in Excel","description":"The #NAME? error means Excel does not recognize something in your formula — usually a misspelled function, missing quotation marks around text, or an unknown name. Here is how to find the cause and fix it.","datePublished":"2026-07-31","dateModified":"2026-07-31","inLanguage":"pt-BR","mainEntityOfPage":"https://griddojo.com/excel/fixes/how-to-fix-name-error-excel/","author":{"@type":"Organization","name":"The GridDojo Team","url":"https://griddojo.com/authors/griddojo-team/"},"publisher":{"@type":"Organization","name":"GridDojo","url":"https://griddojo.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://griddojo.com/"},{"@type":"ListItem","position":2,"name":"Excel","item":"https://griddojo.com/excel/"},{"@type":"ListItem","position":3,"name":"How to Fix the #NAME? Error in Excel","item":"https://griddojo.com/excel/fixes/how-to-fix-name-error-excel/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does my VLOOKUP show #NAME?","acceptedAnswer":{"@type":"Answer","text":"Almost always a spelling slip — for example \"VLOOKP\" or \"VLOOOKUP\". Delete the function name and re-pick VLOOKUP from the list Excel shows as you type, which fixes the spelling automatically."}},{"@type":"Question","name":"Why do I get #NAME? when using text in a formula?","acceptedAnswer":{"@type":"Answer","text":"Text must be wrapped in straight quotation marks. Excel reads unquoted words as a range or defined name it cannot find, so =IF(A1=Paid,...) fails but =IF(A1=\"Paid\",...) works."}},{"@type":"Question","name":"Can a deleted named range cause #NAME?","acceptedAnswer":{"@type":"Answer","text":"Yes. If a formula refers to a named range that was renamed or deleted, Excel no longer recognizes the name and returns #NAME?. Recreate the name, or replace it with the actual cell range, in Formulas > Name Manager."}}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Skip to content</a>
@@ -134,36 +134,31 @@ footer.site a{color:var(--color-text-2)}
 </div></header>
 <main id="conteudo">
 
-<nav class="breadcrumb" aria-label="You are here"><ol><li><a href="/">Home</a></li><li><a href="/excel/">Excel</a></li><li aria-current="page">How to Fix the #DIV/0! Error in Excel</li></ol></nav>
+<nav class="breadcrumb" aria-label="You are here"><ol><li><a href="/">Home</a></li><li><a href="/excel/">Excel</a></li><li aria-current="page">How to Fix the #NAME? Error in Excel</li></ol></nav>
 <div class="article-grid">
 <article class="reading">
-<h1>How to Fix the #DIV/0! Error in Excel</h1>
-<p class="dek">The #DIV/0! error means a formula is dividing by zero or by an empty cell. The fix is to correct the denominator, or wrap the formula in IFERROR or IF so it returns a blank or a message instead. Here is how.</p>
+<h1>How to Fix the #NAME? Error in Excel</h1>
+<p class="dek">The #NAME? error means Excel does not recognize something in your formula — usually a misspelled function, missing quotation marks around text, or an unknown name. Here is how to find the cause and fix it.</p>
 <div class="meta">
 <span>By <a href="/authors/griddojo-team/">The GridDojo Team</a></span>
-<span>Published <time datetime="2026-07-28">July 28, 2026</time></span>
+<span>Published <time datetime="2026-07-31">July 31, 2026</time></span>
 
 <span>2 min read</span>
 </div>
-<p>The #DIV/0! error is Excel telling you a formula tried to divide by zero — which is not a valid calculation. It usually shows up when the number you are dividing by is zero, or the cell it points to is empty.</p>
-<h2 id="what-causes-div-0">What causes #DIV/0!</h2>
-<ul><li>A formula like =A2/B2 where B2 is 0 or empty.</li><li>An average of a range that has no numbers yet, such as =AVERAGE(B2:B10) on empty cells.</li><li>A cell referenced in the denominator that gets cleared later, turning a working formula into an error.</li></ul>
-<h2 id="the-quick-fix-handle-it-with-iferror">The quick fix: handle it with IFERROR</h2>
-<p>If the error appears simply because data has not been entered yet, wrap the formula in IFERROR so it shows a blank (or a message) instead of #DIV/0!:</p>
-<pre><code class="lang-text">=IFERROR(A2/B2, &quot;&quot;)</code></pre>
-<p>The two quotation marks return an empty cell. You could put text there instead, such as =IFERROR(A2/B2, &quot;No data&quot;).</p>
-<aside class="callout callout-warn" role="note"><strong class="callout-label">Warning:</strong> IFERROR hides every error, not just #DIV/0!. If a different mistake creeps in, it will be hidden too. Use it when you expect the divide-by-zero and want a clean result — not to paper over unknown problems.</aside>
-<h2 id="the-precise-fix-test-with-if">The precise fix: test with IF</h2>
-<p>To handle only the zero case and leave real errors visible, check the denominator first with an <a href="/excel/tutorials/how-to-use-if-function-in-excel/">IF function</a>:</p>
-<pre><code class="lang-text">=IF(B2=0, &quot;&quot;, A2/B2)</code></pre>
-<p>This says: if B2 is zero, return blank; otherwise divide normally. It is more precise than IFERROR because it only reacts to the zero, not to every possible error.</p>
-<h2 id="or-just-fix-the-data">Or just fix the data</h2>
-<p>Sometimes the honest fix is not a formula at all — the denominator should not be zero. Check whether a value is missing, a total is wrong, or a cell was cleared by accident. A #DIV/0! is often a useful warning that data is incomplete. For other common formula errors, see <a href="/excel/fixes/how-to-fix-value-error-excel/">how to fix the #VALUE! error</a> and <a href="/excel/fixes/how-to-fix-ref-error-excel/">how to fix the #REF! error</a>.</p>
-<section class="faq" aria-label="Frequently asked questions"><h2 id="faq">Frequently asked questions</h2><details class="faq-item"><summary>How do I hide #DIV/0! but keep the formula?</summary><p>Wrap it in IFERROR, like =IFERROR(A2/B2, &quot;&quot;). The formula still works once valid data is entered, but shows a blank instead of the error while the denominator is zero or empty.</p></details><details class="faq-item"><summary>Why does AVERAGE give a #DIV/0! error?</summary><p>AVERAGE divides the total by the count of numbers. If the range has no numeric values yet, the count is zero and you get #DIV/0!. Once at least one number is entered, the error clears on its own.</p></details><details class="faq-item"><summary>Is #DIV/0! a mistake I should always hide?</summary><p>Not always. It can be a helpful signal that data is missing. Hide it with IFERROR or IF only when a zero denominator is expected and you want a clean sheet — otherwise, fix the underlying data.</p></details></section>
-<section class="sources"><h2 id="sources">Sources and references</h2><ol><li><a href="https://support.microsoft.com/en-us/office/how-to-correct-a-div-0-error-3a5a18a9-8d80-4ebb-a908-39e759a009a5" rel="noopener noreferrer">Microsoft Support — How to correct a #DIV/0! error</a></li></ol></section>
-<aside class="next-step"><h2>Next step</h2><p><a href="/excel/fixes/how-to-fix-name-error-excel/">How to Fix the #NAME? Error in Excel</a> — keep going with the next guide in this topic</p></aside>
+<p>The #NAME? error is Excel's way of saying &quot;I don't recognize something you typed.&quot; It almost always points to a small typo in a formula — and once you know where to look, it is quick to fix.</p>
+<h2 id="the-common-causes-of-name">The common causes of #NAME?</h2>
+<ul><li>A misspelled function name — for example =SUMM(A1:A5) instead of =SUM(A1:A5).</li><li>Text in a formula without quotation marks, like =IF(A1=Paid,&quot;Yes&quot;,&quot;No&quot;) instead of =IF(A1=&quot;Paid&quot;,&quot;Yes&quot;,&quot;No&quot;).</li><li>A named range that does not exist or was deleted.</li><li>A missing colon in a range, such as =SUM(A1 A5) instead of =SUM(A1:A5).</li><li>A function from a newer Excel that your version does not have.</li></ul>
+<h2 id="step-1-check-the-function-name">Step 1: Check the function name</h2>
+<p>Click the cell and read the formula slowly. The most common cause is a typo in the function name. As you start typing a function, Excel shows a list of matching names — pick it from that list instead of typing it fully, and the spelling is guaranteed correct.</p>
+<h2 id="step-2-check-text-and-ranges">Step 2: Check text and ranges</h2>
+<ol><li>Make sure any text inside the formula is wrapped in straight quotation marks: &quot;Paid&quot;, not Paid.</li><li>Check that ranges use a colon: A1:A5, not A1;A5 or A1 A5.</li><li>If you used a named range, open <strong>Formulas &gt; Name Manager</strong> and confirm the name still exists and is spelled the same way.</li></ol>
+<aside class="callout callout-tip" role="note"><strong class="callout-label">Tip:</strong> Copied a formula from a website? The quotation marks are often &quot;curly&quot; (“ ”) rather than the straight quotes Excel needs. Delete them and retype the quotes directly in Excel.</aside>
+<p>The #NAME? error is one of a small family of Excel errors. If you also see others, here is how to fix the <a href="/excel/fixes/how-to-fix-value-error-excel/">#VALUE! error</a>, the <a href="/excel/fixes/how-to-fix-ref-error-excel/">#REF! error</a>, and the <a href="/excel/fixes/how-to-fix-div-0-error-excel/">#DIV/0! error</a>.</p>
+<section class="faq" aria-label="Frequently asked questions"><h2 id="faq">Frequently asked questions</h2><details class="faq-item"><summary>Why does my VLOOKUP show #NAME?</summary><p>Almost always a spelling slip — for example &quot;VLOOKP&quot; or &quot;VLOOOKUP&quot;. Delete the function name and re-pick VLOOKUP from the list Excel shows as you type, which fixes the spelling automatically.</p></details><details class="faq-item"><summary>Why do I get #NAME? when using text in a formula?</summary><p>Text must be wrapped in straight quotation marks. Excel reads unquoted words as a range or defined name it cannot find, so =IF(A1=Paid,...) fails but =IF(A1=&quot;Paid&quot;,...) works.</p></details><details class="faq-item"><summary>Can a deleted named range cause #NAME?</summary><p>Yes. If a formula refers to a named range that was renamed or deleted, Excel no longer recognizes the name and returns #NAME?. Recreate the name, or replace it with the actual cell range, in Formulas &gt; Name Manager.</p></details></section>
+<section class="sources"><h2 id="sources">Sources and references</h2><ol><li><a href="https://support.microsoft.com/en-us/office/how-to-correct-a-name-error-b6d54e31-a743-4d7d-9b61-40002a7b4286" rel="noopener noreferrer">Microsoft Support — How to correct a #NAME? error</a></li></ol></section>
+<aside class="next-step"><h2>Next step</h2><p><a href="/excel/fixes/how-to-fix-div-0-error-excel/">How to Fix the #DIV/0! Error in Excel</a> — keep going with the next guide in this topic</p></aside>
 </article>
-<aside class="toc" aria-label="In this article"><div class="toc-box"><h2>In this article</h2><ol><li><a href="#what-causes-div-0">What causes #DIV/0!</a></li><li><a href="#the-quick-fix-handle-it-with-iferror">The quick fix: handle it with IFERROR</a></li><li><a href="#the-precise-fix-test-with-if">The precise fix: test with IF</a></li><li><a href="#or-just-fix-the-data">Or just fix the data</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></div></aside>
+<aside class="toc" aria-label="In this article"><div class="toc-box"><h2>In this article</h2><ol><li><a href="#the-common-causes-of-name">The common causes of #NAME?</a></li><li><a href="#step-1-check-the-function-name">Step 1: Check the function name</a></li><li><a href="#step-2-check-text-and-ranges">Step 2: Check text and ranges</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></div></aside>
 </div>
 </main>
 <footer class="site"><div class="site-inner">
