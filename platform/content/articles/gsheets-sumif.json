@@ -1,0 +1,145 @@
+{
+  "id": "art-gs-sumif",
+  "slug": "how-to-use-sumif-in-google-sheets",
+  "clusterId": "cl_gs_tut",
+  "title": "How to Use SUMIF in Google Sheets",
+  "dek": "SUMIF adds up numbers that meet a condition. The syntax is =SUMIF(range, criterion, sum_range) — for example, total sales for one region. Here is exactly how each part works, with examples.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-02",
+  "updatedAt": "2026-08-02",
+  "intent": {
+    "primaryKeyword": "how to use sumif in google sheets",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Use SUMIF in Google Sheets",
+    "metaDescription": "SUMIF in Google Sheets adds numbers that meet a condition. Learn the syntax with clear examples, and how SUMIFS handles more than one condition."
+  },
+  "sources": [
+    {
+      "label": "Google Docs Editors Help — SUMIF function",
+      "url": "https://support.google.com/docs/answer/3093583"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "SUMIF adds up only the numbers that meet a condition you set — like totaling the sales for one region, or adding only the expenses over a certain amount. It is one of the most useful functions in Google Sheets once your data grows past a simple list."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The SUMIF syntax, explained"
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=SUMIF(range, criterion, [sum_range])"
+    },
+    {
+      "type": "table",
+      "caption": "The three parts of SUMIF",
+      "headers": [
+        "Part",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "range",
+          "The cells to test against your condition"
+        ],
+        [
+          "criterion",
+          "The condition to match, like \"North\" or \">100\""
+        ],
+        [
+          "sum_range",
+          "The cells to add up (optional — if left out, SUMIF adds the range itself)"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "A real example"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Say column A has regions and column B has sales. To total the sales for the North region:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=SUMIF(A2:A100, \"North\", B2:B100)"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "This checks A2:A100 for \"North\" and adds the matching values from B2:B100. Wrap text criteria in quotation marks. You can also test numbers — =SUMIF(B2:B100, \">100\") adds every value over 100."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Point the criterion at a cell instead of typing it: =SUMIF(A2:A100, D1, B2:B100) totals whatever region you type in D1, so one formula becomes a mini dashboard."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "More than one condition: SUMIFS"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "When you need two or more conditions — say North region AND sales over 100 — use SUMIFS, which puts the sum range first:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=SUMIFS(B2:B100, A2:A100, \"North\", B2:B100, \">100\")"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "SUMIF pairs well with a decision function — combine it with an ",
+        {
+          "link": {
+            "ref": "article:art-gs-if",
+            "text": "IF function"
+          }
+        },
+        " for more complex logic, or turn the totals into a ",
+        {
+          "link": {
+            "ref": "article:art-gs-graph",
+            "text": "graph in Google Sheets"
+          }
+        },
+        " to see them at a glance."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "What is the difference between SUMIF and SUMIFS?",
+          "answerRichText": "SUMIF adds values that meet one condition, with the sum range last. SUMIFS handles several conditions at once and puts the sum range first. Use SUMIF for a single test and SUMIFS when two or more must all be true."
+        },
+        {
+          "question": "How do I use SUMIF with a greater-than condition?",
+          "answerRichText": "Put the operator and number in quotation marks as the criterion, like =SUMIF(B2:B100, \">100\"). You can do the same with <, >=, and <= — for example \">=50\" adds every value of 50 or more."
+        },
+        {
+          "question": "Why is my SUMIF returning 0?",
+          "answerRichText": "Usually the criterion does not match — a trailing space, different text, or numbers stored as text. Check that the range and criterion line up, and that \"North\" in the data exactly matches the \"North\" in your formula."
+        }
+      ]
+    }
+  ]
+}
