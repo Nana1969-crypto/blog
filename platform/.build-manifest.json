@@ -1,6 +1,7 @@
 {
   "sharedHash": "a8103db43b70bc9d",
   "articles": {
+    "art-airtable-vs-excel": "2edb97b8723e994a",
     "art-airtable-vs-gs": "a6e51f73384f5d01",
     "art-best-free-excel": "e10420710ec9c3c1",
     "art-best-spreadsheet": "1813388e9c7d9695",
@@ -25,6 +26,7 @@
     "art-gs-dupes": "e57c1fbec9210fea",
     "art-gs-sumif": "b102a4e01a191cdf",
     "art-gs-vlookup": "e6cfd6470a39aff2",
+    "art-m365-vs-workspace": "eeaa74b13cbd8081",
     "art-notion-vs-gs": "71d1db6a54f6a4c4"
   }
 }
