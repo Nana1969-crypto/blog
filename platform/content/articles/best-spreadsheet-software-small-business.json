@@ -136,6 +136,33 @@
           "answerRichText": "Most small businesses are better served by Google Sheets for its easy collaboration and low cost. Choose Excel if your work is finance-heavy or needs advanced analysis tools like Power Query."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-best-free-excel",
+              "text": "6 Best Free Excel Alternatives"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-m365-vs-workspace",
+              "text": "Microsoft 365 vs Google Workspace"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

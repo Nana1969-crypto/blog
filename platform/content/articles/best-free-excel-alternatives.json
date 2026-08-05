@@ -152,6 +152,25 @@
           "answerRichText": "Yes. Google Sheets, LibreOffice Calc, Zoho Sheet, WPS, and OnlyOffice all open and save Excel .xlsx files. Very complex macros or advanced features may not carry over perfectly."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-m365-vs-workspace",
+              "text": "Microsoft 365 vs Google Workspace"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

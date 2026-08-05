@@ -146,6 +146,33 @@
           "answerRichText": "Usually the condition is always true or always false. Check that you are comparing the right cell and using the correct operator (>, >=, =). A common slip is comparing a number to text, which never matches."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-sumif",
+              "text": "How to Use SUMIF in Google Sheets"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-vlookup",
+              "text": "How to Use VLOOKUP in Google Sheets"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

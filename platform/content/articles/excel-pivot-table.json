@@ -182,6 +182,33 @@
           "answerRichText": "Not by default. Right-click and choose Refresh after your data changes. If you build the pivot table from an Excel Table (Ctrl+T), new rows are included automatically on refresh."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-chart",
+              "text": "How to Make a Chart in Excel"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-sumif",
+              "text": "How to Use SUMIF in Excel"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

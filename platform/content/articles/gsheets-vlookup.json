@@ -134,6 +134,33 @@
           "answerRichText": "XLOOKUP is more flexible — it can return columns to the left, matches exactly by default, and survives inserted columns. VLOOKUP is still widely used and fine for simple left-to-right lookups."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-if",
+              "text": "How to Use the IF Function in Google Sheets"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-sumif",
+              "text": "How to Use SUMIF in Google Sheets"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

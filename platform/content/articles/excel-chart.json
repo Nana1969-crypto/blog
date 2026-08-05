@@ -185,6 +185,25 @@
           "answerRichText": "Usually the wrong range is selected, or text is mixed in where numbers should be. Click the chart, choose Select Data on the Chart Design tab, and confirm the range covers your headers and values with no stray text cells."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-graph",
+              "text": "How to Make a Graph in Google Sheets"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

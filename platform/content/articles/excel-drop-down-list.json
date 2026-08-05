@@ -159,6 +159,25 @@
           "answerRichText": "Data Validation blocks values that are not in the list by design. To allow other entries, open Data Validation, go to the Error Alert tab, and either change the style to Information or untick \"Show error alert\"."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-dropdown",
+              "text": "How to Make a Drop-Down List in Google Sheets"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

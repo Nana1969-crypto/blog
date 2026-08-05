@@ -161,6 +161,25 @@
           "answerRichText": "The rule is set to reject anything outside the list. Open Data > Data validation, and under \"If the data is invalid\" switch from Reject the input to Show a warning, which allows other entries."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-if",
+              "text": "How to Use the IF Function in Google Sheets"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

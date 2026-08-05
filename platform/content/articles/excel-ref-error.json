@@ -116,6 +116,41 @@
           "answerRichText": "Press Ctrl+F, search for #REF! and set \"Look in\" to Formulas. Excel lists every cell containing the broken reference so you can fix them one by one, or use Find & Replace for repeated ones."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-value",
+              "text": "How to Fix the #VALUE! Error in Excel"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-div0",
+              "text": "How to Fix the #DIV/0! Error in Excel"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-name",
+              "text": "How to Fix the #NAME? Error in Excel"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

@@ -147,6 +147,33 @@
           "answerRichText": "Google Sheets, in most cases. A budget relies on formulas, totals, and charts, which Sheets handles natively. Notion can track expenses in a simple table, but the math and reporting are far easier in a spreadsheet."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-airtable-vs-excel",
+              "text": "Airtable vs Excel"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-alternatives",
+              "text": "7 Best Google Sheets Alternatives"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

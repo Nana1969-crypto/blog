@@ -161,6 +161,33 @@
           "answerRichText": "Airtable has a free plan with limits on records per base and features. Larger or more advanced use requires a paid plan, whereas Google Sheets is free for individuals."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-airtable-vs-excel",
+              "text": "Airtable vs Excel"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-notion-vs-gs",
+              "text": "Notion vs Google Sheets"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

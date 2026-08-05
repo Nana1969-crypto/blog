@@ -108,6 +108,33 @@
           "answerRichText": "Press Ctrl+F, search for #VALUE! and set \"Look in\" to Values. Excel lists every cell showing the error so you can work through them."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-div0",
+              "text": "How to Fix the #DIV/0! Error in Excel"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-name",
+              "text": "How to Fix the #NAME? Error in Excel"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

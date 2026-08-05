@@ -166,6 +166,33 @@
           "answerRichText": "Yes. Google Sheets can open and edit .xlsx files, and can export back to Excel format. Very complex Excel features (some macros or advanced formulas) may not carry over perfectly."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-m365-vs-workspace",
+              "text": "Microsoft 365 vs Google Workspace"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-best-free-excel",
+              "text": "6 Best Free Excel Alternatives"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

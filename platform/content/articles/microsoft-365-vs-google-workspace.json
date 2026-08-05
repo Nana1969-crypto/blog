@@ -152,6 +152,33 @@
           "answerRichText": "It depends on the plan and how many users you have, and both update their prices regularly. Compare the current tiers on the official pricing pages — for a single person, Microsoft's personal plan is often the simpler value; for teams, compare per-user business plans side by side."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-best-free-excel",
+              "text": "6 Best Free Excel Alternatives"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-alternatives",
+              "text": "7 Best Google Sheets Alternatives"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

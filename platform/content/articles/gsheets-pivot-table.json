@@ -149,6 +149,33 @@
           "answerRichText": "Yes, they refresh on their own when the source data changes — provided the new data is within the range you selected. Using whole-column ranges keeps future rows included automatically."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-graph",
+              "text": "How to Make a Graph in Google Sheets"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-dupes",
+              "text": "How to Remove Duplicates in Google Sheets"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

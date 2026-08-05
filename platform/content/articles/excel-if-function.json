@@ -129,6 +129,33 @@
           "answerRichText": "Excel allows up to 64 nested IFs, but anything beyond three or four becomes hard to read. Use IFS, VLOOKUP against a lookup table, or the SWITCH function instead for many outcomes."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-if",
+              "text": "How to Use the IF Function in Google Sheets"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-sumif",
+              "text": "How to Use SUMIF in Excel"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

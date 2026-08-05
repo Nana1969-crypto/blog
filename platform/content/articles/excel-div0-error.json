@@ -140,6 +140,25 @@
           "answerRichText": "Not always. It can be a helpful signal that data is missing. Hide it with IFERROR or IF only when a zero denominator is expected and you want a clean sheet — otherwise, fix the underlying data."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-name",
+              "text": "How to Fix the #NAME? Error in Excel"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

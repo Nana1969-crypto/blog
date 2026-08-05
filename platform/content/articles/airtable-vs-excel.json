@@ -149,6 +149,33 @@
           "answerRichText": "Usually yes. Airtable's linked records, kanban and calendar views, and rich field types make it a stronger fit for tracking projects, while Excel is better when the project is really about numbers and calculations."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-notion-vs-gs",
+              "text": "Notion vs Google Sheets"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-best-spreadsheet",
+              "text": "Best Spreadsheet Software for Small Business"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

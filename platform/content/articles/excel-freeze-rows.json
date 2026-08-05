@@ -128,6 +128,25 @@
           "answerRichText": "Freezing only affects the screen. To repeat header rows on every printed page, use Page Layout > Print Titles > Rows to repeat at top."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-freeze",
+              "text": "How to Freeze Rows and Columns in Google Sheets"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

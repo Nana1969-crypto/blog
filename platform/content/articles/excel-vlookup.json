@@ -153,6 +153,33 @@
           "answerRichText": "No — VLOOKUP can only return a column to the right of the lookup column. To look left, use INDEX/MATCH or XLOOKUP, which do not have that limitation."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-vlookup",
+              "text": "How to Use VLOOKUP in Google Sheets"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-if",
+              "text": "How to Use the IF Function in Excel"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

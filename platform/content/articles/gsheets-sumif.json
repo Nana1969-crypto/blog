@@ -140,6 +140,33 @@
           "answerRichText": "Usually the criterion does not match — a trailing space, different text, or numbers stored as text. Check that the range and criterion line up, and that \"North\" in the data exactly matches the \"North\" in your formula."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-sumif",
+              "text": "How to Use SUMIF in Excel"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-vlookup",
+              "text": "How to Use VLOOKUP in Google Sheets"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

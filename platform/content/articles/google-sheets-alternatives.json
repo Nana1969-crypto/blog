@@ -148,6 +148,33 @@
           "answerRichText": "Yes. LibreOffice Calc and the desktop version of Microsoft Excel both work fully offline. Apple Numbers also works offline on Mac and iPhone."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-airtable-vs-gs",
+              "text": "Airtable vs Google Sheets"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-notion-vs-gs",
+              "text": "Notion vs Google Sheets"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

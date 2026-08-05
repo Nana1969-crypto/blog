@@ -122,6 +122,33 @@
           "answerRichText": "In the Remove Duplicates dialog, untick every column except the one you care about. Excel then treats rows as duplicates whenever that single column matches."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-dupes",
+              "text": "How to Remove Duplicates in Google Sheets"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-dropdown",
+              "text": "How to Create a Drop-Down List in Excel"
+            }
+          }
+        ]
+      ]
     }
   ]
 }

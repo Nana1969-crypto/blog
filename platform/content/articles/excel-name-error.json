@@ -124,6 +124,25 @@
           "answerRichText": "Yes. If a formula refers to a named range that was renamed or deleted, Excel no longer recognizes the name and returns #NAME?. Recreate the name, or replace it with the actual cell range, in Formulas > Name Manager."
         }
       ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-vlookup",
+              "text": "How to Use VLOOKUP in Excel"
+            }
+          }
+        ]
+      ]
     }
   ]
 }
