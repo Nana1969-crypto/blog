@@ -1,0 +1,172 @@
+{
+  "id": "art-excel-sumif",
+  "slug": "how-to-use-sumif-in-excel",
+  "clusterId": "cl_excel_tut",
+  "title": "How to Use SUMIF in Excel (with Examples)",
+  "dek": "SUMIF adds up only the numbers that meet a condition. The syntax is =SUMIF(range, criteria, [sum_range]) — like totaling sales for one region. Here is exactly how each part works, plus SUMIFS and wildcards.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-05",
+  "updatedAt": "2026-08-05",
+  "intent": {
+    "primaryKeyword": "how to use sumif in excel",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Use SUMIF in Excel (with Examples)",
+    "metaDescription": "A clear SUMIF guide for Excel: syntax, real examples, number and text criteria, wildcards, and how SUMIFS adds up values with more than one condition."
+  },
+  "sources": [
+    {
+      "label": "Microsoft Support — SUMIF function",
+      "url": "https://support.microsoft.com/en-us/office/sumif-function-169b8c99-c05c-4483-a712-1697a653039b"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "SUMIF is the function you reach for when a plain SUM is not enough — when you want to add only the numbers that meet a condition. Total the sales for one region, add only the expenses over a certain amount, sum the hours for one project: SUMIF does all of it with a single, readable formula."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The SUMIF syntax, explained"
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=SUMIF(range, criteria, [sum_range])"
+    },
+    {
+      "type": "table",
+      "caption": "The three parts of SUMIF",
+      "headers": [
+        "Part",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "range",
+          "The cells to test against your condition"
+        ],
+        [
+          "criteria",
+          "The condition to match, like \"North\" or \">100\""
+        ],
+        [
+          "sum_range",
+          "The cells to add up (optional — if left out, Excel adds the range itself)"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "A real example"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Say column A holds regions and column B holds sales, in the range A2:B100. To total the sales for the North region, you write:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=SUMIF(A2:A100, \"North\", B2:B100)"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "This checks A2:A100 for \"North\" and adds the matching values from B2:B100. Wrap text criteria in quotation marks. You can also test numbers directly — ",
+        {
+          "code": "=SUMIF(B2:B100, \">100\")"
+        },
+        " adds every value greater than 100 (no sum_range needed, because you are summing the same column you are testing)."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Point the criteria at a cell instead of typing it: =SUMIF(A2:A100, D1, B2:B100) totals whatever region you type in D1. One formula becomes a mini dashboard you can change on the fly."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Partial matches with wildcards"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "SUMIF understands two wildcards in text criteria: an asterisk (*) for any number of characters and a question mark (?) for a single character. To sum every product code that starts with \"AB\":"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=SUMIF(A2:A100, \"AB*\", B2:B100)"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "More than one condition: SUMIFS"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "When you need two or more conditions — say the North region AND sales over 100 — use SUMIFS. Note that it puts the sum range first:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=SUMIFS(B2:B100, A2:A100, \"North\", B2:B100, \">100\")"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "SUMIF pairs naturally with other tools. Combine it with an ",
+        {
+          "link": {
+            "ref": "article:art-excel-if",
+            "text": "IF function"
+          }
+        },
+        " for extra logic, summarize the results in a ",
+        {
+          "link": {
+            "ref": "article:art-excel-pivot",
+            "text": "pivot table"
+          }
+        },
+        ", or do the same task in Google Sheets with ",
+        {
+          "link": {
+            "ref": "article:art-gs-sumif",
+            "text": "SUMIF in Google Sheets"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "What is the difference between SUMIF and SUMIFS in Excel?",
+          "answerRichText": "SUMIF adds values that meet one condition, with the sum range last. SUMIFS handles several conditions at once and puts the sum range first. Use SUMIF for a single test and SUMIFS when two or more must all be true."
+        },
+        {
+          "question": "How do I use SUMIF with a date range?",
+          "answerRichText": "Use SUMIFS with two date conditions, like =SUMIFS(B2:B100, A2:A100, \">=\"&DATE(2026,1,1), A2:A100, \"<=\"&DATE(2026,3,31)) to total values within a quarter. The & joins the operator to the date so Excel reads it correctly."
+        },
+        {
+          "question": "Why is my SUMIF returning 0?",
+          "answerRichText": "Usually the criteria does not match — a trailing space, different text, or numbers stored as text. Check that the range and criteria line up, and that \"North\" in the data exactly matches the \"North\" in your formula."
+        }
+      ]
+    }
+  ]
+}
