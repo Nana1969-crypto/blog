@@ -1,0 +1,184 @@
+{
+  "id": "art-numbers-vs-excel",
+  "slug": "apple-numbers-vs-excel",
+  "clusterId": "cl_compare",
+  "title": "Apple Numbers vs Excel: Which Should You Use?",
+  "dek": "Apple Numbers is free, elegant, and great for Mac and iPhone users; Excel is the paid, cross-platform standard with far more power. Numbers suits simple, good-looking spreadsheets, Excel suits serious data work. Here is how they compare.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-07",
+  "updatedAt": "2026-08-07",
+  "intent": {
+    "primaryKeyword": "numbers vs excel",
+    "intentType": "commercial",
+    "funnelStage": "MoFu"
+  },
+  "seo": {
+    "metaTitle": "Apple Numbers vs Excel: Which to Use?",
+    "metaDescription": "Apple Numbers vs Excel compared: free and elegant on Mac and iPhone versus the paid, cross-platform standard. Features, .xlsx, and who each is for."
+  },
+  "sources": [
+    {
+      "label": "Apple — Numbers",
+      "url": "https://www.apple.com/numbers/"
+    },
+    {
+      "label": "Microsoft Support — Excel help & learning",
+      "url": "https://support.microsoft.com/en-us/excel"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "If you use a Mac or iPhone, Apple Numbers is already installed and free — so it is natural to wonder whether you need Excel at all. Both are spreadsheets, but they aim at different users: Numbers is elegant and beginner-friendly, while Excel is the powerful, cross-platform standard that businesses run on. Here is how to decide."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Quick comparison"
+    },
+    {
+      "type": "table",
+      "caption": "Apple Numbers vs Excel at a glance",
+      "headers": [
+        "",
+        "Apple Numbers",
+        "Microsoft Excel"
+      ],
+      "rows": [
+        [
+          "Price",
+          "Free on Apple devices",
+          "Paid (Microsoft 365 or one-time)"
+        ],
+        [
+          "Platforms",
+          "Mac, iPhone, iPad, iCloud web",
+          "Windows, Mac, web, mobile"
+        ],
+        [
+          "Feature depth",
+          "Simpler, fewer functions",
+          "Deepest: pivots, Power Query, more"
+        ],
+        [
+          "Design",
+          "Beautiful templates, easy layout",
+          "Function over form"
+        ],
+        [
+          "Big datasets",
+          "Best with smaller sheets",
+          "Faster with very large data"
+        ],
+        [
+          "File format",
+          "Opens/saves .xlsx",
+          "Native .xlsx"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "When Excel wins"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Choose Excel when you need power or compatibility. It has far more functions, pivot tables, and tools like Power Query, handles very large datasets smoothly, and runs on every platform. If you exchange spreadsheets with coworkers or clients — most of whom use Excel — staying in Excel avoids formatting surprises. It is the safe choice for serious data and business work."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "When Apple Numbers wins"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Choose Numbers if you are on Apple devices and want a free, good-looking spreadsheet for everyday needs. Its templates are genuinely beautiful, the layout is flexible (you can place tables and charts freely on a canvas), and it syncs effortlessly across Mac, iPhone, and iPad through iCloud. For personal budgets, simple trackers, and attractive one-off documents, it is a joy to use — and it costs nothing."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warn",
+      "richText": "The catch is compatibility and depth. Numbers opens and saves .xlsx, but complex Excel files can shift in layout, and Numbers lacks Excel's advanced features. If you share heavy spreadsheets with Excel users, expect some cleanup."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Who each is not for"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Numbers is not ideal for power users, large datasets, or teams that depend on advanced Excel features and perfect .xlsx fidelity.",
+        "Excel is not the obvious pick if you are an Apple user who just wants a free, elegant spreadsheet for personal use and rarely shares complex files.",
+        [
+          "Prefer a free option on any platform, not just Apple? Compare ",
+          {
+            "link": {
+              "ref": "article:art-libreoffice-vs-excel",
+              "text": "LibreOffice Calc vs Excel"
+            }
+          },
+          ", or weigh the browser-based ",
+          {
+            "link": {
+              "ref": "article:art-excel-vs-sheets",
+              "text": "Excel vs Google Sheets"
+            }
+          },
+          "."
+        ]
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Is Apple Numbers as good as Excel?",
+          "answerRichText": "For simple, good-looking spreadsheets on Apple devices, it is excellent and free. Excel is well ahead for advanced functions, pivot tables, very large datasets, and guaranteed compatibility with complex .xlsx files, which is why businesses standardize on it."
+        },
+        {
+          "question": "Can Apple Numbers open Excel files?",
+          "answerRichText": "Yes. Numbers opens and saves .xlsx files, so you can work with Excel documents. Simple files transfer well, but complex layouts, macros, or advanced formulas may shift or not carry over, so check important files."
+        },
+        {
+          "question": "Is Apple Numbers free?",
+          "answerRichText": "Yes. Numbers is free on Mac, iPhone, and iPad, and usable in a browser through iCloud. There is no subscription, which makes it an easy default for Apple users who do not need Excel's advanced features."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-best-free-excel",
+              "text": "6 Best Free Excel Alternatives"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-airtable-vs-excel",
+              "text": "Airtable vs Excel"
+            }
+          }
+        ]
+      ]
+    }
+  ]
+}
