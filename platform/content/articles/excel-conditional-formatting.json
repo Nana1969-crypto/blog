@@ -1,0 +1,231 @@
+{
+  "id": "art-excel-condformat",
+  "slug": "how-to-use-conditional-formatting-in-excel",
+  "clusterId": "cl_excel_tut",
+  "title": "How to Use Conditional Formatting in Excel",
+  "dek": "Conditional formatting changes a cell's color automatically based on its value — to highlight, rank, or flag data. Select your cells, open Home > Conditional Formatting, and pick a rule. Here is how to use every type, step by step.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-08",
+  "updatedAt": "2026-08-08",
+  "intent": {
+    "primaryKeyword": "conditional formatting in excel",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Use Conditional Formatting in Excel",
+    "metaDescription": "Use conditional formatting in Excel to color cells by value: highlight rules, top/bottom, data bars, color scales, and custom formulas. Step-by-step guide."
+  },
+  "sources": [
+    {
+      "label": "Microsoft Support — Apply conditional formatting",
+      "url": "https://support.microsoft.com/en-us/office/apply-conditional-formatting-to-quickly-highlight-your-data-2010b3c0-4b53-4e01-a68a-df8e1f6c0b83"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "Conditional formatting makes Excel color your cells automatically based on what they contain — turning a plain table into something you can read at a glance. Use it to highlight values above a target, flag overdue dates, rank the top performers, or spot duplicates. Once a rule is set, the colors update on their own as the data changes."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to apply conditional formatting"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Select the cells you want to format.",
+        [
+          "On the ",
+          {
+            "b": "Home"
+          },
+          " tab, click ",
+          {
+            "b": "Conditional Formatting"
+          },
+          "."
+        ],
+        "Choose a rule type from the menu (see the types below).",
+        "Set the condition and pick a color or style, then click OK."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The rule types, explained"
+    },
+    {
+      "type": "table",
+      "caption": "Conditional formatting rule types",
+      "headers": [
+        "Rule type",
+        "What it does"
+      ],
+      "rows": [
+        [
+          "Highlight Cells Rules",
+          "Color cells greater than, less than, between, equal to, or containing text"
+        ],
+        [
+          "Top/Bottom Rules",
+          "Highlight the top 10, bottom 10, or above/below average"
+        ],
+        [
+          "Data Bars",
+          "Draw a small bar in each cell, sized by its value"
+        ],
+        [
+          "Color Scales",
+          "Shade cells on a gradient (for example, red-to-green)"
+        ],
+        [
+          "Icon Sets",
+          "Add arrows, traffic lights, or ratings based on value"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "A quick example: highlight values over a target"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Select the sales figures in column B.",
+        "Home > Conditional Formatting > Highlight Cells Rules > Greater Than.",
+        "Type your target (say 1000) and choose a green fill. Click OK."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Every value over 1000 turns green instantly, and any new number you type is colored automatically."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "To highlight duplicates, use Highlight Cells Rules > Duplicate Values. It is the fastest way to spot repeats before you clean them up."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Custom rules with a formula"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "For anything the built-in rules do not cover, use a formula. Choose Conditional Formatting > New Rule > \"Use a formula to determine which cells to format\", then enter a test that returns TRUE or FALSE. For example, to shade an entire row when column C says \"Overdue\":"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=$C2=\"Overdue\""
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "The dollar sign locks the column so the whole row is tested. This is the same TRUE/FALSE logic behind the ",
+        {
+          "link": {
+            "ref": "article:art-excel-if",
+            "text": "IF function"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Edit, find, or clear rules"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          "To change a rule: ",
+          {
+            "b": "Conditional Formatting > Manage Rules"
+          },
+          ", pick the rule, and edit it."
+        ],
+        "To remove formatting: Conditional Formatting > Clear Rules, then choose selected cells or the whole sheet.",
+        "Rules are listed in priority order in Manage Rules — the top rule wins when two overlap."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Conditional formatting also pairs well with other tools: highlight repeats before you ",
+        {
+          "link": {
+            "ref": "article:art-excel-dupes",
+            "text": "remove duplicates in Excel"
+          }
+        },
+        ", or color the results of a ",
+        {
+          "link": {
+            "ref": "article:art-excel-dropdown",
+            "text": "drop-down list"
+          }
+        },
+        " so each choice stands out."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "How do I highlight an entire row with conditional formatting?",
+          "answerRichText": "Use a formula rule. Select the whole range, choose New Rule > \"Use a formula\", and lock the column with a dollar sign — for example =$C2=\"Overdue\". Because the column is fixed, Excel formats the full row whenever the test is true."
+        },
+        {
+          "question": "Why is my conditional formatting not working?",
+          "answerRichText": "The usual causes are the wrong range selected, a formula missing the dollar sign, or a higher-priority rule overriding it. Open Conditional Formatting > Manage Rules to check the range, the formula, and the order of rules."
+        },
+        {
+          "question": "How do I copy conditional formatting to other cells?",
+          "answerRichText": "Select a formatted cell, click Format Painter on the Home tab, then drag over the target cells. The rules copy across, adjusting their references to the new cells."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-chart",
+              "text": "How to Make a Chart in Excel"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-pivot",
+              "text": "How to Make a Pivot Table in Excel"
+            }
+          }
+        ]
+      ]
+    }
+  ]
+}
