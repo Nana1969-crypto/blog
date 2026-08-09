@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to Use SUMIF in Google Sheets</title>
-<meta name="description" content="SUMIF in Google Sheets adds numbers that meet a condition. Learn the syntax with clear examples, and how SUMIFS handles more than one condition.">
-<link rel="canonical" href="https://griddojo.com/google-sheets/tutorials/how-to-use-sumif-in-google-sheets/">
+<title>Conditional Formatting in Google Sheets</title>
+<meta name="description" content="Use conditional formatting in Google Sheets to color cells by value: single-color rules, color scales, and custom formulas. A clear step-by-step guide.">
+<link rel="canonical" href="https://griddojo.com/google-sheets/tutorials/how-to-use-conditional-formatting-in-google-sheets/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a7d55'/%3E%3Cpath d='M6 12h20M6 20h20M13 6v20M21 6v20' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Crect x='13' y='12' width='8' height='8' fill='white'/%3E%3C/svg%3E">
 <link rel="alternate" type="application/rss+xml" title="GridDojo" href="/rss.xml">
-<meta property="og:title" content="How to Use SUMIF in Google Sheets">
-<meta property="og:description" content="SUMIF in Google Sheets adds numbers that meet a condition. Learn the syntax with clear examples, and how SUMIFS handles more than one condition.">
-<meta property="og:url" content="https://griddojo.com/google-sheets/tutorials/how-to-use-sumif-in-google-sheets/">
+<meta property="og:title" content="Conditional Formatting in Google Sheets">
+<meta property="og:description" content="Use conditional formatting in Google Sheets to color cells by value: single-color rules, color scales, and custom formulas. A clear step-by-step guide.">
+<meta property="og:url" content="https://griddojo.com/google-sheets/tutorials/how-to-use-conditional-formatting-in-google-sheets/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="GridDojo">
 <script>(function(){try{var t=localStorage.getItem('theme');
@@ -121,9 +121,9 @@ footer.site .site-inner{display:flex;justify-content:space-between;gap:1rem;flex
 footer.site a{color:var(--color-text-2)}
 @media (prefers-reduced-motion: no-preference){a,button{transition:color var(--motion-fast) ease}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Use SUMIF in Google Sheets","description":"SUMIF adds up numbers that meet a condition. The syntax is =SUMIF(range, criterion, sum_range) — for example, total sales for one region. Here is exactly how each part works, with examples.","datePublished":"2026-08-02","dateModified":"2026-08-02","inLanguage":"pt-BR","mainEntityOfPage":"https://griddojo.com/google-sheets/tutorials/how-to-use-sumif-in-google-sheets/","author":{"@type":"Organization","name":"The GridDojo Team","url":"https://griddojo.com/authors/griddojo-team/"},"publisher":{"@type":"Organization","name":"GridDojo","url":"https://griddojo.com"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://griddojo.com/"},{"@type":"ListItem","position":2,"name":"Google Sheets","item":"https://griddojo.com/google-sheets/"},{"@type":"ListItem","position":3,"name":"How to Use SUMIF in Google Sheets","item":"https://griddojo.com/google-sheets/tutorials/how-to-use-sumif-in-google-sheets/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between SUMIF and SUMIFS?","acceptedAnswer":{"@type":"Answer","text":"SUMIF adds values that meet one condition, with the sum range last. SUMIFS handles several conditions at once and puts the sum range first. Use SUMIF for a single test and SUMIFS when two or more must all be true."}},{"@type":"Question","name":"How do I use SUMIF with a greater-than condition?","acceptedAnswer":{"@type":"Answer","text":"Put the operator and number in quotation marks as the criterion, like =SUMIF(B2:B100, \">100\"). You can do the same with <, >=, and <= — for example \">=50\" adds every value of 50 or more."}},{"@type":"Question","name":"Why is my SUMIF returning 0?","acceptedAnswer":{"@type":"Answer","text":"Usually the criterion does not match — a trailing space, different text, or numbers stored as text. Check that the range and criterion line up, and that \"North\" in the data exactly matches the \"North\" in your formula."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Use Conditional Formatting in Google Sheets","description":"Conditional formatting colors a cell automatically based on its value — to highlight, rank, or flag data. Select your cells, open Format > Conditional formatting, and set a rule. Here is how to use single-color rules, color scales, and custom formulas.","datePublished":"2026-08-09","dateModified":"2026-08-09","inLanguage":"pt-BR","mainEntityOfPage":"https://griddojo.com/google-sheets/tutorials/how-to-use-conditional-formatting-in-google-sheets/","author":{"@type":"Organization","name":"The GridDojo Team","url":"https://griddojo.com/authors/griddojo-team/"},"publisher":{"@type":"Organization","name":"GridDojo","url":"https://griddojo.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://griddojo.com/"},{"@type":"ListItem","position":2,"name":"Google Sheets","item":"https://griddojo.com/google-sheets/"},{"@type":"ListItem","position":3,"name":"How to Use Conditional Formatting in Google Sheets","item":"https://griddojo.com/google-sheets/tutorials/how-to-use-conditional-formatting-in-google-sheets/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I highlight an entire row in Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"Select the whole range, choose Format > Conditional formatting > Custom formula is, and lock the column with a dollar sign — for example =$C1=\"Overdue\". Because the column is fixed, the full row is colored whenever the test is true."}},{"@type":"Question","name":"Why is my conditional formatting not working in Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"Usually the range is wrong, the custom formula is missing the dollar sign, or a higher rule is overriding it. Open the Conditional formatting panel to check the range, the formula, and the order of the rules."}},{"@type":"Question","name":"Can I copy conditional formatting to other cells?","acceptedAnswer":{"@type":"Answer","text":"Yes. Copy a formatted cell, select the target cells, then use Edit > Paste special > Conditional formatting only. The rules copy across and adjust to the new cells."}}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Skip to content</a>
@@ -134,37 +134,38 @@ footer.site a{color:var(--color-text-2)}
 </div></header>
 <main id="conteudo">
 
-<nav class="breadcrumb" aria-label="You are here"><ol><li><a href="/">Home</a></li><li><a href="/google-sheets/">Google Sheets</a></li><li aria-current="page">How to Use SUMIF in Google Sheets</li></ol></nav>
+<nav class="breadcrumb" aria-label="You are here"><ol><li><a href="/">Home</a></li><li><a href="/google-sheets/">Google Sheets</a></li><li aria-current="page">How to Use Conditional Formatting in Google Sheets</li></ol></nav>
 <div class="article-grid">
 <article class="reading">
-<h1>How to Use SUMIF in Google Sheets</h1>
-<p class="dek">SUMIF adds up numbers that meet a condition. The syntax is =SUMIF(range, criterion, sum_range) — for example, total sales for one region. Here is exactly how each part works, with examples.</p>
+<h1>How to Use Conditional Formatting in Google Sheets</h1>
+<p class="dek">Conditional formatting colors a cell automatically based on its value — to highlight, rank, or flag data. Select your cells, open Format &gt; Conditional formatting, and set a rule. Here is how to use single-color rules, color scales, and custom formulas.</p>
 <div class="meta">
 <span>By <a href="/authors/griddojo-team/">The GridDojo Team</a></span>
-<span>Published <time datetime="2026-08-02">August 2, 2026</time></span>
+<span>Published <time datetime="2026-08-09">August 9, 2026</time></span>
 
 <span>2 min read</span>
 </div>
-<p>SUMIF adds up only the numbers that meet a condition you set — like totaling the sales for one region, or adding only the expenses over a certain amount. It is one of the most useful functions in Google Sheets once your data grows past a simple list.</p>
-<h2 id="the-sumif-syntax-explained">The SUMIF syntax, explained</h2>
-<pre><code class="lang-text">=SUMIF(range, criterion, [sum_range])</code></pre>
-<div class="table-wrap"><table><caption>The three parts of SUMIF</caption><thead><tr><th scope="col">Part</th><th scope="col">Meaning</th></tr></thead><tbody><tr><td>range</td><td>The cells to test against your condition</td></tr><tr><td>criterion</td><td>The condition to match, like &quot;North&quot; or &quot;&gt;100&quot;</td></tr><tr><td>sum_range</td><td>The cells to add up (optional — if left out, SUMIF adds the range itself)</td></tr></tbody></table></div>
-<h2 id="a-real-example">A real example</h2>
-<p>Say column A has regions and column B has sales. To total the sales for the North region:</p>
-<pre><code class="lang-text">=SUMIF(A2:A100, &quot;North&quot;, B2:B100)</code></pre>
-<p>This checks A2:A100 for &quot;North&quot; and adds the matching values from B2:B100. Wrap text criteria in quotation marks. You can also test numbers — =SUMIF(B2:B100, &quot;&gt;100&quot;) adds every value over 100.</p>
-<aside class="callout callout-tip" role="note"><strong class="callout-label">Tip:</strong> Point the criterion at a cell instead of typing it: =SUMIF(A2:A100, D1, B2:B100) totals whatever region you type in D1, so one formula becomes a mini dashboard.</aside>
-<h2 id="more-than-one-condition-sumifs">More than one condition: SUMIFS</h2>
-<p>When you need two or more conditions — say North region AND sales over 100 — use SUMIFS, which puts the sum range first:</p>
-<pre><code class="lang-text">=SUMIFS(B2:B100, A2:A100, &quot;North&quot;, B2:B100, &quot;&gt;100&quot;)</code></pre>
-<p>SUMIF pairs well with a decision function — combine it with an <a href="/google-sheets/tutorials/how-to-use-if-function-in-google-sheets/">IF function</a> for more complex logic, or turn the totals into a <a href="/google-sheets/tutorials/how-to-make-a-graph-in-google-sheets/">graph in Google Sheets</a> to see them at a glance.</p>
-<section class="faq" aria-label="Frequently asked questions"><h2 id="faq">Frequently asked questions</h2><details class="faq-item"><summary>What is the difference between SUMIF and SUMIFS?</summary><p>SUMIF adds values that meet one condition, with the sum range last. SUMIFS handles several conditions at once and puts the sum range first. Use SUMIF for a single test and SUMIFS when two or more must all be true.</p></details><details class="faq-item"><summary>How do I use SUMIF with a greater-than condition?</summary><p>Put the operator and number in quotation marks as the criterion, like =SUMIF(B2:B100, &quot;&gt;100&quot;). You can do the same with &lt;, &gt;=, and &lt;= — for example &quot;&gt;=50&quot; adds every value of 50 or more.</p></details><details class="faq-item"><summary>Why is my SUMIF returning 0?</summary><p>Usually the criterion does not match — a trailing space, different text, or numbers stored as text. Check that the range and criterion line up, and that &quot;North&quot; in the data exactly matches the &quot;North&quot; in your formula.</p></details></section>
+<p>Conditional formatting makes Google Sheets color your cells automatically based on what they contain, turning a plain table into something you can scan in seconds. Use it to highlight values above a target, flag overdue dates, or spot duplicates — and the colors update themselves as the data changes.</p>
+<h2 id="how-to-apply-conditional-formatting">How to apply conditional formatting</h2>
+<ol><li>Select the cells you want to format.</li><li>Open the <strong>Format</strong> menu and click <strong>Conditional formatting</strong>.</li><li>In the panel on the right, choose a condition under &quot;Format cells if…&quot;.</li><li>Pick the fill color (or text style), then click Done.</li></ol>
+<h2 id="single-color-vs-color-scale">Single color vs color scale</h2>
+<p>The panel has two tabs. <strong>Single color</strong> applies one format when a condition is true — for example, turn a cell green if it is greater than 1000. <strong>Color scale</strong> shades every cell on a gradient (such as red-to-green), which is perfect for seeing highs and lows across a whole range at a glance.</p>
+<div class="table-wrap"><table><caption>Common &quot;Format cells if&quot; conditions</caption><thead><tr><th scope="col">Condition</th><th scope="col">Use it to</th></tr></thead><tbody><tr><td>Greater than / Less than</td><td>Highlight numbers above or below a target</td></tr><tr><td>Text contains</td><td>Flag cells that include a word, like &quot;Overdue&quot;</td></tr><tr><td>Date is before / after</td><td>Mark upcoming or past dates</td></tr><tr><td>Is empty / is not empty</td><td>Spot missing entries</td></tr><tr><td>Custom formula is</td><td>Anything the built-in options do not cover</td></tr></tbody></table></div>
+<aside class="callout callout-tip" role="note"><strong class="callout-label">Tip:</strong> To highlight duplicates, use a custom formula: =COUNTIF(A:A, A1)&gt;1. Every value that appears more than once gets colored, which makes repeats easy to find before you clean them up.</aside>
+<h2 id="custom-rules-with-a-formula">Custom rules with a formula</h2>
+<p>For full control, choose &quot;Custom formula is&quot; and enter a test that returns TRUE or FALSE. To shade an entire row when column C says &quot;Overdue&quot;, select the whole range and use:</p>
+<pre><code class="lang-text">=$C1=&quot;Overdue&quot;</code></pre>
+<p>The dollar sign locks the column so the whole row is tested — the same TRUE/FALSE logic behind the <a href="/google-sheets/tutorials/how-to-use-if-function-in-google-sheets/">IF function</a>. Doing this in Excel instead? See <a href="/excel/tutorials/how-to-use-conditional-formatting-in-excel/">conditional formatting in Excel</a>.</p>
+<h2 id="edit-or-remove-a-rule">Edit or remove a rule</h2>
+<ul><li>To change a rule: open Format &gt; Conditional formatting, click the rule, and edit it.</li><li>To delete a rule: hover over it in the panel and click the trash icon.</li><li>Rules apply top to bottom — the first matching rule wins, so drag them to reorder if two overlap.</li></ul>
+<p>Conditional formatting pairs well with other tools: highlight repeats before you <a href="/google-sheets/tutorials/how-to-remove-duplicates-in-google-sheets/">remove duplicates in Google Sheets</a>.</p>
+<section class="faq" aria-label="Frequently asked questions"><h2 id="faq">Frequently asked questions</h2><details class="faq-item"><summary>How do I highlight an entire row in Google Sheets?</summary><p>Select the whole range, choose Format &gt; Conditional formatting &gt; Custom formula is, and lock the column with a dollar sign — for example =$C1=&quot;Overdue&quot;. Because the column is fixed, the full row is colored whenever the test is true.</p></details><details class="faq-item"><summary>Why is my conditional formatting not working in Google Sheets?</summary><p>Usually the range is wrong, the custom formula is missing the dollar sign, or a higher rule is overriding it. Open the Conditional formatting panel to check the range, the formula, and the order of the rules.</p></details><details class="faq-item"><summary>Can I copy conditional formatting to other cells?</summary><p>Yes. Copy a formatted cell, select the target cells, then use Edit &gt; Paste special &gt; Conditional formatting only. The rules copy across and adjust to the new cells.</p></details></section>
 <h2 id="related-guides">Related guides</h2>
-<ul><li><a href="/excel/tutorials/how-to-use-sumif-in-excel/">How to Use SUMIF in Excel</a></li><li><a href="/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/">How to Use VLOOKUP in Google Sheets</a></li></ul>
-<section class="sources"><h2 id="sources">Sources and references</h2><ol><li><a href="https://support.google.com/docs/answer/3093583" rel="noopener noreferrer">Google Docs Editors Help — SUMIF function</a></li></ol></section>
-<aside class="next-step"><h2>Next step</h2><p><a href="/google-sheets/tutorials/how-to-use-conditional-formatting-in-google-sheets/">How to Use Conditional Formatting in Google Sheets</a> — keep going with the next guide in this topic</p></aside>
+<ul><li><a href="/google-sheets/tutorials/how-to-make-a-graph-in-google-sheets/">How to Make a Graph in Google Sheets</a></li><li><a href="/google-sheets/tutorials/how-to-make-a-pivot-table-in-google-sheets/">How to Make a Pivot Table in Google Sheets</a></li></ul>
+<section class="sources"><h2 id="sources">Sources and references</h2><ol><li><a href="https://support.google.com/docs/answer/78413" rel="noopener noreferrer">Google Docs Editors Help — Use conditional formatting rules</a></li></ol></section>
+<aside class="next-step"><h2>Next step</h2><p><a href="/google-sheets/tutorials/how-to-create-a-drop-down-list-in-google-sheets/">How to Make a Drop-Down List in Google Sheets</a> — keep going with the next guide in this topic</p></aside>
 </article>
-<aside class="toc" aria-label="In this article"><div class="toc-box"><h2>In this article</h2><ol><li><a href="#the-sumif-syntax-explained">The SUMIF syntax, explained</a></li><li><a href="#a-real-example">A real example</a></li><li><a href="#more-than-one-condition-sumifs">More than one condition: SUMIFS</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#related-guides">Related guides</a></li></ol></div></aside>
+<aside class="toc" aria-label="In this article"><div class="toc-box"><h2>In this article</h2><ol><li><a href="#how-to-apply-conditional-formatting">How to apply conditional formatting</a></li><li><a href="#single-color-vs-color-scale">Single color vs color scale</a></li><li><a href="#custom-rules-with-a-formula">Custom rules with a formula</a></li><li><a href="#edit-or-remove-a-rule">Edit or remove a rule</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#related-guides">Related guides</a></li></ol></div></aside>
 </div>
 </main>
 <footer class="site"><div class="site-inner">

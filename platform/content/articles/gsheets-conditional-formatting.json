@@ -1,0 +1,219 @@
+{
+  "id": "art-gs-condformat",
+  "slug": "how-to-use-conditional-formatting-in-google-sheets",
+  "clusterId": "cl_gs_tut",
+  "title": "How to Use Conditional Formatting in Google Sheets",
+  "dek": "Conditional formatting colors a cell automatically based on its value — to highlight, rank, or flag data. Select your cells, open Format > Conditional formatting, and set a rule. Here is how to use single-color rules, color scales, and custom formulas.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-09",
+  "updatedAt": "2026-08-09",
+  "intent": {
+    "primaryKeyword": "conditional formatting in google sheets",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "Conditional Formatting in Google Sheets",
+    "metaDescription": "Use conditional formatting in Google Sheets to color cells by value: single-color rules, color scales, and custom formulas. A clear step-by-step guide."
+  },
+  "sources": [
+    {
+      "label": "Google Docs Editors Help — Use conditional formatting rules",
+      "url": "https://support.google.com/docs/answer/78413"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "Conditional formatting makes Google Sheets color your cells automatically based on what they contain, turning a plain table into something you can scan in seconds. Use it to highlight values above a target, flag overdue dates, or spot duplicates — and the colors update themselves as the data changes."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to apply conditional formatting"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Select the cells you want to format.",
+        [
+          "Open the ",
+          {
+            "b": "Format"
+          },
+          " menu and click ",
+          {
+            "b": "Conditional formatting"
+          },
+          "."
+        ],
+        "In the panel on the right, choose a condition under \"Format cells if…\".",
+        "Pick the fill color (or text style), then click Done."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Single color vs color scale"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "The panel has two tabs. ",
+        {
+          "b": "Single color"
+        },
+        " applies one format when a condition is true — for example, turn a cell green if it is greater than 1000. ",
+        {
+          "b": "Color scale"
+        },
+        " shades every cell on a gradient (such as red-to-green), which is perfect for seeing highs and lows across a whole range at a glance."
+      ]
+    },
+    {
+      "type": "table",
+      "caption": "Common \"Format cells if\" conditions",
+      "headers": [
+        "Condition",
+        "Use it to"
+      ],
+      "rows": [
+        [
+          "Greater than / Less than",
+          "Highlight numbers above or below a target"
+        ],
+        [
+          "Text contains",
+          "Flag cells that include a word, like \"Overdue\""
+        ],
+        [
+          "Date is before / after",
+          "Mark upcoming or past dates"
+        ],
+        [
+          "Is empty / is not empty",
+          "Spot missing entries"
+        ],
+        [
+          "Custom formula is",
+          "Anything the built-in options do not cover"
+        ]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "To highlight duplicates, use a custom formula: =COUNTIF(A:A, A1)>1. Every value that appears more than once gets colored, which makes repeats easy to find before you clean them up."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Custom rules with a formula"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "For full control, choose \"Custom formula is\" and enter a test that returns TRUE or FALSE. To shade an entire row when column C says \"Overdue\", select the whole range and use:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=$C1=\"Overdue\""
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "The dollar sign locks the column so the whole row is tested — the same TRUE/FALSE logic behind the ",
+        {
+          "link": {
+            "ref": "article:art-gs-if",
+            "text": "IF function"
+          }
+        },
+        ". Doing this in Excel instead? See ",
+        {
+          "link": {
+            "ref": "article:art-excel-condformat",
+            "text": "conditional formatting in Excel"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Edit or remove a rule"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "To change a rule: open Format > Conditional formatting, click the rule, and edit it.",
+        "To delete a rule: hover over it in the panel and click the trash icon.",
+        "Rules apply top to bottom — the first matching rule wins, so drag them to reorder if two overlap."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Conditional formatting pairs well with other tools: highlight repeats before you ",
+        {
+          "link": {
+            "ref": "article:art-gs-dupes",
+            "text": "remove duplicates in Google Sheets"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "How do I highlight an entire row in Google Sheets?",
+          "answerRichText": "Select the whole range, choose Format > Conditional formatting > Custom formula is, and lock the column with a dollar sign — for example =$C1=\"Overdue\". Because the column is fixed, the full row is colored whenever the test is true."
+        },
+        {
+          "question": "Why is my conditional formatting not working in Google Sheets?",
+          "answerRichText": "Usually the range is wrong, the custom formula is missing the dollar sign, or a higher rule is overriding it. Open the Conditional formatting panel to check the range, the formula, and the order of the rules."
+        },
+        {
+          "question": "Can I copy conditional formatting to other cells?",
+          "answerRichText": "Yes. Copy a formatted cell, select the target cells, then use Edit > Paste special > Conditional formatting only. The rules copy across and adjust to the new cells."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-graph",
+              "text": "How to Make a Graph in Google Sheets"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-pivot",
+              "text": "How to Make a Pivot Table in Google Sheets"
+            }
+          }
+        ]
+      ]
+    }
+  ]
+}
