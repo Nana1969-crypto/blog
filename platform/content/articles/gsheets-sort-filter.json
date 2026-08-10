@@ -1,0 +1,194 @@
+{
+  "id": "art-gs-sortfilter",
+  "slug": "how-to-sort-and-filter-in-google-sheets",
+  "clusterId": "cl_gs_tut",
+  "title": "How to Sort and Filter Data in Google Sheets",
+  "dek": "To sort in Google Sheets, use Data > Sort range; to filter, use Data > Create a filter and pick which rows to show. Sorting reorders your data, filtering hides rows without deleting them. Here is how to do both, step by step.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-10",
+  "updatedAt": "2026-08-10",
+  "intent": {
+    "primaryKeyword": "how to sort and filter in google sheets",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Sort and Filter in Google Sheets",
+    "metaDescription": "Sort and filter data in Google Sheets: use Data > Sort range to reorder, and Data > Create a filter to show only the rows you want. Step-by-step guide."
+  },
+  "sources": [
+    {
+      "label": "Google Docs Editors Help — Sort & filter your data",
+      "url": "https://support.google.com/docs/answer/3540681"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "Sorting and filtering are the two fastest ways to make sense of a long list. Sorting reorders the rows — alphabetically, or from highest to lowest. Filtering hides the rows you do not want to see right now, without deleting anything. Together they turn a messy sheet into exactly the view you need."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to sort your data"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Select the range you want to sort, including the header row.",
+        [
+          "Open the ",
+          {
+            "b": "Data"
+          },
+          " menu and choose ",
+          {
+            "b": "Sort range > Advanced range sorting options"
+          },
+          "."
+        ],
+        "Tick \"Data has header row\", pick the column to sort by, and choose A→Z or Z→A.",
+        "Click Sort. To sort by more than one column, click \"Add another sort column\" before sorting."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warn",
+      "richText": "Select the whole table before sorting, not a single column. If you sort just one column, its values move but the other columns stay put — which scrambles your rows. Sorting the full range keeps each row intact."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to filter your data"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Click any cell in your data.",
+        [
+          "Go to ",
+          {
+            "b": "Data > Create a filter"
+          },
+          ". A funnel icon appears on each header."
+        ],
+        "Click the funnel on the column you want to filter.",
+        "Choose \"Filter by values\" to tick which entries to show, or \"Filter by condition\" for rules like greater than, text contains, or is empty. Click OK."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Filtering only hides rows — your data is untouched. To bring everything back, go to ",
+        {
+          "b": "Data > Remove filter"
+        },
+        "."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Sort vs filter: which to use"
+    },
+    {
+      "type": "table",
+      "caption": "Sorting vs filtering",
+      "headers": [
+        "",
+        "Sort",
+        "Filter"
+      ],
+      "rows": [
+        [
+          "What it does",
+          "Reorders the rows",
+          "Hides rows you do not want"
+        ],
+        [
+          "Changes the data?",
+          "Yes, the order changes",
+          "No, rows are only hidden"
+        ],
+        [
+          "Best for",
+          "Ranking, alphabetizing",
+          "Focusing on a subset"
+        ]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Sharing the sheet? Use Data > Create filter view instead of a plain filter. A filter view only changes what you see, so you can filter without disturbing what everyone else is looking at."
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Sorting and filtering work best on clean data. Clear out repeats first with ",
+        {
+          "link": {
+            "ref": "article:art-gs-dupes",
+            "text": "remove duplicates in Google Sheets"
+          }
+        },
+        ", and ",
+        {
+          "link": {
+            "ref": "article:art-gs-freeze",
+            "text": "freeze the header row"
+          }
+        },
+        " so your column titles stay visible while you scroll."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "What is the difference between sorting and filtering in Google Sheets?",
+          "answerRichText": "Sorting reorders every row — for example, alphabetically or highest to lowest. Filtering hides the rows you do not want to see, without changing or deleting anything. Use sorting to rank data and filtering to focus on part of it."
+        },
+        {
+          "question": "How do I filter without affecting other people in a shared sheet?",
+          "answerRichText": "Use Data > Create filter view instead of a regular filter. A filter view changes only your own view of the data, so others working in the same sheet are not disturbed by your filtering or sorting."
+        },
+        {
+          "question": "Why did sorting mix up my rows?",
+          "answerRichText": "You probably selected a single column instead of the whole table. Sorting one column moves only its values while the rest stay put. Always select the full range (with headers) so entire rows move together."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-pivot",
+              "text": "How to Make a Pivot Table in Google Sheets"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-sumif",
+              "text": "How to Use SUMIF in Google Sheets"
+            }
+          }
+        ]
+      ]
+    }
+  ]
+}
