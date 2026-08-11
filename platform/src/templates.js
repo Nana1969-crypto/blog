@@ -223,14 +223,14 @@ function articleJsonLd({ site, article, url, pillar, author }) {
     '@context': 'https://schema.org', '@type': 'Article',
     headline: article.title, description: article.dek,
     datePublished: article.publishedAt, dateModified: article.updatedAt || article.publishedAt,
-    inLanguage: 'pt-BR',
+    inLanguage: 'en',
     mainEntityOfPage: site.baseUrl + url,
     author: { '@type': author.type || 'Person', name: author.name, url: `${site.baseUrl}/authors/${author.slug}/` },
     publisher: { '@type': 'Organization', name: site.name, url: site.baseUrl },
   }, {
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Início', item: site.baseUrl + '/' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.baseUrl + '/' },
       { '@type': 'ListItem', position: 2, name: pillar.title, item: `${site.baseUrl}/${pillar.slug}/` },
       { '@type': 'ListItem', position: 3, name: article.title, item: site.baseUrl + url },
     ],
@@ -262,7 +262,7 @@ ${breadcrumb([{ label: 'Home', href: '/' }, { label: pillar.title }])}
     canonicalPath: `/${pillar.slug}/`, currentPillar: pillar.slug,
     jsonld: [{
       '@context': 'https://schema.org', '@type': 'CollectionPage',
-      name: pillar.title, description: pillar.description, inLanguage: 'pt-BR',
+      name: pillar.title, description: pillar.description, inLanguage: 'en',
       isPartOf: { '@type': 'WebSite', name: site.name, url: site.baseUrl },
     }],
     body,
@@ -290,7 +290,7 @@ function homePage({ site, pillars, latest }) {
     canonicalPath: '/',
     jsonld: [{
       '@context': 'https://schema.org', '@type': 'WebSite',
-      name: site.name, url: site.baseUrl, inLanguage: 'pt-BR',
+      name: site.name, url: site.baseUrl, inLanguage: 'en',
       publisher: { '@type': 'Organization', name: site.name, url: site.baseUrl },
     }],
     body,
