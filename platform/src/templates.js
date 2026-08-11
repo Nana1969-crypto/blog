@@ -139,7 +139,7 @@ function baseLayout({ site, title, description, canonicalPath, jsonld = [], body
 <meta property="og:url" content="${esc(canonical)}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${esc(site.name)}">
-<script>${themeScript}</script>
+${site.adsensePublisherId ? `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${esc(site.adsensePublisherId)}" crossorigin="anonymous"></script>\n` : ''}<script>${themeScript}</script>
 <style>${tokensCss()}${baseCss}</style>
 ${ld}
 </head>
