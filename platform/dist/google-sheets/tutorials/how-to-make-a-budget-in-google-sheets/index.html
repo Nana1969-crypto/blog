@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to Use the IF Function in Google Sheets</title>
-<meta name="description" content="The IF function in Google Sheets returns one value if a condition is true and another if false. Learn the syntax, real examples, and how to nest IFs.">
-<link rel="canonical" href="https://griddojo.com/google-sheets/tutorials/how-to-use-if-function-in-google-sheets/">
+<title>How to Make a Budget in Google Sheets</title>
+<meta name="description" content="Build a free budget in Google Sheets: list income and expenses, total them with SUM, find your balance, and group spending by category with SUMIF.">
+<link rel="canonical" href="https://griddojo.com/google-sheets/tutorials/how-to-make-a-budget-in-google-sheets/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a7d55'/%3E%3Cpath d='M6 12h20M6 20h20M13 6v20M21 6v20' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3Crect x='13' y='12' width='8' height='8' fill='white'/%3E%3C/svg%3E">
 <link rel="alternate" type="application/rss+xml" title="GridDojo" href="/rss.xml">
-<meta property="og:title" content="How to Use the IF Function in Google Sheets">
-<meta property="og:description" content="The IF function in Google Sheets returns one value if a condition is true and another if false. Learn the syntax, real examples, and how to nest IFs.">
-<meta property="og:url" content="https://griddojo.com/google-sheets/tutorials/how-to-use-if-function-in-google-sheets/">
+<meta property="og:title" content="How to Make a Budget in Google Sheets">
+<meta property="og:description" content="Build a free budget in Google Sheets: list income and expenses, total them with SUM, find your balance, and group spending by category with SUMIF.">
+<meta property="og:url" content="https://griddojo.com/google-sheets/tutorials/how-to-make-a-budget-in-google-sheets/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="GridDojo">
 <script>(function(){try{var t=localStorage.getItem('theme');
@@ -121,9 +121,9 @@ footer.site .site-inner{display:flex;justify-content:space-between;gap:1rem;flex
 footer.site a{color:var(--color-text-2)}
 @media (prefers-reduced-motion: no-preference){a,button{transition:color var(--motion-fast) ease}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Use the IF Function in Google Sheets","description":"The IF function in Google Sheets returns one value when a condition is true and another when it is false. The syntax is =IF(condition, value_if_true, value_if_false). Here is exactly how each part works, with examples.","datePublished":"2026-07-29","dateModified":"2026-07-29","inLanguage":"pt-BR","mainEntityOfPage":"https://griddojo.com/google-sheets/tutorials/how-to-use-if-function-in-google-sheets/","author":{"@type":"Organization","name":"The GridDojo Team","url":"https://griddojo.com/authors/griddojo-team/"},"publisher":{"@type":"Organization","name":"GridDojo","url":"https://griddojo.com"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://griddojo.com/"},{"@type":"ListItem","position":2,"name":"Google Sheets","item":"https://griddojo.com/google-sheets/"},{"@type":"ListItem","position":3,"name":"How to Use the IF Function in Google Sheets","item":"https://griddojo.com/google-sheets/tutorials/how-to-use-if-function-in-google-sheets/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between IF and IFS in Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"IF handles one test with a true and a false result. IFS checks several conditions in order and returns the first that is true, which avoids long nested IFs when you have many cases."}},{"@type":"Question","name":"How do I use IF with text in Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"Put the text in quotation marks and compare with =. For example, =IF(A2=\"Paid\", \"Done\", \"Pending\") checks whether A2 says Paid. Text comparisons in Google Sheets are not case-sensitive."}},{"@type":"Question","name":"Why does my IF formula show a value everywhere?","acceptedAnswer":{"@type":"Answer","text":"Usually the condition is always true or always false. Check that you are comparing the right cell and using the correct operator (>, >=, =). A common slip is comparing a number to text, which never matches."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Make a Budget in Google Sheets","description":"To make a budget in Google Sheets, list your income and expenses, total each with SUM, subtract to find your balance, and group spending by category with SUMIF. Here is how to build a simple, free budget from scratch.","datePublished":"2026-08-11","dateModified":"2026-08-11","inLanguage":"pt-BR","mainEntityOfPage":"https://griddojo.com/google-sheets/tutorials/how-to-make-a-budget-in-google-sheets/","author":{"@type":"Organization","name":"The GridDojo Team","url":"https://griddojo.com/authors/griddojo-team/"},"publisher":{"@type":"Organization","name":"GridDojo","url":"https://griddojo.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://griddojo.com/"},{"@type":"ListItem","position":2,"name":"Google Sheets","item":"https://griddojo.com/google-sheets/"},{"@type":"ListItem","position":3,"name":"How to Make a Budget in Google Sheets","item":"https://griddojo.com/google-sheets/tutorials/how-to-make-a-budget-in-google-sheets/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Google Sheets have a budget template?","acceptedAnswer":{"@type":"Answer","text":"Yes. In the Google Sheets home screen, open the Template gallery and look under Personal for budget templates like \"Monthly budget\" and \"Annual budget\". They are a quick starting point, but building your own gives you full control over the categories."}},{"@type":"Question","name":"How do I total expenses by category in Google Sheets?","acceptedAnswer":{"@type":"Answer","text":"Use SUMIF, like =SUMIF(D2:D20, \"Food\", E2:E20), where column D holds the categories and column E holds the amounts. For many categories at once, a pivot table groups and totals them automatically."}},{"@type":"Question","name":"Can I use my Google Sheets budget on my phone?","acceptedAnswer":{"@type":"Answer","text":"Yes. Install the Google Sheets app on iPhone or Android and your budget syncs automatically, so you can add expenses on the go and see your totals update everywhere."}}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Skip to content</a>
@@ -134,38 +134,43 @@ footer.site a{color:var(--color-text-2)}
 </div></header>
 <main id="conteudo">
 
-<nav class="breadcrumb" aria-label="You are here"><ol><li><a href="/">Home</a></li><li><a href="/google-sheets/">Google Sheets</a></li><li aria-current="page">How to Use the IF Function in Google Sheets</li></ol></nav>
+<nav class="breadcrumb" aria-label="You are here"><ol><li><a href="/">Home</a></li><li><a href="/google-sheets/">Google Sheets</a></li><li aria-current="page">How to Make a Budget in Google Sheets</li></ol></nav>
 <div class="article-grid">
 <article class="reading">
-<h1>How to Use the IF Function in Google Sheets</h1>
-<p class="dek">The IF function in Google Sheets returns one value when a condition is true and another when it is false. The syntax is =IF(condition, value_if_true, value_if_false). Here is exactly how each part works, with examples.</p>
+<h1>How to Make a Budget in Google Sheets</h1>
+<p class="dek">To make a budget in Google Sheets, list your income and expenses, total each with SUM, subtract to find your balance, and group spending by category with SUMIF. Here is how to build a simple, free budget from scratch.</p>
 <div class="meta">
 <span>By <a href="/authors/griddojo-team/">The GridDojo Team</a></span>
-<span>Published <time datetime="2026-07-29">July 29, 2026</time></span>
+<span>Published <time datetime="2026-08-11">August 11, 2026</time></span>
 
 <span>2 min read</span>
 </div>
-<p>IF is the function that lets a spreadsheet make decisions. It checks a condition and returns one thing when it is true and another when it is false — perfect for labels like Pass/Fail, Yes/No, or flagging values that need attention.</p>
-<h2 id="the-if-syntax-explained">The IF syntax, explained</h2>
-<pre><code class="lang-text">=IF(condition, value_if_true, value_if_false)</code></pre>
-<div class="table-wrap"><table><caption>The three parts of IF</caption><thead><tr><th scope="col">Part</th><th scope="col">Meaning</th></tr></thead><tbody><tr><td>condition</td><td>A test that is either true or false, like B2&gt;50</td></tr><tr><td>value_if_true</td><td>What to return when the test is true</td></tr><tr><td>value_if_false</td><td>What to return when the test is false</td></tr></tbody></table></div>
-<h2 id="a-real-example">A real example</h2>
-<p>Say column B has scores. To label each one Pass or Fail based on a 50 cutoff, in cell C2 you write:</p>
-<pre><code class="lang-text">=IF(B2&gt;=50, &quot;Pass&quot;, &quot;Fail&quot;)</code></pre>
-<p>This reads: if the score in B2 is 50 or higher, show &quot;Pass&quot;; otherwise show &quot;Fail&quot;. Wrap text values in quotation marks; numbers and cell references do not need them.</p>
-<aside class="callout callout-tip" role="note"><strong class="callout-label">Tip:</strong> Leaving a result blank is fine — use two quotation marks with nothing between them: =IF(B2&gt;=50, &quot;Pass&quot;, &quot;&quot;). The cell stays empty when the test is false.</aside>
-<h2 id="testing-more-than-one-condition">Testing more than one condition</h2>
-<p>You can nest an IF inside another to handle several outcomes — for example, grades:</p>
-<pre><code class="lang-text">=IF(B2&gt;=80, &quot;A&quot;, IF(B2&gt;=50, &quot;B&quot;, &quot;C&quot;))</code></pre>
-<p>When there are many cases, the IFS function is cleaner than deeply nested IFs. And to test two conditions at once, combine IF with AND or OR, like =IF(AND(B2&gt;=50, C2=&quot;Yes&quot;), &quot;OK&quot;, &quot;No&quot;).</p>
-<p>The IF function works almost identically in Excel — see <a href="/excel/tutorials/how-to-use-if-function-in-excel/">how to use the IF function in Excel</a>. Once your logic is set, you can visualize the results with a <a href="/google-sheets/tutorials/how-to-make-a-graph-in-google-sheets/">graph in Google Sheets</a>.</p>
-<section class="faq" aria-label="Frequently asked questions"><h2 id="faq">Frequently asked questions</h2><details class="faq-item"><summary>What is the difference between IF and IFS in Google Sheets?</summary><p>IF handles one test with a true and a false result. IFS checks several conditions in order and returns the first that is true, which avoids long nested IFs when you have many cases.</p></details><details class="faq-item"><summary>How do I use IF with text in Google Sheets?</summary><p>Put the text in quotation marks and compare with =. For example, =IF(A2=&quot;Paid&quot;, &quot;Done&quot;, &quot;Pending&quot;) checks whether A2 says Paid. Text comparisons in Google Sheets are not case-sensitive.</p></details><details class="faq-item"><summary>Why does my IF formula show a value everywhere?</summary><p>Usually the condition is always true or always false. Check that you are comparing the right cell and using the correct operator (&gt;, &gt;=, =). A common slip is comparing a number to text, which never matches.</p></details></section>
+<p>A budget is just income minus expenses — and Google Sheets is a perfect, free place to build one. It works on any device, updates its totals automatically, and you can shape it exactly how you want. This guide builds a simple monthly budget from a blank sheet, step by step, using only a few formulas.</p>
+<h2 id="step-1-set-up-the-layout">Step 1: Set up the layout</h2>
+<p>Open a blank sheet and create two small tables. At the top, an Income table with two columns — Source and Amount. Below it, an Expenses table with three columns — Category, Description, and Amount. Give each a clear header row so it is easy to read and total later.</p>
+<aside class="callout callout-tip" role="note"><strong class="callout-label">Tip:</strong> Keep amounts in their own column with nothing else in it. That makes them easy to sum, and lets you format the whole column as currency in one click (Format &gt; Number &gt; Currency).</aside>
+<h2 id="step-2-total-your-income-and-expenses">Step 2: Total your income and expenses</h2>
+<p>Under each Amount column, add a total with SUM. If your income amounts are in B2:B6, the total is:</p>
+<pre><code class="lang-text">=SUM(B2:B6)</code></pre>
+<p>Do the same for your expenses column. These totals update on their own as you add or change rows, so you never re-add anything by hand.</p>
+<h2 id="step-3-find-your-balance">Step 3: Find your balance</h2>
+<p>Your balance is simply total income minus total expenses. If income totals in B7 and expenses total in E20, put this in a clearly labeled cell:</p>
+<pre><code class="lang-text">=B7-E20</code></pre>
+<p>A positive number means you came out ahead this month; a negative one means you overspent. This single cell is the heart of your budget.</p>
+<h2 id="step-4-group-spending-by-category">Step 4: Group spending by category</h2>
+<p>To see where your money actually goes, total each category with <a href="/google-sheets/tutorials/how-to-use-sumif-in-google-sheets/">SUMIF</a>. If your categories are in D2:D20 and amounts in E2:E20, the total for &quot;Food&quot; is:</p>
+<pre><code class="lang-text">=SUMIF(D2:D20, &quot;Food&quot;, E2:E20)</code></pre>
+<p>List each category in a small summary table and copy the formula down, changing the category name in each row. For a larger budget, a <a href="/google-sheets/tutorials/how-to-make-a-pivot-table-in-google-sheets/">pivot table</a> can build this category summary for you automatically.</p>
+<h2 id="step-5-make-it-easy-to-read">Step 5: Make it easy to read</h2>
+<ul><li>Use <a href="/google-sheets/tutorials/how-to-use-conditional-formatting-in-google-sheets/">conditional formatting</a> to turn the balance red when it goes below zero, so overspending jumps out.</li><li>Add a <a href="/google-sheets/tutorials/how-to-make-a-graph-in-google-sheets/">pie chart</a> of your category totals to see your spending at a glance.</li><li>Flag any single expense over a limit with an <a href="/google-sheets/tutorials/how-to-use-if-function-in-google-sheets/">IF function</a>, such as =IF(E2&gt;200, &quot;Review&quot;, &quot;&quot;).</li></ul>
+<aside class="callout callout-tip" role="note"><strong class="callout-label">Tip:</strong> Once your budget works for one month, right-click the sheet tab and choose Duplicate to reuse it next month — or make a copy of the whole file so each month keeps its own history.</aside>
+<section class="faq" aria-label="Frequently asked questions"><h2 id="faq">Frequently asked questions</h2><details class="faq-item"><summary>Does Google Sheets have a budget template?</summary><p>Yes. In the Google Sheets home screen, open the Template gallery and look under Personal for budget templates like &quot;Monthly budget&quot; and &quot;Annual budget&quot;. They are a quick starting point, but building your own gives you full control over the categories.</p></details><details class="faq-item"><summary>How do I total expenses by category in Google Sheets?</summary><p>Use SUMIF, like =SUMIF(D2:D20, &quot;Food&quot;, E2:E20), where column D holds the categories and column E holds the amounts. For many categories at once, a pivot table groups and totals them automatically.</p></details><details class="faq-item"><summary>Can I use my Google Sheets budget on my phone?</summary><p>Yes. Install the Google Sheets app on iPhone or Android and your budget syncs automatically, so you can add expenses on the go and see your totals update everywhere.</p></details></section>
 <h2 id="related-guides">Related guides</h2>
-<ul><li><a href="/google-sheets/tutorials/how-to-use-sumif-in-google-sheets/">How to Use SUMIF in Google Sheets</a></li><li><a href="/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/">How to Use VLOOKUP in Google Sheets</a></li></ul>
-<section class="sources"><h2 id="sources">Sources and references</h2><ol><li><a href="https://support.google.com/docs/answer/3093364" rel="noopener noreferrer">Google Docs Editors Help — IF function</a></li></ol></section>
-<aside class="next-step"><h2>Next step</h2><p><a href="/google-sheets/tutorials/how-to-make-a-budget-in-google-sheets/">How to Make a Budget in Google Sheets</a> — keep going with the next guide in this topic</p></aside>
+<ul><li><a href="/google-sheets/tutorials/how-to-sort-and-filter-in-google-sheets/">How to Sort and Filter Data in Google Sheets</a></li><li><a href="/google-sheets/tutorials/how-to-use-vlookup-in-google-sheets/">How to Use VLOOKUP in Google Sheets</a></li></ul>
+<section class="sources"><h2 id="sources">Sources and references</h2><ol><li><a href="https://support.google.com/docs/topic/9054603" rel="noopener noreferrer">Google Docs Editors Help — Google Sheets</a></li></ol></section>
+<aside class="next-step"><h2>Next step</h2><p><a href="/google-sheets/tutorials/how-to-use-conditional-formatting-in-google-sheets/">How to Use Conditional Formatting in Google Sheets</a> — keep going with the next guide in this topic</p></aside>
 </article>
-<aside class="toc" aria-label="In this article"><div class="toc-box"><h2>In this article</h2><ol><li><a href="#the-if-syntax-explained">The IF syntax, explained</a></li><li><a href="#a-real-example">A real example</a></li><li><a href="#testing-more-than-one-condition">Testing more than one condition</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#related-guides">Related guides</a></li></ol></div></aside>
+<aside class="toc" aria-label="In this article"><div class="toc-box"><h2>In this article</h2><ol><li><a href="#step-1-set-up-the-layout">Step 1: Set up the layout</a></li><li><a href="#step-2-total-your-income-and-expenses">Step 2: Total your income and expenses</a></li><li><a href="#step-3-find-your-balance">Step 3: Find your balance</a></li><li><a href="#step-4-group-spending-by-category">Step 4: Group spending by category</a></li><li><a href="#step-5-make-it-easy-to-read">Step 5: Make it easy to read</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#related-guides">Related guides</a></li></ol></div></aside>
 </div>
 </main>
 <footer class="site"><div class="site-inner">

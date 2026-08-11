@@ -1,0 +1,219 @@
+{
+  "id": "art-gs-budget",
+  "slug": "how-to-make-a-budget-in-google-sheets",
+  "clusterId": "cl_gs_tut",
+  "title": "How to Make a Budget in Google Sheets",
+  "dek": "To make a budget in Google Sheets, list your income and expenses, total each with SUM, subtract to find your balance, and group spending by category with SUMIF. Here is how to build a simple, free budget from scratch.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-11",
+  "updatedAt": "2026-08-11",
+  "intent": {
+    "primaryKeyword": "how to make a budget in google sheets",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Make a Budget in Google Sheets",
+    "metaDescription": "Build a free budget in Google Sheets: list income and expenses, total them with SUM, find your balance, and group spending by category with SUMIF."
+  },
+  "sources": [
+    {
+      "label": "Google Docs Editors Help — Google Sheets",
+      "url": "https://support.google.com/docs/topic/9054603"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "A budget is just income minus expenses — and Google Sheets is a perfect, free place to build one. It works on any device, updates its totals automatically, and you can shape it exactly how you want. This guide builds a simple monthly budget from a blank sheet, step by step, using only a few formulas."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 1: Set up the layout"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Open a blank sheet and create two small tables. At the top, an Income table with two columns — Source and Amount. Below it, an Expenses table with three columns — Category, Description, and Amount. Give each a clear header row so it is easy to read and total later."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Keep amounts in their own column with nothing else in it. That makes them easy to sum, and lets you format the whole column as currency in one click (Format > Number > Currency)."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 2: Total your income and expenses"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Under each Amount column, add a total with SUM. If your income amounts are in B2:B6, the total is:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=SUM(B2:B6)"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Do the same for your expenses column. These totals update on their own as you add or change rows, so you never re-add anything by hand."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 3: Find your balance"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Your balance is simply total income minus total expenses. If income totals in B7 and expenses total in E20, put this in a clearly labeled cell:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=B7-E20"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "A positive number means you came out ahead this month; a negative one means you overspent. This single cell is the heart of your budget."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 4: Group spending by category"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "To see where your money actually goes, total each category with ",
+        {
+          "link": {
+            "ref": "article:art-gs-sumif",
+            "text": "SUMIF"
+          }
+        },
+        ". If your categories are in D2:D20 and amounts in E2:E20, the total for \"Food\" is:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=SUMIF(D2:D20, \"Food\", E2:E20)"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "List each category in a small summary table and copy the formula down, changing the category name in each row. For a larger budget, a ",
+        {
+          "link": {
+            "ref": "article:art-gs-pivot",
+            "text": "pivot table"
+          }
+        },
+        " can build this category summary for you automatically."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 5: Make it easy to read"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          "Use ",
+          {
+            "link": {
+              "ref": "article:art-gs-condformat",
+              "text": "conditional formatting"
+            }
+          },
+          " to turn the balance red when it goes below zero, so overspending jumps out."
+        ],
+        [
+          "Add a ",
+          {
+            "link": {
+              "ref": "article:art-gs-graph",
+              "text": "pie chart"
+            }
+          },
+          " of your category totals to see your spending at a glance."
+        ],
+        [
+          "Flag any single expense over a limit with an ",
+          {
+            "link": {
+              "ref": "article:art-gs-if",
+              "text": "IF function"
+            }
+          },
+          ", such as =IF(E2>200, \"Review\", \"\")."
+        ]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Once your budget works for one month, right-click the sheet tab and choose Duplicate to reuse it next month — or make a copy of the whole file so each month keeps its own history."
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Does Google Sheets have a budget template?",
+          "answerRichText": "Yes. In the Google Sheets home screen, open the Template gallery and look under Personal for budget templates like \"Monthly budget\" and \"Annual budget\". They are a quick starting point, but building your own gives you full control over the categories."
+        },
+        {
+          "question": "How do I total expenses by category in Google Sheets?",
+          "answerRichText": "Use SUMIF, like =SUMIF(D2:D20, \"Food\", E2:E20), where column D holds the categories and column E holds the amounts. For many categories at once, a pivot table groups and totals them automatically."
+        },
+        {
+          "question": "Can I use my Google Sheets budget on my phone?",
+          "answerRichText": "Yes. Install the Google Sheets app on iPhone or Android and your budget syncs automatically, so you can add expenses on the go and see your totals update everywhere."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-sortfilter",
+              "text": "How to Sort and Filter Data in Google Sheets"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-vlookup",
+              "text": "How to Use VLOOKUP in Google Sheets"
+            }
+          }
+        ]
+      ]
+    }
+  ]
+}
