@@ -1,0 +1,262 @@
+{
+  "id": "art-excel-index-match",
+  "slug": "how-to-use-index-match-in-excel",
+  "clusterId": "cl_excel_tut",
+  "title": "How to Use INDEX MATCH in Excel (with Examples)",
+  "dek": "INDEX MATCH is the flexible lookup that fixes VLOOKUP's biggest limits — it can look to the left and it does not break when you add columns. Here is exactly how INDEX and MATCH work together, step by step.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-13",
+  "updatedAt": "2026-08-13",
+  "intent": {
+    "primaryKeyword": "how to use index match in excel",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Use INDEX MATCH in Excel (with Examples)",
+    "metaDescription": "Learn INDEX MATCH in Excel: how INDEX and MATCH work together for a flexible lookup that beats VLOOKUP, with clear examples and a two-way lookup."
+  },
+  "sources": [
+    {
+      "label": "Microsoft Support — INDEX function",
+      "url": "https://support.microsoft.com/en-us/office/index-function-a5dcf0dd-996d-40a4-a822-b56b061328bd"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "INDEX MATCH is the lookup that experienced Excel users reach for instead of VLOOKUP. It does everything VLOOKUP does, plus two things VLOOKUP cannot: it can look to the ",
+        {
+          "i": "left"
+        },
+        " of your search column, and it does not break when you insert or move columns. Once it clicks, you will rarely go back."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "The trick is that it is really two functions working together. Let us take them one at a time, then combine them."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 1: How MATCH finds the position"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "MATCH looks down a range and returns the ",
+        {
+          "b": "position number"
+        },
+        " of a value — not the value itself. Its syntax is:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=MATCH(lookup_value, lookup_range, 0)"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "The ",
+        {
+          "code": "0"
+        },
+        " means \"exact match\" — always use it for lookups. If \"Widget\" is the 4th item in A2:A100, then ",
+        {
+          "code": "=MATCH(\"Widget\", A2:A100, 0)"
+        },
+        " returns 4."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 2: How INDEX returns the value"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "INDEX does the opposite — you give it a position, and it returns the value there:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=INDEX(return_range, row_number)"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "So ",
+        {
+          "code": "=INDEX(B2:B100, 4)"
+        },
+        " returns the 4th value in column B. On its own that is not very useful — you rarely know the row number by hand. That is exactly the gap MATCH fills."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 3: Combine them"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Drop MATCH inside INDEX where the row number goes. MATCH finds the position, and INDEX returns the value from that position:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=INDEX(B2:B100, MATCH(\"Widget\", A2:A100, 0))"
+    },
+    {
+      "type": "table",
+      "caption": "How the two parts connect",
+      "headers": [
+        "Part",
+        "Job"
+      ],
+      "rows": [
+        [
+          "MATCH(\"Widget\", A2:A100, 0)",
+          "Finds which row \"Widget\" is on"
+        ],
+        [
+          "INDEX(B2:B100, ...)",
+          "Returns the value from column B on that row"
+        ]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Point MATCH at a cell instead of typing the value: =INDEX(B2:B100, MATCH(D1, A2:A100, 0)) returns the price for whatever product you type in D1. That turns one formula into a reusable lookup box."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Why use it instead of VLOOKUP?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "b": "It looks left."
+          },
+          " VLOOKUP can only return values to the right of the search column. INDEX MATCH can return a value from any column, in either direction."
+        ],
+        [
+          {
+            "b": "It survives edits."
+          },
+          " VLOOKUP breaks when you insert a column, because its column number is hard-coded. INDEX MATCH points at real ranges, so it keeps working."
+        ],
+        [
+          {
+            "b": "It can be faster."
+          },
+          " On large sheets, INDEX MATCH reads only the two columns it needs, not the whole table."
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Bonus: a two-way lookup"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Use MATCH twice — once for the row, once for the column — to find a value at the intersection of both:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=INDEX(B2:E100, MATCH(\"Widget\", A2:A100, 0), MATCH(\"Q3\", B1:E1, 0))"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "This finds the row for \"Widget\" and the column for \"Q3\" and returns the number where they meet. It is the same idea you would reach for after mastering ",
+        {
+          "link": {
+            "ref": "article:art-excel-vlookup",
+            "text": "VLOOKUP in Excel"
+          }
+        },
+        ". Combine it with an ",
+        {
+          "link": {
+            "ref": "article:art-excel-if",
+            "text": "IF function"
+          }
+        },
+        " for extra logic, or do a similar lookup in Google Sheets with ",
+        {
+          "link": {
+            "ref": "article:art-gs-vlookup",
+            "text": "VLOOKUP in Google Sheets"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Is INDEX MATCH better than VLOOKUP?",
+          "answerRichText": "For most real work, yes. INDEX MATCH can look to the left, does not break when you add or move columns, and can be faster on large sheets. VLOOKUP is simpler to type, so it is still fine for quick, one-off lookups on a stable table."
+        },
+        {
+          "question": "What does the 0 mean in MATCH?",
+          "answerRichText": "The 0 tells MATCH to find an exact match. Without it, MATCH assumes your data is sorted and looks for the closest lower value, which gives wrong results on unsorted lists. For lookups, always use 0."
+        },
+        {
+          "question": "Why does my INDEX MATCH return #N/A?",
+          "answerRichText": "#N/A means MATCH could not find the value. Check for trailing spaces, text stored as numbers, or a lookup range that does not include the value. Make sure the value you are searching for exactly matches the data."
+        },
+        {
+          "question": "Can I use INDEX MATCH across two sheets?",
+          "answerRichText": "Yes. Point the ranges at the other sheet, like =INDEX(Data!B2:B100, MATCH(D1, Data!A2:A100, 0)). The formula works exactly the same way when the lookup table lives on a different tab."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-vlookup",
+              "text": "How to Use VLOOKUP in Excel"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-sumif",
+              "text": "How to Use SUMIF in Excel"
+            }
+          }
+        ]
+      ]
+    }
+  ]
+}
