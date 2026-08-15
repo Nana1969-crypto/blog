@@ -1,0 +1,245 @@
+{
+  "id": "art-gs-countif",
+  "slug": "how-to-use-countif-in-google-sheets",
+  "clusterId": "cl_gs_tut",
+  "title": "How to Use COUNTIF in Google Sheets",
+  "dek": "COUNTIF counts only the cells that meet a condition. The syntax is =COUNTIF(range, criterion) — like counting how many orders came from one region. Here is exactly how it works, with wildcards, counting duplicates, and COUNTIFS.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-14",
+  "updatedAt": "2026-08-14",
+  "intent": {
+    "primaryKeyword": "how to use countif in google sheets",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Use COUNTIF in Google Sheets",
+    "metaDescription": "COUNTIF in Google Sheets counts cells that meet a condition. Learn the syntax with examples, wildcards, counting duplicates, and COUNTIFS for many rules."
+  },
+  "sources": [
+    {
+      "label": "Google Docs Editors Help — COUNTIF function",
+      "url": "https://support.google.com/docs/answer/3093480"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "COUNTIF counts only the cells that meet a condition you set — not every cell, just the ones that match. How many orders came from the North region? How many scores were above 80? How many times does one name appear in a list? COUNTIF answers each with a single, readable formula in Google Sheets."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The COUNTIF syntax, explained"
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=COUNTIF(range, criterion)"
+    },
+    {
+      "type": "table",
+      "caption": "The two parts of COUNTIF",
+      "headers": [
+        "Part",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "range",
+          "The cells to check against your condition"
+        ],
+        [
+          "criterion",
+          "The condition to match, like \"North\" or \">80\""
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "A real example"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Say column A holds regions in the range A2:A100. To count how many rows are from the North region, you write:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=COUNTIF(A2:A100, \"North\")"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "This checks every cell in A2:A100 and returns how many equal \"North\". Wrap text criteria in quotation marks. You can also test numbers with an operator — ",
+        {
+          "code": "=COUNTIF(B2:B100, \">80\")"
+        },
+        " counts every value greater than 80. Keep the operator inside the quotes, together with the number."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Point the criterion at a cell instead of typing it: =COUNTIF(A2:A100, D1) counts whatever region you type in D1. One formula becomes a mini dashboard you can change on the fly."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Partial matches with wildcards"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "COUNTIF understands two wildcards in text criteria: an asterisk (*) for any number of characters and a question mark (?) for a single character. To count every product code that starts with \"AB\":"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=COUNTIF(A2:A100, \"AB*\")"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "A lone asterisk, ",
+        {
+          "code": "=COUNTIF(A2:A100, \"*\")"
+        },
+        ", counts every cell that contains text — a quick way to count non-blank labels while ignoring numbers and empty cells."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Counting duplicates with COUNTIF"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "One of the most useful jobs for COUNTIF is spotting repeats. In a helper column next to your data, count how many times each value appears in the whole column:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=COUNTIF(A:A, A2)"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Any result above 1 means the value is a duplicate. Copy the formula down and you can instantly see which entries repeat. To highlight them instead, use ",
+        {
+          "link": {
+            "ref": "article:art-gs-condformat",
+            "text": "conditional formatting"
+          }
+        },
+        " with a custom COUNTIF rule, and when you are ready to clean the list, see ",
+        {
+          "link": {
+            "ref": "article:art-gs-dupes",
+            "text": "how to remove duplicates in Google Sheets"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "More than one condition: COUNTIFS"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "When you need two or more conditions — say the North region AND sales over 100 — use COUNTIFS. It takes range and criterion in pairs:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=COUNTIFS(A2:A100, \"North\", B2:B100, \">100\")"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "COUNTIF pairs naturally with other tools. Add up the matching values instead of counting them with ",
+        {
+          "link": {
+            "ref": "article:art-gs-sumif",
+            "text": "SUMIF"
+          }
+        },
+        ", build extra logic around a count with an ",
+        {
+          "link": {
+            "ref": "article:art-gs-if",
+            "text": "IF function"
+          }
+        },
+        ", or do the same task in Excel with ",
+        {
+          "link": {
+            "ref": "article:art-excel-countif",
+            "text": "COUNTIF in Excel"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "What is the difference between COUNT, COUNTA, and COUNTIF?",
+          "answerRichText": "COUNT counts only cells that contain numbers. COUNTA counts every non-empty cell, numbers and text alike. COUNTIF counts cells that meet a condition you set. Use COUNTIF when you need to count by a rule rather than count everything."
+        },
+        {
+          "question": "How do I count duplicates in Google Sheets with COUNTIF?",
+          "answerRichText": "In a helper column, use =COUNTIF(A:A, A2) and copy it down. Any result greater than 1 means that value appears more than once. To count only the extra copies, subtract 1 from each result."
+        },
+        {
+          "question": "Can COUNTIF use two conditions?",
+          "answerRichText": "No — COUNTIF handles a single condition. For two or more conditions that must all be true, use COUNTIFS, which takes range and criterion in pairs, like =COUNTIFS(A2:A100, \"North\", B2:B100, \">100\")."
+        },
+        {
+          "question": "Is COUNTIF in Google Sheets the same as in Excel?",
+          "answerRichText": "Yes. The syntax and wildcards work the same way in both, so =COUNTIF(A2:A100, \"North\") behaves identically. Google Sheets calls the second argument the criterion, while Excel calls it the criteria, but they do the same job."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-sumif",
+              "text": "How to Use SUMIF in Google Sheets"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-vlookup",
+              "text": "How to Use VLOOKUP in Google Sheets"
+            }
+          }
+        ]
+      ]
+    }
+  ]
+}
