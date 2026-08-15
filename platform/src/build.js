@@ -244,6 +244,14 @@ function build(opts = {}) {
   fs.writeFileSync(path.join(DIST, '404.html'), T.notFoundPage({ site })); keepFile(path.join(DIST, '404.html'));
   fs.writeFileSync(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${site.baseUrl}/sitemap.xml\n`); keepFile(path.join(DIST, 'robots.txt'));
 
+  // ads.txt — autoriza o Google AdSense a vender anúncios neste domínio (evita "receita em risco").
+  // pub-id derivado do site.json; f08c47fec0942fa0 é o ID de certificação fixo do Google.
+  if (site.adsensePublisherId) {
+    const pubId = site.adsensePublisherId.replace(/^ca-/, '');
+    const adsTxt = path.join(DIST, 'ads.txt');
+    fs.writeFileSync(adsTxt, `google.com, ${pubId}, DIRECT, f08c47fec0942fa0\n`); keepFile(adsTxt);
+  }
+
   // Google Search Console — arquivo de verificação de propriedade (site.json)
   if (site.googleSiteVerificationFile) {
     const gsv = path.join(DIST, site.googleSiteVerificationFile);
