@@ -1,0 +1,219 @@
+{
+  "id": "art-excel-sortfilter",
+  "slug": "how-to-sort-and-filter-data-in-excel",
+  "clusterId": "cl_excel_tut",
+  "title": "How to Sort and Filter Data in Excel",
+  "dek": "To sort in Excel, select your table and use Data > Sort; to filter, use Data > Filter and pick which rows to show. Sorting reorders your data, filtering hides rows without deleting them. Here is how to do both, step by step.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-15",
+  "updatedAt": "2026-08-15",
+  "intent": {
+    "primaryKeyword": "how to sort and filter data in excel",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Sort and Filter Data in Excel",
+    "metaDescription": "Sort and filter data in Excel: use Data > Sort to reorder rows and Data > Filter to show only the rows you want. A clear step-by-step guide with tips."
+  },
+  "sources": [
+    {
+      "label": "Microsoft Support — Sort data in a range or table",
+      "url": "https://support.microsoft.com/en-us/office/sort-data-in-a-range-or-table-062a44eb-ea11-45e9-9ceb-71c8bd8b5f5f"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "Sorting and filtering are the two fastest ways to make sense of a long list in Excel. Sorting reorders the rows — alphabetically, or from highest to lowest. Filtering hides the rows you do not want to see right now, without deleting anything. Learn both and even a huge sheet becomes easy to read."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to sort your data"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Click any cell inside your table — Excel detects the surrounding data automatically.",
+        [
+          "Open the ",
+          {
+            "b": "Data"
+          },
+          " tab and click ",
+          {
+            "b": "A→Z"
+          },
+          " or ",
+          {
+            "b": "Z→A"
+          },
+          " to sort by the current column."
+        ],
+        [
+          "To sort by more than one column, click ",
+          {
+            "b": "Sort"
+          },
+          " instead — a dialog opens where you can add levels."
+        ],
+        "In the Sort dialog, keep \"My data has headers\" ticked, choose the column, and set the order. Click \"Add Level\" for a second column (for example, sort by Region, then by Sales)."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warn",
+      "richText": "Do not select a single column before sorting. If you highlight only one column and sort it, Excel may move just those values while the other columns stay put — scrambling your rows. Click one cell and let Excel take the whole table, or select the full range including headers."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to filter your data"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Click any cell in your data.",
+        [
+          "On the ",
+          {
+            "b": "Data"
+          },
+          " tab, click ",
+          {
+            "b": "Filter"
+          },
+          ". A small drop-down arrow appears on every header."
+        ],
+        "Click the arrow on the column you want to filter.",
+        "Tick or untick values to choose what to show, or use \"Number Filters\" / \"Text Filters\" for rules like greater than, contains, or between. Click OK."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Filtering only hides rows — your data is untouched, and any hidden rows come straight back. To clear one column's filter, open its arrow and choose \"Clear Filter\". To switch filtering off entirely, click ",
+        {
+          "b": "Filter"
+        },
+        " again on the Data tab."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Press Ctrl+Shift+L to turn filters on and off instantly — no trip to the ribbon. It is the fastest way to toggle those header arrows while you work."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Sort vs filter: which to use"
+    },
+    {
+      "type": "table",
+      "caption": "Sorting vs filtering",
+      "headers": [
+        "",
+        "Sort",
+        "Filter"
+      ],
+      "rows": [
+        [
+          "What it does",
+          "Reorders the rows",
+          "Hides rows you do not want"
+        ],
+        [
+          "Changes the data?",
+          "Yes, the order changes",
+          "No, rows are only hidden"
+        ],
+        [
+          "Best for",
+          "Ranking, alphabetizing",
+          "Focusing on a subset"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Sorting and filtering work best on clean data. Clear out repeats first with ",
+        {
+          "link": {
+            "ref": "article:art-excel-dupes",
+            "text": "remove duplicates in Excel"
+          }
+        },
+        ", and ",
+        {
+          "link": {
+            "ref": "article:art-excel-freeze",
+            "text": "freeze the header row"
+          }
+        },
+        " so your column titles stay visible while you scroll. You can do the same task in Google Sheets with ",
+        {
+          "link": {
+            "ref": "article:art-gs-sortfilter",
+            "text": "sort and filter in Google Sheets"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "What is the difference between sorting and filtering in Excel?",
+          "answerRichText": "Sorting reorders every row — for example, alphabetically or highest to lowest. Filtering hides the rows you do not want to see, without changing or deleting anything. Use sorting to rank data and filtering to focus on part of it."
+        },
+        {
+          "question": "How do I sort by more than one column in Excel?",
+          "answerRichText": "On the Data tab, click Sort to open the Sort dialog, then use \"Add Level\" to stack columns. Excel sorts by the first level, then breaks ties with the next — for example, sort by Region, then by Sales within each region."
+        },
+        {
+          "question": "Why did sorting mix up my rows?",
+          "answerRichText": "You probably selected a single column instead of the whole table. Sorting one column moves only its values while the rest stay put. Click one cell and let Excel take the full table, or select the entire range with headers so whole rows move together."
+        },
+        {
+          "question": "What is the keyboard shortcut for filter in Excel?",
+          "answerRichText": "Press Ctrl+Shift+L to turn AutoFilter on or off. It adds or removes the drop-down arrows on your headers instantly, without going to the Data tab."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-pivot",
+              "text": "How to Make a Pivot Table in Excel"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-condformat",
+              "text": "How to Use Conditional Formatting in Excel"
+            }
+          }
+        ]
+      ]
+    }
+  ]
+}
