@@ -1,0 +1,231 @@
+{
+  "id": "art-gs-query",
+  "slug": "how-to-use-query-function-in-google-sheets",
+  "clusterId": "cl_gs_tut",
+  "title": "How to Use the QUERY Function in Google Sheets",
+  "dek": "QUERY pulls, filters, and sorts data with one formula using a small SQL-like language. The syntax is =QUERY(data, \"SELECT A, B WHERE C > 100\", 1). Here is exactly how it works, with real examples of SELECT, WHERE, and ORDER BY.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-16",
+  "updatedAt": "2026-08-16",
+  "intent": {
+    "primaryKeyword": "how to use query function in google sheets",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Use the QUERY Function in Google Sheets",
+    "metaDescription": "QUERY in Google Sheets pulls, filters, and sorts data with one formula. Learn the SELECT, WHERE, and ORDER BY syntax with clear, real examples."
+  },
+  "sources": [
+    {
+      "label": "Google Docs Editors Help — QUERY function",
+      "url": "https://support.google.com/docs/answer/3093343"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "QUERY is the closest thing Google Sheets has to a database. With one formula it can pull specific columns, filter rows by a condition, sort the results, and even total them — all at once. It uses a small, readable language that looks a lot like SQL, and once you learn three keywords you can replace a whole pile of manual filtering and sorting."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The QUERY syntax, explained"
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=QUERY(data, query, [headers])"
+    },
+    {
+      "type": "table",
+      "caption": "The three parts of QUERY",
+      "headers": [
+        "Part",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "data",
+          "The range to read, like A1:D100"
+        ],
+        [
+          "query",
+          "The instruction, in quotes, like \"SELECT A, B WHERE C > 100\""
+        ],
+        [
+          "headers",
+          "How many header rows your data has (usually 1) — optional"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The three keywords to learn first"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "b": "SELECT"
+          },
+          " — which columns to return, by their letter: SELECT A, C. Use SELECT * for all columns."
+        ],
+        [
+          {
+            "b": "WHERE"
+          },
+          " — the condition rows must meet: WHERE C > 100 or WHERE B = 'North'."
+        ],
+        [
+          {
+            "b": "ORDER BY"
+          },
+          " — how to sort the results: ORDER BY C DESC for highest first."
+        ]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Inside the query, refer to columns by their sheet letter (A, B, C), not by their header name. Wrap text you are matching in single quotes, like WHERE B = 'North', and keep the whole query in double quotes."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "A real example"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Say A1:D100 holds a sales table: Region in A, Rep in B, Product in C, Sales in D. To list the Rep and Sales for every row where Sales is over 500, sorted from highest to lowest, you write:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=QUERY(A1:D100, \"SELECT B, D WHERE D > 500 ORDER BY D DESC\", 1)"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "The result spills automatically into the cells below — you only enter the formula once, in the top-left cell. Change the data and the query result updates on its own."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Common clauses at a glance"
+    },
+    {
+      "type": "table",
+      "caption": "Useful QUERY clauses",
+      "headers": [
+        "Clause",
+        "What it does"
+      ],
+      "rows": [
+        [
+          "SELECT A, B",
+          "Return only columns A and B"
+        ],
+        [
+          "WHERE D > 500",
+          "Keep rows where D is over 500"
+        ],
+        [
+          "ORDER BY D DESC",
+          "Sort by column D, highest first"
+        ],
+        [
+          "GROUP BY A",
+          "Group rows by column A (for totals)"
+        ],
+        [
+          "LIMIT 10",
+          "Return only the first 10 rows"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "QUERY overlaps with tools you may already know. It can filter like ",
+        {
+          "link": {
+            "ref": "article:art-gs-sortfilter",
+            "text": "sort and filter"
+          }
+        },
+        " but as a live formula, look up values like ",
+        {
+          "link": {
+            "ref": "article:art-gs-vlookup",
+            "text": "VLOOKUP"
+          }
+        },
+        ", and total groups like ",
+        {
+          "link": {
+            "ref": "article:art-gs-sumif",
+            "text": "SUMIF"
+          }
+        },
+        " — often all in a single formula."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Do I use column letters or header names in QUERY?",
+          "answerRichText": "When the data is a normal range like A1:D100, use the column letters (A, B, C) inside the query. Header names only work when the data comes from an external source such as IMPORTRANGE. For everyday sheets, stick to the letters."
+        },
+        {
+          "question": "Why does my QUERY return #VALUE! or an error?",
+          "answerRichText": "The most common causes are a missing quote, matching text without single quotes (write WHERE B = 'North'), or mixing text and numbers in one column. Check that the whole query is in double quotes and that text values inside it use single quotes."
+        },
+        {
+          "question": "Can QUERY total or count data?",
+          "answerRichText": "Yes. Combine an aggregate with GROUP BY, like =QUERY(A1:D100, \"SELECT A, SUM(D) GROUP BY A\", 1), to total column D for each value in column A. You can also use COUNT, AVG, MAX, and MIN the same way."
+        },
+        {
+          "question": "Is QUERY available in Excel?",
+          "answerRichText": "No — QUERY is unique to Google Sheets. Excel reaches similar results with features like FILTER, tables, or Power Query, but the single-formula QUERY function itself does not exist in Excel."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-sortfilter",
+              "text": "How to Sort and Filter Data in Google Sheets"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-gs-vlookup",
+              "text": "How to Use VLOOKUP in Google Sheets"
+            }
+          }
+        ]
+      ]
+    }
+  ]
+}
