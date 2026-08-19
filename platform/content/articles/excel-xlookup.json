@@ -1,0 +1,235 @@
+{
+  "id": "art-excel-xlookup",
+  "slug": "how-to-use-xlookup-in-excel",
+  "clusterId": "cl_excel_tut",
+  "title": "How to Use XLOOKUP in Excel (with Examples)",
+  "dek": "XLOOKUP is the modern, all-in-one lookup that replaces VLOOKUP. The syntax is =XLOOKUP(lookup_value, lookup_array, return_array) — it looks in any direction and handles \"not found\" on its own. Here is exactly how it works.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-17",
+  "updatedAt": "2026-08-17",
+  "intent": {
+    "primaryKeyword": "how to use xlookup in excel",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Use XLOOKUP in Excel (with Examples)",
+    "metaDescription": "Learn XLOOKUP in Excel: the syntax, a real example, the built-in if_not_found, and why it beats VLOOKUP by looking in any direction. With clear examples."
+  },
+  "sources": [
+    {
+      "label": "Microsoft Support — XLOOKUP function",
+      "url": "https://support.microsoft.com/en-us/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "XLOOKUP is Excel's modern, all-in-one lookup — the function Microsoft built to replace VLOOKUP. It looks in any direction, needs no column number, handles \"not found\" on its own, and defaults to an exact match. If you have ever fought with VLOOKUP, XLOOKUP will feel like a relief."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warn",
+      "richText": "XLOOKUP is available in Microsoft 365 and Excel 2021 or later. On Excel 2019 or earlier it will not exist — there, use VLOOKUP or INDEX MATCH instead."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The XLOOKUP syntax, explained"
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found])"
+    },
+    {
+      "type": "table",
+      "caption": "The main parts of XLOOKUP",
+      "headers": [
+        "Part",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "lookup_value",
+          "What you are searching for, like a product name"
+        ],
+        [
+          "lookup_array",
+          "The column to search in"
+        ],
+        [
+          "return_array",
+          "The column to return the answer from"
+        ],
+        [
+          "if_not_found",
+          "Text to show when there is no match (optional)"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "A real example"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Say column A holds product names and column B holds prices. To find the price of the product typed in cell D1:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=XLOOKUP(D1, A2:A100, B2:B100)"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "XLOOKUP searches A2:A100 for the value in D1 and returns the matching price from B2:B100. Notice there is no column number to count and no range-of-columns to select — you point at the search column and the answer column directly."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Handle \"not found\" without IFERROR"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "With VLOOKUP you had to wrap the whole formula in IFERROR to avoid an ugly #N/A. XLOOKUP has that built in — just add a fourth argument:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=XLOOKUP(D1, A2:A100, B2:B100, \"Not found\")"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Now, if the product is not in the list, the cell shows \"Not found\" instead of an error. Cleaner and easier to read."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Why use it instead of VLOOKUP?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "b": "It looks in any direction."
+          },
+          " VLOOKUP can only return values to the right. XLOOKUP can return a value from a column on the left just as easily."
+        ],
+        [
+          {
+            "b": "No column number to count."
+          },
+          " VLOOKUP breaks when you insert a column, because its column index is hard-coded. XLOOKUP points at real ranges, so it keeps working."
+        ],
+        [
+          {
+            "b": "Exact match by default."
+          },
+          " VLOOKUP needs a final FALSE for an exact match. XLOOKUP does exact by default, so there is one less thing to forget."
+        ],
+        [
+          {
+            "b": "Built-in not-found handling."
+          },
+          " No more wrapping everything in IFERROR."
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "If XLOOKUP is not available in your version, the classic ",
+        {
+          "link": {
+            "ref": "article:art-excel-vlookup",
+            "text": "VLOOKUP"
+          }
+        },
+        " and the flexible ",
+        {
+          "link": {
+            "ref": "article:art-excel-index-match",
+            "text": "INDEX MATCH"
+          }
+        },
+        " do the same job. You can also add logic to any result with an ",
+        {
+          "link": {
+            "ref": "article:art-excel-if",
+            "text": "IF function"
+          }
+        },
+        ", or do a lookup in Google Sheets with ",
+        {
+          "link": {
+            "ref": "article:art-gs-vlookup",
+            "text": "VLOOKUP in Google Sheets"
+          }
+        },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Is XLOOKUP better than VLOOKUP?",
+          "answerRichText": "For most work, yes. XLOOKUP looks in any direction, needs no column number, defaults to an exact match, and handles not-found on its own. The only catch is that it requires Microsoft 365 or Excel 2021 — on older versions you still need VLOOKUP or INDEX MATCH."
+        },
+        {
+          "question": "Why is XLOOKUP not showing up in my Excel?",
+          "answerRichText": "XLOOKUP only exists in Microsoft 365 and Excel 2021 or later. If you are on Excel 2019, 2016, or earlier, the function is not available and Excel will return a #NAME? error. Use VLOOKUP or INDEX MATCH instead."
+        },
+        {
+          "question": "Can XLOOKUP return more than one column?",
+          "answerRichText": "Yes. Point the return_array at several columns, like =XLOOKUP(D1, A2:A100, B2:D100), and XLOOKUP spills the matching values across those columns automatically in Microsoft 365."
+        },
+        {
+          "question": "Does XLOOKUP do an exact match automatically?",
+          "answerRichText": "Yes. Unlike VLOOKUP, which needs FALSE at the end, XLOOKUP uses an exact match by default. You only change that with the optional match_mode argument if you want an approximate or wildcard match."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-vlookup",
+              "text": "How to Use VLOOKUP in Excel"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-index-match",
+              "text": "How to Use INDEX MATCH in Excel"
+            }
+          }
+        ]
+      ]
+    }
+  ]
+}
