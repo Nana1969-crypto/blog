@@ -1,0 +1,170 @@
+{
+  "id": "art-excel-na",
+  "slug": "how-to-fix-na-error-excel",
+  "clusterId": "cl_excel_fix",
+  "title": "How to Fix the #N/A Error in Excel",
+  "dek": "The #N/A error means a lookup could not find what it was searching for — VLOOKUP, XLOOKUP, or MATCH came up empty. The fix is to check the lookup value for typos, spaces, and type mismatches, or handle it cleanly with IFNA. Here is how.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-19",
+  "updatedAt": "2026-08-19",
+  "intent": {
+    "primaryKeyword": "how to fix na error in excel",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Fix the #N/A Error in Excel",
+    "metaDescription": "The #N/A error means a lookup found no match. Learn what causes it in VLOOKUP and XLOOKUP, how to fix the data, and how to handle it cleanly with IFNA."
+  },
+  "sources": [
+    {
+      "label": "Microsoft Support — How to correct a #N/A error",
+      "url": "https://support.microsoft.com/en-us/office/how-to-correct-a-n-a-error-a9708411-f82e-4e1b-8a7e-28c28311b993"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "#N/A stands for \"not available\", and it means a lookup could not find what you asked for. It shows up most often with VLOOKUP, XLOOKUP, MATCH, and INDEX MATCH — the function searched, found no match, and reported back honestly. The good news: the cause is almost always small and easy to fix."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What causes #N/A"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "The lookup value genuinely is not in the list you are searching.",
+        "A trailing or leading space makes \"North \" and \"North\" look different to Excel.",
+        "A number is stored as text in one place and as a real number in the other, so they never match.",
+        "VLOOKUP is missing its final FALSE, so it does an approximate match on unsorted data.",
+        "A small typo in the lookup value or the search range."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 1: Confirm the value really exists"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "First, check that what you are searching for is actually in the lookup column. Use a quick test next to your data — ",
+        {
+          "code": "=COUNTIF(A2:A100, D1)"
+        },
+        " returns how many times the value in D1 appears. If it returns 0, the value is not there (or not there in the form you typed it)."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 2: Clean the mismatch"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Strip stray spaces with TRIM, like =TRIM(D1), or clean the whole column with Find & Replace.",
+        "Make the types match: if the list holds real numbers, the lookup value must be a number too, not text. Data > Text to Columns > Finish quickly converts text-numbers.",
+        "For VLOOKUP, add FALSE as the last argument to force an exact match: =VLOOKUP(D1, A2:B100, 2, FALSE)."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Hidden spaces are the number-one cause. If \"North\" clearly exists but still returns #N/A, try =VLOOKUP(TRIM(D1), ...) or clean the source column — the culprit is usually a space you cannot see."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step 3: Handle it cleanly with IFNA"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Sometimes a #N/A is expected — the value simply is not there yet. Instead of an ugly error, show a friendly message with IFNA, which catches only #N/A and leaves other errors visible:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=IFNA(VLOOKUP(D1, A2:B100, 2, FALSE), \"Not found\")"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "IFNA is better than IFERROR here because it hides only the not-found case, so a real mistake elsewhere still shows up. This error is most common with the lookup family — ",
+        {
+          "link": {
+            "ref": "article:art-excel-vlookup",
+            "text": "VLOOKUP"
+          }
+        },
+        ", ",
+        {
+          "link": {
+            "ref": "article:art-excel-xlookup",
+            "text": "XLOOKUP"
+          }
+        },
+        ", and ",
+        {
+          "link": {
+            "ref": "article:art-excel-index-match",
+            "text": "INDEX MATCH"
+          }
+        },
+        ". XLOOKUP even has a built-in not-found argument, so it can skip IFNA entirely."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Why does my VLOOKUP return #N/A when the value is clearly there?",
+          "answerRichText": "Almost always a hidden space or a type mismatch. The value may have a trailing space, or it is stored as text in one place and as a number in the other. Wrap the lookup value in TRIM and make sure both sides are the same data type."
+        },
+        {
+          "question": "What is the difference between IFNA and IFERROR?",
+          "answerRichText": "IFNA catches only the #N/A error, while IFERROR catches every error type. Use IFNA for lookups so that a genuine problem elsewhere — like a #REF! or #VALUE! — still shows up instead of being hidden."
+        },
+        {
+          "question": "How do I remove #N/A from a whole column?",
+          "answerRichText": "Wrap each lookup in IFNA to replace #N/A with a blank or a message, like =IFNA(VLOOKUP(...), \"\"). Fix the underlying data where you can, and use IFNA only to handle the cases that are genuinely expected to be missing."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-value",
+              "text": "How to Fix the #VALUE! Error in Excel"
+            }
+          }
+        ],
+        [
+          {
+            "link": {
+              "ref": "article:art-excel-ref",
+              "text": "How to Fix the #REF! Error in Excel"
+            }
+          }
+        ]
+      ]
+    }
+  ]
+}
