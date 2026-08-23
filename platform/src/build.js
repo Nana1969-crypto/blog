@@ -252,6 +252,23 @@ function build(opts = {}) {
     fs.writeFileSync(adsTxt, `google.com, ${pubId}, DIRECT, f08c47fec0942fa0\n`); keepFile(adsTxt);
   }
 
+  // _redirects — 301s de URLs consolidadas → canônica (formato Cloudflare static assets).
+  // Guarda-corpo: rejeita cadeia (destino que também é origem) e loop (from===to).
+  const redirectsFile = path.join(CONTENT, 'redirects.json');
+  if (fs.existsSync(redirectsFile)) {
+    const redirects = JSON.parse(fs.readFileSync(redirectsFile, 'utf8'));
+    const froms = new Set(redirects.map((r) => r.from));
+    for (const r of redirects) {
+      if (r.from === r.to) throw new Error(`redirect loop: ${r.from}`);
+      if (froms.has(r.to)) throw new Error(`redirect chain: ${r.from} -> ${r.to} (destino também é origem)`);
+    }
+    if (redirects.length) {
+      const body = redirects.map((r) => `${r.from} ${r.to} ${r.status || 301}`).join('\n') + '\n';
+      const rf = path.join(DIST, '_redirects');
+      fs.writeFileSync(rf, body); keepFile(rf);
+    }
+  }
+
   // Google Search Console — arquivo de verificação de propriedade (site.json)
   if (site.googleSiteVerificationFile) {
     const gsv = path.join(DIST, site.googleSiteVerificationFile);

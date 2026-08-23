@@ -3,10 +3,10 @@
   "slug": "best-spreadsheet-software-small-business",
   "clusterId": "cl_compare",
   "title": "Best Spreadsheet Software for Small Business (2026)",
-  "dek": "For most small businesses, Google Workspace (Sheets) is the best value for collaboration, while Microsoft 365 (Excel) wins for analysis and finance. Zoho and LibreOffice are strong budget picks. Here is how to choose for your team.",
+  "dek": "For most small businesses, Google Sheets is the best value for collaboration and Excel wins for analysis. Zoho, LibreOffice, WPS, OnlyOffice, Numbers, Airtable and Coda round out the best free and paid alternatives. Here is how to choose.",
   "authorId": "author_team",
   "publishedAt": "2026-07-22",
-  "updatedAt": "2026-07-22",
+  "updatedAt": "2026-08-23",
   "intent": {
     "primaryKeyword": "best spreadsheet software for small business",
     "intentType": "commercial",
@@ -14,7 +14,7 @@
   },
   "seo": {
     "metaTitle": "Best Spreadsheet Software for Small Business",
-    "metaDescription": "The best spreadsheet software for small business in 2026, compared on price, collaboration and ease of use, with a clear pick for each need."
+    "metaDescription": "Best spreadsheet software plus free Excel and Google Sheets alternatives, compared on price, collaboration and ease of use — a pick for each need."
   },
   "sources": [
     {
@@ -24,13 +24,21 @@
     {
       "label": "Microsoft 365 for business — plans",
       "url": "https://www.microsoft.com/en-us/microsoft-365/business"
+    },
+    {
+      "label": "LibreOffice — Calc",
+      "url": "https://www.libreoffice.org/discover/calc/"
+    },
+    {
+      "label": "Zoho Sheet",
+      "url": "https://www.zoho.com/sheet/"
     }
   ],
   "body": [
     {
       "type": "paragraph",
       "richText": [
-        "The best spreadsheet software for a small business is the one your team will actually use together, at a price that fits. For most, that is Google Sheets (via Workspace) for its unbeatable collaboration; for finance-heavy work, Excel (via Microsoft 365) is worth the extra cost. Here is how the main options compare and who each suits."
+        "The best spreadsheet software for a small business is the one your team will actually use together, at a price that fits. For most, that is Google Sheets for its unbeatable collaboration; for finance-heavy work, Excel is worth the extra cost. But there is a strong field of free and paid alternatives — from LibreOffice and Zoho to Airtable and Coda. This guide compares the main options and the best free Excel and Google Sheets alternatives, and tells you who each one suits."
       ]
     },
     {
@@ -40,100 +48,121 @@
     },
     {
       "type": "table",
-      "caption": "Spreadsheet software for small business, compared",
-      "headers": [
-        "Software",
-        "Price model",
-        "Best for"
-      ],
+      "caption": "Spreadsheet software and alternatives, compared",
+      "headers": [ "Software", "Price model", "Best for" ],
       "rows": [
-        [
-          "Google Workspace (Sheets)",
-          "Low monthly per user",
-          "Teams that live in the browser and collaborate daily"
-        ],
-        [
-          "Microsoft 365 (Excel)",
-          "Monthly per user",
-          "Finance, analysis, and Office-heavy workflows"
-        ],
-        [
-          "Zoho Sheet / Workplace",
-          "Free tier + cheap paid",
-          "Budget-conscious teams wanting an all-in-one"
-        ],
-        [
-          "LibreOffice Calc",
-          "Free",
-          "One-off use, tight budgets, no cloud needed"
-        ],
-        [
-          "Airtable",
-          "Free tier + paid",
-          "Teams managing projects and data, not just numbers"
-        ]
+        [ "Google Sheets / Workspace", "Free; low monthly per user for business", "Teams that live in the browser and collaborate daily" ],
+        [ "Microsoft 365 (Excel)", "Paid subscription (or one-time Office)", "Finance, analysis, and Office-heavy workflows" ],
+        [ "Zoho Sheet", "Free tier + cheap paid", "A free, feature-rich browser all-rounder" ],
+        [ "LibreOffice Calc", "Free, open-source", "Offline desktop work, no account, tight budgets" ],
+        [ "WPS Spreadsheet", "Free (ads) + paid", "A familiar, Excel-like interface" ],
+        [ "OnlyOffice", "Free + paid", "High Excel-format fidelity" ],
+        [ "Apple Numbers", "Free", "Mac and iPhone users" ],
+        [ "Airtable", "Free tier + paid", "Managing projects and data, not just numbers" ],
+        [ "Coda", "Free tier + paid", "Docs and spreadsheets combined" ]
       ]
     },
     {
+      "type": "callout",
+      "variant": "warn",
+      "richText": "Pricing tiers change often. Treat the price column as a guide and confirm the current plan on each vendor's own pricing page before you buy."
+    },
+    {
       "type": "heading",
       "level": 2,
-      "text": "Best overall for most small businesses: Google Workspace"
+      "text": "Best overall for most small businesses: Google Sheets"
     },
     {
       "type": "paragraph",
-      "richText": "Google Sheets, as part of Workspace, gives a small team real-time collaboration, automatic saving, easy sharing, and email plus storage in one low monthly price. There is almost nothing to manage and nothing to install. For the majority of small businesses, it is the most productive, lowest-friction choice."
+      "richText": "Google Sheets, on its own or as part of Workspace, gives a small team real-time collaboration, automatic saving, easy sharing, and version history. There is almost nothing to manage and nothing to install, and it is free for individuals. For the majority of small businesses, it is the most productive, lowest-friction choice."
     },
     {
       "type": "heading",
       "level": 2,
-      "text": "Best for finance and analysis: Microsoft 365"
+      "text": "Best for finance and analysis: Microsoft 365 (Excel)"
     },
     {
       "type": "paragraph",
       "richText": [
         "If your business runs on serious modeling, reporting, or accounting, Excel's depth pays for itself. Power Query, Power Pivot, and its huge function set handle work Sheets struggles with. The full case is in our ",
-        {
-          "link": {
-            "ref": "article:art-excel-vs-sheets",
-            "text": "Excel vs Google Sheets comparison"
-          }
-        },
+        { "link": { "ref": "article:art-excel-vs-sheets", "text": "Excel vs Google Sheets comparison" } },
+        ", and for the whole suite, ",
+        { "link": { "ref": "article:art-m365-vs-workspace", "text": "Microsoft 365 vs Google Workspace" } },
         "."
       ]
     },
     {
       "type": "heading",
       "level": 2,
-      "text": "Best on a tight budget: Zoho and LibreOffice"
+      "text": "The best free Excel and Google Sheets alternatives"
     },
     {
       "type": "paragraph",
-      "richText": [
-        "If cost is the deciding factor, Zoho Sheet offers a generous free tier with real collaboration, and LibreOffice Calc is a completely free desktop app. Both appear in our wider list of ",
-        {
-          "link": {
-            "ref": "article:art-gs-alternatives",
-            "text": "best Google Sheets alternatives"
-          }
-        },
-        "."
+      "richText": "You do not have to pay for a spreadsheet. If cost is the deciding factor, or you have simply outgrown one app, these free and low-cost tools cover every reason people switch:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "b": "LibreOffice Calc" }, " — a completely free, open-source desktop app. No account, works fully offline, opens and saves .xlsx. The closest free stand-in for the Excel desktop." ],
+        [ { "b": "Zoho Sheet" }, " — a free, browser-based all-rounder with real-time collaboration, a deep function set, and data-cleaning tools. The closest free match to Google Sheets outside Google." ],
+        [ { "b": "WPS Spreadsheet" }, " — free (with ads) and built to look and feel almost exactly like Excel, across Windows, Mac, Linux, Android, and iOS." ],
+        [ { "b": "OnlyOffice" }, " — free and paid tiers, with especially high fidelity when opening complex Excel files." ],
+        [ { "b": "Apple Numbers" }, " — free on Mac and iPhone, elegant for simple, well-designed sheets." ]
       ]
     },
     {
       "type": "callout",
       "variant": "tip",
-      "richText": "Match the tool to your bottleneck: if it is teamwork, choose Sheets; if it is analysis, choose Excel; if it is budget, choose Zoho or LibreOffice. Do not pay for power you will not use."
+      "richText": "If you only need Excel occasionally, the free Excel for the web (at office.com) also exists — it is lighter than the desktop app but handles everyday tasks at no cost."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "When you have outgrown a plain grid: Airtable and Coda"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "If your spreadsheet has really become a mini-database — tasks, projects, inventory — Airtable and Coda add structure a flat grid cannot: linked records, multiple views (kanban, calendar), and automations. They cost more and have a learning curve, but they replace tangled spreadsheets with real systems. See ",
+        { "link": { "ref": "article:art-airtable-vs-gs", "text": "Airtable vs Google Sheets" } },
+        " for the trade-offs."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to choose"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "b": "Bottleneck is teamwork" }, " → Google Sheets." ],
+        [ { "b": "Bottleneck is analysis" }, " → Microsoft 365 (Excel)." ],
+        [ { "b": "Bottleneck is budget" }, " → LibreOffice, Zoho Sheet, or WPS." ],
+        [ { "b": "You are on Mac/iPhone" }, " → Apple Numbers." ],
+        [ { "b": "It is really a database" }, " → Airtable or Coda." ]
+      ]
     },
     {
       "type": "faq",
       "items": [
         {
           "question": "What is the cheapest spreadsheet software for a small business?",
-          "answerRichText": "LibreOffice Calc is completely free, and Google Sheets is free for individuals (small monthly cost per user under Workspace for business features). Zoho Sheet also has a strong free tier."
+          "answerRichText": "LibreOffice Calc is completely free, and Google Sheets is free for individuals (a small monthly cost per user under Workspace unlocks business features). Zoho Sheet and WPS also have strong free tiers."
         },
         {
-          "question": "Should a small business use Excel or Google Sheets?",
-          "answerRichText": "Most small businesses are better served by Google Sheets for its easy collaboration and low cost. Choose Excel if your work is finance-heavy or needs advanced analysis tools like Power Query."
+          "question": "What is the best free alternative to Excel?",
+          "answerRichText": "For collaboration, Google Sheets. For an offline desktop app with no account, LibreOffice Calc. Zoho Sheet, WPS, and OnlyOffice are also free and open .xlsx files, so your pick depends on whether you work online or offline."
+        },
+        {
+          "question": "What is the best free alternative to Google Sheets?",
+          "answerRichText": "Zoho Sheet is the closest free, browser-based match, with real-time collaboration. For offline work, LibreOffice Calc or Apple Numbers are the top free choices."
+        },
+        {
+          "question": "Can free spreadsheet software open Excel (.xlsx) files?",
+          "answerRichText": "Yes. Google Sheets, LibreOffice Calc, Zoho Sheet, WPS, OnlyOffice, and Apple Numbers all open and save .xlsx files. Very complex macros or advanced formatting may not carry over perfectly, so test important files."
         }
       ]
     },
@@ -146,22 +175,8 @@
       "type": "list",
       "ordered": false,
       "items": [
-        [
-          {
-            "link": {
-              "ref": "article:art-best-free-excel",
-              "text": "6 Best Free Excel Alternatives"
-            }
-          }
-        ],
-        [
-          {
-            "link": {
-              "ref": "article:art-m365-vs-workspace",
-              "text": "Microsoft 365 vs Google Workspace"
-            }
-          }
-        ]
+        [ { "link": { "ref": "article:art-excel-vs-sheets", "text": "Excel vs Google Sheets" } } ],
+        [ { "link": { "ref": "article:art-libreoffice-vs-excel", "text": "LibreOffice Calc vs Excel" } } ]
       ]
     }
   ]

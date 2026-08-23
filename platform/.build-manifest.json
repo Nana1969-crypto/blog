@@ -1,11 +1,10 @@
 {
-  "sharedHash": "bb5933e4a79f39f7",
+  "sharedHash": "1023937384ecf7a9",
   "articles": {
     "art-airtable-vs-excel": "5ef64129bf7c6be9",
-    "art-airtable-vs-gs": "5e3cedfdb9168c11",
-    "art-numbers-vs-excel": "26e2ddd02aacf95d",
-    "art-best-free-excel": "6c3279d969e63ebf",
-    "art-best-spreadsheet": "37ecf550db2a62f8",
+    "art-airtable-vs-gs": "26ba2da6a1856442",
+    "art-numbers-vs-excel": "a9aeb78edc174c27",
+    "art-best-spreadsheet": "12422c2ed7e02e2f",
     "art-excel-chart": "06c665918cf556ce",
     "art-excel-condformat": "424f1c3f4942df19",
     "art-excel-countif": "01e9b9c742113129",
@@ -25,7 +24,6 @@
     "art-excel-vlookup": "7bba1a680acd8343",
     "art-excel-vs-sheets": "ccda23b09329b936",
     "art-excel-xlookup": "1fa50f5958c4e718",
-    "art-gs-alternatives": "eb1d724d38a70971",
     "art-gs-budget": "bebc1d19b2e0d585",
     "art-gs-condformat": "f219430dbf85dde0",
     "art-gs-countif": "3bfcbcfb0dc9e224",
@@ -39,9 +37,9 @@
     "art-gs-sortfilter": "564676b2343a2448",
     "art-gs-sumif": "d7bec61fcee473ff",
     "art-gs-vlookup": "9a4db80fb73b61d5",
-    "art-libreoffice-vs-excel": "23d2c975972b5f96",
-    "art-m365-vs-workspace": "23d2d5fe4f50bd58",
-    "art-notion-vs-gs": "a4d06135d4dd34e4",
-    "art-wps-vs-excel": "73a8238792adef2d"
+    "art-libreoffice-vs-excel": "e6c46debca3ed76e",
+    "art-m365-vs-workspace": "67e9ecfcdaac5d83",
+    "art-notion-vs-gs": "248d48a1e2f7c181",
+    "art-wps-vs-excel": "e86a15820c8d9867"
   }
 }
