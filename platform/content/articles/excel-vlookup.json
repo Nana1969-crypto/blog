@@ -6,7 +6,7 @@
   "dek": "VLOOKUP finds a value in the first column of a table and returns a value from another column in the same row. The formula is =VLOOKUP(lookup_value, table_array, col_index_num, FALSE). Here is exactly how each part works.",
   "authorId": "author_team",
   "publishedAt": "2026-07-12",
-  "updatedAt": "2026-07-12",
+  "updatedAt": "2026-08-21",
   "intent": {
     "primaryKeyword": "how to use vlookup in excel",
     "intentType": "informational",
@@ -42,27 +42,12 @@
     {
       "type": "table",
       "caption": "The four parts of VLOOKUP",
-      "headers": [
-        "Part",
-        "Meaning"
-      ],
+      "headers": [ "Part", "Meaning" ],
       "rows": [
-        [
-          "lookup_value",
-          "What you are searching for (e.g., a product code)"
-        ],
-        [
-          "table_array",
-          "The table to search — the value must be in its first column"
-        ],
-        [
-          "col_index_num",
-          "Which column number to return the answer from"
-        ],
-        [
-          "range_lookup",
-          "FALSE for an exact match; TRUE for an approximate match"
-        ]
+        [ "lookup_value", "What you are searching for (e.g., a product code)" ],
+        [ "table_array", "The table to search — the value must be in its first column" ],
+        [ "col_index_num", "Which column number to return the answer from" ],
+        [ "range_lookup", "FALSE for an exact match; TRUE for an approximate match" ]
       ]
     },
     {
@@ -91,16 +76,46 @@
       "type": "paragraph",
       "richText": [
         "This searches column A for the code in D2, and returns the value from column 2 (prices). The ",
-        {
-          "b": "FALSE"
-        },
+        { "b": "FALSE" },
         " at the end is the part most people forget — it forces an exact match. Leave it out and Excel does an approximate match, which returns wrong prices unless your list is sorted."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "A real-world use case: merging two tables"
+    },
+    {
+      "type": "paragraph",
+      "richText": "The classic job for VLOOKUP is pulling details from a lookup table into a working sheet. Suppose your orders sheet has product codes in column A, and a separate tab named Prices lists codes in column A and prices in column B. Next to the first order, enter this and copy it down:"
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=VLOOKUP(A2, Prices!A:B, 2, FALSE)"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Every order now shows the right price, and when a price changes on the Prices tab, all the orders update automatically. That single pattern — match a key, pull a detail — covers most of what VLOOKUP is used for."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Exact match vs approximate match"
+    },
+    {
+      "type": "table",
+      "caption": "The two match modes of VLOOKUP",
+      "headers": [ "Last argument", "What it does", "When to use" ],
+      "rows": [
+        [ "FALSE (or 0)", "Exact match; returns #N/A if none", "Almost always — codes, names, IDs" ],
+        [ "TRUE (or 1)", "Closest value not greater than the key; needs sorted data", "Rare — tax brackets, grade bands" ]
       ]
     },
     {
       "type": "callout",
       "variant": "warn",
-      "richText": "Almost always use FALSE (exact match). Approximate match (TRUE) is only for sorted numeric ranges like tax brackets — and it silently returns wrong answers on unsorted data."
+      "richText": "Approximate match silently returns wrong answers if the first column is not sorted in ascending order. When in doubt, use FALSE."
     },
     {
       "type": "heading",
@@ -111,20 +126,11 @@
       "type": "list",
       "ordered": false,
       "items": [
-        [
-          "#N/A — the value was not found. Check for extra spaces or a number stored as text."
-        ],
-        [
-          "Returns the wrong value — you probably left off FALSE, or your lookup value is not in the first column of the table."
-        ],
+        [ "#N/A — the value was not found. Check for extra spaces or a number stored as text." ],
+        [ "Returns the wrong value — you probably left off FALSE, or your lookup value is not in the first column of the table." ],
         [
           "#REF! — the column number is larger than the table has columns. See ",
-          {
-            "link": {
-              "ref": "article:art-excel-ref",
-              "text": "how to fix the #REF! error"
-            }
-          },
+          { "link": { "ref": "article:art-excel-ref", "text": "how to fix the #REF! error" } },
           "."
         ]
       ]
@@ -132,18 +138,30 @@
     {
       "type": "heading",
       "level": 2,
-      "text": "Should you use XLOOKUP instead?"
+      "text": "VLOOKUP's limitations"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "It only looks right — the return column must be to the right of the lookup column.",
+        "It breaks when columns move, because the column number is hard-coded.",
+        "The key must be in the first column of the range.",
+        "It returns only the first match, not a list of all matches."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Should you use XLOOKUP or INDEX MATCH instead?"
     },
     {
       "type": "paragraph",
       "richText": [
-        "If your Excel has XLOOKUP (Microsoft 365 and Excel 2021+), it is usually better: it can look left as well as right, does an exact match by default, and does not break when you insert columns. VLOOKUP is still everywhere, though, so it is worth knowing both. Once you are comfortable, combine it with ",
-        {
-          "link": {
-            "ref": "article:art-excel-pivot",
-            "text": "pivot tables"
-          }
-        },
+        "If your Excel has XLOOKUP (Microsoft 365 and Excel 2021+), it is usually better: it looks left as well as right, matches exactly by default, and does not break when you insert columns. On older versions, ",
+        { "link": { "ref": "article:art-excel-index-match", "text": "INDEX MATCH" } },
+        " gives the same flexibility. VLOOKUP is still everywhere, though, so it is worth knowing all three. Once you are comfortable, combine it with ",
+        { "link": { "ref": "article:art-excel-pivot", "text": "pivot tables" } },
         " to build fast, self-updating reports."
       ]
     },
@@ -156,7 +174,15 @@
         },
         {
           "question": "Can VLOOKUP look to the left?",
-          "answerRichText": "No — VLOOKUP can only return a column to the right of the lookup column. To look left, use INDEX/MATCH or XLOOKUP, which do not have that limitation."
+          "answerRichText": "No — VLOOKUP can only return a column to the right of the lookup column. To look left, use INDEX MATCH or XLOOKUP, which do not have that limitation."
+        },
+        {
+          "question": "How do I VLOOKUP between two sheets?",
+          "answerRichText": "Put the sheet name before the range, like =VLOOKUP(A2, Prices!A:B, 2, FALSE). The formula behaves exactly the same when the lookup table is on another tab."
+        },
+        {
+          "question": "What does the last argument in VLOOKUP mean?",
+          "answerRichText": "It is the match mode: FALSE (or 0) forces an exact match, while TRUE (or 1) does an approximate match that needs the first column sorted. For everyday lookups, always use FALSE."
         }
       ]
     },
@@ -169,22 +195,8 @@
       "type": "list",
       "ordered": false,
       "items": [
-        [
-          {
-            "link": {
-              "ref": "article:art-gs-vlookup",
-              "text": "How to Use VLOOKUP in Google Sheets"
-            }
-          }
-        ],
-        [
-          {
-            "link": {
-              "ref": "article:art-excel-if",
-              "text": "How to Use the IF Function in Excel"
-            }
-          }
-        ]
+        [ { "link": { "ref": "article:art-gs-vlookup", "text": "How to Use VLOOKUP in Google Sheets" } } ],
+        [ { "link": { "ref": "article:art-excel-if", "text": "How to Use the IF Function in Excel" } } ]
       ]
     }
   ]

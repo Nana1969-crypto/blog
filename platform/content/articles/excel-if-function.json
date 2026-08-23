@@ -6,7 +6,7 @@
   "dek": "The IF function returns one value when a condition is true and another when it is false. The syntax is =IF(logical_test, value_if_true, value_if_false). Here is how to use it, nest it, and avoid the usual mistakes.",
   "authorId": "author_team",
   "publishedAt": "2026-07-16",
-  "updatedAt": "2026-07-16",
+  "updatedAt": "2026-08-21",
   "intent": {
     "primaryKeyword": "how to use if function in excel",
     "intentType": "informational",
@@ -26,7 +26,7 @@
     {
       "type": "paragraph",
       "richText": [
-        "The IF function is how you make Excel decide. It checks a condition and returns one answer if it is true and a different answer if it is false — the building block of nearly every smart spreadsheet."
+        "The IF function is how you make Excel decide. It checks a condition and returns one answer if it is true and a different answer if it is false — the building block of nearly every smart spreadsheet, from pass/fail grading to flagging overdue invoices."
       ]
     },
     {
@@ -42,23 +42,11 @@
     {
       "type": "table",
       "caption": "The three parts of IF",
-      "headers": [
-        "Part",
-        "Meaning"
-      ],
+      "headers": [ "Part", "Meaning" ],
       "rows": [
-        [
-          "logical_test",
-          "The condition to check, e.g. B2>100"
-        ],
-        [
-          "value_if_true",
-          "What to return when the condition is met"
-        ],
-        [
-          "value_if_false",
-          "What to return when it is not"
-        ]
+        [ "logical_test", "The condition to check, e.g. B2>100" ],
+        [ "value_if_true", "What to return when the condition is met" ],
+        [ "value_if_false", "What to return when it is not" ]
       ]
     },
     {
@@ -90,36 +78,68 @@
     {
       "type": "heading",
       "level": 2,
+      "text": "The comparison operators you can test"
+    },
+    {
+      "type": "table",
+      "caption": "Operators for the logical test",
+      "headers": [ "Operator", "Means", "Example" ],
+      "rows": [
+        [ "=", "equal to", "B2=\"Yes\"" ],
+        [ "<>", "not equal to", "B2<>\"\"" ],
+        [ ">  <", "greater / less than", "B2>100" ],
+        [ ">=  <=", "at least / at most", "B2>=100" ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
       "text": "Nesting IF and combining with AND / OR"
     },
     {
       "type": "paragraph",
-      "richText": [
-        "You can put an IF inside another IF for more than two outcomes, or use AND and OR to test several conditions at once, like =IF(AND(B2>=100, C2=\"VIP\"), \"Bonus\", \"Standard\"). If you have Microsoft 365, the IFS function is cleaner than deeply nested IFs."
-      ]
+      "richText": "You can put an IF inside another IF for more than two outcomes, or use AND and OR to test several conditions at once. To give a bonus only to VIP customers over target:"
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=IF(AND(B2>=100, C2=\"VIP\"), \"Bonus\", \"Standard\")"
+    },
+    {
+      "type": "paragraph",
+      "richText": "AND requires every condition to be true; OR needs just one. For several tiers — say A/B/C grades — you can nest IFs, but they get hard to read fast. If you have Microsoft 365, the IFS function is cleaner:"
+    },
+    {
+      "type": "code",
+      "language": "text",
+      "content": "=IFS(B2>=90, \"A\", B2>=80, \"B\", B2>=70, \"C\", TRUE, \"F\")"
     },
     {
       "type": "callout",
       "variant": "tip",
-      "richText": "A blank cell counts as 0 in a numeric test, which can produce a surprising \"true\". Wrap the test in another IF that checks for blanks if that matters for your data."
+      "richText": "A blank cell counts as 0 in a numeric test, which can produce a surprising \"true\". If blanks matter, test for them first: =IF(B2=\"\", \"\", IF(B2>=100, \"Pass\", \"Fail\"))."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Common mistakes"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Forgetting quotes around text — Excel reads Pass without quotes as a name and returns #NAME?.",
+        "Too many nested IFs — anything past three or four becomes unreadable; switch to IFS, VLOOKUP, or SWITCH.",
+        "Mismatched parentheses — every IF, AND, and OR needs its closing bracket."
+      ]
     },
     {
       "type": "paragraph",
       "richText": [
         "IF pairs naturally with lookups — use it to act on the result of ",
-        {
-          "link": {
-            "ref": "article:art-excel-vlookup",
-            "text": "VLOOKUP"
-          }
-        },
-        ". And if an IF returns #VALUE!, see ",
-        {
-          "link": {
-            "ref": "article:art-excel-value",
-            "text": "how to fix the #VALUE! error"
-          }
-        },
+        { "link": { "ref": "article:art-excel-vlookup", "text": "VLOOKUP" } },
+        ". To hide an error inside an IF, wrap it in IFERROR; if an IF still returns #VALUE!, see ",
+        { "link": { "ref": "article:art-excel-value", "text": "how to fix the #VALUE! error" } },
         "."
       ]
     },
@@ -132,7 +152,15 @@
         },
         {
           "question": "How many IFs can you nest?",
-          "answerRichText": "Excel allows up to 64 nested IFs, but anything beyond three or four becomes hard to read. Use IFS, VLOOKUP against a lookup table, or the SWITCH function instead for many outcomes."
+          "answerRichText": "Excel allows up to 64 nested IFs, but anything beyond three or four becomes hard to read. Use IFS, a VLOOKUP against a lookup table, or the SWITCH function instead for many outcomes."
+        },
+        {
+          "question": "What is the difference between IF and IFS?",
+          "answerRichText": "IF handles a single true/false test with two outcomes. IFS checks several conditions in order and returns the first one that is true, which is much cleaner than deeply nesting IFs for three or more outcomes."
+        },
+        {
+          "question": "How do I use IF with AND or OR?",
+          "answerRichText": "Put AND or OR inside the logical_test, like =IF(AND(B2>=100, C2=\"VIP\"), \"Bonus\", \"Standard\"). AND needs every condition true; OR needs at least one."
         }
       ]
     },
@@ -145,22 +173,8 @@
       "type": "list",
       "ordered": false,
       "items": [
-        [
-          {
-            "link": {
-              "ref": "article:art-gs-if",
-              "text": "How to Use the IF Function in Google Sheets"
-            }
-          }
-        ],
-        [
-          {
-            "link": {
-              "ref": "article:art-excel-sumif",
-              "text": "How to Use SUMIF in Excel"
-            }
-          }
-        ]
+        [ { "link": { "ref": "article:art-gs-if", "text": "How to Use the IF Function in Google Sheets" } } ],
+        [ { "link": { "ref": "article:art-excel-sumif", "text": "How to Use SUMIF in Excel" } } ]
       ]
     }
   ]
