@@ -1,4 +1,5 @@
 source_url,target_url,status_code,redirect_chain,canonical_target,issue,fixed
-/compare/guides/best-free-excel-alternatives/,/compare/guides/best-spreadsheet-software-small-business/,301,none,/compare/guides/best-spreadsheet-software-small-business/,,yes
-/compare/guides/best-google-sheets-alternatives/,/compare/guides/best-spreadsheet-software-small-business/,301,none,/compare/guides/best-spreadsheet-software-small-business/,,yes
-(all 40 articles),(internal links),200,none,self,"177 internal links, 0 broken",n/a
+/compare/guides/best-free-excel-alternatives/,/compare/guides/best-spreadsheet-software-small-business/,301 (config-validated; live HTTP blocked by sandbox egress),none,/compare/guides/best-spreadsheet-software-small-business/,"live 301 not testable from sandbox (egress 403); redirect logic verified locally (direct to hub, no chain/loop)",n/a
+/compare/guides/best-google-sheets-alternatives/,/compare/guides/best-spreadsheet-software-small-business/,301 (config-validated; live HTTP blocked by sandbox egress),none,/compare/guides/best-spreadsheet-software-small-business/,"live 301 not testable from sandbox (egress 403); redirect logic verified locally (direct to hub, no chain/loop)",n/a
+/compare/guides/best-spreadsheet-software-small-business/,/compare/guides/best-spreadsheet-software-small-business/,200 (built; index.html present),none,/compare/guides/best-spreadsheet-software-small-business/,none — self-canonical,n/a
+(all 40 articles),(all internal links),200,none,self,"177 internal links checked, 0 broken",n/a
