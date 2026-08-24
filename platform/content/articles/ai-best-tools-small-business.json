@@ -1,0 +1,190 @@
+{
+  "id": "art-ai-best-tools-small-business",
+  "slug": "best-ai-tools-for-small-business",
+  "clusterId": "cl_ai",
+  "title": "Best AI Tools for Small Businesses (2026)",
+  "dek": "The best AI tools for a small business are the ones that save real time on a real job — writing, meetings, design, support, or data. This is a short, honest shortlist chosen by the work they do, not by how many features they list.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-24",
+  "updatedAt": "2026-08-24",
+  "intent": {
+    "primaryKeyword": "best ai tools for small business",
+    "intentType": "commercial",
+    "funnelStage": "MoFu"
+  },
+  "seo": {
+    "metaTitle": "Best AI Tools for Small Businesses (2026)",
+    "metaDescription": "A short, honest shortlist of the best AI tools for small business — for writing, meetings, design, support and data — with what each is best for."
+  },
+  "sources": [
+    {
+      "label": "OpenAI — ChatGPT",
+      "url": "https://openai.com/chatgpt/"
+    },
+    {
+      "label": "Anthropic — Claude",
+      "url": "https://www.anthropic.com/claude"
+    },
+    {
+      "label": "Google — Gemini for Google Workspace",
+      "url": "https://workspace.google.com/solutions/ai/"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "There are thousands of AI tools, and most small businesses do not need more than a handful. The useful question is not \"what is the best AI?\" but \"what job do I want to hand off?\" This shortlist is organised by job — writing, meetings, design, support, and data — with a small number of genuinely relevant tools for each, and an honest note on what they are not."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How this list was chosen"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Each tool here solves a real small-business job, needs no coding, and has a free tier or an affordable paid plan. Descriptions are based on each vendor's current documented features, not on hands-on testing. Pricing changes often, so treat any figure as \"at the time of writing\" and confirm it on the vendor's own pricing page before you subscribe."
+    },
+    {
+      "type": "table",
+      "caption": "AI tools for small business, by job",
+      "headers": [ "Tool", "Best for", "Pricing model" ],
+      "rows": [
+        [ "ChatGPT / Claude", "A general assistant: drafting, rewriting, summarising, planning", "Free tier + paid plans" ],
+        [ "Grammarly", "Polishing everything you send to clients", "Free tier + paid plans" ],
+        [ "Canva (Magic Studio)", "Social posts, flyers, and simple branding", "Free tier + paid plans" ],
+        [ "AI note-taker (e.g. Otter, Fathom)", "Recording and summarising meetings", "Free tier + paid plans" ],
+        [ "Notion AI", "Docs, notes, and a team knowledge base", "Free tier + paid add-on" ],
+        [ "AI support chatbot (e.g. Tidio, Intercom Fin)", "Answering common customer questions 24/7", "Free/low tier + paid plans" ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "A general assistant: ChatGPT or Claude"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "One general chatbot covers most day-to-day work: drafting emails and proposals, rewriting copy, summarising long documents, and thinking through a plan. ChatGPT is the most versatile all-rounder; Claude is often preferred for writing and long documents. Both have capable free tiers. If you are deciding between them (and Google's Gemini), see our ",
+        { "link": { "ref": "article:art-ai-chatgpt-vs-claude-vs-gemini", "text": "ChatGPT vs Claude vs Gemini for work" } },
+        " comparison."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " almost any writing or thinking task. ", { "b": "Limitation:" }, " it can sound confident while being wrong, so verify facts and numbers before you use them." ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Polishing client-facing writing: Grammarly"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Grammarly checks grammar, clarity, and tone across email, documents, and the browser. For a small business, its value is consistency — everything that leaves your inbox reads professionally, even when you are rushing."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " solo owners and small teams who write to clients daily. ", { "b": "Limitation:" }, " it improves how you write, not what you say — the ideas still have to be yours." ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Design and social content: Canva Magic Studio"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Canva's AI features generate images, remove backgrounds, resize a design for every platform, and draft social captions. It lets a non-designer produce on-brand posts and flyers quickly."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " businesses without a designer. ", { "b": "Limitation:" }, " AI-generated visuals can look generic — use your own photos and brand colours to stand out." ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Meetings and notes: an AI note-taker"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Tools like Otter and Fathom join a call, transcribe it, and produce a summary with action items. For a small team, that turns every client call into a searchable record without anyone taking notes by hand."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " client-facing and remote teams. ", { "b": "Limitation:" }, " recording others usually requires consent — tell participants a bot is transcribing." ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Docs and knowledge: Notion AI"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Notion combines documents, notes, and databases, and its AI layer can draft text, summarise a page, and answer questions about your own content. It is a good home for a small team's shared knowledge."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " teams that want notes, tasks, and wiki in one place. ", { "b": "Limitation:" }, " it has a learning curve, and the AI is a paid add-on on top of the workspace." ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Customer support: an AI chatbot"
+    },
+    {
+      "type": "paragraph",
+      "richText": "An AI support chatbot (such as Tidio or Intercom's Fin) answers common questions on your website around the clock, drawing on your own help content, and hands off to a human when it cannot help."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " businesses fielding the same questions repeatedly. ", { "b": "Limitation:" }, " it is only as good as the help content you give it, so it needs setup and upkeep." ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to choose for your business"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ "Start with one general assistant (ChatGPT or Claude) — it covers the widest range of jobs for the least money." ],
+        [ "Add a tool only when a specific task is eating your week: writing polish, design, meetings, or support." ],
+        [ "Prefer free tiers first; upgrade only once a tool is clearly saving you hours." ],
+        [ "Working in spreadsheets? See the ", { "link": { "ref": "article:art-ai-spreadsheets", "text": "best AI tools for spreadsheets" } }, " and ", { "link": { "ref": "article:art-ai-data-analysis-no-coding", "text": "AI tools for data analysis without coding" } }, "." ]
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "What is the single best AI tool for a small business?",
+          "answerRichText": "For most, a general assistant like ChatGPT or Claude, because one subscription helps with writing, summarising, planning, and analysis across the whole business. Add specialised tools only for jobs that a general chatbot cannot do well, such as design or meeting transcription."
+        },
+        {
+          "question": "Are free AI tools good enough for a small business?",
+          "answerRichText": "Often, yes. The free tiers of ChatGPT, Claude, Grammarly, and Canva cover a lot of everyday work. Paid plans mainly add higher limits, advanced features, and file handling — worth it only once a tool is clearly saving you time."
+        },
+        {
+          "question": "Is it safe to put business data into AI tools?",
+          "answerRichText": "Treat anything you paste as potentially retained unless the vendor states otherwise. Avoid sharing customer personal data or secrets, check each tool's data and privacy settings, and prefer business or team plans, which usually offer stronger data controls."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "link": { "ref": "article:art-ai-chatgpt-vs-claude-vs-gemini", "text": "ChatGPT vs Claude vs Gemini for Work" } } ],
+        [ { "link": { "ref": "article:art-ai-spreadsheets", "text": "Best AI Tools for Spreadsheets" } } ]
+      ]
+    }
+  ]
+}

@@ -17,12 +17,19 @@
       "slug": "compare",
       "title": "Compare & Choose",
       "description": "Honest comparisons and buyer's guides to help you pick the right spreadsheet tool for your work and budget."
+    },
+    {
+      "id": "pillar_ai",
+      "slug": "ai-tools",
+      "title": "AI Tools",
+      "description": "Practical guides to AI tools for real work — for writing, spreadsheets, data, and small business — with honest comparisons and no hype."
     }
   ],
   "clusters": [
     { "id": "cl_excel_tut", "pillarId": "pillar_excel", "slug": "tutorials", "title": "Excel Tutorials" },
     { "id": "cl_excel_fix", "pillarId": "pillar_excel", "slug": "fixes", "title": "Fix Excel Errors" },
     { "id": "cl_gs_tut", "pillarId": "pillar_gsheets", "slug": "tutorials", "title": "Google Sheets Tutorials" },
-    { "id": "cl_compare", "pillarId": "pillar_compare", "slug": "guides", "title": "Buyer's Guides" }
+    { "id": "cl_compare", "pillarId": "pillar_compare", "slug": "guides", "title": "Buyer's Guides" },
+    { "id": "cl_ai", "pillarId": "pillar_ai", "slug": "guides", "title": "AI Guides" }
   ]
 }

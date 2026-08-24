@@ -1,0 +1,165 @@
+{
+  "id": "art-ai-chatgpt-vs-claude-vs-gemini",
+  "slug": "chatgpt-vs-claude-vs-gemini-for-work",
+  "clusterId": "cl_ai",
+  "title": "ChatGPT vs Claude vs Gemini for Work",
+  "dek": "There is no single best AI — there is a best one for each job. This compares ChatGPT, Claude, and Gemini across real work tasks: writing, research, spreadsheets, coding, and living inside your existing tools, with a clear pick for each.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-25",
+  "updatedAt": "2026-08-25",
+  "intent": {
+    "primaryKeyword": "chatgpt vs claude vs gemini",
+    "intentType": "commercial",
+    "funnelStage": "MoFu"
+  },
+  "seo": {
+    "metaTitle": "ChatGPT vs Claude vs Gemini for Work (2026)",
+    "metaDescription": "ChatGPT vs Claude vs Gemini compared for real work — writing, research, spreadsheets, coding, and tool integration — with a clear pick for each task."
+  },
+  "sources": [
+    {
+      "label": "OpenAI — ChatGPT",
+      "url": "https://openai.com/chatgpt/"
+    },
+    {
+      "label": "Anthropic — Claude",
+      "url": "https://www.anthropic.com/claude"
+    },
+    {
+      "label": "Google — Gemini",
+      "url": "https://gemini.google/"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "Ask \"which AI is best?\" and every answer is arguing about a different task. For work, the honest answer is that ChatGPT, Claude, and Gemini each win at different jobs — and the paid tiers all sit around the same monthly price, so cost rarely decides it. Here is how they compare on the things you actually do at work."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "At a glance"
+    },
+    {
+      "type": "table",
+      "caption": "ChatGPT vs Claude vs Gemini — strengths",
+      "headers": [ "", "Strongest at", "Notable for" ],
+      "rows": [
+        [ "ChatGPT", "The versatile all-rounder", "Widest feature set: image generation, voice, custom GPTs" ],
+        [ "Claude", "Writing, editing, long documents, coding", "A natural, careful writing style; large context" ],
+        [ "Gemini", "Living inside Google Workspace", "Deep Docs/Sheets/Gmail integration; multimodal" ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "For writing and editing"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Claude is the common favourite for drafting and refining prose — its writing tends to read naturally and it handles long documents well. ChatGPT is close behind and more flexible in tone. Gemini is capable but usually chosen here for its Google Docs integration rather than the writing itself."
+    },
+    {
+      "type": "paragraph", "richText": [ { "b": "Best for writing: Claude." } ] },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "For research and long documents"
+    },
+    {
+      "type": "paragraph",
+      "richText": "All three can summarise and answer questions about material you provide. Claude and Gemini are known for large context windows, which helps when you paste in a long report or several documents at once. ChatGPT's browsing and research features are strong for pulling in current information."
+    },
+    {
+      "type": "paragraph", "richText": [ { "b": "Best for long documents: Claude or Gemini; for live web research: ChatGPT." } ] },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "For spreadsheets and data"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "For writing and explaining formulas, any of the three works well from a good description. The bigger difference is integration: Gemini is built into Google Sheets and ChatGPT's paid data-analysis feature can read an uploaded file. See ",
+        { "link": { "ref": "article:art-ai-spreadsheets", "text": "the best AI tools for spreadsheets" } },
+        " for how the built-in and external options compare."
+      ]
+    },
+    {
+      "type": "paragraph", "richText": [ { "b": "Best for spreadsheets in Google: Gemini; for uploaded-file analysis: ChatGPT." } ] },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "For coding"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Claude has a strong reputation among developers for code generation and debugging, and it is the go-to for many coding tasks. ChatGPT is also widely used and versatile. If you are not a developer, this mostly matters for light scripting and automation — where all three are more than enough."
+    },
+    {
+      "type": "paragraph", "richText": [ { "b": "Best for coding: Claude." } ] },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "For living inside your tools"
+    },
+    {
+      "type": "paragraph",
+      "richText": "If your work runs on Google Workspace, Gemini's integration across Docs, Sheets, Gmail, and Drive is a real advantage — the AI is already where you work. Microsoft-heavy teams get a similar benefit from Copilot (built on OpenAI models). ChatGPT and Claude are more standalone, though both are adding connectors."
+    },
+    {
+      "type": "paragraph", "richText": [ { "b": "Best for Google Workspace: Gemini." } ] },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "So which should you pick?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ "Mostly writing, editing, or long documents → ", { "b": "Claude" }, "." ],
+        [ "Want one flexible all-rounder with the widest features → ", { "b": "ChatGPT" }, "." ],
+        [ "Live in Google Workspace → ", { "b": "Gemini" }, "." ],
+        [ "Not sure → start with a free tier of ChatGPT or Claude; you can switch any time." ]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "You do not have to commit to one. Many people keep a free account on two of them and use whichever suits the task. Paid tiers cluster around the same price, so try before you subscribe."
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Which AI is best overall for work?",
+          "answerRichText": "There is no single winner. Claude leads for writing and coding, Gemini for Google Workspace integration, and ChatGPT as the most versatile all-rounder. The best choice depends on the tasks you do most and the tools you already use."
+        },
+        {
+          "question": "Is the paid version worth it?",
+          "answerRichText": "For occasional use, the free tiers are often enough. Paid plans — which sit at a similar monthly price across all three — add higher limits, faster models, file uploads, and advanced features, which pay off once you use the tool daily."
+        },
+        {
+          "question": "Can I use more than one?",
+          "answerRichText": "Yes, and many people do. Keeping free accounts on two lets you pick the best model per task — for example, Claude for a report and Gemini for a Google Sheet — without paying for both."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "link": { "ref": "article:art-ai-best-tools-small-business", "text": "Best AI Tools for Small Businesses" } } ],
+        [ { "link": { "ref": "article:art-ai-data-analysis-no-coding", "text": "AI Tools for Data Analysis (No Coding)" } } ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "id": "art-ai-spreadsheets",
+  "slug": "best-ai-tools-for-spreadsheets",
+  "clusterId": "cl_ai",
+  "title": "Best AI Tools for Spreadsheets (Excel & Google Sheets)",
+  "dek": "Some AI tools write formulas from a description; others live inside the sheet and edit it for you. This guide sorts the best AI tools for spreadsheets by how they actually work — so you pick the right kind for your data and your app.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-25",
+  "updatedAt": "2026-08-25",
+  "intent": {
+    "primaryKeyword": "best ai tools for spreadsheets",
+    "intentType": "commercial",
+    "funnelStage": "MoFu"
+  },
+  "seo": {
+    "metaTitle": "Best AI Tools for Spreadsheets (Excel & Sheets)",
+    "metaDescription": "The best AI tools for spreadsheets, sorted by how they work: built-in assistants, external chatbots, and AI-native sheets — with who each is best for."
+  },
+  "sources": [
+    {
+      "label": "Microsoft — Copilot in Excel",
+      "url": "https://support.microsoft.com/en-us/copilot-excel"
+    },
+    {
+      "label": "Google Workspace — Gemini in Google Sheets",
+      "url": "https://support.google.com/docs/answer/14356410"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "\"AI for spreadsheets\" covers three very different things: an assistant built into your spreadsheet, an outside chatbot you copy formulas from, and a new kind of AI-native spreadsheet. They suit different needs, so the useful way to choose is by how the tool works — not by which has the longest feature list."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Three kinds of spreadsheet AI"
+    },
+    {
+      "type": "table",
+      "caption": "How spreadsheet AI tools differ",
+      "headers": [ "Type", "How it works", "Examples" ],
+      "rows": [
+        [ "Built-in assistant", "Lives inside the sheet; can read and edit your data", "Copilot in Excel, Gemini in Google Sheets" ],
+        [ "External chatbot", "You describe the task; it returns a formula to paste", "ChatGPT, Claude" ],
+        [ "AI-native spreadsheet", "A separate app built around AI from the start", "Rows, and analysis tools like Julius" ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Built into your spreadsheet: Copilot and Gemini"
+    },
+    {
+      "type": "paragraph",
+      "richText": "These are the most convenient because they work where your data already lives. Microsoft's Copilot in Excel can suggest formulas, create charts, and summarise a table in plain English; Google's Gemini side panel does the same inside Google Sheets, including generating tables and formulas. Both read the sheet directly, so you skip the copy-paste."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " people who want AI help without leaving their spreadsheet. ", { "b": "Limitation:" }, " they are paid features tied to a Microsoft 365 or Google Workspace plan, and availability depends on your subscription and region." ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "An outside chatbot: ChatGPT or Claude"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "A general chatbot does not touch your file, but it is excellent at turning a described task into a formula and explaining what an existing formula does. It works for both Excel and Google Sheets, and it is free to start. The trade-off is the copy-paste loop and the need to verify — see ",
+        { "link": { "ref": "article:art-ai-chatgpt-excel-formulas", "text": "how to use ChatGPT to write Excel formulas" } },
+        " for the workflow and the checks that matter."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " occasional help and learning, on any spreadsheet app, for free. ", { "b": "Limitation:" }, " it cannot see your data unless you paste it in or upload a file on a paid tier." ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "AI-native spreadsheets and analysis tools"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Some tools are built around AI from the ground up. Rows is a spreadsheet with an AI assistant and live data connections; upload-and-ask tools like Julius let you drop in a file and get charts and answers in plain English. These shine for analysis and reporting rather than day-to-day editing — more on them in ",
+        { "link": { "ref": "article:art-ai-data-analysis-no-coding", "text": "AI tools for data analysis without coding" } },
+        "."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " turning a dataset into a chart or summary quickly. ", { "b": "Limitation:" }, " they are a separate app, so they suit analysis more than living in your main workbook." ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Which should you use?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ "Want help right inside Excel or Sheets, and have the subscription → ", { "b": "Copilot or Gemini" }, "." ],
+        [ "Want free help and do not mind copy-paste → ", { "b": "ChatGPT or Claude" }, "." ],
+        [ "Want to analyse a dataset and get charts fast → an ", { "b": "AI-native / analysis tool" }, "." ],
+        [ "Still choosing between the apps themselves? Read ", { "link": { "ref": "article:art-excel-vs-sheets", "text": "Excel vs Google Sheets" } }, "." ]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Whichever type you pick, treat AI output as a draft. Test any formula on rows where you know the answer, and sanity-check any chart against the raw numbers before you share it."
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Does Excel have built-in AI?",
+          "answerRichText": "Yes — Copilot in Excel can write formulas, build charts, and summarise data inside the app. It is a paid feature tied to a Microsoft 365 plan with Copilot, so whether you have it depends on your subscription."
+        },
+        {
+          "question": "Does Google Sheets have built-in AI?",
+          "answerRichText": "Yes. Gemini appears as a side panel in Google Sheets and can generate formulas, tables, and summaries. Like Copilot, it is part of paid Workspace plans, so availability depends on your subscription and region."
+        },
+        {
+          "question": "What is the best free AI tool for spreadsheets?",
+          "answerRichText": "A general chatbot like ChatGPT or Claude, used to write and explain formulas. It works with both Excel and Google Sheets on a free tier, as long as you paste the description in and verify the result yourself."
+        },
+        {
+          "question": "Can AI clean and analyse my spreadsheet automatically?",
+          "answerRichText": "Upload-and-ask tools can suggest cleaning steps and produce charts and summaries from a file you provide. Always review the steps it takes and confirm the output against your raw data before relying on it."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "link": { "ref": "article:art-ai-chatgpt-excel-formulas", "text": "How to Use ChatGPT to Write Excel Formulas" } } ],
+        [ { "link": { "ref": "article:art-ai-data-analysis-no-coding", "text": "AI Tools for Data Analysis (No Coding)" } } ]
+      ]
+    }
+  ]
+}

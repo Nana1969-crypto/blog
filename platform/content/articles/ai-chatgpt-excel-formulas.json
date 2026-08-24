@@ -1,0 +1,162 @@
+{
+  "id": "art-ai-chatgpt-excel-formulas",
+  "slug": "how-to-use-chatgpt-to-write-excel-formulas",
+  "clusterId": "cl_ai",
+  "title": "How to Use ChatGPT to Write Excel Formulas",
+  "dek": "Describe the result you want in plain English — your column layout and one example — and ChatGPT returns a formula you paste into Excel and verify. Here is how to prompt it well, and how to check the formula before you trust it.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-24",
+  "updatedAt": "2026-08-24",
+  "intent": {
+    "primaryKeyword": "how to use chatgpt to write excel formulas",
+    "intentType": "informational",
+    "funnelStage": "ToFu"
+  },
+  "seo": {
+    "metaTitle": "How to Use ChatGPT to Write Excel Formulas",
+    "metaDescription": "Use ChatGPT to write Excel formulas: how to describe your data, prompt it well, and — the key step — verify the formula on sample data before you trust it."
+  },
+  "sources": [
+    {
+      "label": "Microsoft Support — Excel functions (by category)",
+      "url": "https://support.microsoft.com/en-us/office/excel-functions-by-category-5f91f4e9-7b42-46d2-9bd1-63f26a86c0eb"
+    },
+    {
+      "label": "OpenAI — ChatGPT",
+      "url": "https://openai.com/chatgpt/"
+    }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "If you know the result you want but not the formula, ChatGPT is a fast way to get there. You describe the task in plain English, it writes the Excel formula, and you paste it into your sheet. The catch — and the part most guides skip — is that a formula from an AI is a draft, not a fact. This guide shows how to prompt it so the draft is usually right, and how to check it before you rely on it."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The basic workflow"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "In plain English, describe what you want to calculate — and tell it exactly where your data is (which columns, starting row).",
+        "Paste ChatGPT's formula into the correct cell in Excel.",
+        "Test it on a few rows where you already know the answer.",
+        "Ask ChatGPT to explain the formula if anything looks off, then adjust."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Write a prompt that gets the right formula"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Vague prompts get vague formulas. The more of these you include, the better the result:"
+    },
+    {
+      "type": "table",
+      "caption": "What to put in your prompt",
+      "headers": [ "Include", "Example" ],
+      "rows": [
+        [ "The goal, in plain words", "\"Total sales, but only for the North region\"" ],
+        [ "Your column layout", "\"Region is in column A, Sales in column B, rows 2 to 500\"" ],
+        [ "A concrete example", "\"For North, the answer should be about 12,000\"" ],
+        [ "Any conditions or edge cases", "\"Ignore blank rows; regions are text\"" ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "A prompt like that typically returns a clean, correct formula — for the example above, a ",
+        { "link": { "ref": "article:art-excel-sumif", "text": "SUMIF" } },
+        " such as ",
+        { "code": "=SUMIF(A2:A500, \"North\", B2:B500)" },
+        ". Name the columns and give one expected answer, and you remove most of the guesswork."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Always verify before you trust it"
+    },
+    {
+      "type": "paragraph",
+      "richText": "This is the step that separates a useful workflow from a risky one. An AI can produce a formula that looks right but returns the wrong number — especially with complex or uncommon functions. Three quick checks catch almost every mistake:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "b": "Test on known rows." }, " Run it where you already know the answer and confirm it matches." ],
+        [ { "b": "Ask it to explain." }, " \"Explain this formula step by step\" often exposes a wrong assumption about your data." ],
+        [ { "b": "Use Excel's own tools." }, " Formulas tab > Evaluate Formula, or Trace Precedents, shows exactly what the formula is reading." ]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "warn",
+      "richText": "ChatGPT will occasionally invent a function that does not exist, or use one from Google Sheets that Excel does not have. If Excel returns #NAME?, the function name is the first thing to check."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What it is good and bad at"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "ChatGPT is strong at translating a described task into a standard formula, fixing a formula you paste in, and explaining what an existing formula does. It is weaker on very complex, multi-step logic and on anything that depends on data it cannot see. For lookups, it is often quicker to learn the underlying function — see ",
+        { "link": { "ref": "article:art-excel-vlookup", "text": "VLOOKUP" } },
+        " and the ",
+        { "link": { "ref": "article:art-excel-if", "text": "IF function" } },
+        " — so you can judge whether the AI's answer is sensible."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "ChatGPT works from a text description; it does not touch your file. If you want an AI that reads the workbook and edits cells directly, that is a different class of tool — see our guide to the ",
+        { "link": { "ref": "article:art-ai-spreadsheets", "text": "best AI tools for spreadsheets" } },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Can ChatGPT read my Excel file?",
+          "answerRichText": "The plain chat does not — it works from your written description, so it never sees your data. Paid tiers with file upload and data-analysis features can read an uploaded file, and separate add-ins (or Copilot in Excel) can work inside the workbook itself."
+        },
+        {
+          "question": "Do the same prompts work for Google Sheets?",
+          "answerRichText": "Mostly. Many functions are shared, but a few differ, so tell ChatGPT which app you are using. If a formula returns an error in one app, ask it to rewrite the formula specifically for Excel or for Google Sheets."
+        },
+        {
+          "question": "Do I need ChatGPT Plus to write formulas?",
+          "answerRichText": "No. Writing and explaining formulas works on the free tier, because it is a text task. Paid tiers mainly add file upload, data analysis, and higher limits, which help for larger or more complex work rather than for single formulas."
+        },
+        {
+          "question": "Why did ChatGPT's formula give the wrong answer?",
+          "answerRichText": "Usually it misread your layout — wrong column, wrong start row — or assumed numbers where you have text. Re-state your exact ranges and data types, and test the result on rows where you already know the answer."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "link": { "ref": "article:art-ai-spreadsheets", "text": "Best AI Tools for Spreadsheets" } } ],
+        [ { "link": { "ref": "article:art-excel-vlookup", "text": "How to Use VLOOKUP in Excel" } } ]
+      ]
+    }
+  ]
+}
