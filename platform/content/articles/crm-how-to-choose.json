@@ -1,0 +1,133 @@
+{
+  "id": "art-crm-choose",
+  "slug": "how-to-choose-a-crm",
+  "clusterId": "cl_crm",
+  "title": "How to Choose a CRM for a Small Business",
+  "dek": "Choosing a CRM is not about finding the \"best\" one — it is about matching a tool to your problem, team, and budget. This is a practical ten-step framework that gets you to a confident decision, without a demo call or a feature spreadsheet.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-27",
+  "updatedAt": "2026-08-27",
+  "intent": {
+    "primaryKeyword": "how to choose a crm",
+    "intentType": "informational",
+    "funnelStage": "MoFu"
+  },
+  "seo": {
+    "metaTitle": "How to Choose a CRM for a Small Business",
+    "metaDescription": "A practical ten-step framework for choosing a CRM for a small business — define the problem, users, budget and automation, then decide with confidence."
+  },
+  "sources": [
+    { "label": "HubSpot — CRM", "url": "https://www.hubspot.com/products/crm" },
+    { "label": "Zoho CRM", "url": "https://www.zoho.com/crm/" }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "The mistake most small businesses make with a CRM is starting from the tools — comparing feature lists before they have defined the problem. That is how you end up with a powerful CRM nobody uses. This framework works the other way round: define what you need first, and let that narrow the field. Ten steps, no demo call required."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "A ten-step framework"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        [ { "b": "Define the problem." }, " Name the specific pain: missed follow-ups, no shared client history, an invisible pipeline. The problem, not the software, is your starting point." ],
+        [ { "b": "Count who needs access." }, " One person, or a team? User count drives both the shortlist and the price, because most CRMs charge per user." ],
+        [ { "b": "List required integrations." }, " Write down the tools it must connect to — email, calendar, invoicing, your website — and treat these as non-negotiable." ],
+        [ { "b": "Set a budget." }, " Decide what you can spend per user per month, and check the cost at the plan you will actually need, not the entry tier." ],
+        [ { "b": "Judge the automation you need." }, " Reminders and follow-up sequences save the most time; decide whether basic or advanced automation is worth paying for." ],
+        [ { "b": "Weigh ease of use heavily." }, " The best CRM is the one your team will use. If it is hard, adoption fails and the tool is worthless." ],
+        [ { "b": "Think one to two years ahead." }, " Migrating CRMs is painful, so pick one you can grow into — but do not overpay today for scale you may never reach." ],
+        [ { "b": "Trial before you commit." }, " Put real contacts and a real deal through it for a week. A demo is marketing; a trial is evidence." ],
+        [ { "b": "Check the free-plan limits." }, " If you plan to start free, know exactly where the caps on users, contacts, and automation sit." ],
+        [ { "b": "Decide — and import your data." }, " Commit, export your existing contacts to CSV, and import them. Done is better than perfect." ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Turn your answers into a shortlist"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Once you have worked through the steps, your answers point to a type of tool rather than leaving you staring at a hundred options:"
+    },
+    {
+      "type": "table",
+      "caption": "Matching your needs to a CRM type",
+      "headers": [ "If your priority is…", "Look at…" ],
+      "rows": [
+        [ "An all-in-one free start", "HubSpot Free" ],
+        [ "Best value as the team grows", "Zoho CRM" ],
+        [ "A visual, sales-led pipeline", "Pipedrive" ],
+        [ "Simplicity for one person", "Bigin, Capsule, or Less Annoying CRM" ],
+        [ "A CRM inside Gmail", "Streak" ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Each of these is covered in depth in ",
+        { "link": { "ref": "article:art-crm-best", "text": "the best CRM for small businesses" } },
+        ", with free options in ",
+        { "link": { "ref": "article:art-crm-free", "text": "the best free CRM" } },
+        " and solo-focused picks in ",
+        { "link": { "ref": "article:art-crm-solopreneurs", "text": "the best CRM for freelancers and solo owners" } },
+        "."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "One more question before you buy"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Step back and ask whether you need a CRM at all yet. If you are very small and your only real need is a contact list, a spreadsheet may still be the right answer — our guide to ",
+        { "link": { "ref": "article:art-crm-vs-spreadsheet", "text": "CRM vs spreadsheet" } },
+        " helps you make that call before you spend anything."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Whatever you pick, commit for a season, not forever. Give one CRM a genuine month of daily use before judging it — most \"bad CRM\" experiences are really abandoned setups, not bad software."
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "How do I choose the right CRM for my business?",
+          "answerRichText": "Start from your problem, not the tools: define the pain, count your users, list must-have integrations, set a budget, and weigh ease of use heavily. Trial your top one or two with real data for a week, then decide. Matching needs to a tool beats chasing the longest feature list."
+        },
+        {
+          "question": "What should a small business look for in a CRM?",
+          "answerRichText": "Ease of use above all, a price that works at the plan you will actually need, solid contact and pipeline management, the automation that saves you time, and the integrations you depend on. Room to grow matters too, since switching CRMs later is disruptive."
+        },
+        {
+          "question": "Should I start with a free CRM or pay from the beginning?",
+          "answerRichText": "If a free tier covers your users, contacts, and the features you need, start free — it costs only your setup time and you can upgrade later. Pay from the start only when you already know you need automation, more users, or capabilities the free plan excludes."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "link": { "ref": "article:art-crm-best", "text": "Best CRM for Small Businesses" } } ],
+        [ { "link": { "ref": "article:art-crm-vs-spreadsheet", "text": "CRM vs Spreadsheet: When to Switch" } } ]
+      ]
+    }
+  ]
+}

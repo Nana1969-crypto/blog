@@ -126,7 +126,9 @@
       "richText": [
         "If your spreadsheet has really become a mini-database — tasks, projects, inventory — Airtable and Coda add structure a flat grid cannot: linked records, multiple views (kanban, calendar), and automations. They cost more and have a learning curve, but they replace tangled spreadsheets with real systems. See ",
         { "link": { "ref": "article:art-airtable-vs-gs", "text": "Airtable vs Google Sheets" } },
-        " for the trade-offs."
+        " for the trade-offs. And if the sheet has become a customer and deal tracker, a CRM is the natural next step — see ",
+        { "link": { "ref": "article:art-crm-vs-spreadsheet", "text": "CRM vs Spreadsheet" } },
+        "."
       ]
     },
     {

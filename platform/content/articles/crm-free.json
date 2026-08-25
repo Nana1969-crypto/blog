@@ -1,0 +1,161 @@
+{
+  "id": "art-crm-free",
+  "slug": "best-free-crm-for-small-business",
+  "clusterId": "cl_crm",
+  "title": "Best Free CRM for Small Businesses (2026)",
+  "dek": "A free CRM can run a small business well — until you hit a wall you did not see coming. This guide covers what \"free\" really means, which free CRMs are genuinely useful, and the exact limits (users, contacts, automation) that tell you it is time to pay.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-27",
+  "updatedAt": "2026-08-27",
+  "intent": {
+    "primaryKeyword": "best free crm for small business",
+    "intentType": "commercial",
+    "funnelStage": "MoFu"
+  },
+  "seo": {
+    "metaTitle": "Best Free CRM for Small Businesses (2026)",
+    "metaDescription": "The best free CRMs for small business, and what \"free\" really means — the user, contact and automation limits that tell you when it is time to pay."
+  },
+  "sources": [
+    { "label": "HubSpot — Free CRM", "url": "https://www.hubspot.com/products/crm" },
+    { "label": "Zoho CRM — Editions", "url": "https://www.zoho.com/crm/zohocrm-pricing.html" },
+    { "label": "Freshsales", "url": "https://www.freshworks.com/crm/sales/" }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "A free CRM is a real category, not a trick — several established vendors offer a plan that never expires. The catch is that \"free\" is defined by limits, and knowing where those limits sit is the difference between a free CRM that carries you for a year and one you outgrow in a month. This guide explains what free actually includes, which options are worth starting with, and the signs it is time to upgrade."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What \"free CRM\" really means"
+    },
+    {
+      "type": "paragraph",
+      "richText": "A free forever plan is not a free trial — it does not end after 14 days. Instead, vendors cap it in ways designed to be comfortable for a very small team and to nudge you upward as you grow. The caps that matter most are:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "b": "Number of users." }, " Free tiers commonly allow only a handful of people on the account." ],
+        [ { "b": "Contacts and records." }, " There is often a ceiling on how many contacts or deals you can store." ],
+        [ { "b": "Automation." }, " Multi-step workflows and sequences are usually reserved for paid plans." ],
+        [ { "b": "Email and integrations." }, " Two-way email sync and some connectors may be paid-only." ],
+        [ { "b": "Branding and support." }, " Free tools can carry vendor branding and offer limited support." ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The best free CRMs right now"
+    },
+    {
+      "type": "paragraph",
+      "richText": "The plans below are the free tiers most worth starting with. Limits and features change frequently, so treat the notes as \"at the time of writing\" and confirm the current caps on each vendor's pricing page before you rely on them."
+    },
+    {
+      "type": "table",
+      "caption": "Free CRM plans compared",
+      "headers": [ "CRM", "Free plan is best for", "Watch the limit on" ],
+      "rows": [
+        [ "HubSpot Free", "An all-in-one start with marketing tools", "Users, pipelines, branding, automation" ],
+        [ "Zoho CRM Free", "A small team wanting real CRM features", "Number of users and advanced automation" ],
+        [ "Freshsales Free", "A lean sales team that needs email built in", "Pipelines and advanced features" ],
+        [ "Capsule Free", "Very small, contact-first tracking", "Contact count and users" ],
+        [ "Bigin (by Zoho)", "Solo and micro-teams wanting a simple pipeline", "Records and pipelines on the free tier" ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "HubSpot Free — the most generous starting point"
+    },
+    {
+      "type": "paragraph",
+      "richText": "HubSpot's free CRM stands out for pairing contact and deal management with light marketing, forms, and email in one free account. It is the easiest way to look professional from day one. The trade-offs are a small user cap, a single pipeline, HubSpot branding on free assets, and automation that is largely paid-only."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " a small team that wants sales and marketing in one free tool. ", { "b": "You will pay when:" }, " you need more users, more than one pipeline, branding removed, or real automation." ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Zoho CRM Free and Freshsales Free — real CRM features at zero cost"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Zoho CRM's free edition gives a small team genuine CRM functionality — leads, contacts, deals, and basic reports — and Freshsales' free tier adds built-in email to a simple sales workflow. Both are solid homes for a couple of people running a sales process without paying yet."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " small sales teams who want structure, not just a contact list. ", { "b": "You will pay when:" }, " you add people beyond the free user cap or need deeper automation and analytics." ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Capsule and Bigin — simple and free for the smallest teams"
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "If you want the least complexity, Capsule's free tier suits very small, contact-first tracking, and Bigin (Zoho's lightweight CRM) gives a solo owner or micro-team a clean pipeline for free. These are ideal starting points that you can grow out of gently. For a deeper look at options aimed at one-person businesses, see ",
+        { "link": { "ref": "article:art-crm-solopreneurs", "text": "the best CRM for freelancers and solo owners" } },
+        "."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "When free stops being enough"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Three signals usually mean it is time to pay: you have added people and hit the user cap; you are storing so many contacts that the record limit is close; or you keep wanting automation — reminders, sequences, workflows — that only paid plans unlock. If none of those bite yet, staying free is the right call."
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Still deciding whether you even need a CRM instead of the sheet you already have? Read ",
+        { "link": { "ref": "article:art-crm-vs-spreadsheet", "text": "CRM vs spreadsheet" } },
+        ". Ready to compare paid options too? Start with ",
+        { "link": { "ref": "article:art-crm-best", "text": "the best CRM for small businesses" } },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Is there a genuinely free CRM, or is it always a trial?",
+          "answerRichText": "Several vendors — including HubSpot, Zoho, Freshsales, and Capsule — offer a free forever plan, not just a trial. It is limited by users, contacts, and features, but it does not expire, so a small team can run on it indefinitely if it fits within the caps."
+        },
+        {
+          "question": "What is the best free CRM for a very small team?",
+          "answerRichText": "HubSpot's free CRM is the most generous all-rounder, while Zoho and Freshsales free tiers suit small sales teams and Capsule or Bigin suit the simplest setups. The best pick depends on how many users you need and whether you also want marketing or just a pipeline."
+        },
+        {
+          "question": "When should I upgrade from a free CRM?",
+          "answerRichText": "Upgrade when you outgrow the user cap, approach the contact or record limit, or repeatedly need automation that only paid plans include. Until one of those limits actually slows you down, a free plan is usually enough."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "link": { "ref": "article:art-crm-best", "text": "Best CRM for Small Businesses" } } ],
+        [ { "link": { "ref": "article:art-crm-choose", "text": "How to Choose a CRM for a Small Business" } } ]
+      ]
+    }
+  ]
+}

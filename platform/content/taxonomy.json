@@ -23,6 +23,12 @@
       "slug": "ai-tools",
       "title": "AI Tools",
       "description": "Practical guides to AI tools for real work — for writing, spreadsheets, data, and small business — with honest comparisons and no hype."
+    },
+    {
+      "id": "pillar_business",
+      "slug": "business-software",
+      "title": "Business Software",
+      "description": "Honest, criteria-based guides to the software small teams run on — CRM and the tools for sales, clients, and operations — with who each suits and who should skip it."
     }
   ],
   "clusters": [
@@ -30,6 +36,7 @@
     { "id": "cl_excel_fix", "pillarId": "pillar_excel", "slug": "fixes", "title": "Fix Excel Errors" },
     { "id": "cl_gs_tut", "pillarId": "pillar_gsheets", "slug": "tutorials", "title": "Google Sheets Tutorials" },
     { "id": "cl_compare", "pillarId": "pillar_compare", "slug": "guides", "title": "Buyer's Guides" },
-    { "id": "cl_ai", "pillarId": "pillar_ai", "slug": "guides", "title": "AI Guides" }
+    { "id": "cl_ai", "pillarId": "pillar_ai", "slug": "guides", "title": "AI Guides" },
+    { "id": "cl_crm", "pillarId": "pillar_business", "slug": "crm", "title": "CRM" }
   ]
 }

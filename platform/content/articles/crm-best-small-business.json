@@ -1,0 +1,194 @@
+{
+  "id": "art-crm-best",
+  "slug": "best-crm-for-small-business",
+  "clusterId": "cl_crm",
+  "title": "Best CRM for Small Businesses (2026)",
+  "dek": "The best CRM for a small business is the one your team will actually use every day — not the one with the longest feature list. This guide picks by real fit: how many people, what you sell, and what you already use, with an honest note on who each tool is wrong for.",
+  "authorId": "author_team",
+  "publishedAt": "2026-08-27",
+  "updatedAt": "2026-08-27",
+  "intent": {
+    "primaryKeyword": "best crm for small business",
+    "intentType": "commercial",
+    "funnelStage": "MoFu"
+  },
+  "seo": {
+    "metaTitle": "Best CRM for Small Businesses (2026)",
+    "metaDescription": "An honest, criteria-based guide to the best CRM for small business — HubSpot, Zoho, Pipedrive and more — with who each suits and who should skip it."
+  },
+  "sources": [
+    { "label": "HubSpot — CRM", "url": "https://www.hubspot.com/products/crm" },
+    { "label": "Zoho CRM", "url": "https://www.zoho.com/crm/" },
+    { "label": "Pipedrive", "url": "https://www.pipedrive.com/" }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "A CRM (customer relationship manager) is one place to keep every contact, deal, and follow-up so nothing slips through the cracks. For a small business the hard part is not finding a CRM — it is finding one your team will keep using once the novelty wears off. This guide picks by fit rather than feature count: how many people need access, what you sell, and which tools you already live in. For each recommendation you will also see who it is the wrong choice for."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Do you actually need a CRM yet?"
+    },
+    {
+      "type": "paragraph",
+      "richText": "A CRM earns its place when you have more leads and clients than you can track in your head or a single spreadsheet — when follow-ups get missed, when more than one person needs the same customer history, or when you want a repeatable sales pipeline. If you are a one-person shop with a handful of clients, a spreadsheet may still be enough for now; we cover exactly where that line is in the section below."
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "If you are weighing a CRM against the sheet you already use, read ",
+        { "link": { "ref": "article:art-crm-vs-spreadsheet", "text": "CRM vs spreadsheet" } },
+        " first — it is the cheapest decision to get right."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to judge a small-business CRM"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "b": "Ease of use." }, " If it is fiddly, your team will drift back to email and sticky notes. This matters more than any feature." ],
+        [ { "b": "Price and the free tier." }, " Look at the real cost once your team and contact count grow, not just the headline plan." ],
+        [ { "b": "Pipeline and contacts." }, " Can you see every deal's stage and every contact's history at a glance?" ],
+        [ { "b": "Automation." }, " Even simple reminders and follow-up sequences save hours over a month." ],
+        [ { "b": "Integrations." }, " It should connect to the email, calendar, and tools you already use." ],
+        [ { "b": "Room to grow." }, " Moving CRMs later is painful, so pick one you can grow into for a year or two." ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The best CRMs for small businesses"
+    },
+    {
+      "type": "paragraph",
+      "richText": "The shortlist below covers the tools that consistently fit small teams. Descriptions are based on each vendor's current documented plans, not on hands-on testing. Pricing and plan limits change often, so treat every figure as \"at the time of writing\" and confirm it on the vendor's own pricing page before you commit."
+    },
+    {
+      "type": "table",
+      "caption": "Small-business CRMs at a glance",
+      "headers": [ "CRM", "Best for", "Free plan?" ],
+      "rows": [
+        [ "HubSpot", "An all-in-one start: sales + marketing, generous free tier", "Yes (limited users/contacts)" ],
+        [ "Zoho CRM", "Best value as a small team grows", "Yes (up to a few users)" ],
+        [ "Pipedrive", "Sales-led teams who live in a visual pipeline", "No (trial only)" ],
+        [ "Freshsales", "Low-cost paid plans with built-in email", "Yes (small teams)" ],
+        [ "Capsule", "Simple, contact-first relationship tracking", "Yes (very small)" ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "HubSpot — best all-rounder to start free"
+    },
+    {
+      "type": "paragraph",
+      "richText": "HubSpot's free CRM is the easiest way for a small team to get organised without spending anything, and it pairs contact management with light marketing and email tools in one place. The free tier is capped — on contacts, users, and pipelines, and it adds HubSpot branding — and paid tiers rise quickly once you need automation and higher limits."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " beginners and small teams who want sales and marketing together. ", { "b": "Skip it if:" }, " you only need a lean sales pipeline — you may be paying for breadth you will not use." ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Zoho CRM — best value as you grow"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Zoho CRM offers a free tier for a small number of users and paid plans that stay affordable as you scale, with deep customisation and a large ecosystem of connected Zoho apps. It is a strong pick if you expect to add people and processes and want to keep per-user costs down."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " growing teams who want capability at a low per-user price. ", { "b": "Skip it if:" }, " you want the absolute simplest setup — Zoho's depth can feel like a lot at first." ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Pipedrive — best for sales-led teams"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Pipedrive is built around a clean, visual sales pipeline, and teams that sell every day tend to find it the most intuitive place to move deals from first contact to close. There is no permanent free plan — only a trial — so it is a paid-from-day-one choice."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " sales-focused teams who want pipeline clarity above all. ", { "b": "Skip it if:" }, " you need a free option or heavy marketing features in the same tool." ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Freshsales and Capsule — lean, affordable options"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Freshsales offers a free tier and inexpensive paid plans with built-in email and lead scoring, which suits a small sales team on a budget. Capsule keeps things deliberately simple — a free tier for very small use and an affordable step up — and is a good home for contact-first relationship tracking rather than complex pipelines."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " small teams wanting low cost (Freshsales) or maximum simplicity (Capsule). ", { "b": "Skip them if:" }, " you need advanced automation or a broad all-in-one platform." ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Which should you choose?"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ "Want to start free and keep sales and marketing together → ", { "b": "HubSpot" }, "." ],
+        [ "Want the best value as the team grows → ", { "b": "Zoho CRM" }, "." ],
+        [ "Sell every day and want a visual pipeline → ", { "b": "Pipedrive" }, "." ],
+        [ "Want low cost or dead-simple contact tracking → ", { "b": "Freshsales or Capsule" }, "." ],
+        [ "Just you, or on the tightest budget → see ", { "link": { "ref": "article:art-crm-free", "text": "the best free CRM" } }, " and ", { "link": { "ref": "article:art-crm-solopreneurs", "text": "the best CRM for freelancers and solo owners" } }, "." ]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": [
+        "Not sure how to weigh these against each other? Our ",
+        { "link": { "ref": "article:art-crm-choose", "text": "step-by-step framework for choosing a CRM" } },
+        " turns this shortlist into a decision you can defend."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "What is the best CRM for a small business overall?",
+          "answerRichText": "For most small businesses starting out, HubSpot's free CRM is the easiest on-ramp, while Zoho CRM offers the best value as the team grows and Pipedrive suits sales-led teams. The right pick depends on your team size, what you sell, and the tools you already use."
+        },
+        {
+          "question": "How much does a CRM cost for a small business?",
+          "answerRichText": "Several CRMs have a free tier for a small team, and paid plans commonly run from roughly the price of a lunch per user per month up to more for advanced features. Prices change often, so confirm the current plan and per-user cost on the vendor's pricing page."
+        },
+        {
+          "question": "Is a free CRM good enough?",
+          "answerRichText": "Often yes, for a very small team with a modest number of contacts. Free tiers usually limit users, contacts, pipelines, and automation, so you upgrade once those caps start to slow you down. See our guide to the best free CRM for where the limits bite."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "link": { "ref": "article:art-crm-vs-spreadsheet", "text": "CRM vs Spreadsheet: When to Switch" } } ],
+        [ { "link": { "ref": "article:art-crm-choose", "text": "How to Choose a CRM for a Small Business" } } ]
+      ]
+    }
+  ]
+}

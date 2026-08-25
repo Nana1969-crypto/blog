@@ -181,7 +181,8 @@
       "ordered": false,
       "items": [
         [ { "link": { "ref": "article:art-m365-vs-workspace", "text": "Microsoft 365 vs Google Workspace" } } ],
-        [ { "link": { "ref": "article:art-best-spreadsheet", "text": "Best Spreadsheet Software for Small Business" } } ]
+        [ { "link": { "ref": "article:art-best-spreadsheet", "text": "Best Spreadsheet Software for Small Business" } } ],
+        [ "Using a spreadsheet to track customers or deals? ", { "link": { "ref": "article:art-crm-vs-spreadsheet", "text": "CRM vs Spreadsheet: When to Switch" } } ]
       ]
     }
   ]
