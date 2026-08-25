@@ -100,7 +100,9 @@
     {
       "type": "paragraph",
       "richText": [
-        "Choose Notion when the spreadsheet was really a stand-in for something else — a task list, a content calendar, a simple CRM, or a team wiki. Notion links notes, tasks, and databases in one place, with views like boards and calendars that a spreadsheet cannot match. For light tracking where you rarely do math, it is more pleasant to use."
+        "Choose Notion when the spreadsheet was really a stand-in for something else — a task list, a content calendar, a simple CRM, or a team wiki. Notion links notes, tasks, and databases in one place, with views like boards and calendars that a spreadsheet cannot match. For light tracking where you rarely do math, it is more pleasant to use. If that something else was tracking customers and deals, a dedicated tool may fit better — see ",
+        { "link": { "ref": "article:art-crm-vs-spreadsheet", "text": "CRM vs Spreadsheet" } },
+        "."
       ]
     },
     {

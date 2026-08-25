@@ -41,7 +41,15 @@ Cluster shape (as specified):
 ## Reverse links added (existing → new), semantically natural only
 - `excel-vs-google-sheets` → CRM vs Spreadsheet (Related guides item, framed for readers tracking customers in a sheet).
 - `best-spreadsheet-software-small-business` → CRM vs Spreadsheet (in the "mini-database" paragraph).
-- No mass/indiscriminate edits. Two existing articles touched, one link each.
+- `notion-vs-google-sheets` → CRM vs Spreadsheet (the paragraph that already names "a simple CRM" as a spreadsheet stand-in).
+- No mass/indiscriminate edits. Three existing articles touched, one link each, each at a genuinely natural "when a spreadsheet stops being enough for customers" hook.
+
+## Factual safety re-audit
+- Scanned all 5 articles: no hard prices (`$`), no numeric user/contact/storage limits, no "we tested" / "our experience" / unqualified "current pricing" claims.
+- Cost is always framed qualitatively with a "confirm on the vendor's pricing page / prices change often" caveat. Vendor plan structures (free tiers, who each suits) reflect current 2026 vendor documentation; specific figures deliberately omitted so nothing goes stale.
+- Schema carries no invented ratings: 0 `aggregateRating` / `Review` / `ratingValue`; only Article, FAQPage, BreadcrumbList, Organization.
+- Mobile: all tables render inside `table-wrap` (`overflow-x`) containers; no horizontal page overflow.
+- Breadcrumbs link only to `/` and the `/business-software/` pillar (both exist) — no link to a non-existent cluster index, so no internal 404.
 
 ## Research (current, 2026)
 Grounded on vendor plans confirmed via web search (HubSpot, Zoho CRM, Pipedrive, Freshsales, Zoho Bigin, Capsule, Streak, monday CRM, Less Annoying CRM). Pricing/limits framed as "at the time of writing — confirm on the vendor's pricing page." No invented prices, stats, tests, or personal experience. No fake screenshots.
