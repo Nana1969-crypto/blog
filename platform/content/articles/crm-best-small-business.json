@@ -152,6 +152,14 @@
       ]
     },
     {
+      "type": "paragraph",
+      "richText": [
+        "Weighing the three biggest names head-to-head? See ",
+        { "link": { "ref": "article:art-crm-hubspot-zoho-pipedrive", "text": "HubSpot vs Zoho vs Pipedrive" } },
+        " for how they differ on platform breadth, value, and sales focus."
+      ]
+    },
+    {
       "type": "callout",
       "variant": "tip",
       "richText": [

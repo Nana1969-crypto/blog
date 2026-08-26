@@ -78,6 +78,8 @@
         { "link": { "ref": "article:art-crm-free", "text": "the best free CRM" } },
         " and solo-focused picks in ",
         { "link": { "ref": "article:art-crm-solopreneurs", "text": "the best CRM for freelancers and solo owners" } },
+        ". For a head-to-head on the three biggest names, see ",
+        { "link": { "ref": "article:art-crm-hubspot-zoho-pipedrive", "text": "HubSpot vs Zoho vs Pipedrive" } },
         "."
       ]
     },
