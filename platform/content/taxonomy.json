@@ -37,6 +37,7 @@
     { "id": "cl_gs_tut", "pillarId": "pillar_gsheets", "slug": "tutorials", "title": "Google Sheets Tutorials" },
     { "id": "cl_compare", "pillarId": "pillar_compare", "slug": "guides", "title": "Buyer's Guides" },
     { "id": "cl_ai", "pillarId": "pillar_ai", "slug": "guides", "title": "AI Guides" },
-    { "id": "cl_crm", "pillarId": "pillar_business", "slug": "crm", "title": "CRM" }
+    { "id": "cl_crm", "pillarId": "pillar_business", "slug": "crm", "title": "CRM" },
+    { "id": "cl_pm", "pillarId": "pillar_business", "slug": "project-management", "title": "Project Management" }
   ]
 }
