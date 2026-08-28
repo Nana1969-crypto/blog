@@ -163,6 +163,14 @@
       ]
     },
     {
+      "type": "paragraph",
+      "richText": [
+        "Torn between the three most popular options? See ",
+        { "link": { "ref": "article:art-pm-trello-asana-clickup", "text": "Trello vs Asana vs ClickUp" } },
+        " for a head-to-head on simplicity, structure, and all-in-one value."
+      ]
+    },
+    {
       "type": "callout",
       "variant": "tip",
       "richText": "Whatever you pick, run a one-week trial with a real project and the whole team, not just you. Adoption is the real test — a tool nobody opens on a busy week is the wrong tool, however good it looks in a demo."
