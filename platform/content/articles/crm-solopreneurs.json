@@ -157,7 +157,8 @@
       "ordered": false,
       "items": [
         [ { "link": { "ref": "article:art-crm-best", "text": "Best CRM for Small Businesses" } } ],
-        [ { "link": { "ref": "article:art-crm-free", "text": "Best Free CRM for Small Businesses" } } ]
+        [ { "link": { "ref": "article:art-crm-free", "text": "Best Free CRM for Small Businesses" } } ],
+        [ "Also need to get paid? ", { "link": { "ref": "article:art-invoice-best-freelancers", "text": "Best Invoicing Software for Freelancers" } } ]
       ]
     }
   ]
