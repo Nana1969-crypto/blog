@@ -1,0 +1,173 @@
+{
+  "id": "art-invoice-quickbooks-xero-wave",
+  "slug": "quickbooks-vs-xero-vs-wave",
+  "clusterId": "cl_invoice",
+  "title": "QuickBooks vs Xero vs Wave: Accounting Compared",
+  "dek": "These three accounting tools win at three different things: QuickBooks for full-featured power, Xero for multi-user collaboration, and Wave for free basic bookkeeping. This compares them on the decision that matters for a small business — how much accounting you really need — with a clear pick for each and who should skip each.",
+  "authorId": "author_team",
+  "publishedAt": "2026-09-01",
+  "updatedAt": "2026-09-01",
+  "intent": {
+    "primaryKeyword": "quickbooks vs xero vs wave",
+    "intentType": "commercial",
+    "funnelStage": "MoFu"
+  },
+  "seo": {
+    "metaTitle": "QuickBooks vs Xero vs Wave: Compared",
+    "metaDescription": "QuickBooks vs Xero vs Wave compared for small business accounting — the free option, the most features, and who each suits — with a clear pick for each."
+  },
+  "sources": [
+    { "label": "QuickBooks", "url": "https://quickbooks.intuit.com/" },
+    { "label": "Xero", "url": "https://www.xero.com/" },
+    { "label": "Wave", "url": "https://www.waveapps.com/" }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "QuickBooks, Xero, and Wave are three of the most common answers to \"what accounting software should my small business use?\" — and comparing their feature lists can stall you, because past the basics they all do bookkeeping, invoicing, and reports. The clearer question is how much accounting you actually need: full-featured power, easy multi-user collaboration, or just free, simple books. Each of these three is built around a different answer. This compares them on what decides it for a small business, with a clear pick for each situation and an honest note on who should look elsewhere."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The one-line difference"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "b": "QuickBooks" }, " is the full-featured standard — the most capable and the most widely supported by accountants, and paid." ],
+        [ { "b": "Xero" }, " is the collaboration pick — unlimited users on every plan, strong reporting, and popular with accountants, also paid." ],
+        [ { "b": "Wave" }, " is the free option — genuinely free core accounting and invoicing, best for microbusinesses with simple needs." ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "At a glance"
+    },
+    {
+      "type": "table",
+      "caption": "QuickBooks vs Xero vs Wave",
+      "headers": [ "", "QuickBooks", "Xero", "Wave" ],
+      "rows": [
+        [ "Best described as", "Full-featured standard", "Multi-user collaboration", "Free basic accounting" ],
+        [ "Price", "Paid (tiers)", "Paid (tiers)", "Free core; pay for add-ons" ],
+        [ "Users", "Limited by plan", "Unlimited on all plans", "Limited" ],
+        [ "Inventory / advanced", "Strong", "Good", "Not included" ],
+        [ "Best fit", "Growing businesses wanting depth", "Teams working with an accountant", "Freelancers and microbusinesses" ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "richText": "Descriptions here are based on each vendor's current documented plans, not on hands-on testing. Pricing and plan limits change often, so treat any detail as \"at the time of writing\" and confirm it on each vendor's own pricing page before you commit."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Best for full-featured accounting: QuickBooks"
+    },
+    {
+      "type": "paragraph",
+      "richText": "QuickBooks is the market standard, and it earns that with depth: inventory tracking, job costing, payroll integration, advanced reporting, and one of the largest ecosystems of connected apps. Just as important, most accountants know it, so handing over your books at tax time is easy. It is a paid tool with no free plan, and its higher tiers get expensive, but for a growing business that needs real accounting, it is the safe, capable default."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " growing small businesses that need full accounting features and easy accountant support. ", { "b": "Skip it if:" }, " you only need simple books — you would be paying for depth you will not use." ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Best for collaboration: Xero"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Xero's standout feature is that every plan includes unlimited users, so you, your team, and your accountant can all work in the books without paying per seat — something QuickBooks charges for. It pairs that with strong reporting and a clean interface, and it is popular with accountants, especially outside the US. Payroll is a separate product and the app ecosystem is smaller than QuickBooks', but for a team that collaborates on its finances, Xero is often the better fit."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " businesses where several people, including an accountant, need access to the books. ", { "b": "Skip it if:" }, " you rely on a specific integration or built-in payroll that QuickBooks handles better." ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Best free option: Wave"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Wave offers genuinely free core accounting and invoicing — income and expense tracking, unlimited invoices, and basic reports — which makes it the natural pick for freelancers and microbusinesses on a tight budget. You pay only when you accept online payments or add payroll. The trade-offs are scope and support: Wave does not do inventory, its features are more basic, and support is limited on a free product. For simple books, though, it is remarkable value."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " freelancers and very small businesses that need free, simple accounting. ", { "b": "Skip it if:" }, " you need inventory, advanced reporting, or hands-on support as you grow." ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How much accounting do you actually need?"
+    },
+    {
+      "type": "paragraph",
+      "richText": "The honest way to choose is to match the tool to your real needs rather than the longest feature list. Three questions settle it for most small businesses:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "b": "Is budget the priority, with simple needs?" }, " Start with Wave — free covers a lot for a microbusiness." ],
+        [ { "b": "Do several people, including an accountant, need access?" }, " Xero's unlimited users make it the value pick." ],
+        [ { "b": "Do you need depth — inventory, job costing, rich reporting?" }, " QuickBooks is the most capable and the most supported." ]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "If you are unsure, ask your accountant which tool they prefer before you subscribe. Working in the software your accountant already uses saves time and fees at tax season, and it is the single most practical tie-breaker between QuickBooks and Xero."
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "This comparison is about the books. If what you really need is to bill clients and get paid rather than full accounting, see ",
+        { "link": { "ref": "article:art-invoice-best-freelancers", "text": "the best invoicing software for freelancers" } },
+        ", where Wave also appears alongside simpler invoicing-first tools. And to keep an eye on cash flow alongside your accounting, a simple ",
+        { "link": { "ref": "article:art-gs-budget", "text": "budget in Google Sheets" } },
+        " is a useful companion."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "Which is best, QuickBooks, Xero, or Wave?",
+          "answerRichText": "None is best overall. QuickBooks is best for full-featured accounting and accountant support, Xero for teams that need unlimited users and collaboration, and Wave for free, simple books for a microbusiness. The right pick depends on how much accounting you need and your budget."
+        },
+        {
+          "question": "Is Wave really free?",
+          "answerRichText": "Yes. Wave's core accounting and invoicing are free, with unlimited invoices and expense tracking. You pay only for optional extras such as accepting online payments (a per-transaction fee) or payroll. It does lack inventory and advanced features, and support is limited on the free product."
+        },
+        {
+          "question": "Is Xero cheaper than QuickBooks?",
+          "answerRichText": "It depends on the plan and how many users you have. Because Xero includes unlimited users on every plan while QuickBooks limits users by tier, Xero can work out cheaper for teams. Compare the current plans on each vendor's pricing page, since prices change."
+        },
+        {
+          "question": "Which accounting software do accountants prefer?",
+          "answerRichText": "Both QuickBooks and Xero are widely used and well supported by accountants; QuickBooks has the larger base in the US, while Xero is very popular elsewhere. The most practical move is to ask your own accountant which they prefer before you choose."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "link": { "ref": "article:art-invoice-best-freelancers", "text": "Best Invoicing Software for Freelancers" } } ],
+        [ { "link": { "ref": "article:art-crm-vs-spreadsheet", "text": "CRM vs Spreadsheet: When to Switch" } } ]
+      ]
+    }
+  ]
+}

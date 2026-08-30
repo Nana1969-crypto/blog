@@ -179,7 +179,8 @@
       "ordered": false,
       "items": [
         [ { "link": { "ref": "article:art-crm-solopreneurs", "text": "Best CRM for Freelancers & Solo Owners" } } ],
-        [ { "link": { "ref": "article:art-crm-vs-spreadsheet", "text": "CRM vs Spreadsheet: When to Switch" } } ]
+        [ { "link": { "ref": "article:art-crm-vs-spreadsheet", "text": "CRM vs Spreadsheet: When to Switch" } } ],
+        [ "Need full accounting, not just invoices? ", { "link": { "ref": "article:art-invoice-quickbooks-xero-wave", "text": "QuickBooks vs Xero vs Wave" } } ]
       ]
     }
   ]
