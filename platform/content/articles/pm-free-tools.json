@@ -1,0 +1,165 @@
+{
+  "id": "art-pm-free",
+  "slug": "best-free-project-management-tools",
+  "clusterId": "cl_pm",
+  "title": "Best Free Project Management Tools",
+  "dek": "A free project management tool can run a small team well — until you hit a cap you did not see coming. This guide covers what \"free\" really means, which free tools are genuinely useful, and the exact limits (users, boards, features) that tell you it is time to pay.",
+  "authorId": "author_team",
+  "publishedAt": "2026-09-02",
+  "updatedAt": "2026-09-02",
+  "intent": {
+    "primaryKeyword": "best free project management tools",
+    "intentType": "commercial",
+    "funnelStage": "MoFu"
+  },
+  "seo": {
+    "metaTitle": "Best Free Project Management Tools",
+    "metaDescription": "The best free project management tools, and what \"free\" really means — the user, board and feature limits that tell you when it is time to pay."
+  },
+  "sources": [
+    { "label": "ClickUp", "url": "https://clickup.com/" },
+    { "label": "Trello", "url": "https://trello.com/" },
+    { "label": "Asana", "url": "https://asana.com/" }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "You do not have to pay to run projects properly. Several leading tools offer a free plan that never expires, and for a small team they are often all you need. The catch is that \"free\" is defined by limits, and knowing where those limits sit is the difference between a free tool that carries you for a year and one you outgrow in a month. This guide explains what free actually includes, which options are worth starting with, and the signs it is time to upgrade."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What \"free\" really means in a project tool"
+    },
+    {
+      "type": "paragraph",
+      "richText": "A free forever plan is not a trial — it does not end after two weeks. Instead, vendors cap it in ways designed to be comfortable for a small team and to nudge you upward as you grow. The caps that matter most are:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "b": "Number of users." }, " This varies enormously between tools and is where free plans differ most." ],
+        [ { "b": "Projects, boards, or blocks." }, " Some tools limit how many separate projects or boards you can create." ],
+        [ { "b": "Views." }, " Timeline (Gantt), calendar, and dashboard views are often reserved for paid plans." ],
+        [ { "b": "Automation." }, " Free tiers usually include only a small monthly allowance of automated actions." ],
+        [ { "b": "Storage and history." }, " File-storage caps and limited activity history are common on free plans." ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The best free project management tools"
+    },
+    {
+      "type": "paragraph",
+      "richText": "The plans below are the free tiers most worth starting with. Free-tier limits change frequently — sometimes tightening, as Asana's did in late 2025 — so treat the notes as \"at the time of writing\" and confirm the current caps on each vendor's pricing page before you rely on them."
+    },
+    {
+      "type": "table",
+      "caption": "Free project management plans compared",
+      "headers": [ "Tool", "Free plan is best for", "Watch the limit on" ],
+      "rows": [
+        [ "ClickUp", "Small teams — the most generous on users", "Feature usage (e.g. advanced views)" ],
+        [ "Trello", "Simple visual boards", "Number of boards and collaborators" ],
+        [ "Asana", "An individual or a pair", "User count (now small)" ],
+        [ "Notion", "Solo docs and tasks together", "Members and block limits" ],
+        [ "Jira", "Small agile or dev teams", "User count and advanced features" ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "ClickUp — the most generous free plan for a team"
+    },
+    {
+      "type": "paragraph",
+      "richText": "ClickUp's free plan stands out because it does not cap the number of members, so a whole small team can work on it without paying — with unlimited tasks and a wide feature set. It is the strongest free choice for a team that wants real capability. The limits are on usage of some advanced features rather than on people, and, as with the paid tool, it takes some setup."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " a small team that wants the most capability for free. ", { "b": "You will pay when:" }, " you need heavier automation or unlimited use of advanced views." ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Trello — the simplest free board"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Trello's free plan is ideal for simple, visual task tracking: unlimited cards across a set number of boards, with a handful of collaborators. For a small team running straightforward projects, that is often all it needs, and it is the fastest of these to set up. You bump into the ceiling when you need many separate boards, more collaborators, or timeline and reporting views."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " simple projects and small groups who want zero learning curve. ", { "b": "You will pay when:" }, " you outgrow the board limit or need dependencies and reporting." ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Asana, Notion, and Jira — free for smaller or specific setups"
+    },
+    {
+      "type": "paragraph",
+      "richText": "These three are genuinely free but suit narrower cases. Asana's free plan is polished and easy but now limited to a very small number of users, so it works best for an individual or a pair rather than a whole team. Notion's free plan is excellent for one person keeping docs and tasks together, though block and member limits appear as a team joins. Jira's free plan suits small agile or software teams up to a modest user cap, with the Agile depth developers expect."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " solo or paired work (Asana, Notion) or small dev teams (Jira). ", { "b": "You will pay when:" }, " your team grows past the free user cap or you need features beyond the basics." ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "When free stops being enough"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Three signals usually mean it is time to pay: you have added people and hit the user cap; you need a view the free plan locks away, such as timelines or dashboards; or you keep wanting automation beyond the small free allowance. If none of those bite yet, staying free is the right call — do not pay for capacity you are not using."
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "Choosing between the tools themselves rather than just their free tiers? Start with ",
+        { "link": { "ref": "article:art-pm-best", "text": "the best project management software for small teams" } },
+        ", and for a head-to-head of the three most popular options see ",
+        { "link": { "ref": "article:art-pm-trello-asana-clickup", "text": "Trello vs Asana vs ClickUp" } },
+        "."
+      ]
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "What is the best free project management tool?",
+          "answerRichText": "For a small team, ClickUp's free plan is the most generous because it does not cap the number of members. Trello is best for simple visual boards, while Asana, Notion, and Jira suit individuals, pairs, or small dev teams. The right pick depends on your team size and how much structure you need."
+        },
+        {
+          "question": "Are free project management tools actually free?",
+          "answerRichText": "Yes — ClickUp, Trello, Asana, Notion, and Jira all offer free plans that never expire, not just trials. They are limited by users, projects, views, automation, and storage, so a small team can run on them indefinitely if it fits within the caps."
+        },
+        {
+          "question": "Which free plan allows the most users?",
+          "answerRichText": "ClickUp is the standout, since its free plan does not cap the number of members. Others are more restrictive — Trello allows a limited number of collaborators, and Asana's free plan was reduced to a very small user count in late 2025 — so confirm the current limits before you rely on them."
+        },
+        {
+          "question": "When should I upgrade from a free plan?",
+          "answerRichText": "Upgrade when you hit the user cap, need a view or report the free plan locks away, or repeatedly run out of the free automation allowance. Until one of those limits actually slows you down, a free plan is usually enough."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "link": { "ref": "article:art-pm-best", "text": "Best Project Management Software for Small Teams" } } ],
+        [ { "link": { "ref": "article:art-pm-trello-asana-clickup", "text": "Trello vs Asana vs ClickUp" } } ]
+      ]
+    }
+  ]
+}

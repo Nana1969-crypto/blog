@@ -55,7 +55,7 @@
         [ "Best described as", "Simple kanban board", "Balanced task manager", "All-in-one workspace" ],
         [ "Ease of use", "Easiest", "Approachable", "Steeper learning curve" ],
         [ "Views", "Boards (kanban)", "List, board, calendar, timeline", "Many, including docs and goals" ],
-        [ "Free plan", "Good for simple use", "Covers a small team", "Most generous" ],
+        [ "Free plan", "Good for simple use", "Small user limit", "Most generous" ],
         [ "Best fit", "Lightweight task tracking", "Structured team workflows", "Teams wanting depth in one tool" ]
       ]
     },
@@ -83,7 +83,7 @@
     },
     {
       "type": "paragraph",
-      "richText": "Asana sits in the middle, and for many small teams that is exactly right. It gives you list, board, calendar, and timeline views, cleaner task and workflow structure than Trello, and a polished interface that stays approachable. It is the natural step up when a simple board is no longer enough but ClickUp feels like too much. Its free plan covers a small team, though some advanced views and automation sit on paid tiers."
+      "richText": "Asana sits in the middle, and for many small teams that is exactly right. It gives you list, board, calendar, and timeline views, cleaner task and workflow structure than Trello, and a polished interface that stays approachable. It is the natural step up when a simple board is no longer enough but ClickUp feels like too much. Its free plan is now limited to a very small number of users — better for trying it than running a whole team — and some advanced views and automation sit on paid tiers."
     },
     {
       "type": "paragraph",
@@ -109,7 +109,11 @@
     },
     {
       "type": "paragraph",
-      "richText": "All three have a free plan that never expires, so cost rarely decides this for a small team starting out. The differences are in the caps. ClickUp's free tier is the most feature-rich and is generous on members; Asana's free plan comfortably covers a small team but reserves some views and automation for paid tiers; Trello's free plan is fine for simple boards but limits how much you can store and automate. As with pricing, confirm the current free-tier limits on each vendor's page, since they change."
+      "richText": [
+        "All three have a free plan that never expires, so cost rarely decides this for a small team starting out. The differences are in the caps. ClickUp's free tier is the most feature-rich and is generous on members; Asana's free plan is now restricted to a very small number of users and reserves some views and automation for paid tiers; Trello's free plan is fine for simple boards but limits how much you can store and automate. For a fuller look at each free tier, see our guide to the ",
+        { "link": { "ref": "article:art-pm-free", "text": "best free project management tools" } },
+        ". As with pricing, confirm the current free-tier limits on each vendor's page, since they change."
+      ]
     },
     {
       "type": "heading",
@@ -161,7 +165,7 @@
         },
         {
           "question": "Which has the best free plan?",
-          "answerRichText": "ClickUp generally offers the most feature-rich free plan and is generous on members. Asana's free plan comfortably covers a small team, and Trello's is fine for simple boards. Because free-tier limits change, confirm the current caps on each vendor's pricing page before deciding."
+          "answerRichText": "ClickUp generally offers the most feature-rich free plan and is generous on members. Asana's free plan is now limited to a very small number of users, and Trello's is fine for simple boards. Because free-tier limits change, confirm the current caps on each vendor's pricing page before deciding."
         },
         {
           "question": "Is ClickUp harder to learn than Trello or Asana?",
