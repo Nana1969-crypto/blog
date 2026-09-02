@@ -136,7 +136,11 @@
     {
       "type": "callout",
       "variant": "tip",
-      "richText": "Start free unless you already know you need automation. Wave or Zoho Invoice will get you paid professionally at zero cost, and you can move up to a paid tool the day invoicing starts eating hours you would rather bill."
+      "richText": [
+        "Start free unless you already know you need automation. Wave or Zoho Invoice will get you paid professionally at zero cost — see the ",
+        { "link": { "ref": "article:art-invoice-free", "text": "best free invoicing software" } },
+        " for all the free options — and you can move up to a paid tool the day invoicing starts eating hours you would rather bill."
+      ]
     },
     {
       "type": "paragraph",

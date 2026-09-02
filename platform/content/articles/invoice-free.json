@@ -1,0 +1,168 @@
+{
+  "id": "art-invoice-free",
+  "slug": "best-free-invoicing-software",
+  "clusterId": "cl_invoice",
+  "title": "Best Free Invoicing Software",
+  "dek": "You can send professional invoices and get paid without paying a cent for the software. This guide covers what \"free invoicing\" really means, which free tools are genuinely worth using, and the limits that tell you when a paid plan is worth it.",
+  "authorId": "author_team",
+  "publishedAt": "2026-09-03",
+  "updatedAt": "2026-09-03",
+  "intent": {
+    "primaryKeyword": "best free invoicing software",
+    "intentType": "commercial",
+    "funnelStage": "MoFu"
+  },
+  "seo": {
+    "metaTitle": "Best Free Invoicing Software",
+    "metaDescription": "The best free invoicing software — Zoho Invoice, Wave, Invoice Ninja and more — what \"free\" really covers, and when a paid plan is worth it."
+  },
+  "sources": [
+    { "label": "Zoho Invoice", "url": "https://www.zoho.com/invoice/" },
+    { "label": "Wave", "url": "https://www.waveapps.com/" },
+    { "label": "Invoice Ninja", "url": "https://www.invoiceninja.com/" }
+  ],
+  "body": [
+    {
+      "type": "paragraph",
+      "richText": [
+        "Invoicing is one of the few business tasks you genuinely do not need to pay for. Several established tools let you create, send, and track professional invoices for free, and for a freelancer or small business that is often all you need. The catch is in the detail: \"free\" usually means free to send the invoice, while accepting online payment carries a small per-transaction fee, and some free plans cap clients or revenue. This guide explains what free invoicing really includes, which tools are worth starting with, and when paying starts to make sense."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What \"free invoicing\" actually means"
+    },
+    {
+      "type": "paragraph",
+      "richText": "A free invoicing tool lets you build a branded invoice, send it, and track whether it has been paid — at no cost. Two things are worth understanding before you rely on one:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "b": "Sending is free; getting paid online is not." }, " Accepting card or bank payment through the tool almost always carries a per-transaction fee, charged by the payment processor, not a subscription." ],
+        [ { "b": "Free plans have caps." }, " Common limits include the number of clients, a business-revenue threshold, or which advanced features are included." ],
+        [ { "b": "Free rarely means full accounting." }, " Most free invoicing tools handle billing well but stop short of complete bookkeeping and tax." ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The best free invoicing tools"
+    },
+    {
+      "type": "paragraph",
+      "richText": "The tools below are the free options most worth starting with. Descriptions are based on each vendor's current documented plans, not on hands-on testing. Free-tier limits and fees change, so treat any detail as \"at the time of writing\" and confirm it on the vendor's own pricing page before you rely on it."
+    },
+    {
+      "type": "table",
+      "caption": "Free invoicing tools compared",
+      "headers": [ "Tool", "Best for", "Watch the limit on" ],
+      "rows": [
+        [ "Zoho Invoice", "The best all-round free invoicing", "A business-revenue threshold" ],
+        [ "Wave", "Free invoicing plus basic accounting", "Fees when you accept payments" ],
+        [ "Invoice Ninja", "Customisation and project billing", "Number of clients (cloud free)" ],
+        [ "PayPal Invoicing", "Sending a quick invoice fast", "Per-transaction fees" ],
+        [ "Square Invoices", "In-person and online sellers", "Per-transaction fees" ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Zoho Invoice — the best all-round free option"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Zoho Invoice is a genuinely free, full-featured invoicing tool: unlimited invoices and customers, recurring invoices, automated reminders, expense and time tracking, and a client portal. For most freelancers and small businesses it does everything invoicing should, at no cost. The main condition is a business-revenue threshold on the free plan, which varies by region, so very established businesses may age out of it."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " freelancers and small businesses wanting complete, professional invoicing for free. ", { "b": "Watch out for:" }, " the revenue limit on the free plan, and that it is invoicing-first, not full accounting." ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Wave — free invoicing with accounting attached"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Wave pairs free, unlimited invoicing with genuine bookkeeping, so you can track income and expenses in the same place — useful at tax time. It is the natural pick if you want invoicing and basic accounting together without paying. As with every tool here, accepting online payments carries a per-transaction fee, and Wave does not cover inventory or advanced reporting."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " those who want free invoicing and simple accounting in one tool. ", { "b": "Watch out for:" }, " payment-processing fees and the lack of advanced accounting features." ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Invoice Ninja, PayPal, and Square — customisation or pay-as-you-go"
+    },
+    {
+      "type": "paragraph",
+      "richText": "Invoice Ninja is a strong free choice if you want customisation and project-based billing; its cloud free plan covers a small number of clients, and because it is open source you can even self-host it. PayPal Invoicing and Square Invoices take a different approach: there is no subscription, so sending invoices is free and you simply pay a per-transaction fee when a client pays. That pay-as-you-go model suits anyone who invoices occasionally and wants zero setup."
+    },
+    {
+      "type": "paragraph",
+      "richText": [ { "b": "Best for:" }, " customisation and self-hosting (Invoice Ninja) or occasional, no-setup invoicing (PayPal, Square). ", { "b": "Watch out for:" }, " the client cap on Invoice Ninja's free cloud plan, and per-transaction fees on all three." ]
+    },
+    {
+      "type": "heading",
+      "text": "When it is worth paying",
+      "level": 2
+    },
+    {
+      "type": "paragraph",
+      "richText": "Free invoicing covers the basics well, so pay only when a real need appears: you have grown past a free plan's client or revenue cap; you want automation and polish that save you hours, such as advanced recurring billing and reminders; or you need full accounting and tax rather than just invoices. Until one of those bites, a free tool is the right call."
+    },
+    {
+      "type": "paragraph",
+      "richText": [
+        "If you are a freelancer weighing free against paid tools with more automation, see ",
+        { "link": { "ref": "article:art-invoice-best-freelancers", "text": "the best invoicing software for freelancers" } },
+        ". And if what you really need is full bookkeeping, compare ",
+        { "link": { "ref": "article:art-invoice-quickbooks-xero-wave", "text": "QuickBooks vs Xero vs Wave" } },
+        "."
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "tip",
+      "richText": "Whichever free tool you choose, add your logo and payment terms and turn on automatic reminders. A professional-looking invoice with a clear due date and an easy way to pay gets you paid faster — and costs nothing to set up."
+    },
+    {
+      "type": "faq",
+      "items": [
+        {
+          "question": "What is the best free invoicing software?",
+          "answerRichText": "Zoho Invoice is the best all-round free option, with unlimited invoices and customers, recurring billing, and reminders. Wave is best if you also want basic accounting, and Invoice Ninja for customisation. The right pick depends on whether you need accounting, customisation, or just to send invoices fast."
+        },
+        {
+          "question": "Is free invoicing software really free?",
+          "answerRichText": "Sending invoices is genuinely free with tools like Zoho Invoice, Wave, and Invoice Ninja. The usual cost is a per-transaction fee when you accept online card or bank payments, charged by the payment processor. Some free plans also cap clients or business revenue, so check the current limits."
+        },
+        {
+          "question": "Can I accept payments with free invoicing software?",
+          "answerRichText": "Yes. Most free invoicing tools let clients pay online by card or bank transfer directly from the invoice. This carries a per-transaction fee rather than a subscription, and it typically gets you paid faster than waiting for a manual bank transfer."
+        },
+        {
+          "question": "Do I need paid invoicing software as I grow?",
+          "answerRichText": "Not always. Many businesses run indefinitely on a free tool. You upgrade when you outgrow a client or revenue cap, want automation that saves real time, or need full accounting and tax rather than invoicing alone."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Related guides"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        [ { "link": { "ref": "article:art-invoice-best-freelancers", "text": "Best Invoicing Software for Freelancers" } } ],
+        [ { "link": { "ref": "article:art-invoice-quickbooks-xero-wave", "text": "QuickBooks vs Xero vs Wave" } } ]
+      ]
+    }
+  ]
+}
