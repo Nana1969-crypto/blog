@@ -83,7 +83,11 @@
     },
     {
       "type": "paragraph",
-      "richText": "Grammarly checks grammar, clarity, and tone across email, documents, and the browser. For a small business, its value is consistency — everything that leaves your inbox reads professionally, even when you are rushing."
+      "richText": [
+        "Grammarly checks grammar, clarity, and tone across email, documents, and the browser. For a small business, its value is consistency — everything that leaves your inbox reads professionally, even when you are rushing. For drafting as well as editing, see the ",
+        { "link": { "ref": "article:art-ai-writing-tools", "text": "best AI writing tools for work" } },
+        "."
+      ]
     },
     {
       "type": "paragraph",
